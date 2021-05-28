@@ -3,7 +3,5 @@
 // import utilStyles from '../styles/utils.module.css'
 
 export default function Occasions() {
-    return (
-      <h1>This is the Occasions page</h1>
-    )
-  }
+  return <h1>This is the Occasions page</h1>;
+}
