@@ -14,3 +14,7 @@ a {
 * {
   box-sizing: border-box;
 }
+.logo {
+  height: 30px;
+  
+}
