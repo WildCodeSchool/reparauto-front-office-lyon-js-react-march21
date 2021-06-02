@@ -83,16 +83,6 @@ export default function Contact() {
               </a>
             </div>
           </div>
-
-          <div className="mt-8 text-gray-700">
-            Crédits{' '}
-            <a
-              className="font-bold"
-              href="https://dribbble.com/shots/12052834-Rating-popup"
-            >
-              Goga
-            </a>
-          </div>
         </div>
       </div>
     </>
