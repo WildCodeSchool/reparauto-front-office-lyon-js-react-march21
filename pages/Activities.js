@@ -38,7 +38,7 @@ export default function Activities() {
              at consequuntur consequatur officiis repudiandae! Culpa cum vel tenetur itaque eius provident voluptatum similique impedit?</span>
         </div>
 
-        <button class="w-full text-lg h-16 text-white font-extrabold bg-red-500 rounded-lg">à partir de <span class="text-4xl">35€</span></button>
+        <button class="w-full text-lg h-16 text-white font-extrabold bg-red-500 rounded-lg mb-4">à partir de <span class="text-4xl">35€</span></button>
       </div>
     </div>
   </main>
