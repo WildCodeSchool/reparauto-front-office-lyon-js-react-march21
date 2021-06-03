@@ -9,7 +9,7 @@ export default function Activities() {
         <img src="https://via.placeholder.com/150" alt="" class="w-full h-48 sm:h-56 object-cover" />
 
         <div class="px-10 py-6 mb-10 text-center">
-          <div class="text-2xl font-bold text-yellow-500 mb-4">DIAGNOCTICS</div>
+          <div class="text-2xl font-bold text-yellow-500 mb-4">DIAGNOSTICS</div>
           <span class="text-sm">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate tempore eligendi magnam distinctio molestias. Incidunt at consequuntur consequatur 
             officiis repudiandae! Culpa cum vel tenetur itaque eius provident voluptatum similique impedit?

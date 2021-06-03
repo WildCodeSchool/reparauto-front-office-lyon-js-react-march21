@@ -12,7 +12,7 @@ export default function Nav() {
                 <div className="ml-10"><Link href="./Occasions">Véhicules d'occasions</Link></div>
                 <div className="ml-10"><Link href='./Customers-notices'>Avis clients</Link></div>
                 <div className="ml-10"><Link href='./Contact'>Contact</Link></div>
-                <div className="ml-10"><Link href='./Avis'>Avis</Link></div>
+                <div className="ml-10"><Link href='./Detail-occasion'>Détails</Link></div>
             </div>
         </div>
     )

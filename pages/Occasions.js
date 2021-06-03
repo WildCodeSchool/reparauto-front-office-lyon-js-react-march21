@@ -4,7 +4,7 @@
 
 export default function Occasions() {
     return (
-<>
+<div >
   <div class="flex my-10">
     <div class="bg-white w-1/5 m-auto border-1  border-dashed border-gray-100 shadow-md rounded-lg overflow-hidden ">
       <img src="https://via.placeholder.com/150" alt="" class="w-full object-cover object-center" />
@@ -142,7 +142,7 @@ export default function Occasions() {
   </div>
 </div>
 
-  </>
+  </div>
 
   
 
