@@ -11,13 +11,13 @@ export default function Contact() {
           <div className="bg-white min-w-1xl flex flex-col rounded-xl shadow-lg">
             <div className="px-12 py-5">
               <h2 className="text-gray-800 text-3xl font-semibold">
-                Your opinion matters to us!
+                Votre Avis nous intéresse !
               </h2>
             </div>
             <div className="bg-gray-200 w-full flex flex-col items-center">
               <div className="flex flex-col items-center py-6 space-y-3">
                 <span className="text-lg text-gray-800">
-                  How was quality of the call?
+                  Quelle à été la qualité du service rendu ?
                 </span>
                 <div className="flex space-x-3">
                   <svg
@@ -67,19 +67,19 @@ export default function Contact() {
                   rows="3"
                   className="p-4 text-gray-500 rounded-xl resize-none"
                 >
-                  Leave a message, if you want
+                  Redigez votre avis :
                 </textarea>
                 <button
                   type="submit"
                   className="py-3 my-8 text-lg bg-gradient-to-r from-purple-500 to-indigo-600 rounded-xl text-white"
                 >
-                  Rate now
+                  Envoyer
                 </button>
               </div>
             </div>
             <div className="h-20 flex items-center justify-center">
               <a href="#" className="text-gray-600">
-                Maybe later
+                Peut-etre plus tard
               </a>
             </div>
           </div>
