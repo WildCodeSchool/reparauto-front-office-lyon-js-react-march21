@@ -1,10 +1,10 @@
 
 export default function Activities() {
   return (
-<main class="px-3">
+<main class="px-3 mb-6">
     <div class="text-4xl sm:text-5xl text-center my-10">Nos prestations</div>
 
-    <div class="grid md:grid-cols-3 gap-8 m-5 max-w-5xl m-auto">
+    <div class="grid md:grid-cols-3 gap-2 max-w-5xl m-auto">
       <div class="bg-white">
         <img src="https://via.placeholder.com/150" alt="" class="w-full h-48 sm:h-56 object-cover" />
 
