@@ -4,6 +4,13 @@
 
 export default function Contact() {
     return (
-      <h1>This is the Contact page</h1>
+      
+      
+     <p>
+        Suggestions, thanks or love notes? Let us know below 😃
+      </p>
+
+
+
     )
   }
