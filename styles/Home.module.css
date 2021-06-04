@@ -8,8 +8,6 @@
   align-items: center;
   
 }
-
-
 .main {
   padding: 5rem 0;
   flex: 1;
@@ -90,10 +88,6 @@
   line-height: 1.5;
 }*/
 
-.logo {
-  height: 30px;
-  
-}
 
 @media (max-width: 600px) {
   .grid {
