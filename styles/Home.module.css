@@ -86,8 +86,17 @@
   margin: 0;
   font-size: 1.25rem;
   line-height: 1.5;
+<<<<<<< HEAD
 }*/
 
+=======
+}
+
+.logo {
+  height: 1em;
+  margin-left: 0.5rem;
+}
+>>>>>>> joris2
 
 @media (max-width: 600px) {
   .grid {
