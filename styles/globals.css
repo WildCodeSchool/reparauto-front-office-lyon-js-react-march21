@@ -16,12 +16,32 @@ a {
   
 }
 .navbar show-nav{
-  
-  
-  
   background-color: brown;
-  
 }
-.navbar{
-  
+.Contact-form{
+  min-width: 60vw;
+  max-width: 500px;
+  max-height:90vh;
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border:solid 2px rgb(114, 114, 114);
+  border-radius: 5px;
+  background-color: rgb(223, 219, 219);
+  padding-top: 3rem;
+}
+.form-input{
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+}
+.input-text{
+  margin-top: 1rem;
+  width: 68vw;
+  height: 3rem;
+  max-width: 300px;
+  border: 2px solid grey;
+  border-radius: 5px;
 }
