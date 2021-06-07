@@ -40,25 +40,26 @@ export default function Avis() {
                 onChange={ratingChanged}
                 required
                 value="3"
+                edit={true}
                 />
                    
                  </div>
               </div>
               <div className="w-3/4 flex flex-col">
-                <textarea defaultValue="test" {...register("content")}
+                <textarea {...register("content")}
                   rows="3"
                   className="p-4 text-gray-500 rounded-xl resize-none"
-                  defaultValue="Rédigez votre avis :"
+                  placeholder="Rédigez votre avis :"
                   required
                 />
-                <input defaultValue="Votre email:" {...register("email")}
+                <input placeholder="Votre email:" {...register("email")}
                   rows="3"
                   className="p-4 text-gray-500 my-1 rounded-xl resize-none"
                   // type="text"
                   // defaultValue="Votre email:"
                   // required
                 />
-                <input defaultValue="Votre nom:" {...register("userNameRequired", { required: true })}
+                <input placeholder="Votre nom:" {...register("userNameRequired", { required: true })}
                   rows="3"
                   className="p-4 text-gray-500 rounded-xl resize-none"
                   // type="text"
@@ -68,7 +69,7 @@ export default function Avis() {
                 {errors.userNameRequired && <span>This field is required</span>}
                 <button
                   type="submit"
-                  className="py-3 my-8 text-lg bg-gradient-to-r from-purple-500 to-indigo-600 rounded-xl text-white"
+                  className="py-3 my-8 text-lg bg-gradient-to-r from-yellow-500 to-red-600 rounded-xl text-white"
                 >
                   Envoyer
                 </button>
