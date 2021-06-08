@@ -9,11 +9,12 @@ import ReactStars from "react-rating-stars-component";
 export default function Avis() {
 
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
-  const onSubmit = data => console.log(data);
-  const ratingChanged = (newRating) => {
+  
+  const ratingChanged = (newRating,data) => {
     console.log(newRating);
+    // data.newRating = newRating
   };
-
+  const onSubmit = data => console.log(data);
   console.log(watch("example")); // watch input value by passing the name of it
 
   return (
@@ -41,32 +42,29 @@ export default function Avis() {
                 required
                 value="3"
                 edit={true}
+                type="input"
                 />
                    
                  </div>
               </div>
               <div className="w-3/4 flex flex-col">
-                <textarea {...register("content")}
+                <textarea {...register("content",{ required: true })}
                   rows="3"
                   className="p-4 text-gray-500 rounded-xl resize-none"
                   placeholder="Rédigez votre avis :"
-                  required
+                  
                 />
-                <input placeholder="Votre email:" {...register("email")}
+                <input placeholder="Votre email:" {...register("email",{ required: true })}
                   rows="3"
                   className="p-4 text-gray-500 my-1 rounded-xl resize-none"
-                  // type="text"
-                  // defaultValue="Votre email:"
-                  // required
+                  
                 />
                 <input placeholder="Votre nom:" {...register("userNameRequired", { required: true })}
                   rows="3"
                   className="p-4 text-gray-500 rounded-xl resize-none"
-                  // type="text"
-                  // defaultValue="Votre nom:"
-                  // required
+                  
                 />
-                {errors.userNameRequired && <span>This field is required</span>}
+                {errors.userNameRequired && <span>Cette information est requise pour l'envoi du formulaire</span>}
                 <button
                   type="submit"
                   className="py-3 my-8 text-lg bg-gradient-to-r from-yellow-500 to-red-600 rounded-xl text-white"
