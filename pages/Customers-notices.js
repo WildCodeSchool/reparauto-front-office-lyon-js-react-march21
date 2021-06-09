@@ -8,16 +8,19 @@ import ReactStars from "react-rating-stars-component";
 
 export default function Avis() {
 
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const { register, handleSubmit, watch, formState: { errors }, setValue } = useForm();
   
   const ratingChanged = (newRating) => {
+    setValue("rating", newRating);
     console.log(newRating);
     
     // data.newRating = newRating
   };
   const onSubmit = data => console.log(data);
   // data.rate = {newRating}
-  console.log(watch("example")); // watch input value by passing the name of it
+  // console.log(watch("example")); // watch input value by passing the name of it
+
+  
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -37,7 +40,7 @@ export default function Avis() {
                 </span>
                 
                 <div className="flex space-x-3">
-                <ReactStars 
+                <ReactStars
                 size={65}
                 activeColor="#ffd700"
                 onChange={ratingChanged}
