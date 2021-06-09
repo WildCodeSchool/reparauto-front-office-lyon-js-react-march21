@@ -10,11 +10,13 @@ export default function Avis() {
 
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
   
-  const ratingChanged = (newRating,data) => {
+  const ratingChanged = (newRating) => {
     console.log(newRating);
+    
     // data.newRating = newRating
   };
   const onSubmit = data => console.log(data);
+  // data.rate = {newRating}
   console.log(watch("example")); // watch input value by passing the name of it
 
   return (
@@ -66,7 +68,9 @@ export default function Avis() {
                 />
                 {errors.userNameRequired && <span>Cette information est requise pour l'envoi du formulaire</span>}
                 <button
-                  type="submit"
+                  // onClick={() => {
+                   // setValue("newRating", {newRating});
+                  // }}
                   className="py-3 my-8 text-lg bg-gradient-to-r from-yellow-500 to-red-600 rounded-xl text-white"
                 >
                   Envoyer
