@@ -11,8 +11,8 @@ export default function Avis() {
   const { register, handleSubmit, watch, formState: { errors }, setValue } = useForm();
   
   const ratingChanged = (newRating) => {
-    setValue("rating", newRating);
-    console.log(newRating);
+    setValue("rating", newRating,{ shouldValidate: true });
+    // console.log(newRating);
     
     // data.newRating = newRating
   };
