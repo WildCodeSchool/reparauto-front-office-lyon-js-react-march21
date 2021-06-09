@@ -7,20 +7,31 @@ export default function Detail_occasions() {
 
 <div class="flex my-10">
     <div class="bg-white w-1/2 m-auto border-1  border-dashed border-gray-100 shadow-md rounded-lg overflow-hidden ">
-      <img src="https://via.placeholder.com/150" alt="" class="w-full object-cover object-center" />
+      <img src="https://ibb.co/TkjNq5R" alt="Dacia" class="w-full" />
       <div class="p-4">
-        <p class="mb-1 text-gray-900 font-semibold">Ferrari F50s</p>
+        <p class="mb-1 text-gray-900 font-semibold">Dacia Logan break MCV phase 2 DCI 85CV</p>
 
-        <span class="text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi fugit hic ab quos eos
-          quisquam labore minus, dignissimos porro explicabo distinctio.</span>
+        
+<br></br>
+<span class="text-gray-700">Gris métallisé, Intérieur tissu</span>
+<br></br>
+<span class="text-gray-700">Février 2010, 225000km</span>
+<br></br>
+<span class="text-gray-700">Diesel, 6Cv</span>
+<br></br>
+<span class="text-gray-700">5 portes, 5 places </span>
+<br></br>
+<span class="text-gray-700">Climatisation, Vitres avant électrique, Direction assistée, Fermeture centralisée, Barres de toit, 4 pneus 4 saisons</span>
+<br></br>
+<span class="text-gray-700">Révisée, Distribution neuve, Contrôle technique OK </span>
+<br></br>
+<span class="text-gray-700">Garantie 3 mois MINIMUM extension possible </span>
         <br></br>
         <br></br>
 
-        <span class="text-gray-700">Prix : <span class="text-xl font-medium">20 000€</span> </span>
+        <span class="text-gray-700">Prix : <span class="text-xl font-medium">2990€ TTC</span> </span>
 
         <div class="mt-8 mb-3">
-          <a href="#"
-            class=" bg-yellow-300 px-4 py-2 bg-teal-500 shadow-lg border rounded-lg text-grey uppercase font-semibold tracking-wider focus:outline-none focus:shadow-outline hover:bg-teal-400 active:bg-teal-400 align-center">Détails</a>
         </div>
       </div>
     </div>
