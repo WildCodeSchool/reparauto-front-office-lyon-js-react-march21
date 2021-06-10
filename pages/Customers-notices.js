@@ -25,7 +25,7 @@ export default function Avis() {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="min-h-screen bg-gray-300 py-6 flex flex-col justify-center sm:py-12">
-        <div className="py-3 m-auto">
+        <div className="py-3 m-auto mt-0 mb-0">
           <div className="bg-white w-full flex flex-col rounded-xl shadow-lg">
             <div className="px-12 py-5">
               <h2 className="text-gray-800 text-3xl font-semibold">
@@ -55,18 +55,18 @@ export default function Avis() {
               <div className="w-3/4 flex flex-col">
                 <textarea {...register("content",{ required: true })}
                   rows="3"
-                  className="p-4 text-gray-500 rounded-xl resize-none"
+                  className="p-4 my-2 text-gray-500 rounded-xl resize-none hover:shadow-xl"
                   placeholder="Rédigez votre avis :"
                   
                 />
                 <input placeholder="Votre email:" {...register("email",{ required: true })}
                   rows="3"
-                  className="p-4 text-gray-500 my-1 rounded-xl resize-none"
+                  className="p-4 text-gray-500 my-2 rounded-xl resize-none hover:shadow-lg"
                   
                 />
                 <input placeholder="Votre nom:" {...register("userNameRequired", { required: true })}
                   rows="3"
-                  className="p-4 text-gray-500 rounded-xl resize-none"
+                  className="p-4 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
                   
                 />
                 {errors.userNameRequired && <span>Cette information est requise pour l'envoi du formulaire</span>}
@@ -74,7 +74,7 @@ export default function Avis() {
                   // onClick={() => {
                    // setValue("newRating", {newRating});
                   // }}
-                  className="py-3 my-8 text-lg bg-gradient-to-r from-yellow-500 to-red-600 rounded-xl text-white"
+                  className="py-3 my-8 text-lg bg-gradient-to-r from-yellow-500 to-red-600 rounded-xl text-white hover:shadow-lg"
                 >
                   Envoyer
                 </button>
