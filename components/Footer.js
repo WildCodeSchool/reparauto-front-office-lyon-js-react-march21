@@ -1,9 +1,15 @@
+<<<<<<< .merge_file_a51388
 import Link from 'next/link'
 import React from 'react'
 
+=======
+/* eslint-disable jsx-a11y/alt-text */
+import React from 'react';
+>>>>>>> .merge_file_a51880
 
 
 export default function Footer() {
+<<<<<<< .merge_file_a51388
     return (
         
             <div className="fixed  -bottom-20 flex justify-around items-end w-screen h-36 bg-gray-600 transform hover:-translate-y-20 transition duration-500 ">
@@ -18,4 +24,17 @@ export default function Footer() {
         </div>
         
     )
+=======
+  return (
+    <div className="absolute bottom-0 flex justify-around w-screen h-16 bg-gray-800">
+      <input type="image" src="./logo.png" alt="logo" className=" " />
+      <input
+        type="image"
+        src="./logo-wild.png"
+        alt="logo-wild"
+        className=" w-16 "
+      />
+    </div>
+  );
+>>>>>>> .merge_file_a51880
 }
