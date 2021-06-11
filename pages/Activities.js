@@ -1,12 +1,13 @@
+import Image from 'next/image';
 
 export default function Activities() {
   return (
-<main class="px-3">
+<main class="px-3 mb-6">
     <div class="text-4xl sm:text-5xl text-center my-10">Nos prestations</div>
 
-    <div class="grid md:grid-cols-3 gap-8 m-5 max-w-5xl m-auto">
+    <div class="grid md:grid-cols-3 gap-2 max-w-5xl m-auto mx-5px">
       <div class="bg-white">
-        <img src="https://via.placeholder.com/150" alt="" class="w-full h-48 sm:h-56 object-cover" />
+      <Image src='/images/diag.jpg' alt="carwash" class="w-full" width={500} height={250} layout="responsive"/>
 
         <div class="px-10 py-6 mb-10 text-center">
           <div class="text-2xl font-bold text-yellow-500 mb-4">DIAGNOSTICS</div>
@@ -20,7 +21,7 @@ export default function Activities() {
       </div>
 
       <div class="bg-white">
-        <img src="https://via.placeholder.com/150" alt="" class="w-full h-48 sm:h-56 object-cover" />
+      <Image src='/images/vidange.jpg' alt="carwash" class="w-full" width={500} height={250} layout="responsive"/>
         <div class="px-10 py-6 mb-10 text-center">
           <div class="text-2xl font-bold text-yellow-600 mb-4">VIDANGE</div>
           <span class="text-sm">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate tempore eligendi magnam distinctio molestias. Incidunt 
@@ -30,7 +31,7 @@ export default function Activities() {
       </div>
 
       <div class="bg-white">
-        <img src="https://via.placeholder.com/150" alt="" class="w-full h-48 sm:h-56 object-cover" />
+      <Image src='/images/carwash.jpg' alt="carwash" class="w-full" width={500} height={250} layout="responsive"/>
         <div class="px-10 py-6 mb-10 text-center">
           <div class="text-2xl font-bold text-red-500 mb-4">NETTOYAGE</div>
 
