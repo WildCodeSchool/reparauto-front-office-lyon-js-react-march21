@@ -9,7 +9,7 @@ export default function Occasions() {
 <div className="md:flex flex-col">
   <div className="md:flex mt-2">
     <div className="bg-white w-3/5 md:w-1/3 mt-10  md:mx-20 m-auto border-1  border-dashed border-gray-100 shadow-md rounded-lg overflow-hidden ">
-      <Image src='/images/voiture.jpg' alt="Dacia" class="w-full" width={500} height={250}/>
+      <Image src='/images/voiture.jpg' alt="Dacia" class="w-full" width={500} height={250} layout="responsive"/>
       <div className="p-4">
         <p className="mb-1 text-gray-900 text-xl font-semibold">Dacia Logan break MCV phase 2 DCI 85CV</p>
 
@@ -25,7 +25,7 @@ export default function Occasions() {
       </div>
     </div>
     <div className="bg-white w-3/5 md:w-1/3 my-10 md:mx-20 m-auto border-1  border-dashed border-gray-100 shadow-md rounded-lg overflow-hidden">
-    <Image src='/images/voiture.jpg' alt="Dacia" class="w-full" width={500} height={250}/>
+    <Image src='/images/voiture.jpg' alt="Dacia" class="w-full" width={500} height={250} layout="responsive"/>
       <div className="p-4">
         <p className="mb-1 text-gray-900 text-xl font-semibold">Dacia Logan break MCV phase 2 DCI 85CV</p>
 
