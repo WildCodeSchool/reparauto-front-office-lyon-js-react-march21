@@ -1,3 +1,4 @@
+import { data } from 'autoprefixer';
 import React from 'react';
 import {useForm} from "react-hook-form";
 import ReactStars from "react-rating-stars-component";
@@ -11,14 +12,20 @@ export default function Avis() {
   const { register, handleSubmit, watch, formState: { errors }, setValue } = useForm();
   
   const ratingChanged = (newRating) => {
-    setValue("rating", newRating,{ shouldValidate: true });
-    // console.log(newRating);
+    setValue("rating", newRating);
     
-    // data.newRating = newRating
   };
-  const onSubmit = data => console.log(data);
-  // data.rate = {newRating}
-  // console.log(watch("example")); // watch input value by passing the name of it
+  const onSubmit = data =>  {
+    data.rating && console.log(data);
+    if (data.rating != (undefined)){
+      window.alert(`Merci ${data.userNameRequired}, votre message a bien été envoyé avec une note de ${data.rating} étoiles !`)
+    } else {
+      window.alert("Tout les champs et une note doivent être enregistrés pour envoyer le formulaire")
+    }
+    ;
+    
+  }
+  
 
   
 
@@ -44,7 +51,6 @@ export default function Avis() {
                 size={65}
                 activeColor="#ffd700"
                 onChange={ratingChanged}
-                required
                 value="3"
                 edit={true}
                 type="input"
@@ -62,6 +68,7 @@ export default function Avis() {
                 <input placeholder="Votre email:" {...register("email",{ required: true })}
                   rows="3"
                   className="p-4 text-gray-500 my-2 rounded-xl resize-none hover:shadow-lg"
+                  type="email"
                   
                 />
                 <input placeholder="Votre nom:" {...register("userNameRequired", { required: true })}
@@ -71,9 +78,7 @@ export default function Avis() {
                 />
                 {errors.userNameRequired && <span>Cette information est requise pour l'envoi du formulaire</span>}
                 <button
-                  // onClick={() => {
-                   // setValue("newRating", {newRating});
-                  // }}
+                 
                   className="py-3 my-8 text-lg bg-gradient-to-r from-yellow-500 to-red-600 rounded-xl text-white hover:shadow-lg"
                 >
                   Envoyer
