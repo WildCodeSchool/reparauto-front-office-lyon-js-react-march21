@@ -44,12 +44,5 @@ export default function Occasions() {
   <br></br>
   </div>
   </div>
-
-
-  
-
-  
-  
-
     )
   }
