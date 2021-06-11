@@ -1,8 +1,15 @@
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useState } from 'react'
+
+
 
 export default function Nav() {
-  const [toggleMenu, setToggleMenu] = useState(true);
+    const [toggleMenu, setToggleMenu] = useState(true)
+    
+
+    const showMenu = () => {
+        setToggleMenu(!toggleMenu)
+    }
 
     return (
         <div className="navbar">
@@ -20,27 +27,6 @@ export default function Nav() {
                 <div className="ml-20 md:mx-4 text-gray-800 transform hover:scale-110 transition duration-500"><Link href='./Contact'>Contact</Link></div>                
             </div>)}
         </div>
-
-        {toggleMenu && (
-          <div className=" md:flex md:items-center ">
-            <div className="ml-20 md:mx-4 text-gray-800">
-              <Link href="./Appointments">Rendez-vous</Link>
-            </div>
-            <div className="ml-20 md:mx-4 text-gray-800">
-              <Link href="./Activities">Activités</Link>
-            </div>
-            <div className="ml-20 md:mx-4 text-gray-800">
-              <Link href="./Occasions">Véhicules d'occasions</Link>
-            </div>
-            <div className="ml-20 md:mx-4 text-gray-800">
-              <Link href="./Customers-notices">Avis clients</Link>
-            </div>
-            <div className="ml-20 md:mx-4 text-gray-800">
-              <Link href="./Contact">Contact</Link>
-            </div>
-          </div>
-        )}
-      </div>
-    </div>
-  );
+        </div>
+    )
 }
