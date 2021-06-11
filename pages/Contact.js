@@ -8,10 +8,10 @@ export default function Contact() {
   }
   
   return (
-    <div  className="flex flex-col justify-center ">
+    <div  className="flex flex-col md:mt-20 sm:mt-0 justify-center ">
       <div className="h-full sm:max-w-xl sm:mx-auto">
-        <div className="flex flex-col shadow-lg">
-          <div className="bg-gray-200 flex justify-center sm:mt-10 md:mt-0 sm:py-10 md:py-8 px-20 hover:shadow-l">
+        <div className="flex flex-col item-center shadow-lg ">
+          <div className="bg-gray-200 flex justify-center  sm:py-6 md:py-6 px-20 hover:shadow-l">
             <h2 className="text-gray-800 text-xl font-semibold py-4">N'hésitez pas à nous contacter !</h2>
           </div>
           <div className="bg-gray-300 w-full h-auto flex flex-col items-center ">
@@ -45,6 +45,15 @@ export default function Contact() {
               >
               </input>
               {errors.email && <p>Email requis</p>}
+              <input 
+              {...register('email',{required:true, minLength:{value:3}})}
+              className="p-3 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
+              placeholder="Immatriculation"
+              type='text'
+              name="immatriculation"
+              >
+              </input>
+              {errors.immatriculation && <p>Immatriculation requise</p>}
               <textarea
               {...register('message',{required:true, minLength:{value:1}})}
               className="p-3 h-24 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
@@ -54,6 +63,9 @@ export default function Contact() {
               >
               </textarea>
               {errors.message && <p>Message requis</p>}
+              <button  className="py-4 my-2  text-lg bg-white  rounded-xl text-gray-800 hover:shadow-lg"
+              >Ajoutez une photo
+              </button>
               <button  className="py-4 mt-2 mb-20 text-lg bg-gradient-to-r from-yellow-400 to-red-500 rounded-xl text-gray-800 hover:shadow-lg"
               >Envoyez
               </button>
