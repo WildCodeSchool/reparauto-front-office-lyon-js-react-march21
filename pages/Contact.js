@@ -8,7 +8,7 @@ export default function Contact() {
   }
   
   return (
-    <div  className="flex flex-col md:mt-20 sm:mt-0 justify-center ">
+    <div  className="flex flex-col md:mt-10 sm:mt-0 justify-center ">
       <div className="h-full sm:max-w-xl sm:mx-auto">
         <div className="flex flex-col item-center shadow-lg ">
           <div className="bg-gray-200 flex justify-center  sm:py-6 md:py-6 px-20 hover:shadow-l">
