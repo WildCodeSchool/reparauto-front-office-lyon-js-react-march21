@@ -7,7 +7,7 @@ export default function Detail_occasions() {
 
 <div class="flex my-10">
     <div class="bg-white w-1/2 m-auto border-1  border-dashed border-gray-100 shadow-md rounded-lg overflow-hidden ">
-      <img src="https://ibb.co/TkjNq5R" alt="Dacia" class="w-full" />
+    <img src="https://via.placeholder.com/150" alt="" class="w-full h-48 sm:h-56 object-cover"/>
       <div class="p-4">
         <p class="mb-1 text-gray-900 font-semibold">Dacia Logan break MCV phase 2 DCI 85CV</p>
 
