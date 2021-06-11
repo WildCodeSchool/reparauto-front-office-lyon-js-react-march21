@@ -21,7 +21,7 @@ export default function Detail_occasions() {
 <br></br>
 <span class="text-gray-700">5 portes, 5 places </span>
 <br></br>
-<span class="text-gray-700">Climatisation, Vitres avant électrique, Direction assistée, Fermeture centralisée, Barres de toit, 4 pneus 4 saisons</span>
+<span class="text-gray-700">Climatisation, Vitres avant électriques, Direction assistée, Fermeture centralisée, Barres de toit, 4 pneus 4 saisons</span>
 <br></br>
 <span class="text-gray-700">Révisée, Distribution neuve, Contrôle technique OK </span>
 <br></br>
