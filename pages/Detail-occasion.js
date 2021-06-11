@@ -1,13 +1,13 @@
 // import Head from 'next/head'
 // import Layout, { siteTitle } from '../components/layout'
 // import utilStyles from '../styles/utils.module.css'
-
+import Image from 'next/image'
 export default function Detail_occasions() {
   return (
 
 <div class="flex my-10">
     <div class="bg-white w-1/2 m-auto border-1  border-dashed border-gray-100 shadow-md rounded-lg overflow-hidden ">
-    <img src="https://via.placeholder.com/150" alt="" class="w-full h-48 sm:h-56 object-cover"/>
+    <Image src='/images/voiture.jpg' alt="Dacia" class="w-full" width={500} height={250} layout="responsive"/>
       <div class="p-4">
         <p class="mb-1 text-gray-900 font-semibold">Dacia Logan break MCV phase 2 DCI 85CV</p>
 
