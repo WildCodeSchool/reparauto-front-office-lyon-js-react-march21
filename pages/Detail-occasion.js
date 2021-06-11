@@ -1,20 +1,9 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 // import Head from 'next/head'
 // import Layout, { siteTitle } from '../components/layout'
 // import utilStyles from '../styles/utils.module.css'
 import Image from 'next/image'
 export default function Detail_occasions() {
   return (
-    <div className="flex my-10">
-      <div className="bg-white w-1/2 m-auto border-1  border-dashed border-gray-100 shadow-md rounded-lg overflow-hidden ">
-        <img
-          src="https://via.placeholder.com/150"
-          alt=""
-          className="w-full object-cover object-center"
-        />
-        <div className="p-4">
-          <p className="mb-1 text-gray-900 font-semibold">Ferrari F50s</p>
-
 
 <div class="flex my-10">
     <div class="bg-white w-1/2 m-auto border-1  border-dashed border-gray-100 shadow-md rounded-lg overflow-hidden ">
@@ -43,9 +32,9 @@ export default function Detail_occasions() {
         <span class="text-gray-700">Prix : <span class="text-xl font-medium">2990€ TTC</span> </span>
 
         <div class="mt-8 mb-3">
-          </div>
         </div>
       </div>
     </div>
-  );
-}
+    </div>
+  )
+  }
