@@ -14,6 +14,5 @@ export default function Home() {
       </Head>
       <h1>Main page under construction</h1>
     </div>
-
-  )
+  );
 }
