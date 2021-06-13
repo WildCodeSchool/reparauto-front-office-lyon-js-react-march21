@@ -2,6 +2,7 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 
 export default function Nav() {
+
   const [toggleMenu, setToggleMenu] = useState(true);
 
   const showMenu = () => {
@@ -25,7 +26,7 @@ export default function Nav() {
         />
         <div className="text-xl text-gray-900 sm:ml-10 sm:flex sm:justify-around md:flex md:justify-around md:mx-16 ml-20">
           <Link href="/">Repar'Auto Mobile</Link>
-        </div>
+</div>
 
         {toggleMenu && (
           <div className=" md:flex md:items-center ">
