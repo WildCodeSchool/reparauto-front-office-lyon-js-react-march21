@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
 
 export default function Footer() {
@@ -20,7 +19,7 @@ export default function Footer() {
       <input
         type="image"
         src="./facebook.png"
-        className="w-8 h-8 transform hover:scale-125 transition duration-500 mb-4"
+        className="w-10 h-10 transform hover:scale-125 transition duration-500 mb-4"
       />
     </div>
   );
