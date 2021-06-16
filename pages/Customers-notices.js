@@ -31,11 +31,11 @@ export default function Avis() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="min-h-screen bg-gray-300 py-6 flex flex-col justify-center sm:py-12">
+      <div className=" py-6 flex flex-col justify-center sm:py-12">
         <div className="py-3 m-auto mt-0 mb-0">
           <div className="bg-white w-full flex flex-col rounded-xl shadow-lg">
             <div className="px-12 py-5">
-              <h2 className="text-gray-800 text-3xl font-semibold">
+              <h2 className="text-gray-800 text-xl font-semibold">
                 Votre avis nous intéresse !
               </h2>
             </div>
