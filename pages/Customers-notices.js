@@ -1,4 +1,4 @@
-// import { data } from 'autoprefixer';
+import { data } from 'autoprefixer';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import ReactStars from 'react-rating-stars-component';
@@ -14,6 +14,7 @@ export default function Avis() {
   const ratingChanged = (newRating) => {
     setValue('rating', newRating);
   };
+  // eslint-disable-next-line no-shadow
   const onSubmit = (data) => {
     // eslint-disable-next-line no-unused-expressions
     data.rating && console.log(data);
