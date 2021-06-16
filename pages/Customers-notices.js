@@ -7,7 +7,6 @@ export default function Avis() {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
     setValue,
   } = useForm();
@@ -80,13 +79,16 @@ export default function Avis() {
                     Cette information est requise pour l'envoi du formulaire
                   </span>
                 )}
-                <button className="py-3 my-8 text-lg bg-gradient-to-r from-yellow-500 to-red-600 rounded-xl text-white hover:shadow-lg">
+                <button
+                  type="button"
+                  className="py-3 my-8 text-lg bg-gradient-to-r from-yellow-500 to-red-600 rounded-xl text-white hover:shadow-lg"
+                >
                   Envoyer
                 </button>
               </div>
             </div>
             <div className="h-20 flex items-center justify-center">
-              <a className="text-gray-600">Merci pour votre avis</a>
+              <p className="text-gray-600">Merci pour votre avis</p>
             </div>
           </div>
         </div>
