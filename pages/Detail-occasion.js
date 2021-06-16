@@ -9,7 +9,7 @@ export default function Detail_occasions() {
     <div className="my-10">
       <div className="bg-white w-1/2 m-auto border-1  border-dashed border-gray-100 shadow-md rounded-lg overflow-hidden">
         <div className="slider">
-          <figure className="flex-row">
+          <figure>
             <Image
               src="/images/voiture.jpg"
               alt="Dacia"
