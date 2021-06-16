@@ -7,6 +7,7 @@ export default function Avis() {
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors },
     setValue,
   } = useForm();
@@ -14,11 +15,9 @@ export default function Avis() {
   const ratingChanged = (newRating) => {
     setValue('rating', newRating);
   };
-  // eslint-disable-next-line no-shadow
   const onSubmit = (data) => {
-    // eslint-disable-next-line no-unused-expressions
     data.rating && console.log(data);
-    if (data.rating !== undefined) {
+    if (data.rating != undefined) {
       window.alert(
         `Merci ${data.userNameRequired}, votre message a bien été envoyé avec une note de ${data.rating} étoiles !`
       );
@@ -31,11 +30,11 @@ export default function Avis() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className=" py-6 flex flex-col justify-center sm:py-12">
-        <div className="py-3 m-auto mt-0 mb-0">
+      <div className="bg-gray-300 flex flex-col h-screen justify-center h-auto">
+        <div className="m-auto max-h-screen mt-3">
           <div className="bg-white w-full flex flex-col rounded-xl shadow-lg">
             <div className="px-12 py-5">
-              <h2 className="text-gray-800 text-xl font-semibold">
+              <h2 className="text-gray-800 text-3xl font-semibold">
                 Votre avis nous intéresse !
               </h2>
             </div>
@@ -81,16 +80,13 @@ export default function Avis() {
                     Cette information est requise pour l'envoi du formulaire
                   </span>
                 )}
-                <button
-                  type="button"
-                  className="py-3 my-8 text-lg bg-gradient-to-r from-yellow-500 to-red-600 rounded-xl text-white hover:shadow-lg"
-                >
+                <button className="py-3 my-8 text-lg bg-gradient-to-r from-yellow-500 to-red-600 rounded-xl text-white hover:shadow-lg">
                   Envoyer
                 </button>
               </div>
             </div>
             <div className="h-20 flex items-center justify-center">
-              <p className="text-gray-600">Merci pour votre avis</p>
+              <a className="text-gray-600">A bientot !</a>
             </div>
           </div>
         </div>
