@@ -7,7 +7,7 @@ import Link from 'next/link';
 import axios from 'axios'
 
 
-export default function Occasions({occasionCars}) { 
+function Occasions({ occasionCars }) { 
   
   
   return (
@@ -88,11 +88,16 @@ export default function Occasions({occasionCars}) {
   );
 }
 
+
+
 export async function getStaticProps() {
+
   const res = await axios.get('http://localhost:1337/second-hand-cars')
-  const occasionCars = res.data;
-  
+  const occasionCars = await res.json()
   return {
-    props: {occasionCars},
-  };
+    props: {
+      occasionCars,
+    },
+  }
 }
+export default Occasions
