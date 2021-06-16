@@ -1,4 +1,4 @@
-import { data } from 'autoprefixer';
+// import { data } from 'autoprefixer';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import ReactStars from 'react-rating-stars-component';
@@ -15,8 +15,9 @@ export default function Avis() {
     setValue('rating', newRating);
   };
   const onSubmit = (data) => {
+    // eslint-disable-next-line no-unused-expressions
     data.rating && console.log(data);
-    if (data.rating != undefined) {
+    if (data.rating !== undefined) {
       window.alert(
         `Merci ${data.userNameRequired}, votre message a bien été envoyé avec une note de ${data.rating} étoiles !`
       );
