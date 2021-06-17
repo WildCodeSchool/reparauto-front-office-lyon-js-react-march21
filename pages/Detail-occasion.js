@@ -7,14 +7,14 @@ import Image from 'next/image';
 export default function Detail_occasions() {
   return (
     <div className="my-10">
-      <div className="bg-white w-2/3 m-auto border-1  border-dashed border-gray-100 shadow-md rounded-lg overflow-hidden">
+      <div className="bg-white w-96 m-auto border-1  border-dashed border-gray-100 shadow-md rounded-lg overflow-hidden">
         <div className="slider">
           <figure>
             <Image
               src="/images/voiture.jpg"
               alt="Dacia"
               class="w-full"
-              width={500}
+              width={384}
               height={250}
               layout="responsive"
             />
@@ -22,7 +22,7 @@ export default function Detail_occasions() {
               src="/images/voiture2.jpg"
               alt="Dacia"
               class="w-full"
-              width={500}
+              width={384}
               height={250}
               layout="responsive"
             />
@@ -30,7 +30,7 @@ export default function Detail_occasions() {
               src="/images/voiture3.jpg"
               alt="Dacia"
               class="w-full"
-              width={500}
+              width={384}
               height={250}
               layout="responsive"
             />
@@ -38,7 +38,7 @@ export default function Detail_occasions() {
               src="/images/voiture4.jpg"
               alt="Dacia"
               class="w-full"
-              width={500}
+              width={384}
               height={250}
               layout="responsive"
             />
@@ -46,7 +46,7 @@ export default function Detail_occasions() {
               src="/images/voiture5.jpg"
               alt="Dacia"
               class="w-full"
-              width={500}
+              width={384}
               height={250}
               layout="responsive"
             />
@@ -54,7 +54,7 @@ export default function Detail_occasions() {
               src="/images/voiture6.jpg"
               alt="Dacia"
               class="w-full"
-              width={500}
+              width={384}
               height={250}
               layout="responsive"
             />

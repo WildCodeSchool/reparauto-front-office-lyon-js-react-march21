@@ -15,10 +15,10 @@ a {
   box-sizing: border-box;
 }
 
-.slider { width: 500px; height: 250px; overflow: hidden;}
+.slider { width: 384px; height: 250px; overflow: hidden;}
 
 
-  .slider figure Image { width: 500px; height: 250px ; float: top; }
+  .slider figure Image { width: 384px; height: 250px ; float: top; }
 
 
   @keyframes slidy {
