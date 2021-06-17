@@ -29,7 +29,7 @@ export default function Avis() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="bg-gray-300 flex flex-col h-screen justify-center h-auto">
+      <div className="bg-gray-300 flex flex-col h-full justify-center h-auto">
         <div className="m-auto max-h-screen mt-3">
           <div className="bg-white w-full flex flex-col rounded-xl shadow-lg">
             <div className="px-12 py-5">
@@ -48,7 +48,6 @@ export default function Avis() {
                     size={65}
                     activeColor="#ffd700"
                     onChange={ratingChanged}
-                    value="3"
                     edit
                     type="input"
                   />
