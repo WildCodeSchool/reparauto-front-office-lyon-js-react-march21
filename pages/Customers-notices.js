@@ -1,9 +1,14 @@
 // import { data } from 'autoprefixer';
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import ReactStars from 'react-rating-stars-component';
+// import { ToastProvider, useToasts } from 'react-toast-notifications';
+
+
 
 export default function Avis() {
+
+  // react hook form
   const {
     register,
     handleSubmit,
@@ -11,10 +16,20 @@ export default function Avis() {
     setValue,
   } = useForm();
 
+  //react star handling
+  const [starRating, setStarRating] = useState(null);
+
   const ratingChanged = (newRating) => {
     setValue('rating', newRating);
   };
+
+  // addtoasts
+  
+  
+  
+// form handling
   const onSubmit = (data) => {
+    (starRating);
     data.rating && console.log(data);
     if (data.rating !== undefined) {
       window.alert(
@@ -47,9 +62,11 @@ export default function Avis() {
                   <ReactStars
                     size={65}
                     activeColor="#ffd700"
-                    onChange={ratingChanged}
-                    edit
+                    value={starRating}
+                    // onChange={ratingChanged}
+                    onChange={setStarRating,ratingChanged}
                     type="input"
+                    required
                   />
                 </div>
               </div>
