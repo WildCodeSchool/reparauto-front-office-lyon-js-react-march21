@@ -16,7 +16,7 @@ export default function Avis() {
     setValue,
   } = useForm();
 
-  //react star handling
+  // try react star handling
   const [starRating, setStarRating] = useState(null);
 
   const ratingChanged = (newRating) => {
@@ -30,7 +30,7 @@ export default function Avis() {
 // form handling
   const onSubmit = (data) => {
     (starRating);
-    data.rating && console.log(data);
+    (data.rating) && console.log(data);
     if (data.rating !== undefined) {
       window.alert(
         `Merci ${data.userNameRequired}, votre message a bien été envoyé avec une note de ${data.rating} étoiles !`
