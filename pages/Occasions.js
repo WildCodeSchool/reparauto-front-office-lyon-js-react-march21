@@ -1,15 +1,7 @@
-/* eslint-disable prettier/prettier */
-// import Head from 'next/head'
-// import Layout, { siteTitle } from '../components/layout'
-// import utilStyles from '../styles/utils.module.css'
 import Image from 'next/image';
 import Link from 'next/link';
-import axios from 'axios'
 
-
-export default function Occasions({occasionCars}) { 
-  
-  
+export default function Occasions() {
   return (
     <div className="md:flex flex-col">
       <div className="md:flex mt-2">
@@ -23,14 +15,10 @@ export default function Occasions({occasionCars}) {
             layout="responsive"
           />
           <div className="p-4">
-            {occasionCars && 
-            <div>
-              <p>{occasionCars[0].SecondHandModel}</p>
-              <p>{occasionCars[0].SecondHandBrand}</p>
-              <p>{occasionCars[0].Description}</p>
-              <p>{occasionCars[0].Price}€</p>
-            </div>} 
-            
+            <p className="mb-1 text-gray-900 text-xl font-semibold">
+              Dacia Logan break MCV phase 2 DCI 85CV
+            </p>
+
             <br />
             <br />
 
@@ -86,13 +74,4 @@ export default function Occasions({occasionCars}) {
       </div>
     </div>
   );
-}
-
-export async function getStaticProps() {
-  const res = await axios.get('http://localhost:1337/second-hand-cars')
-  const occasionCars = res.data;
-  
-  return {
-    props: {occasionCars},
-  };
 }
