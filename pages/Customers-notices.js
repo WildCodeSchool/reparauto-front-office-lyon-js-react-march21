@@ -1,17 +1,18 @@
 /* eslint-disable prettier/prettier */
-
 import axios from 'axios';
 import {useForm} from 'react-hook-form'
-
 import ReactStars from 'react-rating-stars-component';
 
 export default function Avis({reviews}) {
+
+
 
   const {
     register,
     handleSubmit,
     formState: { errors },
     setValue,
+    reset,
   } = useForm();
 
   const ratingChanged = (newRating) => {
@@ -69,7 +70,7 @@ export default function Avis({reviews}) {
                         size={50}
                         activeColor="#ffd700"
                         onChange={ratingChanged}
-                        value="3"
+                        value="0"
                         edit
                         type="input"
                       />
@@ -124,3 +125,4 @@ export async function getStaticProps() {
     props: { reviews },
   };
 }
+
