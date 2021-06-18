@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { useForm } from 'react-hook-form';
 
 export default function Contact() {
@@ -11,15 +12,16 @@ export default function Contact() {
   };
 
   return (
+    
     <div className="flex flex-col md:mt-10 sm:mt-0 justify-center ">
       <div className="h-full sm:max-w-xl sm:mx-auto">
         <div className="flex flex-col item-center shadow-lg ">
-          <div className="bg-gray-200 flex justify-center  sm:py-6 md:py-6 px-20 hover:shadow-l">
-            <h2 className="text-gray-800 text-xl font-semibold py-4">
+          <div className="bg-white flex justify-center md:rounded-t-xl sm:py-6 md:py-6 hover:shadow-lg px-14">
+            <h2 className="text-gray-800 text-xl font-semibold py-2">
               N'hésitez pas à nous contacter !
             </h2>
           </div>
-          <div className="bg-gray-300 w-full h-auto flex flex-col items-center ">
+          <div className="bg-gray-200  flex flex-col items-center md:rounded-b-xl ">
             <div className="flex flex-col items-center py-2 space-y-3" />
             <form
               onSubmit={handleSubmit(onSubmit)}
@@ -61,7 +63,7 @@ export default function Contact() {
               />
               {errors.email && <p>Email requis</p>}
               <input
-                {...register('email', {
+                {...register('immatriculation', {
                   required: true,
                   minLength: { value: 3 },
                 })}
@@ -83,7 +85,7 @@ export default function Contact() {
               />
               {errors.message && <p>Message requis</p>}
               <button
-                type="submit"
+                type="button"
                 className="py-4 my-2  text-lg bg-white  rounded-xl text-gray-800 hover:shadow-lg"
               >
                 Ajoutez une photo
