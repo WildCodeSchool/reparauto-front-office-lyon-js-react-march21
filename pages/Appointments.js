@@ -89,8 +89,7 @@ export default function Appointements() {
               {errors.message && <p>Message requis</p>}
               <p>Date de rendez-vous souhaité</p>
               <Calendar
-              
-              className='bg-white max-w-800 h-56  text-gray-500 rounded-xl  hover:shadow-lg'
+                className='bg-white max-w-800 h-56  text-gray-500 rounded-xl  hover:shadow-lg'
               />
               <button
                 type="button"
