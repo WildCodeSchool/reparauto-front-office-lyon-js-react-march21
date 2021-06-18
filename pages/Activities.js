@@ -9,7 +9,7 @@ export default function Activities() {
         Nos prestations
       </div>
 
-      <div className="grid md:grid-cols-3 gap-2 max-w-5xl m-auto mx-5px">
+      <div className="grid md:grid-cols-3 gap-2 max-w-5xl m-auto ">
         <div className="bg-white">
           <Image
             src="/images/diag.jpg"
