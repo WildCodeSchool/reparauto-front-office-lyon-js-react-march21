@@ -2,14 +2,11 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import ReactStars from 'react-rating-stars-component';
-import axios from "axios";
+import axios from 'axios';
 
 // import { ToastProvider, useToasts } from 'react-toast-notifications';
 
-
-
-export default function Avis({reviews}) {
-
+export default function Avis({ reviews }) {
   const {
     register,
     handleSubmit,
@@ -26,31 +23,29 @@ export default function Avis({reviews}) {
   };
 
   // addtoasts
-  
-  
-  
-// form handling
-  const onSubmit = (data) => {
-     console.log(data);
-    (data.rating) && axios({
-      method: 'post',
-      url: 'http://localhost:1337/reviews',
-      data: {
-        Content : data.content,
-        ClientEmail : data.ClientEmail,
-        Rating  : data.rating,
-        ReviewsClientName : data.userNameRequired
 
-      }
-  })
-  .then(function (reponse) {
-      //On traite la suite une fois la réponse obtenue 
-      console.log(reponse);
-  })
-  .catch(function (erreur) {
-      //On traite ici les erreurs éventuellement survenues
-      console.log(erreur);
-  });
+  // form handling
+  const onSubmit = (data) => {
+    console.log(data);
+    data.rating &&
+      axios({
+        method: 'post',
+        url: 'http://localhost:1337/reviews',
+        data: {
+          Content: data.content,
+          ClientEmail: data.ClientEmail,
+          Rating: data.rating,
+          ReviewsClientName: data.userNameRequired,
+        },
+      })
+        .then(function (reponse) {
+          // On traite la suite une fois la réponse obtenue
+          console.log(reponse);
+        })
+        .catch(function (erreur) {
+          // On traite ici les erreurs éventuellement survenues
+          console.log(erreur);
+        });
     if (data.rating !== undefined) {
       // setStarRating(true)
       window.alert(
@@ -85,11 +80,12 @@ export default function Avis({reviews}) {
                     size={65}
                     activeColor="#ffd700"
                     value={starRating}
-                    onChange={setStarRating,ratingChanged}
+                    onChange={(setStarRating, ratingChanged)}
                     type="input"
                     required
                   />
-                </div>{errors.starRating}
+                </div>
+                {errors.starRating}
               </div>
               <div className="w-3/4 flex flex-col">
                 <textarea
@@ -128,13 +124,11 @@ export default function Avis({reviews}) {
               <p className="text-gray-600">A bientot !</p>
             </div>
           </div>
-        
+        </div>
       </div>
-    </div>
     </form>
   );
 }
-
 
 export async function getStaticProps() {
   const res = await axios.get('http://localhost:1337/reviews');
@@ -144,4 +138,3 @@ export async function getStaticProps() {
     props: { reviews },
   };
 }
-
