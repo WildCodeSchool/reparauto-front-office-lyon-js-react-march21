@@ -5,8 +5,6 @@ import ReactStars from 'react-rating-stars-component';
 
 export default function Avis({reviews}) {
 
-
-
   const {
     register,
     handleSubmit,
