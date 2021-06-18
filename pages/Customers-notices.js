@@ -8,14 +8,14 @@ import axios from "axios";
 
 
 
-export default function Avis() {
+export default function Avis({reviews}) {
 
-  // react hook form
   const {
     register,
     handleSubmit,
     formState: { errors },
     setValue,
+    reset,
   } = useForm();
 
   // try react star handling
@@ -128,9 +128,20 @@ export default function Avis() {
               <p className="text-gray-600">A bientot !</p>
             </div>
           </div>
-        </div>
+        
       </div>
+    </div>
     </form>
   );
 }
-// render(<StarRating totalStars={5} />, document.getElementsByClassName("star-rating"))
+
+
+export async function getStaticProps() {
+  const res = await axios.get('http://localhost:1337/reviews');
+  const reviews = res.data;
+
+  return {
+    props: { reviews },
+  };
+}
+
