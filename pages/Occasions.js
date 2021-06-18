@@ -93,7 +93,8 @@ function Occasions({ occasionCars }) {
 export async function getStaticProps() {
 
   const res = await axios.get('http://localhost:1337/second-hand-cars')
-  const occasionCars = await res.json()
+  const occasionCars = await res.data;
+  console.log(res.data);
   return {
     props: {
       occasionCars,

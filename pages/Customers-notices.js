@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import ReactStars from 'react-rating-stars-component';
+import axios from "axios";
+
 // import { ToastProvider, useToasts } from 'react-toast-notifications';
 
 
@@ -29,13 +31,33 @@ export default function Avis() {
   
 // form handling
   const onSubmit = (data) => {
-    (starRating);
-    (data.rating) && console.log(data);
+     console.log(data);
+    (data.rating) && axios({
+      method: 'post',
+      url: 'http://localhost:1337/reviews',
+      data: {
+        Content : data.content,
+        ClientEmail : data.ClientEmail,
+        Rating  : data.rating,
+        ReviewsClientName : data.userNameRequired
+
+      }
+  })
+  .then(function (reponse) {
+      //On traite la suite une fois la réponse obtenue 
+      console.log(reponse);
+  })
+  .catch(function (erreur) {
+      //On traite ici les erreurs éventuellement survenues
+      console.log(erreur);
+  });
     if (data.rating !== undefined) {
+      // setStarRating(true)
       window.alert(
         `Merci ${data.userNameRequired}, votre message a bien été envoyé avec une note de ${data.rating} étoiles !`
       );
     } else {
+      //  setStarRating(false);
       window.alert(
         'Tout les champs et une note doivent être enregistrés pour envoyer le formulaire'
       );
@@ -63,12 +85,11 @@ export default function Avis() {
                     size={65}
                     activeColor="#ffd700"
                     value={starRating}
-                    // onChange={ratingChanged}
                     onChange={setStarRating,ratingChanged}
                     type="input"
                     required
                   />
-                </div>
+                </div>{errors.starRating}
               </div>
               <div className="w-3/4 flex flex-col">
                 <textarea
@@ -79,7 +100,7 @@ export default function Avis() {
                 />
                 <input
                   placeholder="Votre email:"
-                  {...register('email', { required: true })}
+                  {...register('clientEmail', { required: true })}
                   rows="3"
                   className="p-4 text-gray-500 my-2 rounded-xl resize-none hover:shadow-lg"
                   type="email"
@@ -112,3 +133,4 @@ export default function Avis() {
     </form>
   );
 }
+// render(<StarRating totalStars={5} />, document.getElementsByClassName("star-rating"))
