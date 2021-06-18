@@ -1,10 +1,12 @@
-/* eslint-disable prettier/prettier */
-import axios from 'axios';
-import {useForm} from 'react-hook-form';
+// import { data } from 'autoprefixer';
+import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
 import ReactStars from 'react-rating-stars-component';
+import axios from 'axios';
 
-export default function Avis({reviews}) {
+// import { ToastProvider, useToasts } from 'react-toast-notifications';
 
+export default function Avis({ reviews }) {
   const {
     register,
     handleSubmit,
@@ -13,16 +15,44 @@ export default function Avis({reviews}) {
     reset,
   } = useForm();
 
+  // try react star handling
+  const [starRating, setStarRating] = useState(null);
+
   const ratingChanged = (newRating) => {
     setValue('rating', newRating);
   };
+
+  // addtoasts
+
+  // form handling
   const onSubmit = (data) => {
-    data.rating && console.log(data);
-    if (data.rating != undefined) {
+    console.log(data);
+    data.rating &&
+      axios({
+        method: 'post',
+        url: 'http://localhost:1337/reviews',
+        data: {
+          Content: data.content,
+          ClientEmail: data.ClientEmail,
+          Rating: data.rating,
+          ReviewsClientName: data.userNameRequired,
+        },
+      })
+        .then(function (reponse) {
+          // On traite la suite une fois la réponse obtenue
+          console.log(reponse);
+        })
+        .catch(function (erreur) {
+          // On traite ici les erreurs éventuellement survenues
+          console.log(erreur);
+        });
+    if (data.rating !== undefined) {
+      // setStarRating(true)
       window.alert(
         `Merci ${data.userNameRequired}, votre message a bien été envoyé avec une note de ${data.rating} étoiles !`
       );
     } else {
+      //  setStarRating(false);
       window.alert(
         'Tout les champs et une note doivent être enregistrés pour envoyer le formulaire'
       );
@@ -30,9 +60,9 @@ export default function Avis({reviews}) {
   };
 
   return (
-    <div className='flex justify-center sm:flex-row md:flex flex-col-reverse'>
+    <div className="flex justify-center sm:flex-row md:flex flex-col-reverse">
       <div>
-        {reviews.map((review) => 
+        {reviews.map((review) => (
           <div className="max-w-md mb-20 md:m-6 bg-white rounded-xl shadow-lg overflow-hidden md:max-w-xl my-10 ">
             <div className="p-6 md:p-4 ">
               <p>Note : {review.Rating} / 5</p>
@@ -45,7 +75,7 @@ export default function Avis({reviews}) {
               {console.log(reviews)}
             </div>
           </div>
-      )}
+        ))}
       </div>
       <div>
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -95,19 +125,15 @@ export default function Avis({reviews}) {
                       className="p-4 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
                     />
                     {errors.userNameRequired && (
-                    <span>
-                      Cette information est requise pour l'envoi du formulaire
-                    </span>
-                )}
-                    <button
-                      className="py-3 my-8 text-lg bg-gradient-to-r from-yellow-500 to-red-600 rounded-xl text-white hover:shadow-lg"
-                      type="submit"
-                    >
+                      <span>
+                        Cette information est requise pour l'envoi du formulaire
+                      </span>
+                    )}
+                    <button className="py-3 my-8 text-lg bg-gradient-to-r from-yellow-500 to-red-600 rounded-xl text-white hover:shadow-lg">
                       Envoyer
                     </button>
                   </div>
                 </div>
-                
               </div>
             </div>
           </div>
@@ -117,7 +143,6 @@ export default function Avis({reviews}) {
   );
 }
 
-
 export async function getStaticProps() {
   const res = await axios.get('http://localhost:1337/reviews');
   const reviews = res.data;
@@ -126,4 +151,3 @@ export async function getStaticProps() {
     props: { reviews },
   };
 }
-
