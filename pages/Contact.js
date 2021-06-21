@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { useForm } from 'react-hook-form';
+import {useForm} from 'react-hook-form';
 
 export default function Contact() {
   const {

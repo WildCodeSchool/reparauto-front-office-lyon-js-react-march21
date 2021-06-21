@@ -1,11 +1,11 @@
 /* eslint-disable prettier/prettier */
 import { useForm } from 'react-hook-form';
-import Calendar from 'react-calendar'
-import {useState} from'react'
+import Calendar from 'react-calendar';
+// import {useState} from'react';
 
 
 export default function Appointements() {
-  const [date, setDate] = useState()
+  // const [date, setDate] = useState()
   const {
     register,
     handleSubmit,

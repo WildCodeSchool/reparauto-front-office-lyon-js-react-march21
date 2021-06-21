@@ -1,4 +1,3 @@
-
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -16,15 +15,25 @@ export default function Occasions() {
             layout="responsive"
           />
           <div className="p-4">
-            <p className="mb-1 text-gray-900 text-xl font-semibold">Dacia Logan break MCV phase 2 DCI 85CV</p>
+            <p className="mb-1 text-gray-900 text-xl font-semibold">
+              Dacia Logan break MCV phase 2 DCI 85CV
+            </p>
 
             <br />
             <br />
 
-            <span className="text-gray-700">Prix : <span class="text-xl font-medium">2990€ TTC</span> </span>
+            <span className="text-gray-700">
+              Prix : <span className="text-xl font-medium">2990€ TTC</span>{' '}
+            </span>
 
             <div className="mt-8 mb-3">
-          <Link href="./Detail-occasion" className="cursor-pointer bg-yellow-300 px-4 py-2 bg-teal-500 shadow-lg border rounded-lg text-grey uppercase font-semibold tracking-wider focus:outline-none focus:shadow-outline hover:bg-teal-400 active:bg-teal-400 align-center"> Détails</Link>
+              <Link
+                href="./Detail-occasion"
+                className="cursor-pointer bg-yellow-300 px-4 py-2 bg-teal-500 shadow-lg border rounded-lg text-grey uppercase font-semibold tracking-wider focus:outline-none focus:shadow-outline hover:bg-teal-400 active:bg-teal-400 align-center"
+              >
+                {' '}
+                Détails
+              </Link>
             </div>
           </div>
         </div>
@@ -38,19 +47,24 @@ export default function Occasions() {
             layout="responsive"
           />
           <div className="p-4">
-            <p className="mb-1 text-gray-900 text-xl font-semibold">Dacia Logan break MCV phase 2 DCI 85CV</p>
+            <p className="mb-1 text-gray-900 text-xl font-semibold">
+              Dacia Logan break MCV phase 2 DCI 85CV
+            </p>
 
             <br />
             <br />
 
-            <span className="text-gray-700">Prix : <span class="text-xl font-medium">2990€ TTC</span> </span>
+            <span className="text-gray-700">
+              Prix : <span className="text-xl font-medium">2990€ TTC</span>{' '}
+            </span>
 
             <div className="mt-8 mb-3">
-          <Link href="./Detail-occasion"
-            className=" bg-yellow-300 px-4 py-2 bg-teal-500 shadow-lg border rounded-lg text-grey uppercase font-semibold tracking-wider focus:outline-none focus:shadow-outline hover:bg-teal-400 active:bg-teal-400 align-center"
-            >
-            Détails
-          </Link>
+              <Link
+                href="./Detail-occasion"
+                className=" bg-yellow-300 px-4 py-2 bg-teal-500 shadow-lg border rounded-lg text-grey uppercase font-semibold tracking-wider focus:outline-none focus:shadow-outline hover:bg-teal-400 active:bg-teal-400 align-center"
+              >
+                Détails
+              </Link>
             </div>
           </div>
         </div>
