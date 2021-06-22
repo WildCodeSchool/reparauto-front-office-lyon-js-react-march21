@@ -1,11 +1,11 @@
+/* eslint-disable no-unused-expressions */
+/* eslint-disable prettier/prettier */
 // import { data } from 'autoprefixer';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import ReactStars from 'react-rating-stars-component';
 import axios from 'axios';
-
 // import { ToastProvider, useToasts } from 'react-toast-notifications';
-
 export default function Avis({ reviews }) {
   const {
     register,
@@ -21,16 +21,12 @@ export default function Avis({ reviews }) {
   const ratingChanged = (newRating) => {
     setValue('rating', newRating);
   };
-
-  // addtoasts
-
-  // form handling
   const onSubmit = (data) => {
     console.log(data);
     data.rating &&
       axios({
         method: 'post',
-        url: 'http://localhost:1337/reviews',
+        url: 'http://localhost:1337/Reviews',
         data: {
           Content: data.content,
           ClientEmail: data.ClientEmail,
