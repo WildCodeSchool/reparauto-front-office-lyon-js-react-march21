@@ -1,13 +1,18 @@
 /* eslint-disable prettier/prettier */
 import { useForm } from 'react-hook-form';
 import Calendar from 'react-calendar'
-import {useState, useEffect} from'react'
+import {useState} from'react'
 import axios from 'axios';
 
 
 export default function Appointements() {
 
-  const [date, setDate] = useState()
+  const [date, setDate] = useState(new Date())
+  const onChange = date => {
+    setDate(date),
+    console.log(date)
+    
+  }
   const {register, handleSubmit, formState: { errors },} = useForm();
 
   const onSubmit = (data) => {
@@ -15,16 +20,19 @@ export default function Appointements() {
       method:'post',
       url: 'http://localhost:1337/Appointments', 
       data: {
-        AppointmentAsk: data.date,
-        AppointmentsUserEmail: data.email,
-        AppointmentsUserName: data.lastname,
-        AppointmentsUserAskContent: data.message,
-        AppointmentsImmat: data.immatriculation,
-        Brand: data.marque,
-        Model: data.model,
-    }
-      .catch((err) => console.log(err))
-  })};
+        AppointmentsEmail: data.email,
+        AppointmentsName: data.lastName,
+        AppointmentsContent: data.content,
+        AppointmentsImmatriculation: data.immatriculation,
+        Brand: data.Brand,
+        Model: data.Model,
+    }})
+    .then(function (reponse) {
+      // On traite la suite une fois la réponse obtenue
+      console.log(reponse);
+    })
+  .catch((err) => console.log(err))
+};
 
   return (
     <div className="flex flex-col md:mt-10 sm:mt-0 justify-center ">
@@ -99,19 +107,24 @@ export default function Appointements() {
               />
               {errors.email && <p>Email requis</p>}
               <textarea
-                {...register('message', {
+                {...register('content', {
                   required: true,
                   minLength: { value: 1 },
                 })}
                 className="p-3 h-28 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
                 placeholder='Travaux à réaliser'
-                name="message"
+                name="content"
                 type="text"
               />
               {errors.message && <p>Message requis</p>}
               <p className='flex justify-center m-2 text-gray-600'>Date de rendez-vous souhaité</p>
-              <Calendar
-                className=' p-4 my-2 max-w-md bg-white text-gray-600 rounded-xl hover:shadow-lg'
+              <Calendar 
+                {...register('date', {
+                  required: true
+                })}
+                className=' p-4 my-2 max-w-md bg-white text-gray-500 rounded-xl hover:shadow-lg'
+                value={date}
+                onChange={onChange}
               />
               <button
                 type="button"
