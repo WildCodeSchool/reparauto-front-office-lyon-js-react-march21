@@ -25,14 +25,31 @@ export default function Contact() {
 
   const onSubmit = (data) => {
     console.log(data);
+    /*
     axios
-      // .post(`${process.env.REACT_APP_API_BASE_URL}/contact-mail`, data)
+      // .post(`${process.env.REACT_APP_API_BASE_URL}/contact-mails`, data)
       .post(`http://localhost:1337/contact-mails`, data)
       .then(() => {
         // eslint-disable-next-line no-alert
         console.log(data);
         window.alert('Votre email a bien été envoyé (ne spammez pas trop :-)');
       });
+     */
+    fetch('http://localhost:1337/contact-mails', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    }).then((res) => {
+      console.log('Response received')
+      if (res.status === 200) {
+        console.log('Response succeeded!')
+
+      }
+    })
+
   }
 
   return (
