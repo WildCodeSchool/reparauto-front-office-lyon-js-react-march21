@@ -2,6 +2,9 @@
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 
+// require('dotenv').config();
+
+
 /*
 {
   firstName: "aaaa",
@@ -19,52 +22,19 @@ export default function Contact() {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (e, data) => {
 
-    // e.preventDefault();
-    // destructure from inputs
+  const onSubmit = (data) => {
+    console.log(data);
     axios
-      .post(`${process.env.REACT_APP_API_BASE_URL}/contactmail`, data)
-      // make an object to be handled from req.body on the backend.
+      // .post(`${process.env.REACT_APP_API_BASE_URL}/contact-mail`, data)
+      .post(`http://localhost:1337/contact-mails`, data)
       .then(() => {
         // eslint-disable-next-line no-alert
+        console.log(data);
         window.alert('Votre email a bien été envoyé (ne spammez pas trop :-)');
       });
+  }
 
-  };
-
-  // email handling
-  /*
-  const handleBookSubmit = (event) => {
-    event.preventDefault();
-    setMessage({ user: userPseudo, input: userInput });
-    setUserPseudo('');
-    setUserInput('');
-  };
-  
-    const handleChange = (e) => {
-      const { name, value } = e.target;
-      setEmailInputs((prev) => ({ ...prev, [name]: value }));
-    };
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      // destructure from inputs
-      axios
-        .post(`${process.env.REACT_APP_API_BASE_URL}/contactmail`, emailInputs)
-        // make an object to be handled from req.body on the backend.
-        .then(() => {
-          // eslint-disable-next-line no-alert
-          window.alert('Votre email a bien été envoyé (ne spammez pas trop :-)');
-        });
-      setEmailInputs({
-        email: '',
-        name: '',
-        subject: '',
-        description: '',
-      });
-    };
-  
-  */
   return (
 
     <div className="flex flex-col md:mt-10 sm:mt-0 justify-center ">
