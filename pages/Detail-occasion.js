@@ -7,7 +7,7 @@ import Image from 'next/image';
 export default function Detail_occasions() {
   return (
     <div className="my-10">
-      <div className="bg-white w-96 m-auto border-1  border-dashed border-gray-100 shadow-md rounded-lg overflow-hidden">
+      <div className="bg-white w-96 m-auto border-1  border-dashed border-gray-100 shadow-md rounded-lg overflow-hidden mb-20">
         <div className="slider">
           <figure>
             <Image
