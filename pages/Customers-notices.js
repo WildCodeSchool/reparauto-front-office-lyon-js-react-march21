@@ -4,6 +4,8 @@ import { useForm } from 'react-hook-form';
 import ReactStars from 'react-rating-stars-component';
 import axios from 'axios';
 
+require('dotenv').config();
+
 // import { ToastProvider, useToasts } from 'react-toast-notifications';
 
 export default function Avis({ reviews }) {

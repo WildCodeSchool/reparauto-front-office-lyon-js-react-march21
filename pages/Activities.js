@@ -30,7 +30,7 @@ export default function Activities() {
               tenetur itaque eius provident voluptatum similique impedit?
             </span>
           </div>
-          <button className="w-full text-lg h-16 text-white font-extrabold bg-yellow-500 rounded-lg">
+          <button type="button" className="w-full text-lg h-16 text-white font-extrabold bg-yellow-500 rounded-lg">
             à partir de <span className="text-4xl">35€</span>
           </button>
         </div>
@@ -54,7 +54,7 @@ export default function Activities() {
               tenetur itaque eius provident voluptatum similique impedit?
             </span>
           </div>
-          <button className="w-full text-lg h-16 text-white font-extrabold bg-yellow-600 rounded-lg">
+          <button type="button" className="w-full text-lg h-16 text-white font-extrabold bg-yellow-600 rounded-lg">
             à partir de <span className="text-4xl">55€</span>
           </button>
         </div>
