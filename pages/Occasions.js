@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 
 export default function Occasions() {
   return (
@@ -27,8 +26,9 @@ export default function Occasions() {
             </span>
 
             <div className="mt-8 mb-3">
-              {// remplacé </Link> par </a>
-}
+              {
+                // remplacé </Link> par </a>
+              }
               <a
                 href="./Detail-occasion"
                 className="cursor-pointer bg-yellow-300 px-4 py-2 bg-teal-500 shadow-lg border rounded-lg text-grey uppercase font-semibold tracking-wider focus:outline-none focus:shadow-outline hover:bg-teal-400 active:bg-teal-400 align-center"
@@ -61,12 +61,13 @@ export default function Occasions() {
             </span>
 
             <div className="mt-8 mb-3">
-              <Link
+              <a
                 href="./Detail-occasion"
-                className=" bg-yellow-300 px-4 py-2 bg-teal-500 shadow-lg border rounded-lg text-grey uppercase font-semibold tracking-wider focus:outline-none focus:shadow-outline hover:bg-teal-400 active:bg-teal-400 align-center"
+                className="cursor-pointer bg-yellow-300 px-4 py-2 bg-teal-500 shadow-lg border rounded-lg text-grey uppercase font-semibold tracking-wider focus:outline-none focus:shadow-outline hover:bg-teal-400 active:bg-teal-400 align-center"
               >
+                {' '}
                 Détails
-              </Link>
+              </a>
             </div>
           </div>
         </div>
