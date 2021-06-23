@@ -2,6 +2,16 @@
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 
+/*
+{
+  firstName: "aaaa",
+ lastName: "aaaa",
+  email: "maupied69@hotmail.com",
+   immatriculation: "aaaaaa",
+    message: "a"
+  }
+*/
+
 
 export default function Contact() {
   const {
