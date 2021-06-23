@@ -4,7 +4,7 @@ import Head from 'next/head';
 
 export default function Activities() {
   return (
-    <main className="px-3 mb-6">
+    <main className="px-3 mb-20">
       <div className="text-4xl sm:text-5xl text-center my-10">
         Nos prestations
       </div>
