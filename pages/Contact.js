@@ -2,6 +2,14 @@
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 
+//require('dotenv').config();
+
+/*
+const {
+  REACT_APP_API_BASE_URL,
+} = require('../env');
+*/
+
 // require('dotenv').config();
 
 
@@ -24,7 +32,7 @@ export default function Contact() {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+    
     /*
     axios
       // .post(`${process.env.REACT_APP_API_BASE_URL}/contact-mails`, data)
@@ -35,23 +43,31 @@ export default function Contact() {
         window.alert('Votre email a bien été envoyé (ne spammez pas trop :-)');
       });
      */
-    fetch('http://localhost:1337/contact-mails', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json, text/plain, */*',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    }).then((res) => {
-      console.log('Response received')
-      if (res.status === 200) {
-        console.log('Response succeeded!')
-
-      }
-    })
-
-  }
-
+    
+    
+      console.log(data);
+        axios({
+          method: 'post',
+          url: 'http://localhost:1337/contact-mails',
+          data: {
+            ContactContent: data.ContactContent,
+            UserEmail: data.UserEmail,
+            CarDescription: data.CarDescription,
+            ContactPhotos: data.ContactPhotos,
+            ContactImmat: data.ContactImmat,
+            ContactModel: data.ContactModel,
+            ContactBrand: data.ContactBrand
+          },
+        })
+          .then(function (reponse) {
+            // On traite la suite une fois la réponse obtenue
+            console.log(reponse);
+          })
+          .catch(function (erreur) {
+            // On traite ici les erreurs éventuellement survenues
+            console.log(erreur);
+          });
+        }
   return (
 
     <div className="flex flex-col md:mt-10 sm:mt-0 justify-center ">
@@ -69,59 +85,70 @@ export default function Contact() {
               className="w-3/4 flex flex-col "
             >
               <input
-                {...register('firstName', {
-                  pattern: /^[A-Za-z]+$/i,
+                {...register("ContactBrand", {
+                 // pattern: /^[A-Za-z]+$/i,
                   required: true,
                   minLength: { value: 3 },
                 })}
                 className="p-3 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
-                name="firstName"
-                placeholder="Prénom"
+                name="ContactBrand"
+                placeholder="Marque du vehicule"
+                type="text"
+              />
+              <input
+                {...register("CarDescription", {
+                 // pattern: /^[A-Za-z]+$/i,
+                  required: true,
+                  minLength: { value: 3 },
+                })}
+                className="p-3 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
+                name="CarDescription"
+                placeholder="Description du vehicule"
                 type="text"
               />
               {errors.firstName && <p>Prénom requis (lettres uniquement)</p>}
               <input
-                {...register('lastName', {
-                  pattern: /^[A-Za-z]+$/i,
+                {...register("ContactModel", {
+                 // pattern: /^[A-Za-z]+$/i,
                   required: true,
                   minLength: { value: 3 },
                 })}
                 className="p-3 my-2 text-gray-500 rounded-xl resize-none  hover:shadow-lg"
-                name="lastName"
-                placeholder="Nom"
+                name="ContactModel"
+                placeholder="Modele du véhicule"
                 type="text"
               />
               {errors.lastName && <p>Nom requis (lettres uniquement)</p>}
               <input
-                {...register('email', {
+                {...register("UserEmail", {
                   required: true,
                   minLength: { value: 3 },
                 })}
                 className="p-3 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
                 placeholder="Email"
                 type="email"
-                name="email"
+                name="UserEmail"
               />
               {errors.email && <p>Email requis</p>}
               <input
-                {...register('immatriculation', {
+                {...register("ContactImmat", {
                   required: true,
-                  minLength: { value: 3 },
+                 minLength: { value: 3 },
                 })}
                 className="p-3 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
                 placeholder="Immatriculation"
                 type="text"
-                name="immatriculation"
+                name="ContactImmat"
               />
               {errors.immatriculation && <p>Immatriculation requise</p>}
               <textarea
-                {...register('message', {
+                {...register("ContactContent", {
                   required: true,
                   minLength: { value: 1 },
                 })}
                 className="p-3 h-24 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
                 placeholder="laissez nous un message"
-                name="message"
+                name="ContactContent"
                 type="text"
               />
               {errors.message && <p>Message requis</p>}
