@@ -1,12 +1,11 @@
-// import Head from 'next/head'
-// import Layout, { siteTitle } from '../components/layout'
-// import utilStyles from '../styles/utils.module.css'
 import Image from 'next/image';
+import axios from 'axios'
 
 // eslint-disable-next-line camelcase
-export default function Detail_occasions() {
+export default function Detail_occasions({occasionCars}) {
   return (
     <div className="my-10">
+    {occasionCars.map((occasion) => (
       <div className="bg-white w-96 m-auto border-1  border-dashed border-gray-100 shadow-md rounded-lg overflow-hidden">
         <div className="slider">
           <figure>
@@ -61,41 +60,32 @@ export default function Detail_occasions() {
           </figure>
         </div>
         <div className="p-4">
-          <p className="mb-1 text-gray-900 font-semibold">
-            Dacia Logan break MCV phase 2 DCI 85CV
-          </p>
+          <p className="mb-1 text-gray-900 font-semibold">{occasion.titre}</p>
+          <br />
+          <h3 className="mb-1 text-gray-900 font-semibold"></h3>
+          <p className="text-gray-700">Marque: {occasion.marque}</p>
+          <br />
+          <p className="text-gray-700">Modèle: {occasion.model}</p>
 
           <br />
-          <span className="text-gray-700">Gris métallisé, Intérieur tissu</span>
-          <br />
-          <span className="text-gray-700">Février 2010, 225000km</span>
-          <br />
-          <span className="text-gray-700">Diesel, 6Cv</span>
-          <br />
-          <span className="text-gray-700">5 portes, 5 places </span>
-          <br />
-          <span className="text-gray-700">
-            Climatisation, Vitres avant électriques, Direction assistée,
-            Fermeture centralisée, Barres de toit, 4 pneus 4 saisons
-          </span>
-          <br />
-          <span className="text-gray-700">
-            Révisée, Distribution neuve, Contrôle technique OK{' '}
-          </span>
-          <br />
-          <span className="text-gray-700">
-            Garantie 3 mois MINIMUM extension possible{' '}
-          </span>
-          <br />
-          <br />
-
-          <span className="text-gray-700">
-            Prix : <span className="text-xl font-medium">2990€ TTC</span>{' '}
-          </span>
+          <h3>Description:</h3>
+          <p className="text-gray-700"> {occasion.description}</p>
+          <p className=" mt-3 text-gray-700">Prix : {occasion.prix} TTC{' '}</p>
 
           <div className="mt-8 mb-3" />
         </div>
       </div>
+    ))};
     </div>
-  );
+  )
+}
+
+
+export async function getStaticProps() {
+  const res = await axios.get('http://localhost:1337/second-hand-cars');
+  const occasionCars = res.data;
+
+  return {
+    props: { occasionCars },
+  };
 }
