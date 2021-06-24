@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import Calendar from 'react-calendar'
 import {useState} from'react'
 import axios from 'axios';
@@ -7,29 +7,30 @@ import axios from 'axios';
 
 export default function Appointements() {
 
+  const {register, handleSubmit, control, formState: { errors },} = useForm();
   const [date, setDate] = useState(new Date())
   const onChange = date => {
-    setDate(date),
-    console.log(date)
-    
+    setDate(date)
+
   }
-  const {register, handleSubmit, formState: { errors },} = useForm();
 
   const onSubmit = (data) => {
+    console.log(data)
     axios({
       method:'post',
-      url: 'http://localhost:1337/Appointments', 
+      url:'http://localhost:1337/Appointments',
       data: {
+        Brand: data.Brand,
+        Model: data.Model,
+        AppointmentDate: data.date,
         AppointmentsEmail: data.email,
         AppointmentsName: data.lastName,
         AppointmentsContent: data.content,
         AppointmentsImmatriculation: data.immatriculation,
-        Brand: data.Brand,
-        Model: data.Model,
     }})
-    .then(function (reponse) {
-      // On traite la suite une fois la réponse obtenue
-      console.log(reponse);
+    .then(function (response) {
+      console.log(response)
+    
     })
   .catch((err) => console.log(err))
 };
@@ -118,14 +119,16 @@ export default function Appointements() {
               />
               {errors.message && <p>Message requis</p>}
               <p className='flex justify-center m-2 text-gray-600'>Date de rendez-vous souhaité</p>
-              <Calendar 
-                {...register('date', {
-                  required: true
-                })}
+              <Controller name= 'AppointmentDate' control={control} defaultValue={null}
+              render={({onChange,value}) =>
+              <Calendar
                 className=' p-4 my-2 max-w-md bg-white text-gray-500 rounded-xl hover:shadow-lg'
-                value={date}
                 onChange={onChange}
+                selected={value}
+              />}
               />
+
+              {console.log(date)}
               <button
                 type="button"
                 className="py-4 my-2 text-lg bg-white rounded-xl text-gray-600 hover:shadow-lg"
