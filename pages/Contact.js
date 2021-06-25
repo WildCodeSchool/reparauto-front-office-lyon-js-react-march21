@@ -61,7 +61,7 @@ export default function Contact() {
         })
           .then(function (reponse) {
             // On traite la suite une fois la réponse obtenue
-            console.log(reponse);
+            console.log(reponse.data);
           })
           .catch(function (erreur) {
             // On traite ici les erreurs éventuellement survenues

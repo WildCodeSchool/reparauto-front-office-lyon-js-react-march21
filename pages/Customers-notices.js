@@ -4,6 +4,12 @@ import { useForm } from 'react-hook-form';
 import ReactStars from 'react-rating-stars-component';
 import axios from 'axios';
 
+// require('dotenv').config();
+// const fs = require('fs');
+const noticesUrl = process.env.REACT_APP_API_BASE_URL;
+const envTest = process.env.API_HOST;
+
+
 // import { ToastProvider, useToasts } from 'react-toast-notifications';
 
 export default function Avis({ reviews }) {
@@ -26,11 +32,14 @@ export default function Avis({ reviews }) {
 
   // form handling
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
+    console.log(noticesUrl);
+    console.log(envTest);
     data.rating &&
       axios({
         method: 'post',
-        url: 'http://localhost:1337/reviews',
+        // url: 'http://localhost:1337/reviews',
+        url: `${noticesUrl}/reviews`,
         data: {
           Content: data.content,
           ClientEmail: data.ClientEmail,
