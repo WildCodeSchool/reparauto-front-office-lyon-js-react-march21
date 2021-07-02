@@ -70,7 +70,7 @@ export default function Contact() {
         }
   return (
 
-    <div className="flex flex-col md:mt-10 sm:mt-0 justify-center ">
+    <div className="flex flex-col md:mt-0 sm:mt-0 justify-center ">
       <div className="h-full sm:max-w-xl sm:mx-auto">
         <div className="flex flex-col item-center shadow-lg ">
           <div className="bg-white flex justify-center md:rounded-t-xl sm:py-6 md:py-6 hover:shadow-lg px-14">
