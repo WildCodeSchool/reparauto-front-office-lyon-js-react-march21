@@ -2,14 +2,18 @@
 import Image from 'next/image';
 import Head from 'next/head';
 
-export default function Activities() {
+
+export default function Activities({activities}) {
+  console.log(activities)
   return (
     <main className="px-3 mb-6">
+      <div>
       <div className="text-4xl sm:text-5xl text-center my-10">
         Nos prestations
       </div>
+      {activities.map((service)=> (
 
-      <div className="grid md:grid-cols-3 gap-2 max-w-5xl m-auto mx-5px">
+        <div className="grid md:grid-cols-3 gap-2 max-w-5xl m-auto mx-5px">
         <div className="bg-white">
           <Image
             src="/images/diag.jpg"
@@ -18,7 +22,7 @@ export default function Activities() {
             width={500}
             height={250}
             layout="responsive"
-          />
+            />
           <div className="px-10 py-6 mb-10 text-center">
             <div className="text-2xl font-bold text-yellow-500 mb-4">
               DIAGNOSTICS
@@ -31,7 +35,7 @@ export default function Activities() {
             </span>
           </div>
           <button className="w-full text-lg h-16 text-white font-extrabold bg-yellow-500 rounded-lg">
-            à partir de <span className="text-4xl">35€</span>
+            à partir de <span className="text-4xl">{service.ServicesPrice}</span>
           </button>
         </div>
         <div className="bg-white">
@@ -42,7 +46,7 @@ export default function Activities() {
             width={500}
             height={250}
             layout="responsive"
-          />
+            />
           <div className="px-10 py-6 mb-10 text-center">
             <div className="text-2xl font-bold text-yellow-600 mb-4">
               VIDANGE
@@ -66,7 +70,7 @@ export default function Activities() {
             width={500}
             height={250}
             layout="responsive"
-          />
+            />
           <div className="px-10 py-6 mb-10 text-center">
             <div className="text-2xl font-bold text-red-500 mb-4">
               NETTOYAGE
@@ -83,6 +87,16 @@ export default function Activities() {
           </button>
         </div>
       </div>
+        ))}
+      </div>
     </main>
   );
+}
+export async function getStaticProps() {
+  const res = await axios.get('http://localhost:1337/Rates');
+  const activities = res.data;
+
+  return {
+    props: { activities },
+  };
 }

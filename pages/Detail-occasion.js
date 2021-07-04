@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import axios from 'axios'
+//import fs from 'fs';
+//require('dotenv').config()
 
 // eslint-disable-next-line camelcase
 export default function Detail_occasions({occasionCars}) {
@@ -84,6 +86,11 @@ export default function Detail_occasions({occasionCars}) {
 export async function getStaticProps() {
   const res = await axios.get('http://localhost:1337/second-hand-cars');
   const occasionCars = res.data;
+  if (!data) {
+    return {
+      notFound: true,
+    }
+  }
 
   return {
     props: { occasionCars },
