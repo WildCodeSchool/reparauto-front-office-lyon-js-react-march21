@@ -1,17 +1,8 @@
-// import { data } from 'autoprefixer';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import ReactStars from 'react-rating-stars-component';
 import axios from 'axios';
-
-// require('dotenv').config();
-// const fs = require('fs');
-const noticesUrl = process.env.REACT_APP_API_BASE_URL;
-const envTest = process.env.API_HOST;
-
-
 // import { ToastProvider, useToasts } from 'react-toast-notifications';
-
 export default function Avis({ reviews }) {
   const {
     register,
@@ -27,10 +18,6 @@ export default function Avis({ reviews }) {
   const ratingChanged = (newRating) => {
     setValue('rating', newRating);
   };
-
-  // addtoasts
-
-  // form handling
   const onSubmit = (data) => {
     // console.log(data);
     console.log(noticesUrl);
@@ -38,8 +25,7 @@ export default function Avis({ reviews }) {
     data.rating &&
       axios({
         method: 'post',
-        // url: 'http://localhost:1337/reviews',
-        url: `${noticesUrl}/reviews`,
+        url: (process.env.NEXT_PUBLIC_REVIEWS_URL),
         data: {
           Content: data.content,
           ClientEmail: data.ClientEmail,
@@ -157,7 +143,7 @@ export default function Avis({ reviews }) {
 }
 
 export async function getStaticProps() {
-  const res = await axios.get('http://localhost:1337/reviews');
+  const res = await axios.get(process.env.NEXT_PUBLIC_REVIEWS_URL);
   const reviews = res.data;
 
   return {

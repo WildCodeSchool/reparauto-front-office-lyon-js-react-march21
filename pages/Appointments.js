@@ -1,19 +1,40 @@
 /* eslint-disable prettier/prettier */
-import { useForm } from 'react-hook-form';
-import Calendar from 'react-calendar';
-// import {useState} from'react';
+import { useForm, Controller } from 'react-hook-form';
+import Calendar from 'react-calendar'
+import {useState} from'react'
+import axios from 'axios';
 
 
 export default function Appointements() {
-  // const [date, setDate] = useState()
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+
+  const {register, handleSubmit, control, formState: { errors },} = useForm();
+  const [date, setDate] = useState(new Date())
+
+  const onChange = date => {
+    setDate(date)
+
+  }
+
   const onSubmit = (data) => {
-    console.log(data);
-  };
+    console.log(data)
+    axios({
+      method:'post',
+      url:(process.env.NEXT_PUBLIC_APPOINTMENTS_URL),
+      data: {
+        Brand: data.Brand,
+        Model: data.Model,
+        AppointmentDate: data.date,
+        AppointmentsEmail: data.email,
+        AppointmentsName: data.lastName,
+        AppointmentsContent: data.content,
+        AppointmentsImmatriculation: data.immatriculation,
+    }})
+    .then(function (response) {
+      console.log(response)
+    
+    })
+  .catch((err) => console.log(err))
+};
 
   return (
     <div className="flex flex-col md:mt-10 sm:mt-0 justify-center ">
@@ -31,22 +52,10 @@ export default function Appointements() {
               className="w-3/4 flex flex-col "
             >
               <input
-                {...register('firstName', {
-                  pattern: /^[A-Za-z]+$/i,
-                  required: true,
-                  minLength: { value: 3 },
-                })}
-                className="p-3 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
-                name="firstName"
-                placeholder="Prénom"
-                type="text"
-              />
-              {errors.firstName && <p>Prénom requis (lettres uniquement)</p>}
-              <input
                 {...register('lastName', {
                   pattern: /^[A-Za-z]+$/i,
                   required: true,
-                  minLength: { value: 3 },
+                  minLength: { value: 1 },
                 })}
                 className="p-3 my-2 text-gray-500 rounded-xl resize-none  hover:shadow-lg"
                 name="lastName"
@@ -54,46 +63,77 @@ export default function Appointements() {
                 type="text"
               />
               {errors.lastName && <p>Nom requis (lettres uniquement)</p>}
+                <input
+                  {...register('Brand', {
+                    pattern: /^[A-Za-z]+$/i,
+                    required: true,
+                    minLength: { value: 1 },
+                  })}
+                  className="p-3 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
+                  name="Brand"
+                  placeholder="Marque"
+                  type="text"
+                />
+                {errors.Brand && <p>Marque requise (lettres uniquement)</p>}
+                <input
+                  {...register('Model', {
+                    required: true,
+                    minLength: { value: 1 },
+                  })}
+                  className="p-3 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
+                  name="Model"
+                  placeholder="Modèle"
+                  type="text"
+                />
+                {errors.Brand && <p>Modele requis (lettres uniquement)</p>}
+                  <input
+                    {...register('immatriculation', {
+                      required: true,
+                      minLength: { value: 1 },
+                    })}
+                    className="p-3 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
+                    placeholder="Immatriculation"
+                    type="text"
+                    name="immatriculation"
+                  />
+                  {errors.immatriculation && <p>Immatriculation requise</p>}
               <input
                 {...register('email', {
-                  required: true,
-                  minLength: { value: 3 },
-                })}
-                className="p-3 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
-                placeholder="Email"
-                type="email"
-                name="email"
-              />
-              {errors.email && <p>Email requis</p>}
-              <input
-                {...register('email', {
-                  required: true,
-                  minLength: { value: 3 },
-                })}
-                className="p-3 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
-                placeholder="Immatriculation"
-                type="text"
-                name="immatriculation"
-              />
-              {errors.immatriculation && <p>Immatriculation requise</p>}
-              <textarea
-                {...register('message', {
                   required: true,
                   minLength: { value: 1 },
                 })}
-                className="p-3 h-24 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
+                className="p-3 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
+                name='email'
+                placeholder="email"
+                type="text"
+              />
+              {errors.email && <p>Email requis</p>}
+              <textarea
+                {...register('content', {
+                  required: true,
+                  minLength: { value: 1 },
+                })}
+                className="p-3 h-28 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
                 placeholder='Travaux à réaliser'
-                name="message"
+                name="content"
                 type="text"
               />
               {errors.message && <p>Message requis</p>}
-              <p>Date de rendez-vous souhaité</p>
+              <p className='flex justify-center m-2 text-gray-600'>Date de rendez-vous souhaité</p>
+              
+              <Controller name= 'AppointmentDate' control={control} defaultValue={null}
+              render={({onChange,value}) =>{
               <Calendar
-                className='bg-white max-w-800 h-56  text-gray-500 rounded-xl  hover:shadow-lg'
+                className=' p-4 my-2 max-w-md bg-white text-gray-500 rounded-xl hover:shadow-lg'
+                onChange={onChange}
+                selected={value}
+              />}}
               />
+
+              {console.log(date)}
               <button
                 type="button"
-                className="py-4 my-2  text-lg bg-white  rounded-xl text-gray-800 hover:shadow-lg"
+                className="py-4 my-2 text-lg bg-white rounded-xl text-gray-600 hover:shadow-lg"
               >
                 Ajoutez une photo
               </button>
