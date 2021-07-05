@@ -1,6 +1,7 @@
 /* eslint-disable prettier/prettier */
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
+import {_app} from './_app'
 
 // require('dotenv').config();
 
@@ -32,6 +33,8 @@ export default function Contact() {
   } = useForm();
 
   const onSubmit = (data) => {
+
+  
 
   /*
     const emailer = require('../mailer');
@@ -73,7 +76,8 @@ emailer.sendMail(
             ContactPhotos: data.ContactPhotos,
             ContactImmat: data.ContactImmat,
             ContactModel: data.ContactModel,
-            ContactBrand: data.ContactBrand
+            ContactBrand: data.ContactBrand,
+            ContactPhotos: data.ContactPhotos
           },
         })
           .then(function (reponse) {
@@ -170,12 +174,14 @@ emailer.sendMail(
                 type="text"
               />
               {errors.message && <p>Message requis</p>}
-              <button
-                type="button"
+              <input {...register("ContactPhotos", {
+                  required: true,
+                  name: "ContactPhotos"
+                })}
+                type="file"
                 className="py-4 my-2  text-lg bg-white  rounded-xl text-gray-800 hover:shadow-lg"
               >
-                Ajoutez une photo
-              </button>
+              </input>
               <button
                 type="submit"
                 className="py-4 mt-2 mb-20 text-lg bg-gradient-to-r from-yellow-400 to-red-500 rounded-xl text-gray-800 hover:shadow-lg"
