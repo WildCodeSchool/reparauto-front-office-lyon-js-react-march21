@@ -2,7 +2,7 @@
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 
-//require('dotenv').config();
+// require('dotenv').config();
 
 /*
 const {
@@ -32,7 +32,24 @@ export default function Contact() {
   } = useForm();
 
   const onSubmit = (data) => {
-    
+
+  /*
+    const emailer = require('../mailer');
+
+emailer.sendMail(
+  {
+    from: 'maupied69@hotmail.com',
+    to: 'maupied69@hotmail.com',
+    subject: 'This is a test email',
+    text: `Hello world , ${data.ContactContent}`,
+    html: '<p>Hello <em>world</em></p>',
+  },
+  (err, info) => {
+    if (err) console.error(err);
+    else console.log(info);
+  }
+);
+*/    
     /*
     axios
       // .post(`${process.env.REACT_APP_API_BASE_URL}/contact-mails`, data)
@@ -68,6 +85,7 @@ export default function Contact() {
             console.log(erreur);
           });
         }
+        
   return (
 
     <div className="flex flex-col md:mt-0 sm:mt-0 justify-center ">
