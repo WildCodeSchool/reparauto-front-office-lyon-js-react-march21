@@ -32,7 +32,7 @@ export default function Occasions({occasionCars}) {
 }
 
 export async function getStaticProps() {
-  const res = await axios.get('http://localhost:1337/second-hand-cars');
+  const res = await axios.get(process.env.NEXT_PUBLIC_OCCASION_URL);
   const occasionCars = res.data;
 
   return {

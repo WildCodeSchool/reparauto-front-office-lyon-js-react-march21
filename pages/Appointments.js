@@ -9,6 +9,7 @@ export default function Appointements() {
 
   const {register, handleSubmit, control, formState: { errors },} = useForm();
   const [date, setDate] = useState(new Date())
+
   const onChange = date => {
     setDate(date)
 
@@ -18,7 +19,7 @@ export default function Appointements() {
     console.log(data)
     axios({
       method:'post',
-      url:'http://localhost:1337/Appointments',
+      url:(process.env.NEXT_PUBLIC_APPOINTMENTS_URL),
       data: {
         Brand: data.Brand,
         Model: data.Model,
@@ -119,13 +120,14 @@ export default function Appointements() {
               />
               {errors.message && <p>Message requis</p>}
               <p className='flex justify-center m-2 text-gray-600'>Date de rendez-vous souhaité</p>
+              
               <Controller name= 'AppointmentDate' control={control} defaultValue={null}
-              render={({onChange,value}) =>
+              render={({onChange,value}) =>{
               <Calendar
                 className=' p-4 my-2 max-w-md bg-white text-gray-500 rounded-xl hover:shadow-lg'
                 onChange={onChange}
                 selected={value}
-              />}
+              />}}
               />
 
               {console.log(date)}

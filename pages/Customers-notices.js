@@ -1,6 +1,3 @@
-/* eslint-disable no-unused-expressions */
-/* eslint-disable prettier/prettier */
-// import { data } from 'autoprefixer';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import ReactStars from 'react-rating-stars-component';
@@ -26,7 +23,7 @@ export default function Avis({ reviews }) {
     data.rating &&
       axios({
         method: 'post',
-        url: 'http://localhost:1337/Reviews',
+        url: (process.env.NEXT_PUBLIC_REVIEWS_URL),
         data: {
           Content: data.content,
           ClientEmail: data.ClientEmail,
@@ -140,7 +137,7 @@ export default function Avis({ reviews }) {
 }
 
 export async function getStaticProps() {
-  const res = await axios.get('http://localhost:1337/reviews');
+  const res = await axios.get(process.env.NEXT_PUBLIC_REVIEWS_URL);
   const reviews = res.data;
 
   return {
