@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
-import {_app} from './_app';
+// import {_app} from './_app';
 import { useToasts } from 'react-toast-notifications'
 
 // require('dotenv').config();

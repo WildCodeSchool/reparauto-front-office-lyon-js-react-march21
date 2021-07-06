@@ -8,13 +8,15 @@ import('../styles/globals.css');
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
+    
       <ToastProvider
         placement="bottom-right"
       >
+        <Layout>
       <Component {...pageProps} />
+      </Layout>
       </ToastProvider>
-    </Layout>
+    
   );
 }
 
