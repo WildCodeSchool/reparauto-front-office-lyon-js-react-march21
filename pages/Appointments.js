@@ -1,11 +1,11 @@
 import { useForm, Controller } from 'react-hook-form';
 import { motion } from 'framer-motion';
 import ReactDatePicker from 'react-datepicker';
-// import {useState} from'react';
+
 
 export default function Appointements() {
-  // const [date, setDate] = useState()
-  const {register, handleSubmit, control, formState: { errors },} = useForm();
+
+  const {register, handleSubmit, control, formState: { errors }} = useForm();
   const onSubmit = (data) => {
     console.log(data);
   };
@@ -24,7 +24,7 @@ export default function Appointements() {
               Prenons rendez-vous !
             </h2>
           </div>
-          <div className="bg-gray-200 w-80 flex flex-col items-center md:rounded-b-xl ">
+          <div className="bg-gray-200 max-w-80 flex flex-col items-center md:rounded-b-xl ">
             <div className="flex flex-col items-center py-2 space-y-3" />
             <form
               onSubmit={handleSubmit(onSubmit)}
@@ -87,24 +87,21 @@ export default function Appointements() {
                 type="text"
               />
               {errors.message && <p>Message requis</p>}
-              
               <Controller 
-              name="appointmentsDate"
+              name="appointmentDate"
               control={control}
-              defaultValue={null}
-              render={({onChange, value})=>
-              <ReactDatePicker 
-                className="p-3 my-2 text-gray-500 rounded-xl hover:shadow-lg"
-                placeholderText="Date de rendez-vous souhaité"
+              render={({field:{onChange, value}}) =>(
+              <ReactDatePicker
+                onChange={onChange}
                 selected={value}
-                onChange={onChange}/>}
+                className="p-3 my-2 text-gray-500 rounded-xl hover:shadow-lg"
+                placeholderText="Date de rendez-vous souhaité"/>)}
               />
-              <button
-                type="button"
-                className="py-4 my-2  text-lg bg-white  rounded-xl text-gray-800 hover:shadow-lg"
+              <input
+                type="file"
+                className="py-3 my-2 text-lg bg-white  rounded-xl text-gray-800 hover:shadow-lg"
               >
-                Ajoutez une photo
-              </button>
+              </input>
               <button
                 type="submit"
                 className="py-4 mt-2 mb-20 text-lg bg-gradient-to-r from-yellow-400 to-red-500 rounded-xl text-gray-800 hover:shadow-lg"
