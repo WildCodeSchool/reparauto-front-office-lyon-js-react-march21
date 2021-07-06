@@ -85,7 +85,7 @@ emailer.sendMail(
         })
           .then(function (reponse) {
             // On traite la suite une fois la réponse obtenue
-            addToast('Votre mail a bien été envoyé, je vous repondrais dés que possible, merci !', {
+            addToast('Votre mail a bien été envoyé, je vous répondrais dés que possible, merci !', {
               appearance:'success',
               autoDismiss: true,
             })
@@ -182,7 +182,6 @@ emailer.sendMail(
               />
               {errors.message && <p>Message requis</p>}
               <input {...register("ContactPhotos", {
-                  required: true,
                   name: "ContactPhotos"
                 })}
                 type="file"

@@ -6,7 +6,7 @@ import axios from 'axios';
 
 export default function Activities({services}) {
   return (
-    <main className="px-3 mb-10 ">
+    <main className="px-3 mb-20">
       <div className="text-4xl sm:text-5xl text-center my-10">
         Nos prestations
       </div>
