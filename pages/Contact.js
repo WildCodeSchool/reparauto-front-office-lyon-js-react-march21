@@ -71,7 +71,7 @@ emailer.sendMail(
       console.log(data);
         axios({
           method: 'post',
-          url: 'http://localhost:1337/contact-mails',
+          url: process.env.NEXT_PUBLIC_CONTACT_URL,
           data: {
             ContactContent: data.ContactContent,
             UserEmail: data.UserEmail,
@@ -80,7 +80,6 @@ emailer.sendMail(
             ContactImmat: data.ContactImmat,
             ContactModel: data.ContactModel,
             ContactBrand: data.ContactBrand,
-            ContactPhotos: data.ContactPhotos
           },
         })
           .then(function (reponse) {
@@ -181,13 +180,13 @@ emailer.sendMail(
                 type="text"
               />
               {errors.message && <p>Message requis</p>}
-              <input {...register("ContactPhotos", {
+              <input
+                {...register("ContactPhotos", {
                   name: "ContactPhotos"
                 })}
                 type="file"
                 className="py-4 my-2  text-lg bg-white  rounded-xl text-gray-800 hover:shadow-lg"
-              >
-              </input>
+              />
               <button
                 type="submit"
                 className="py-4 mt-2 mb-20 text-lg bg-gradient-to-r from-yellow-400 to-red-500 rounded-xl text-gray-800 hover:shadow-lg"
