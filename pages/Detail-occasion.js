@@ -74,7 +74,7 @@ export default function Detail_occasions({occasionCars}) {
           <div className="mt-8 mb-3" />
         </div>
       </div>
-    ))};
+    ));
     </div>
   )
 }
