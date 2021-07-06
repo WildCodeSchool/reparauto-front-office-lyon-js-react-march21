@@ -1,6 +1,7 @@
 /* eslint-disable prettier/prettier */
 import Image from 'next/image';
 import Head from 'next/head';
+import axios from 'axios';
 
 
 export default function Activities({activities}) {
@@ -25,13 +26,10 @@ export default function Activities({activities}) {
             />
           <div className="px-10 py-6 mb-10 text-center">
             <div className="text-2xl font-bold text-yellow-500 mb-4">
-              DIAGNOSTICS
+            TRAVAUX SIMPLES
             </div>
             <span className="text-sm">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Voluptate tempore eligendi magnam distinctio molestias. Incidunt
-              at consequuntur consequatur officiis repudiandae! Culpa cum vel
-              tenetur itaque eius provident voluptatum similique impedit?
+              {service.ServiceLow}
             </span>
           </div>
           <button className="w-full text-lg h-16 text-white font-extrabold bg-yellow-500 rounded-lg">
@@ -49,17 +47,14 @@ export default function Activities({activities}) {
             />
           <div className="px-10 py-6 mb-10 text-center">
             <div className="text-2xl font-bold text-yellow-600 mb-4">
-              VIDANGE
+            TRAVAUX LOURDS
             </div>
             <span className="text-sm">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Voluptate tempore eligendi magnam distinctio molestias. Incidunt
-              at consequuntur consequatur officiis repudiandae! Culpa cum vel
-              tenetur itaque eius provident voluptatum similique impedit?
+              {service.ServiceHigh}
             </span>
           </div>
           <button className="w-full text-lg h-16 text-white font-extrabold bg-yellow-600 rounded-lg">
-            à partir de <span className="text-4xl">55€</span>
+            à partir de <span className="text-4xl">{service.ServiceHighPrice}€</span>
           </button>
         </div>
         <div className="bg-white">
@@ -73,17 +68,14 @@ export default function Activities({activities}) {
             />
           <div className="px-10 py-6 mb-10 text-center">
             <div className="text-2xl font-bold text-red-500 mb-4">
-              NETTOYAGE
+              DIVERS 
             </div>
             <span className="text-sm">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Voluptate tempore eligendi magnam distinctio molestias. Incidunt
-              at consequuntur consequatur officiis repudiandae! Culpa cum vel
-              tenetur itaque eius provident voluptatum similique impedit?
+              {service.OtherService}
             </span>
           </div>
           <button className="w-full text-lg h-16 text-white font-extrabold bg-red-500 rounded-lg">
-            à partir de <span className="text-4xl">35€</span>
+            à partir de <span className="text-4xl">{service.OtherServicePrice}€</span>
           </button>
         </div>
       </div>

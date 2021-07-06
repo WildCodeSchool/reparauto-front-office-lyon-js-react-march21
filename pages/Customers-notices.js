@@ -138,7 +138,6 @@ export default function Avis({ reviews }) {
 }
 
 export async function getStaticProps() {
-  //const reviewsUrl = process.env.NEXT_PUBLIC_REVIEWS_URL;
   const res = await axios.get(process.env.NEXT_PUBLIC_REVIEWS_URL);
   const reviews = res.data;
 
