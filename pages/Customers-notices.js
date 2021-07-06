@@ -1,8 +1,9 @@
-
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import ReactStars from 'react-rating-stars-component';
 import axios from 'axios';
+import { motion } from 'framer-motion';
+
 // import { ToastProvider, useToasts } from 'react-toast-notifications';
 export default function Avis({ reviews }) {
   const {
@@ -54,7 +55,12 @@ export default function Avis({ reviews }) {
   };
 
   return (
-    <div className="flex justify-center sm:flex-row md:flex flex-col-reverse">
+    <motion.div
+    initial={{ opacity:0}}
+    animate={{ opacity: 1}}
+    exit={{opacity:0}}
+    transition={{duration:1.1}}
+    className="flex justify-center sm:flex-row md:flex flex-col-reverse">
       <div>
         {reviews.map((review) => (
           <div className="max-w-md mb-20 md:m-6 bg-white rounded-xl shadow-lg overflow-hidden md:max-w-xl my-10 ">
@@ -133,7 +139,7 @@ export default function Avis({ reviews }) {
           </div>
         </form>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

@@ -2,10 +2,16 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import axios from 'axios'
+import { motion } from 'framer-motion';
 
 export default function Occasions({occasionCars}) {
   return (
-    <div className="md:flex flex-col ">
+    <motion.div
+    initial={{ opacity:0}}
+    animate={{ opacity: 1}}
+    exit={{opacity:0}}
+    transition={{duration:1.1}}
+    className="md:flex flex-col ">
       {occasionCars.map((occasion)=> (
       <div className="md:flex mt-2 ">
         <div className="bg-white w-3/5 md:w-1/3 mt-10  md:mx-20 m-auto border-1  border-dashed border-gray-100 shadow-lg hover:shadow-2xl rounded-lg overflow-hidden ">
@@ -27,12 +33,12 @@ export default function Occasions({occasionCars}) {
         </div>
       </div>
       ))}
-    </div>
+    </motion.div>
   );
 }
 
 export async function getStaticProps() {
-  const res = await axios.get('http://localhost:1337/second-hand-cars');
+  const res = await axios.get(process.env.NEXT_PUBLIC_OCCASION_URL);
   const occasionCars = res.data;
 
   return {

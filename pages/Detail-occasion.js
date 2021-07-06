@@ -1,12 +1,16 @@
 import Image from 'next/image';
 import axios from 'axios'
-//import fs from 'fs';
-//require('dotenv').config()
+import { motion } from 'framer-motion';
 
 // eslint-disable-next-line camelcase
 export default function Detail_occasions({occasionCars}) {
   return (
-    <div className="my-10">
+    <motion.div
+    initial={{ opacity:0}}
+    animate={{ opacity: 1}}
+    exit={{opacity:0}}
+    transition={{duration:1.1}}
+    className="my-10">
     {occasionCars.map((occasion) => (
       <div className="bg-white w-96 m-auto border-1  border-dashed border-gray-100 shadow-md rounded-lg overflow-hidden">
         <div className="slider">
@@ -72,19 +76,19 @@ export default function Detail_occasions({occasionCars}) {
           <br />
           <h3>Description:</h3>
           <p className="text-gray-700"> {occasion.description}</p>
-          <p className=" mt-3 text-gray-700">Prix : {occasion.prix} TTC{' '}</p>
+          <p className=" mt-3 text-gray-700">Prix : {occasion.price} TTC{' '}</p>
 
           <div className="mt-8 mb-3" />
         </div>
       </div>
     ))};
-    </div>
+    </motion.div>
   )
 }
 
 
 export async function getStaticProps() {
-  const res = await axios.get('http://localhost:1337/second-hand-cars');
+  const res = await axios.get(process.env.NEXT_PUBLIC_OCCASION_URL);
   const occasionCars = res.data;
   if (!data) {
     return {

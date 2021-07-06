@@ -1,15 +1,16 @@
 import 'tailwindcss/tailwind.css';
 import Layout from '../components/Layout'
 import ('../styles/globals.css');
-// import { ToastProvider, useToasts } from 'react-toast-notifications';
+import { AnimatePresence } from "framer-motion";
+import 'react-datepicker/dist/react-datepicker.css'
 
 function MyApp({ Component, pageProps }) {
   return (
+    <AnimatePresence >
     <Layout>
-      
       <Component {...pageProps} />
-      
     </Layout>
+    </AnimatePresence>
   );
 }
 
