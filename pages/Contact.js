@@ -1,4 +1,5 @@
 /* eslint-disable prettier/prettier */
+import { motion} from 'framer-motion';
 import { useForm } from 'react-hook-form';
 
 export default function Contact() {
@@ -12,8 +13,12 @@ export default function Contact() {
   };
 
   return (
-    
-    <div className="flex flex-col md:mt-10 sm:mt-0 justify-center ">
+    <motion.div
+    initial={{ opacity:0}}
+    animate={{ opacity: 1}}
+    exit={{opacity:0}}
+    transition={{duration:1.1}}
+    className="flex flex-col md:mt-10 sm:mt-0 justify-center ">
       <div className="h-full sm:max-w-xl sm:mx-auto">
         <div className="flex flex-col item-center shadow-lg ">
           <div className="bg-white flex justify-center md:rounded-t-xl sm:py-6 md:py-6 hover:shadow-lg px-14">
@@ -100,6 +105,6 @@ export default function Contact() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

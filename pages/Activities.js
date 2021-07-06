@@ -2,10 +2,17 @@
 import Image from 'next/image';
 import Head from 'next/head';
 import axios from 'axios';
+import { motion } from 'framer-motion';
 
 
 export default function Activities({services}) {
   return (
+    <motion.div
+    initial={{ opacity:0}}
+    animate={{ opacity: 1}}
+    exit={{opacity:0}}
+    transition={{duration:1.1}}
+    >
     <main className="px-3 mb-10 ">
       <div className="text-4xl sm:text-5xl text-center my-10">
         Nos prestations
@@ -78,6 +85,7 @@ export default function Activities({services}) {
       </div>
         ))}
     </main>
+    </motion.div>
   );
 }
 
