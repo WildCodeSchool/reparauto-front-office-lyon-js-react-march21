@@ -1,7 +1,8 @@
 /* eslint-disable prettier/prettier */
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
-import {_app} from './_app'
+import {_app} from './_app';
+import { useToasts } from 'react-toast-notifications'
 
 // require('dotenv').config();
 
@@ -31,6 +32,8 @@ export default function Contact() {
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  const { addToast } = useToasts()
 
   const onSubmit = (data) => {
 
@@ -82,6 +85,10 @@ emailer.sendMail(
         })
           .then(function (reponse) {
             // On traite la suite une fois la réponse obtenue
+            addToast('Votre mail a bien été envoyé, je vous repondrais dés que possible, merci !', {
+              appearance:'success',
+              autoDismiss: true,
+            })
             console.log(reponse.data);
           })
           .catch(function (erreur) {

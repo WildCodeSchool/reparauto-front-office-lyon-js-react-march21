@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import ReactStars from 'react-rating-stars-component';
 import axios from 'axios';
-// import { ToastProvider, useToasts } from 'react-toast-notifications';
+import { useToasts } from 'react-toast-notifications';
+
+
+
 export default function Avis({ reviews }) {
   const {
     register,
@@ -12,6 +15,8 @@ export default function Avis({ reviews }) {
     reset,
   } = useForm();
 
+  const { addToast } = useToasts()
+
   // try react star handling
   const [starRating, setStarRating] = useState(null);
 
@@ -20,8 +25,6 @@ export default function Avis({ reviews }) {
   };
   const onSubmit = (data) => {
     // console.log(data);
-    console.log(noticesUrl);
-    console.log(envTest);
     data.rating &&
       axios({
         method: 'post',
@@ -35,6 +38,7 @@ export default function Avis({ reviews }) {
       })
         .then(function (reponse) {
           // On traite la suite une fois la réponse obtenue
+          
           console.log(reponse);
         })
         .catch(function (erreur) {
@@ -43,14 +47,16 @@ export default function Avis({ reviews }) {
         });
     if (data.rating !== undefined) {
       // setStarRating(true)
-      window.alert(
-        `Merci ${data.userNameRequired}, votre message a bien été envoyé avec une note de ${data.rating} étoiles !`
-      );
+      addToast(`Merci ${data.userNameRequired}, votre message a bien été envoyé avec une note de ${data.rating} étoiles !`, {
+        appearance:'success',
+        autoDismiss: true,
+      })
     } else {
       //  setStarRating(false);
-      window.alert(
-        'Tout les champs et une note doivent être enregistrés pour envoyer le formulaire'
-      );
+      addToast('Tout les champs et une note doivent être enregistrés pour envoyer le formulaire', {
+        appearance:'error',
+        autoDismiss: false,
+      });
     }
   };
 

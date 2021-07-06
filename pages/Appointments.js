@@ -3,12 +3,16 @@ import { useForm, Controller } from 'react-hook-form';
 import Calendar from 'react-calendar'
 import {useState} from'react'
 import axios from 'axios';
+import { useToasts } from 'react-toast-notifications';
+
 
 
 export default function Appointements() {
 
   const {register, handleSubmit, control, formState: { errors },} = useForm();
   const [date, setDate] = useState(new Date())
+
+  const { addToast } = useToasts()
 
   const onChange = date => {
     setDate(date)
@@ -30,7 +34,11 @@ export default function Appointements() {
         AppointmentsImmatriculation: data.immatriculation,
     }})
     .then(function (response) {
-      console.log(response)
+      console.log(response),
+      addToast(`Merci M.${data.lastName}, votre demande de rendez-vous a bien été prise en compte pour le ${data.date}`, {
+        appearance:'success',
+        autoDismiss: true,
+      })
     
     })
   .catch((err) => console.log(err))
