@@ -68,7 +68,7 @@ emailer.sendMail(
       console.log(data);
         axios({
           method: 'post',
-          url: 'http://localhost:1337/contact-mails',
+          url: process.env.NEXT_PUBLIC_CONTACT_URL,
           data: {
             ContactContent: data.ContactContent,
             UserEmail: data.UserEmail,
