@@ -1,9 +1,8 @@
 /* eslint-disable prettier/prettier */
-import { motion} from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
-// import {_app} from './_app';
-import { useToasts } from 'react-toast-notifications'
+import { useToasts } from 'react-toast-notifications';
 
 // require('dotenv').config();
 
@@ -15,7 +14,6 @@ const {
 
 // require('dotenv').config();
 
-
 /*
 {
   firstName: "aaaa",
@@ -26,7 +24,6 @@ const {
   }
 */
 
-
 export default function Contact() {
   const {
     register,
@@ -34,9 +31,39 @@ export default function Contact() {
     formState: { errors },
   } = useForm();
 
-  const { addToast } = useToasts()
+  const { addToast } = useToasts();
 
   const onSubmit = (data) => {
+    console.log(data);
+    axios({
+      method: 'post',
+      url: process.env.NEXT_PUBLIC_CONTACT_URL,
+      data: {
+        ContactContent: data.ContactContent,
+        UserEmail: data.UserEmail,
+        CarDescription: data.CarDescription,
+        ContactPhotos: data.ContactPhotos,
+        ContactImmat: data.ContactImmat,
+        ContactModel: data.ContactModel,
+        ContactBrand: data.ContactBrand,
+      },
+    })
+      .then(function (reponse) {
+        // On traite la suite une fois la réponse obtenue
+        addToast(
+          'Votre mail a bien été envoyé, je vous répondrais dés que possible, merci !',
+          {
+            appearance: 'success',
+            autoDismiss: true,
+          }
+        );
+        console.log(reponse.data);
+      })
+      .catch(function (erreur) {
+        // On traite ici les erreurs éventuellement survenues
+        console.log(erreur);
+      });
+  };
 
       console.log(data);
 
@@ -138,7 +165,7 @@ export default function Contact() {
                     <input
                       {...register("ContactImmat", {
                   required: true,
-                 minLength: { value: 3 },
+                  minLength: { value: 3 },
                 })}
                       className="p-3 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
                       placeholder="Immatriculation"
@@ -177,4 +204,3 @@ export default function Contact() {
           </motion.div>
   );
 }
-

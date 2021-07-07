@@ -1,14 +1,10 @@
 import { useForm, Controller } from 'react-hook-form';
 import { motion } from 'framer-motion';
 import ReactDatePicker from 'react-datepicker';
-// import {useState} from'react';
-// import Calendar from 'react-calendar'
-// import { useState } from 'react';
 import axios from 'axios';
 import { useToasts } from 'react-toast-notifications';
 
 export default function Appointements() {
-  // const [date, setDate] = useState()
   const {
     register,
     handleSubmit,
