@@ -5,6 +5,10 @@ import axios from 'axios';
 import { motion } from 'framer-motion';
 
 // import { ToastProvider, useToasts } from 'react-toast-notifications';
+import { useToasts } from 'react-toast-notifications';
+
+
+
 export default function Avis({ reviews }) {
   const {
     register,
@@ -14,6 +18,8 @@ export default function Avis({ reviews }) {
     reset,
   } = useForm();
 
+  const { addToast } = useToasts()
+
   // try react star handling
   const [starRating, setStarRating] = useState(null);
 
@@ -21,7 +27,7 @@ export default function Avis({ reviews }) {
     setValue('rating', newRating);
   };
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
     data.rating &&
       axios({
         method: 'post',
@@ -35,6 +41,7 @@ export default function Avis({ reviews }) {
       })
         .then(function (reponse) {
           // On traite la suite une fois la réponse obtenue
+          
           console.log(reponse);
         })
         .catch(function (erreur) {
@@ -43,14 +50,16 @@ export default function Avis({ reviews }) {
         });
     if (data.rating !== undefined) {
       // setStarRating(true)
-      window.alert(
-        `Merci ${data.userNameRequired}, votre message a bien été envoyé avec une note de ${data.rating} étoiles !`
-      );
+      addToast(`Merci ${data.userNameRequired}, votre message a bien été envoyé avec une note de ${data.rating} étoiles !`, {
+        appearance:'success',
+        autoDismiss: true,
+      })
     } else {
       //  setStarRating(false);
-      window.alert(
-        'Tout les champs et une note doivent être enregistrés pour envoyer le formulaire'
-      );
+      addToast('Tout les champs et une note doivent être enregistrés pour envoyer le formulaire', {
+        appearance:'error',
+        autoDismiss: false,
+      });
     }
   };
 
@@ -95,14 +104,15 @@ export default function Avis({ reviews }) {
 
                     <div className="flex space-x-3">
                       <ReactStars
-                        size={50}
+                        size={65}
                         activeColor="#ffd700"
-                        onChange={ratingChanged}
-                        value="0"
-                        edit
+                        value={starRating}
+                        onChange={(setStarRating, ratingChanged)}
                         type="input"
+                        required
                       />
                     </div>
+                    {errors.starRating}
                   </div>
                   <div className="w-3/4 flex flex-col">
                     <textarea
@@ -113,7 +123,7 @@ export default function Avis({ reviews }) {
                     />
                     <input
                       placeholder="Votre email:"
-                      {...register('email', { required: true })}
+                      {...register('clientEmail', { required: true })}
                       rows="3"
                       className="p-4 text-gray-500 my-2 rounded-xl resize-none hover:shadow-lg"
                       type="email"
@@ -129,7 +139,10 @@ export default function Avis({ reviews }) {
                         Cette information est requise pour l'envoi du formulaire
                       </span>
                     )}
-                    <button className="py-3 my-8 text-lg bg-gradient-to-r from-yellow-500 to-red-600 rounded-xl text-white hover:shadow-lg">
+                    <button
+                      type="submit"
+                      className="py-3 my-8 text-lg bg-gradient-to-r from-yellow-500 to-red-600 rounded-xl text-white hover:shadow-lg"
+                    >
                       Envoyer
                     </button>
                   </div>

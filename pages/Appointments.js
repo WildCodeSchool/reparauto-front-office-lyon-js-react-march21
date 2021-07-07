@@ -2,13 +2,49 @@ import { useForm, Controller } from 'react-hook-form';
 import { motion } from 'framer-motion';
 import ReactDatePicker from 'react-datepicker';
 // import {useState} from'react';
+import Calendar from 'react-calendar'
+import {useState} from'react'
+import axios from 'axios';
+import { useToasts } from 'react-toast-notifications';
+
+
 
 export default function Appointements() {
   // const [date, setDate] = useState()
   const {register, handleSubmit, control, formState: { errors },} = useForm();
+  const [date, setDate] = useState(new Date())
+
+  const { addToast } = useToasts()
+
+  const onChange = date => {
+    setDate(date)
+
+  }
+
   const onSubmit = (data) => {
-    console.log(data);
-  };
+    console.log(data)
+    axios({
+      method:'post',
+      url:(process.env.NEXT_PUBLIC_APPOINTMENTS_URL),
+      data: {
+        Brand: data.Brand,
+        Model: data.Model,
+        AppointmentDate: data.date,
+        AppointmentsEmail: data.email,
+        AppointmentsName: data.lastName,
+        AppointmentsContent: data.content,
+        AppointmentsImmatriculation: data.immatriculation,
+    }})
+    .then(function (response) {
+      console.log(response),
+      addToast(`Merci M.${data.lastName}, votre demande de rendez-vous a bien été prise en compte pour le ${data.date}`, {
+        appearance:'success',
+        autoDismiss: true,
+      })
+    
+    })
+  .catch((err) => console.log(err))
+};
 
   return (
     <motion.div
