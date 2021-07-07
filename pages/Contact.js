@@ -38,7 +38,8 @@ export default function Contact() {
     console.log(data);
     axios({
       method: 'post',
-      url: process.env.NEXT_PUBLIC_CONTACT_URL,
+      // url: process.env.NEXT_PUBLIC_CONTACT_URL,
+      url: '/api/contact',
       data: {
         ContactContent: data.ContactContent,
         UserEmail: data.UserEmail,
