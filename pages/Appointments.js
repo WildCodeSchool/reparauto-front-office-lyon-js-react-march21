@@ -33,7 +33,7 @@ export default function Appointements() {
         AppointmentsImmatriculation: data.immatriculation,
       },
     })
-      .then( (response) {
+      .then(function (response) {
         console.log(response),
           addToast(
             `Merci M.${data.lastName}, votre demande de rendez-vous a bien été prise en compte pour le ${data.date}`,
@@ -43,7 +43,9 @@ export default function Appointements() {
             }
           );
       })
-      .catch((err) => console.log(err));
+      .catch(function (err) {
+        console.log(err);
+      });
   };
 
   return (

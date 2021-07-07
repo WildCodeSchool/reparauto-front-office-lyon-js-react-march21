@@ -38,13 +38,12 @@ export default function Contact() {
 
   const onSubmit = (data) => {
 
-  
-  
-    
       console.log(data);
+
         axios({
           method: 'post',
-          url: process.env.NEXT_PUBLIC_CONTACT_URL,
+         // url: process.env.NEXT_PUBLIC_CONTACT_URL,
+         url: '/api/contact',
           data: {
             ContactContent: data.ContactContent,
             UserEmail: data.UserEmail,
@@ -55,7 +54,7 @@ export default function Contact() {
             ContactBrand: data.ContactBrand,
           },
         })
-          .then(function (reponse) {
+          .then(function(reponse) {
             // On traite la suite une fois la réponse obtenue
             addToast('Votre mail a bien été envoyé, je vous répondrais dés que possible, merci !', {
               appearance:'success',
@@ -63,7 +62,7 @@ export default function Contact() {
             })
             console.log(reponse.data);
           })
-          .catch(function (erreur) {
+          .catch(function(erreur) {
             // On traite ici les erreurs éventuellement survenues
             console.log(erreur);
           });
