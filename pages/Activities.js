@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import Image from 'next/image';
 import Head from 'next/head';
 import axios from 'axios';
