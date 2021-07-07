@@ -16,11 +16,6 @@ export default function Appointements() {
 
   const { addToast } = useToasts()
 
-  const onChange = date => {
-    setDate(date)
-
-  }
-
   const onSubmit = (data) => {
     console.log(data)
     axios({
