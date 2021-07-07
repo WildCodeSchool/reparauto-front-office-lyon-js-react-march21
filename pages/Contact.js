@@ -5,16 +5,6 @@ import axios from 'axios';
 // import {_app} from './_app';
 import { useToasts } from 'react-toast-notifications'
 
-// require('dotenv').config();
-
-/*
-const {
-  REACT_APP_API_BASE_URL,
-} = require('../env');
-*/
-
-// require('dotenv').config();
-
 
 /*
 {

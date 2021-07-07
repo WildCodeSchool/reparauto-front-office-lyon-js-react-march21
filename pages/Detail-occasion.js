@@ -68,7 +68,6 @@ export default function Detail_occasions({occasionCars}) {
         <div className="p-4">
           <p className="mb-1 text-gray-900 font-semibold">{occasion.titre}</p>
           <br />
-          <h3 className="mb-1 text-gray-900 font-semibold"></h3>
           <p className="text-gray-700">Marque: {occasion.marque}</p>
           <br />
           <p className="text-gray-700">Modèle: {occasion.model}</p>
