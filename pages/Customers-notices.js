@@ -4,12 +4,8 @@ import ReactStars from 'react-rating-stars-component';
 import axios from 'axios';
 import { motion } from 'framer-motion';
 
-require('dotenv').config();
-
 // import { ToastProvider, useToasts } from 'react-toast-notifications';
 import { useToasts } from 'react-toast-notifications';
-
-
 
 export default function Avis({ reviews }) {
   const {
@@ -17,10 +13,9 @@ export default function Avis({ reviews }) {
     handleSubmit,
     formState: { errors },
     setValue,
-    reset,
   } = useForm();
 
-  const { addToast } = useToasts()
+  const { addToast } = useToasts();
 
   // try react star handling
   const [starRating, setStarRating] = useState(null);
@@ -33,7 +28,7 @@ export default function Avis({ reviews }) {
     data.rating &&
       axios({
         method: 'post',
-        url: (process.env.NEXT_PUBLIC_REVIEWS_URL),
+        url: process.env.NEXT_PUBLIC_REVIEWS_URL,
         data: {
           Content: data.content,
           ClientEmail: data.ClientEmail,
@@ -43,7 +38,7 @@ export default function Avis({ reviews }) {
       })
         .then(function (reponse) {
           // On traite la suite une fois la réponse obtenue
-          
+
           console.log(reponse);
         })
         .catch(function (erreur) {
@@ -52,26 +47,33 @@ export default function Avis({ reviews }) {
         });
     if (data.rating !== undefined) {
       // setStarRating(true)
-      addToast(`Merci ${data.userNameRequired}, votre message a bien été envoyé avec une note de ${data.rating} étoiles !`, {
-        appearance:'success',
-        autoDismiss: true,
-      })
+      addToast(
+        `Merci ${data.userNameRequired}, votre message a bien été envoyé avec une note de ${data.rating} étoiles !`,
+        {
+          appearance: 'success',
+          autoDismiss: true,
+        }
+      );
     } else {
       //  setStarRating(false);
-      addToast('Tout les champs et une note doivent être enregistrés pour envoyer le formulaire', {
-        appearance:'error',
-        autoDismiss: false,
-      });
+      addToast(
+        'Tout les champs et une note doivent être enregistrés pour envoyer le formulaire',
+        {
+          appearance: 'error',
+          autoDismiss: false,
+        }
+      );
     }
   };
 
   return (
     <motion.div
-    initial={{ opacity:0}}
-    animate={{ opacity: 1}}
-    exit={{opacity:0}}
-    transition={{duration:1.1}}
-    className="flex justify-center sm:flex-row md:flex flex-col-reverse">
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1.1 }}
+      className="flex justify-center sm:flex-row md:flex flex-col-reverse"
+    >
       <div>
         {reviews.map((review) => (
           <div className="max-w-md mb-20 md:m-6 bg-white rounded-xl shadow-lg overflow-hidden md:max-w-xl my-10 ">
