@@ -3,24 +3,26 @@ import { motion } from 'framer-motion';
 import ReactDatePicker from 'react-datepicker';
 // import {useState} from'react';
 // import Calendar from 'react-calendar'
-import {useState} from'react'
+// import { useState } from 'react';
 import axios from 'axios';
 import { useToasts } from 'react-toast-notifications';
 
-
-
 export default function Appointements() {
   // const [date, setDate] = useState()
-  const {register, handleSubmit, control, formState: { errors },} = useForm();
-  const [date, setDate] = useState(new Date())
+  const {
+    register,
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useForm();
 
-  const { addToast } = useToasts()
+  const { addToast } = useToasts();
 
   const onSubmit = (data) => {
-    console.log(data)
+    console.log(data);
     axios({
-      method:'post',
-      url:(process.env.NEXT_PUBLIC_APPOINTMENTS_URL),
+      method: 'post',
+      url: process.env.NEXT_PUBLIC_APPOINTMENTS_URL,
       data: {
         Brand: data.Brand,
         Model: data.Model,
@@ -29,25 +31,29 @@ export default function Appointements() {
         AppointmentsName: data.lastName,
         AppointmentsContent: data.content,
         AppointmentsImmatriculation: data.immatriculation,
-    }})
-    .then(function (response) {
-      console.log(response),
-      addToast(`Merci M.${data.lastName}, votre demande de rendez-vous a bien été prise en compte pour le ${data.date}`, {
-        appearance:'success',
-        autoDismiss: true,
-      })
-    
+      },
     })
-  .catch((err) => console.log(err))
-};
+      .then( (response) {
+        console.log(response),
+          addToast(
+            `Merci M.${data.lastName}, votre demande de rendez-vous a bien été prise en compte pour le ${data.date}`,
+            {
+              appearance: 'success',
+              autoDismiss: true,
+            }
+          );
+      })
+      .catch((err) => console.log(err));
+  };
 
   return (
     <motion.div
-    initial={{ opacity:0}}
-    animate={{ opacity: 1}}
-    exit={{opacity:0}}
-    transition={{duration:1.1}}
-    className="flex flex-col md:mt-10 sm:mt-0 justify-center ">
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1.1 }}
+      className="flex flex-col md:mt-10 sm:mt-0 justify-center "
+    >
       <div className="h-full sm:max-w-xl sm:mx-auto">
         <div className="flex flex-col item-center shadow-lg ">
           <div className="bg-white flex justify-center md:rounded-t-xl sm:py-6 md:py-6  hover:shadow-l">
@@ -57,10 +63,7 @@ export default function Appointements() {
           </div>
           <div className="bg-gray-200 max-w-80 flex flex-col items-center md:rounded-b-xl ">
             <div className="flex flex-col items-center py-2 space-y-3" />
-            <form
-              onSubmit={handleSubmit(onSubmit)}
-              className=" flex flex-col "
-            >
+            <form onSubmit={handleSubmit(onSubmit)} className=" flex flex-col ">
               <input
                 {...register('firstName', {
                   pattern: /^[A-Za-z]+$/i,
@@ -113,26 +116,27 @@ export default function Appointements() {
                   minLength: { value: 1 },
                 })}
                 className="p-3 h-24 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
-                placeholder='Travaux à réaliser'
+                placeholder="Travaux à réaliser"
                 name="message"
                 type="text"
               />
               {errors.message && <p>Message requis</p>}
-              <Controller 
-              name="appointmentDate"
-              control={control}
-              render={({field:{onChange, value}}) =>(
-              <ReactDatePicker
-                onChange={onChange}
-                selected={value}
-                className="p-3 my-2 text-gray-500 rounded-xl hover:shadow-lg"
-                placeholderText="Date de rendez-vous souhaité"/>)}
+              <Controller
+                name="appointmentDate"
+                control={control}
+                render={({ field: { onChange, value } }) => (
+                  <ReactDatePicker
+                    onChange={onChange}
+                    selected={value}
+                    className="p-3 my-2 text-gray-500 rounded-xl hover:shadow-lg"
+                    placeholderText="Date de rendez-vous souhaité"
+                  />
+                )}
               />
               <input
                 type="file"
                 className="py-3 my-2 text-lg bg-white  rounded-xl text-gray-800 hover:shadow-lg"
-              >
-              </input>
+              />
               <button
                 type="submit"
                 className="py-4 mt-2 mb-20 text-lg bg-gradient-to-r from-yellow-400 to-red-500 rounded-xl text-gray-800 hover:shadow-lg"
