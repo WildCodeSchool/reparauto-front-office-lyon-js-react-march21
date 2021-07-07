@@ -4,6 +4,15 @@ import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { useToasts } from 'react-toast-notifications';
 
+// require('dotenv').config();
+
+/*
+const {
+  REACT_APP_API_BASE_URL,
+} = require('../env');
+*/
+
+// require('dotenv').config();
 
 /*
 {
@@ -16,6 +25,7 @@ import { useToasts } from 'react-toast-notifications';
 */
 
 export default function Contact() {
+  
   const {
     register,
     handleSubmit,
@@ -52,40 +62,12 @@ export default function Contact() {
       })
       .catch(function (erreur) {
         // On traite ici les erreurs éventuellement survenues
-        console.log(erreur);
+         console.log(erreur);
       });
   };
 
-      console.log(data);
 
-        axios({
-          method: 'post',
-         // url: process.env.NEXT_PUBLIC_CONTACT_URL,
-         url: '/api/contact',
-          data: {
-            ContactContent: data.ContactContent,
-            UserEmail: data.UserEmail,
-            CarDescription: data.CarDescription,
-            ContactPhotos: data.ContactPhotos,
-            ContactImmat: data.ContactImmat,
-            ContactModel: data.ContactModel,
-            ContactBrand: data.ContactBrand,
-          },
-        })
-          .then(function(reponse) {
-            // On traite la suite une fois la réponse obtenue
-            addToast('Votre mail a bien été envoyé, je vous répondrais dés que possible, merci !', {
-              appearance:'success',
-              autoDismiss: true,
-            })
-            console.log(reponse.data);
-          })
-          .catch(function(erreur) {
-            // On traite ici les erreurs éventuellement survenues
-            console.log(erreur);
-          });
-        }
-        
+              
         return (
           <motion.div
             initial={{ opacity:0}}
@@ -194,4 +176,4 @@ export default function Contact() {
             </div>
           </motion.div>
   );
-}
+              }
