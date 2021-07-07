@@ -24,7 +24,6 @@ export default function Avis({ reviews }) {
     setValue('rating', newRating);
   };
   const onSubmit = (data) => {
-    // console.log(data);
     data.rating &&
       axios({
         method: 'post',
@@ -35,16 +34,8 @@ export default function Avis({ reviews }) {
           Rating: data.rating,
           ReviewsClientName: data.userNameRequired,
         },
-      })
-        .then((reponse) {
-          // On traite la suite une fois la réponse obtenue
+      });
 
-          console.log(reponse);
-        })
-        .catch((erreur) {
-          // On traite ici les erreurs éventuellement survenues
-          console.log(erreur);
-        });
     if (data.rating !== undefined) {
       // setStarRating(true)
       addToast(
