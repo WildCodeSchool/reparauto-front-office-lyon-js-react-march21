@@ -11,9 +11,9 @@ export default function Activities({ services }) {
       transition={{ duration: 1.1 }}
     >
       <main className="px-3 mb-10 ">
-        <div className="text-4xl sm:text-5xl text-center my-10">
+        <h1 className="text-4xl sm:text-5xl text-center my-10">
           Nos prestations
-        </div>
+        </h1>
         {services.map((service) => (
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl m-auto">
             <div className="bg-white h-full  shadow-lg transform hover:shadow-2xl transition duration-500 transform hover:scale-105 transition duration-500">
@@ -26,9 +26,9 @@ export default function Activities({ services }) {
                 layout="responsive"
               />
               <div className="px-10 py-12 mb-20 text-center">
-                <div className="text-2xl font-bold text-yellow-500 mb-10">
+                <h1 className="text-2xl font-bold text-yellow-500 mb-10">
                   TRAVAUX SIMPLES
-                </div>
+                </h1>
                 <span className="text-sm">{service.ServiceLow}</span>
               </div>
               <button
@@ -49,9 +49,9 @@ export default function Activities({ services }) {
                 layout="responsive"
               />
               <div className="px-10 py-12 text-center">
-                <div className="text-2xl font-bold text-yellow-600 mb-10">
+                <h1 className="text-2xl font-bold text-yellow-600 mb-10">
                   TRAVAUX LOURDS
-                </div>
+                </h1>
                 <span className="text-sm">{service.ServiceHigh}</span>
               </div>
               <button
@@ -72,9 +72,9 @@ export default function Activities({ services }) {
                 layout="responsive"
               />
               <div className="px-10 py-12  text-center">
-                <div className="text-2xl font-bold text-red-500 mb-10">
+                <h1 className="text-2xl font-bold text-red-500 mb-10">
                   DIVERS
-                </div>
+                </h1>
                 <span className="text-sm">{service.OtherService}</span>
               </div>
               <button
