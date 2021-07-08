@@ -63,9 +63,12 @@ export default function Appointements() {
               Prenons rendez-vous !
             </h2>
           </div>
-          <div className="bg-gray-200 max-w-80 flex flex-col items-center md:rounded-b-xl ">
+          <div className="bg-gray-200 flex flex-col items-center md:rounded-b-xl ">
             <div className="flex flex-col items-center py-2 space-y-3" />
-            <form onSubmit={handleSubmit(onSubmit)} className=" flex flex-col ">
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              className=" flex flex-col mx-10"
+            >
               <input
                 {...register('firstName', {
                   pattern: /^[A-Za-z]+$/i,
@@ -141,7 +144,7 @@ export default function Appointements() {
               />
               <button
                 type="submit"
-                className="py-4 mt-2 mb-20 text-lg bg-gradient-to-r from-yellow-400 to-red-500 rounded-xl text-gray-800 hover:shadow-lg"
+                className="py-4 mx-10 mt-2 mb-10 text-lg bg-gradient-to-r from-yellow-400 to-red-500 rounded-xl text-gray-800 hover:shadow-lg"
               >
                 Envoyez
               </button>
