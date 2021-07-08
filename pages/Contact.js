@@ -3,28 +3,10 @@ import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { useToasts } from 'react-toast-notifications';
-
-// require('dotenv').config();
-
-/*
-const {
-  REACT_APP_API_BASE_URL,
-} = require('../env');
-*/
-
-// require('dotenv').config();
-
-/*
-{
-  firstName: "aaaa",
- lastName: "aaaa",
-  email: "maupied69@hotmail.com",
-   immatriculation: "aaaaaa",
-    message: "a"
-  }
-*/
+// import { app } from "./_app"
 
 export default function Contact() {
+
   
   const {
     register,
@@ -36,6 +18,7 @@ export default function Contact() {
 
   const onSubmit = (data) => {
     console.log(data);
+    
     axios({
       method: 'post',
       // url: process.env.NEXT_PUBLIC_CONTACT_URL,
@@ -44,7 +27,7 @@ export default function Contact() {
         ContactContent: data.ContactContent,
         UserEmail: data.UserEmail,
         CarDescription: data.CarDescription,
-        ContactPhotos: data.ContactPhotos,
+        ContactPhotos: data.ContactPhotos[0].name,
         ContactImmat: data.ContactImmat,
         ContactModel: data.ContactModel,
         ContactBrand: data.ContactBrand,
@@ -117,7 +100,7 @@ export default function Contact() {
                       {...register("ContactModel", {
                  // pattern: /^[A-Za-z]+$/i,
                   required: true,
-                  minLength: { value: 3 },
+                  minLength: { value: 2 },
                 })}
                       className="p-3 my-2 text-gray-500 rounded-xl resize-none  hover:shadow-lg"
                       name="ContactModel"

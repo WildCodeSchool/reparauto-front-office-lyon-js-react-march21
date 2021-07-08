@@ -24,9 +24,14 @@ export default function (req, res) {
   });
   const mailData = {
     from: 'joris-maupied_student2021@wilder.school',
-    to: 'maupied69@hotmail.com',
+    to: 'reparautomobilemail@gmail.com',
     subject: `${UserEmail} vous à contacté`,
-    text: `Message:${ContactContent}, Description:${CarDescription}, Photos: ${ContactPhotos}, Immatriculation: ${ContactImmat}, Modele:${ContactModel}, Marque :${ContactBrand}`,
+    text: `Message:${ContactContent},
+       Description:${CarDescription},
+       Photos: ${ContactPhotos},
+       Immatriculation: ${ContactImmat},
+        Modele:${ContactModel},
+        Marque :${ContactBrand}`,
     html: `Message:${ContactContent},</br> Description:${CarDescription},</br> Photos: ${ContactPhotos},</br> Immatriculation: ${ContactImmat},</br> Modele:${ContactModel},</br> Marque :${ContactBrand}`,
   };
   transporter.sendMail(mailData, function (err, info) {
