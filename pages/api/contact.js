@@ -23,8 +23,8 @@ export default function (req, res) {
     },
   });
   const mailData = {
-    from: 'joris-maupied_student2021@wilder.school',
-    to: 'reparautomobilemail@gmail.com',
+    from: process.env.SMTP_MAILSENDER,
+    to: process.env.SMTP_MAILRECEIVER,
     subject: `${UserEmail} vous à contacté`,
     text: `Message:${ContactContent},
        Description:${CarDescription},
