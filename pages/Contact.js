@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { useToasts } from 'react-toast-notifications';
-// import { app } from "./_app"
 
 export default function Contact() {
 
@@ -85,8 +84,8 @@ export default function Contact() {
                       type="text"
                     />
                     <input
-                      {...register("CarDescription", {
-                 // pattern: /^[A-Za-z]+$/i,
+                      {...register('CarDescription', {
+                  // pattern: /^[A-Za-z]+$/i,
                   required: true,
                   minLength: { value: 3 },
                 })}
@@ -97,8 +96,8 @@ export default function Contact() {
                     />
                     {errors.firstName && <p>Prénom requis (lettres uniquement)</p>}
                     <input
-                      {...register("ContactModel", {
-                 // pattern: /^[A-Za-z]+$/i,
+                      {...register('ContactModel', {
+                  // pattern: /^[A-Za-z]+$/i,
                   required: true,
                   minLength: { value: 2 },
                 })}
@@ -109,7 +108,7 @@ export default function Contact() {
                     />
                     {errors.lastName && <p>Nom requis (lettres uniquement)</p>}
                     <input
-                      {...register("UserEmail", {
+                      {...register('UserEmail', {
                   required: true,
                   minLength: { value: 3 },
                 })}
@@ -120,7 +119,7 @@ export default function Contact() {
                     />
                     {errors.email && <p>Email requis</p>}
                     <input
-                      {...register("ContactImmat", {
+                      {...register('ContactImmat', {
                   required: true,
                   minLength: { value: 3 },
                 })}
@@ -131,7 +130,7 @@ export default function Contact() {
                     />
                     {errors.immatriculation && <p>Immatriculation requise</p>}
                     <textarea
-                      {...register("ContactContent", {
+                      {...register('ContactContent', {
                   required: true,
                   minLength: { value: 1 },
                 })}
@@ -142,8 +141,8 @@ export default function Contact() {
                     />
                     {errors.message && <p>Message requis</p>}
                     <input
-                      {...register("ContactPhotos", {
-                  name: "ContactPhotos"
+                      {...register('ContactPhotos', {
+                  name: 'ContactPhotos',
                 })}
                       type="file"
                       className="py-4 my-2  text-lg bg-white  rounded-xl text-gray-800 hover:shadow-lg"
