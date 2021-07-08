@@ -24,7 +24,6 @@ export default function Avis({ reviews }) {
     setValue('rating', newRating);
   };
   const onSubmit = (data) => {
-    // console.log(data);
     data.rating &&
       axios({
         method: 'post',
