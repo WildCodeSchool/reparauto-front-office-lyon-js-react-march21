@@ -24,13 +24,9 @@ export default function Home() {
           alt="accueil"
           height="700px"
           width="900px"
-<<<<<<< HEAD
           priority='true'
           quality='1'
           loading='eager'
-=======
-          opacity="0.5"
->>>>>>> 1941eb49db1c48f4a4f0fc93c97e377b4882b855
         />
       </div>
     </div>
