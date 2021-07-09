@@ -1,6 +1,16 @@
 const nodemailer = require('nodemailer');
 
 export default function (req, res) {
+  console.log(req.body);
+  const {
+    ContactContent,
+    UserEmail,
+    CarDescription,
+    ContactPhotos,
+    ContactImmat,
+    ContactModel,
+    ContactBrand,
+  } = req.body;
   const transporter = nodemailer.createTransport({
     port: process.env.SMTP_PORT,
     host: process.env.SMTP_HOST,
@@ -8,15 +18,22 @@ export default function (req, res) {
       user: process.env.SMTP_USER,
       pass: process.env.SMTP_PASSWORD,
     },
-    secure: true,
+    tls: {
+      rejectUnauthorized: false,
+      secure: true,
+    },
   });
   const mailData = {
-    from: 'maupiedjoris@gmail.com',
-    to: 'maupied69@hotmail.com',
-    subject: `Message From `,
-    text: `Sent from:`,
-    html: `<div>Salut</div><p>Sent from:
-      </p>`,
+    from: process.env.SMTP_MAILSENDER,
+    to: process.env.SMTP_MAILRECEIVER,
+    subject: `${UserEmail} vous à contacté`,
+    text: `Message:${ContactContent},
+       Description:${CarDescription},
+       Photos: ${ContactPhotos},
+       Immatriculation: ${ContactImmat},
+        Modele:${ContactModel},
+        Marque :${ContactBrand}`,
+    html: `Message:${ContactContent},</br> Description:${CarDescription},</br> Photos: ${ContactPhotos},</br> Immatriculation: ${ContactImmat},</br> Modele:${ContactModel},</br> Marque :${ContactBrand}`,
   };
   transporter.sendMail(mailData, function (err, info) {
     if (err) console.log(err);
