@@ -1,16 +1,21 @@
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-console */
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import ReactStars from 'react-rating-stars-component';
 import axios from 'axios';
-// import { ToastProvider, useToasts } from 'react-toast-notifications';
+import { motion } from 'framer-motion';
+import { useToasts } from 'react-toast-notifications';
+
 export default function Avis({ reviews }) {
   const {
     register,
     handleSubmit,
     formState: { errors },
     setValue,
-    reset,
   } = useForm();
+
+  const { addToast } = useToasts();
 
   // try react star handling
   const [starRating, setStarRating] = useState(null);
@@ -18,14 +23,12 @@ export default function Avis({ reviews }) {
   const ratingChanged = (newRating) => {
     setValue('rating', newRating);
   };
+  // form data sending email
   const onSubmit = (data) => {
-    // console.log(data);
-    console.log(noticesUrl);
-    console.log(envTest);
     data.rating &&
       axios({
         method: 'post',
-        url: (process.env.NEXT_PUBLIC_REVIEWS_URL),
+        url: process.env.NEXT_PUBLIC_REVIEWS_URL,
         data: {
           Content: data.content,
           ClientEmail: data.ClientEmail,
@@ -33,32 +36,45 @@ export default function Avis({ reviews }) {
           ReviewsClientName: data.userNameRequired,
         },
       })
-        .then(function (reponse) {
+        .then((reponse) => {
           // On traite la suite une fois la réponse obtenue
+
           console.log(reponse);
         })
-        .catch(function (erreur) {
+        .catch((erreur) => {
           // On traite ici les erreurs éventuellement survenues
           console.log(erreur);
         });
     if (data.rating !== undefined) {
-      // setStarRating(true)
-      window.alert(
-        `Merci ${data.userNameRequired}, votre message a bien été envoyé avec une note de ${data.rating} étoiles !`
+      addToast(
+        `Merci ${data.userNameRequired}, votre message a bien été envoyé avec une note de ${data.rating} étoiles !`,
+        {
+          appearance: 'success',
+          autoDismiss: true,
+        }
       );
     } else {
-      //  setStarRating(false);
-      window.alert(
-        'Tout les champs et une note doivent être enregistrés pour envoyer le formulaire'
+      addToast(
+        'Tout les champs et une note doivent être enregistrés pour envoyer le formulaire',
+        {
+          appearance: 'error',
+          autoDismiss: false,
+        }
       );
     }
   };
 
   return (
-    <div className="flex justify-center sm:flex-row md:flex flex-col-reverse">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1.1 }}
+      className="flex flex-col md:mt-10 sm:mt-0 justify-center"
+    >
       <div>
         {reviews.map((review) => (
-          <div className="max-w-md mb-20 md:m-6 bg-white rounded-xl shadow-lg overflow-hidden md:max-w-xl my-10 ">
+          <div className="max-w-md mb-20 md:m-6 bg-white md:rounded-xl shadow-lg overflow-hidden md:max-w-xl my-10 ">
             <div className="p-6 md:p-4 ">
               <p>Note : {review.Rating} / 5</p>
               <div className="tracking-wide text-sm text-indigo-500 font-semibold">
@@ -74,18 +90,18 @@ export default function Avis({ reviews }) {
       </div>
       <div>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className=" py-4 flex flex-col justify-center sm:py-3">
+          <div className="h-full sm:max-w-xl sm:mx-auto mb-10 md:mb-20">
             <div className="py-3 m-auto mt-0 mb-0">
-              <div className="bg-white w-full flex flex-col rounded-xl shadow-lg">
+              <div className="bg-white w-full flex flex-col md:rounded-xl shadow-lg ">
                 <div className="px-12 py-5">
                   <h2 className="text-gray-800 text-xl font-semibold">
                     Votre avis nous intéresse !
                   </h2>
                 </div>
-                <div className="bg-gray-200 w-full flex flex-col items-center">
+                <div className="bg-gray-200 w-full flex flex-col md:rounded-xl items-center">
                   <div className="flex flex-col items-center py-3 space-y-1">
                     <span className="text-lg text-gray-800">
-                      Quelle à été la qualité du service rendu ?
+                      Quelle a été la qualité du service rendu ?
                     </span>
 
                     <div className="flex space-x-3">
@@ -138,7 +154,7 @@ export default function Avis({ reviews }) {
           </div>
         </form>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

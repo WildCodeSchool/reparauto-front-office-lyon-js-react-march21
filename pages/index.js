@@ -18,12 +18,19 @@ export default function Home() {
       </Head>
 
       
-      <div className="sm:mt-0 md:mt-10 ">
+      <div className="sm:mt-0 md:mt-0 ">
         <Image
-          src="/images/accueil-1.jpg"
+          src="/images/accueil-1mini.jpg"
           alt="accueil"
           height="700px"
           width="900px"
+<<<<<<< HEAD
+          priority='true'
+          quality='1'
+          loading='eager'
+=======
+          opacity="0.5"
+>>>>>>> 1941eb49db1c48f4a4f0fc93c97e377b4882b855
         />
       </div>
     </div>
