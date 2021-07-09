@@ -108,6 +108,7 @@ export default function Contact() {
                       type="text"
                     />
                     <input
+
                       {...register('CarDescription', {
                   // pattern: /^[A-Za-z]+$/i,
                   required: true,
@@ -120,8 +121,10 @@ export default function Contact() {
                     />
                     {errors.firstName && <p>Prénom requis (lettres uniquement)</p>}
                     <input
+
                       {...register('ContactModel', {
                   // pattern: /^[A-Za-z]+$/i,
+
                   required: true,
                   minLength: { value: 2 },
                 })}
@@ -132,7 +135,9 @@ export default function Contact() {
                     />
                     {errors.lastName && <p>Nom requis (lettres uniquement)</p>}
                     <input
+
                       {...register('UserEmail', {
+
                   required: true,
                   minLength: { value: 3 },
                 })}
@@ -143,7 +148,9 @@ export default function Contact() {
                     />
                     {errors.email && <p>Email requis</p>}
                     <input
+
                       {...register('ContactImmat', {
+
                   required: true,
                   minLength: { value: 3 },
                 })}
@@ -154,19 +161,23 @@ export default function Contact() {
                     />
                     {errors.immatriculation && <p>Immatriculation requise</p>}
                     <textarea
+
                       {...register('ContactContent', {
+
                   required: true,
                   minLength: { value: 1 },
                 })}
                       className="p-3 h-24 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
-                      placeholder="laissez nous un message"
+                      placeholder="Laissez nous un message"
                       name="ContactContent"
                       type="text"
                     />
                     {errors.message && <p>Message requis</p>}
                     <input
+
                       {...register('ContactPhotos', {
                   name: 'ContactPhotos',
+
                 })}
                       type="file"
                       // onChange={handleFiles}
