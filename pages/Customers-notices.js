@@ -105,7 +105,7 @@ export default function Avis({ reviews }) {
                 <div className="bg-gray-200 w-full flex flex-col md:rounded-xl items-center">
                   <div className="flex flex-col items-center py-3 space-y-1">
                     <span className="text-lg text-gray-800">
-                      Quelle à été la qualité du service rendu ?
+                      Quelle a été la qualité du service rendu ?
                     </span>
 
                     <div className="flex space-x-3">
