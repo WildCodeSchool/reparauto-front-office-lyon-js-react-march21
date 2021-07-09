@@ -153,7 +153,7 @@ export default function Contact() {
                   minLength: { value: 1 },
                 })}
                       className="p-3 h-24 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
-                      placeholder="laissez nous un message"
+                      placeholder="Laissez nous un message"
                       name="ContactContent"
                       type="text"
                     />
