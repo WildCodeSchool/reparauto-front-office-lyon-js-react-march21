@@ -1,74 +1,56 @@
 /* eslint-disable prettier/prettier */
-import { motion} from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
-// import {_app} from './_app';
-import { useToasts } from 'react-toast-notifications'
-
-// require('dotenv').config();
-
-/*
-const {
-  REACT_APP_API_BASE_URL,
-} = require('../env');
-*/
-
-// require('dotenv').config();
-
-
-/*
-{
-  firstName: "aaaa",
- lastName: "aaaa",
-  email: "maupied69@hotmail.com",
-   immatriculation: "aaaaaa",
-    message: "a"
-  }
-*/
-
+import { useToasts } from 'react-toast-notifications';
 
 export default function Contact() {
+
+  
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const { addToast } = useToasts()
+  const { addToast } = useToasts();
 
   const onSubmit = (data) => {
-
-  
-  
+    console.log(data);
     
-      console.log(data);
-        axios({
-          method: 'post',
-          url: process.env.NEXT_PUBLIC_CONTACT_URL,
-          data: {
-            ContactContent: data.ContactContent,
-            UserEmail: data.UserEmail,
-            CarDescription: data.CarDescription,
-            ContactPhotos: data.ContactPhotos,
-            ContactImmat: data.ContactImmat,
-            ContactModel: data.ContactModel,
-            ContactBrand: data.ContactBrand,
-          },
-        })
-          .then(function (reponse) {
-            // On traite la suite une fois la réponse obtenue
-            addToast('Votre mail a bien été envoyé, je vous répondrais dés que possible, merci !', {
-              appearance:'success',
-              autoDismiss: true,
-            })
-            console.log(reponse.data);
-          })
-          .catch(function (erreur) {
-            // On traite ici les erreurs éventuellement survenues
-            console.log(erreur);
-          });
-        }
-        
+    axios({
+      method: 'post',
+      // url: process.env.NEXT_PUBLIC_CONTACT_URL,
+      url: '/api/contact',
+      data: {
+        ContactContent: data.ContactContent,
+        UserEmail: data.UserEmail,
+        CarDescription: data.CarDescription,
+        ContactPhotos: data.ContactPhotos[0].name,
+        ContactImmat: data.ContactImmat,
+        ContactModel: data.ContactModel,
+        ContactBrand: data.ContactBrand,
+      },
+    })
+      .then(function (reponse) {
+        // On traite la suite une fois la réponse obtenue
+        addToast(
+          'Votre mail a bien été envoyé, je vous répondrais dés que possible, merci !',
+          {
+            appearance: 'success',
+            autoDismiss: true,
+          }
+        );
+        console.log(reponse.data);
+      })
+      .catch(function (erreur) {
+        // On traite ici les erreurs éventuellement survenues
+         console.log(erreur);
+      });
+  };
+
+
+              
         return (
           <motion.div
             initial={{ opacity:0}}
@@ -102,8 +84,10 @@ export default function Contact() {
                       type="text"
                     />
                     <input
-                      {...register("CarDescription", {
-                 // pattern: /^[A-Za-z]+$/i,
+
+                      {...register('CarDescription', {
+                  // pattern: /^[A-Za-z]+$/i,
+                        
                   required: true,
                   minLength: { value: 3 },
                 })}
@@ -114,10 +98,12 @@ export default function Contact() {
                     />
                     {errors.firstName && <p>Prénom requis (lettres uniquement)</p>}
                     <input
-                      {...register("ContactModel", {
-                 // pattern: /^[A-Za-z]+$/i,
+
+                      {...register('ContactModel', {
+                  // pattern: /^[A-Za-z]+$/i,
+
                   required: true,
-                  minLength: { value: 3 },
+                  minLength: { value: 2 },
                 })}
                       className="p-3 my-2 text-gray-500 rounded-xl resize-none  hover:shadow-lg"
                       name="ContactModel"
@@ -126,7 +112,9 @@ export default function Contact() {
                     />
                     {errors.lastName && <p>Nom requis (lettres uniquement)</p>}
                     <input
-                      {...register("UserEmail", {
+
+                      {...register('UserEmail', {
+
                   required: true,
                   minLength: { value: 3 },
                 })}
@@ -137,9 +125,11 @@ export default function Contact() {
                     />
                     {errors.email && <p>Email requis</p>}
                     <input
-                      {...register("ContactImmat", {
+
+                      {...register('ContactImmat', {
+
                   required: true,
-                 minLength: { value: 3 },
+                  minLength: { value: 3 },
                 })}
                       className="p-3 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
                       placeholder="Immatriculation"
@@ -148,19 +138,25 @@ export default function Contact() {
                     />
                     {errors.immatriculation && <p>Immatriculation requise</p>}
                     <textarea
-                      {...register("ContactContent", {
+
+                      {...register('ContactContent', {
+
                   required: true,
                   minLength: { value: 1 },
                 })}
                       className="p-3 h-24 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
+
                       placeholder="Laissez nous un message"
+
                       name="ContactContent"
                       type="text"
                     />
                     {errors.message && <p>Message requis</p>}
                     <input
-                      {...register("ContactPhotos", {
-                  name: "ContactPhotos"
+
+                      {...register('ContactPhotos', {
+                  name: 'ContactPhotos',
+
                 })}
                       type="file"
                       className="py-4 my-2  text-lg bg-white  rounded-xl text-gray-800 hover:shadow-lg"
@@ -177,5 +173,4 @@ export default function Contact() {
             </div>
           </motion.div>
   );
-}
-
+              }

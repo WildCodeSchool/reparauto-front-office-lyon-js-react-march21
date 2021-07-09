@@ -7,27 +7,22 @@
 import { useForm, Controller } from 'react-hook-form';
 import { motion } from 'framer-motion';
 import ReactDatePicker from 'react-datepicker';
-// import {useState} from'react';
-// import Calendar from 'react-calendar'
-import { useState } from 'react';
+
 import axios from 'axios';
 import { useToasts } from 'react-toast-notifications';
 
 export default function Appointements() {
-  // const [date, setDate] = useState()
+
   const {
     register,
     handleSubmit,
     control,
     formState: { errors },
   } = useForm();
-  const [date, setDate] = useState(new Date());
+
 
   const { addToast } = useToasts();
 
-  const onChange = (date) => {
-    setDate(date);
-  };
 
   const onSubmit = (data) => {
     console.log(data);
@@ -54,7 +49,11 @@ export default function Appointements() {
             }
           );
       })
-      .catch((err) => console.log(err));
+
+      .catch(function (err) {
+        console.log(err);
+      });
+
   };
 
   return (
@@ -72,11 +71,13 @@ export default function Appointements() {
               Prenons rendez-vous !
             </h2>
           </div>
-          <div className="bg-gray-200 max-w-80 flex flex-col items-center md:rounded-b-xl ">
+          <div className="bg-gray-200 flex flex-col items-center md:rounded-b-xl ">
             <div className="flex flex-col items-center py-2 space-y-3" />
             <form
               onSubmit={handleSubmit(onSubmit)}
-              className=" flex flex-col mx-10 "
+
+              className=" flex flex-col mx-10"
+
             >
               <input
                 {...register('firstName', {
@@ -153,7 +154,7 @@ export default function Appointements() {
               />
               <button
                 type="submit"
-                className="py-4 mt-2 mb-20 text-lg bg-gradient-to-r from-yellow-400 to-red-500 rounded-xl text-gray-800 hover:shadow-lg"
+                className="py-4 mx-10 mt-2 mb-10 text-lg bg-gradient-to-r from-yellow-400 to-red-500 rounded-xl text-gray-800 hover:shadow-lg"
               >
                 Envoyez
               </button>

@@ -5,8 +5,6 @@ import { useForm } from 'react-hook-form';
 import ReactStars from 'react-rating-stars-component';
 import axios from 'axios';
 import { motion } from 'framer-motion';
-
-// import { ToastProvider, useToasts } from 'react-toast-notifications';
 import { useToasts } from 'react-toast-notifications';
 
 export default function Avis({ reviews }) {
@@ -25,8 +23,8 @@ export default function Avis({ reviews }) {
   const ratingChanged = (newRating) => {
     setValue('rating', newRating);
   };
+  // form data sending email
   const onSubmit = (data) => {
-    // console.log(data);
     data.rating &&
       axios({
         method: 'post',
@@ -38,17 +36,16 @@ export default function Avis({ reviews }) {
           ReviewsClientName: data.userNameRequired,
         },
       })
-        .then(function (reponse) {
+        .then((reponse) => {
           // On traite la suite une fois la réponse obtenue
 
           console.log(reponse);
         })
-        .catch(function (erreur) {
+        .catch((erreur) => {
           // On traite ici les erreurs éventuellement survenues
           console.log(erreur);
         });
     if (data.rating !== undefined) {
-      // setStarRating(true)
       addToast(
         `Merci ${data.userNameRequired}, votre message a bien été envoyé avec une note de ${data.rating} étoiles !`,
         {
@@ -57,7 +54,6 @@ export default function Avis({ reviews }) {
         }
       );
     } else {
-      //  setStarRating(false);
       addToast(
         'Tout les champs et une note doivent être enregistrés pour envoyer le formulaire',
         {
