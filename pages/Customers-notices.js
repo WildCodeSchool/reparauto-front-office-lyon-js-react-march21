@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-console */
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import ReactStars from 'react-rating-stars-component';
@@ -72,11 +74,11 @@ export default function Avis({ reviews }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1.1 }}
-      className="flex justify-center sm:flex-row md:flex flex-col-reverse"
+      className="flex flex-col md:mt-10 sm:mt-0 justify-center"
     >
       <div>
         {reviews.map((review) => (
-          <div className="max-w-md mb-20 md:m-6 bg-white rounded-xl shadow-lg overflow-hidden md:max-w-xl my-10 ">
+          <div className="max-w-md mb-20 md:m-6 bg-white md:rounded-xl shadow-lg overflow-hidden md:max-w-xl my-10 ">
             <div className="p-6 md:p-4 ">
               <p>Note : {review.Rating} / 5</p>
               <div className="tracking-wide text-sm text-indigo-500 font-semibold">
@@ -92,15 +94,15 @@ export default function Avis({ reviews }) {
       </div>
       <div>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className=" py-4 flex flex-col justify-center sm:py-3">
+          <div className="h-full sm:max-w-xl sm:mx-auto mb-10 md:mb-20">
             <div className="py-3 m-auto mt-0 mb-0">
-              <div className="bg-white w-full flex flex-col rounded-xl shadow-lg">
+              <div className="bg-white w-full flex flex-col md:rounded-xl shadow-lg ">
                 <div className="px-12 py-5">
                   <h2 className="text-gray-800 text-xl font-semibold">
                     Votre avis nous intéresse !
                   </h2>
                 </div>
-                <div className="bg-gray-200 w-full flex flex-col items-center">
+                <div className="bg-gray-200 w-full flex flex-col md:rounded-xl items-center">
                   <div className="flex flex-col items-center py-3 space-y-1">
                     <span className="text-lg text-gray-800">
                       Quelle à été la qualité du service rendu ?
