@@ -74,14 +74,17 @@ export default function Appointements() {
           </div>
           <div className="bg-gray-200 max-w-80 flex flex-col items-center md:rounded-b-xl ">
             <div className="flex flex-col items-center py-2 space-y-3" />
-            <form onSubmit={handleSubmit(onSubmit)} className=" flex flex-col ">
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              className=" flex flex-col mx-10 "
+            >
               <input
                 {...register('firstName', {
                   pattern: /^[A-Za-z]+$/i,
                   required: true,
                   minLength: { value: 3 },
                 })}
-                className="p-3 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
+                className="p-3 m my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
                 name="firstName"
                 placeholder="Prénom"
                 type="text"
