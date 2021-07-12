@@ -19,7 +19,7 @@ export default function Detail_occasions({ occasionCars }) {
               <Image
                 src="/images/voiture.jpg"
                 alt="Dacia"
-                class="w-full"
+                className="w-full"
                 width={384}
                 height={250}
                 layout="responsive"
@@ -27,7 +27,7 @@ export default function Detail_occasions({ occasionCars }) {
               <Image
                 src="/images/voiture2.jpg"
                 alt="Dacia"
-                class="w-full"
+                className="w-full"
                 width={384}
                 height={250}
                 layout="responsive"
@@ -35,7 +35,7 @@ export default function Detail_occasions({ occasionCars }) {
               <Image
                 src="/images/voiture3.jpg"
                 alt="Dacia"
-                class="w-full"
+                className="w-full"
                 width={384}
                 height={250}
                 layout="responsive"
@@ -43,7 +43,7 @@ export default function Detail_occasions({ occasionCars }) {
               <Image
                 src="/images/voiture4.jpg"
                 alt="Dacia"
-                class="w-full"
+                className="w-full"
                 width={384}
                 height={250}
                 layout="responsive"
@@ -51,7 +51,7 @@ export default function Detail_occasions({ occasionCars }) {
               <Image
                 src="/images/voiture5.jpg"
                 alt="Dacia"
-                class="w-full"
+                className="w-full"
                 width={384}
                 height={250}
                 layout="responsive"
@@ -59,7 +59,7 @@ export default function Detail_occasions({ occasionCars }) {
               <Image
                 src="/images/voiture6.jpg"
                 alt="Dacia"
-                class="w-full"
+                className="w-full"
                 width={384}
                 height={250}
                 layout="responsive"

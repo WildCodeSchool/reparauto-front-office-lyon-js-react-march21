@@ -30,14 +30,14 @@ export default function Appointements() {
       },
     })
       .then(function (response) {
-        console.log(response),
-          addToast(
-            `Merci M.${data.lastName}, votre demande de rendez-vous a bien été prise en compte pour le ${data.date}`,
-            {
-              appearance: 'success',
-              autoDismiss: true,
-            }
-          );
+        console.log(response);
+        addToast(
+          `Merci M.${data.lastName}, votre demande de rendez-vous a bien été prise en compte pour le ${data.date}`,
+          {
+            appearance: 'success',
+            autoDismiss: true,
+          }
+        );
       })
       .catch(function (err) {
         console.log(err);

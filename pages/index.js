@@ -3,9 +3,9 @@ import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 
+import homeImg from '../public/images/accueil-1.jpg';
 
 export default function Home() {
- 
   return (
     <div className={styles.container}>
       <Head>
@@ -17,16 +17,16 @@ export default function Home() {
         <link rel="icon" href="./favicon.png" />
       </Head>
 
-      
-      <div className="sm:mt-0 md:mt-10 ">
-        <Image
-          src="/images/accueil-1.jpg"
-          alt="accueil"
-          height="700px"
-          width="900px"
-        />
+      <div className="sm:mt-0 md:mt-10">
+        <div className="w-full m-auto max-w-7xl">
+          <Image
+            src={homeImg}
+            alt="accueil"
+            layout="responsive"
+            placeholder="blur"
+          />
+        </div>
       </div>
     </div>
   );
 }
-

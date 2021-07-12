@@ -23,7 +23,7 @@ export default function Avis({ reviews }) {
   };
   // form data sending email
   const onSubmit = (data) => {
-    data.rating &&
+    if (data.rating) {
       axios({
         method: 'post',
         url: process.env.NEXT_PUBLIC_REVIEWS_URL,
@@ -43,6 +43,8 @@ export default function Avis({ reviews }) {
           // On traite ici les erreurs éventuellement survenues
           console.log(erreur);
         });
+    }
+
     if (data.rating !== undefined) {
       addToast(
         `Merci ${data.userNameRequired}, votre message a bien été envoyé avec une note de ${data.rating} étoiles !`,
@@ -72,7 +74,10 @@ export default function Avis({ reviews }) {
     >
       <div>
         {reviews.map((review) => (
-          <div className="max-w-md mb-20 md:m-6 bg-white rounded-xl shadow-lg overflow-hidden md:max-w-xl my-10 ">
+          <div
+            key={review.id}
+            className="max-w-md mb-20 md:m-6 bg-white rounded-xl shadow-lg overflow-hidden md:max-w-xl my-10 "
+          >
             <div className="p-6 md:p-4 ">
               <p>Note : {review.Rating} / 5</p>
               <div className="tracking-wide text-sm text-indigo-500 font-semibold">

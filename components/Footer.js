@@ -8,22 +8,25 @@ export default function Footer() {
         Informations
       </h1>
       <Link href="./Contact">
-        <input
+        <img
           type="image"
+          alt="logo"
           src="./logo.png"
           className="w-10 h-10items-center transform hover:scale-110 transition duration-500 mb-3"
         />
       </Link>
       <Link href="https://www.wildcodeschool.com/fr-FR">
-        <input
+        <img
           type="image"
+          alt="wild code school logo"
           src="./logo-wild.png"
           className=" w-16  transform hover:scale-110 transition duration-500"
         />
       </Link>
       <Link href="https://www.facebook.com/repar.auto.mobile.florian.leblond">
-        <input
+        <img
           type="image"
+          alt="facebook logo"
           src="./facebook.png"
           className="w-10 h-10 mb-4 transform hover:scale-110 transition duration-500"
         />

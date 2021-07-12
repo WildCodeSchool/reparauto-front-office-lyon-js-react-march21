@@ -15,12 +15,15 @@ export default function Activities({ services }) {
           Nos prestations
         </div>
         {services.map((service) => (
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl m-auto">
+          <div
+            key={service.id}
+            className="grid md:grid-cols-3 gap-8 max-w-5xl m-auto"
+          >
             <div className="bg-white h-full  shadow-lg transform hover:shadow-2xl transition duration-500 transform hover:scale-105 transition duration-500">
               <Image
                 src="/images/diag.jpg"
                 alt="carwash"
-                class="w-full"
+                className="w-full"
                 width={500}
                 height={300}
                 layout="responsive"
@@ -43,7 +46,7 @@ export default function Activities({ services }) {
               <Image
                 src="/images/vidange.jpg"
                 alt="carwash"
-                class="w-full"
+                className="w-full"
                 width={500}
                 height={300}
                 layout="responsive"
@@ -66,7 +69,7 @@ export default function Activities({ services }) {
               <Image
                 src="/images/carwash.jpg"
                 alt="carwash"
-                class="w-full"
+                className="w-full"
                 width={500}
                 height={300}
                 layout="responsive"

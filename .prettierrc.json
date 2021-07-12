@@ -1,6 +1,5 @@
 {
-    "semi": true,
-    "singleQuote": true,
-    "prettier/prettier": ["error", {"singleQuote": true, "parser": "flow"}]
+  "semi": true,
+  "singleQuote": true,
+  "prettier/prettier": ["error", { "singleQuote": true, "parser": "flow" }]
 }
-
