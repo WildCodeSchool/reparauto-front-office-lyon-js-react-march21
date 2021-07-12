@@ -109,7 +109,7 @@ export default function Contact() {
                     />
                     <input
                       {...register('CarDescription', {
-                  // pattern: /^[A-Za-z]+$/i,
+                  pattern: /^[A-Za-z]+$/i,
                   required: true,
                   minLength: { value: 3 },
                 })}
