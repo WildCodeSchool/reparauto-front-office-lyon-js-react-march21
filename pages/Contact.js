@@ -6,6 +6,31 @@ import { useToasts } from 'react-toast-notifications';
 
 export default function Contact() {
 
+  // affichage miniatures des file uploads
+  /*
+
+  function handleFiles(files) {
+    for (let i = 0; i < files.length; i++) {
+      const file = files[i];
+      const imageType = /^image\//;
+  
+      if (!imageType.test(file.type)) {
+        continue;
+      }
+  
+      const img = document.createElement("img");
+      img.classList.add("obj");
+      img.file = file;
+      const preview = document.querySelector('#preview');
+      preview.appendChild(img); // En admettant que "preview" est l'élément div qui contiendra le contenu affiché.
+  
+      const reader = new FileReader();
+      reader.onload = (function(aImg) { return function(e) { aImg.src = e.target.result; }; })(img);
+      reader.readAsDataURL(file);
+    }
+  }
+  */
+
   
   const {
     register,
@@ -20,7 +45,6 @@ export default function Contact() {
     
     axios({
       method: 'post',
-      // url: process.env.NEXT_PUBLIC_CONTACT_URL,
       url: '/api/contact',
       data: {
         ContactContent: data.ContactContent,
@@ -84,6 +108,7 @@ export default function Contact() {
                       type="text"
                     />
                     <input
+
                       {...register('CarDescription', {
                   // pattern: /^[A-Za-z]+$/i,
                   required: true,
@@ -96,8 +121,10 @@ export default function Contact() {
                     />
                     {errors.firstName && <p>Prénom requis (lettres uniquement)</p>}
                     <input
+
                       {...register('ContactModel', {
                   // pattern: /^[A-Za-z]+$/i,
+
                   required: true,
                   minLength: { value: 2 },
                 })}
@@ -108,7 +135,9 @@ export default function Contact() {
                     />
                     {errors.lastName && <p>Nom requis (lettres uniquement)</p>}
                     <input
+
                       {...register('UserEmail', {
+
                   required: true,
                   minLength: { value: 3 },
                 })}
@@ -119,7 +148,9 @@ export default function Contact() {
                     />
                     {errors.email && <p>Email requis</p>}
                     <input
+
                       {...register('ContactImmat', {
+
                   required: true,
                   minLength: { value: 3 },
                 })}
@@ -130,22 +161,28 @@ export default function Contact() {
                     />
                     {errors.immatriculation && <p>Immatriculation requise</p>}
                     <textarea
+
                       {...register('ContactContent', {
+
                   required: true,
                   minLength: { value: 1 },
                 })}
                       className="p-3 h-24 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
-                      placeholder="laissez nous un message"
+                      placeholder="Laissez nous un message"
                       name="ContactContent"
                       type="text"
                     />
                     {errors.message && <p>Message requis</p>}
                     <input
+
                       {...register('ContactPhotos', {
                   name: 'ContactPhotos',
+
                 })}
                       type="file"
-                      className="py-4 my-2  text-lg bg-white  rounded-xl text-gray-800 hover:shadow-lg"
+                      // onChange={handleFiles}
+                      multiple
+                      className="py-4 my-2 text-lg bg-white  rounded-xl text-gray-800 hover:shadow-lg"
                     />
                     <button
                       type="submit"

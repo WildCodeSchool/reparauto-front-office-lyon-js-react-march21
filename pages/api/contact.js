@@ -20,6 +20,7 @@ export default function (req, res) {
     },
     tls: {
       rejectUnauthorized: false,
+      secure: true,
     },
   });
   const mailData = {

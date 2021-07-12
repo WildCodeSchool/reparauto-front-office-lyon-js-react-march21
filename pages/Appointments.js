@@ -1,6 +1,13 @@
+/* eslint-disable func-names */
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-sequences */
+/* eslint-disable no-console */
+/* eslint-disable no-shadow */
+/* eslint-disable no-unused-vars */
 import { useForm, Controller } from 'react-hook-form';
 import { motion } from 'framer-motion';
 import ReactDatePicker from 'react-datepicker';
+
 import axios from 'axios';
 import { useToasts } from 'react-toast-notifications';
 
@@ -29,7 +36,7 @@ export default function Appointements() {
         AppointmentsImmatriculation: data.immatriculation,
       },
     })
-      .then(function (response) {
+      .then((response) => {
         console.log(response),
           addToast(
             `Merci M.${data.lastName}, votre demande de rendez-vous a bien été prise en compte pour le ${data.date}`,
@@ -39,6 +46,7 @@ export default function Appointements() {
             }
           );
       })
+
       .catch(function (err) {
         console.log(err);
       });
@@ -71,7 +79,7 @@ export default function Appointements() {
                   required: true,
                   minLength: { value: 3 },
                 })}
-                className="p-3 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
+                className="p-3 m my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
                 name="firstName"
                 placeholder="Prénom"
                 type="text"
