@@ -18,7 +18,7 @@ export default function Occasions({ occasionCars }) {
           <div className="bg-white w-3/5 md:w-1/3 mt-10  md:mx-20 m-auto border-1  border-dashed border-gray-100 shadow-lg hover:shadow-2xl rounded-lg overflow-hidden ">
             <Image
               src="/images/voiture.jpg"
-/*
+              /*
               src={
                 process.env.NEXT_PUBLIC_OCCASION_URL +
                 occasion.Photos[0].formats.thumbnail.url

@@ -108,9 +108,8 @@ export default function Contact() {
                       type="text"
                     />
                     <input
-
                       {...register('CarDescription', {
-                  // pattern: /^[A-Za-z]+$/i,
+                  pattern: /^[A-Za-z]+$/i,
                   required: true,
                   minLength: { value: 3 },
                 })}
@@ -121,7 +120,6 @@ export default function Contact() {
                     />
                     {errors.firstName && <p>Prénom requis (lettres uniquement)</p>}
                     <input
-
                       {...register('ContactModel', {
                   // pattern: /^[A-Za-z]+$/i,
 
@@ -135,7 +133,6 @@ export default function Contact() {
                     />
                     {errors.lastName && <p>Nom requis (lettres uniquement)</p>}
                     <input
-
                       {...register('UserEmail', {
 
                   required: true,
@@ -148,7 +145,6 @@ export default function Contact() {
                     />
                     {errors.email && <p>Email requis</p>}
                     <input
-
                       {...register('ContactImmat', {
 
                   required: true,
@@ -161,7 +157,6 @@ export default function Contact() {
                     />
                     {errors.immatriculation && <p>Immatriculation requise</p>}
                     <textarea
-
                       {...register('ContactContent', {
 
                   required: true,
@@ -174,7 +169,6 @@ export default function Contact() {
                     />
                     {errors.message && <p>Message requis</p>}
                     <input
-
                       {...register('ContactPhotos', {
                   name: 'ContactPhotos',
 
