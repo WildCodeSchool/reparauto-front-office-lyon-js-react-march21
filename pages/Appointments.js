@@ -127,8 +127,8 @@ export default function Appointements() {
                   <ReactDatePicker
                     onChange={onChange}
                     selected={value}
-                    className="p-3 my-2 text-gray-500 rounded-xl hover:shadow-lg"
-                    placeholderText="Date de rendez-vous souhaité"
+                    className="p-3 px-16 my-2 text-gray-500 rounded-xl hover:shadow-lg"
+                    placeholderText="Date de rendez-vous"
                   />
                 )}
               />

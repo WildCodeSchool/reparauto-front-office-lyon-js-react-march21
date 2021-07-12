@@ -11,6 +11,7 @@ export default function Footer() {
         <input
           type="image"
           src="./logo.png"
+          alt="logo"
           className="w-10 h-10items-center transform hover:scale-110 transition duration-500 mb-3"
         />
       </Link>
@@ -18,6 +19,7 @@ export default function Footer() {
         <input
           type="image"
           src="./logo-wild.png"
+          alt="logo-wild"
           className=" w-16  transform hover:scale-110 transition duration-500"
         />
       </Link>
@@ -25,6 +27,7 @@ export default function Footer() {
         <input
           type="image"
           src="./facebook.png"
+          alt="facebook-logo"
           className="w-10 h-10 mb-4 transform hover:scale-110 transition duration-500"
         />
       </Link>
