@@ -18,7 +18,7 @@ export default function Home() {
       </Head>
 
       <div className="sm:mt-0 md:mt-10">
-        <div className="w-full m-auto max-w-7xl">
+        <div className="w-full m-auto max-w-7xl pb-20">
           <Image
             src={homeImg}
             alt="accueil"
