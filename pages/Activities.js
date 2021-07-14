@@ -10,17 +10,20 @@ export default function Activities({ services }) {
       exit={{ opacity: 0 }}
       transition={{ duration: 1.1 }}
     >
-      <main className="px-3 mb-10 ">
+      <div className="px-3 mb-10 ">
         <div className="text-4xl sm:text-5xl text-center my-10">
           Nos prestations
         </div>
         {services.map((service) => (
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl m-auto">
-            <div className="bg-white h-full  shadow-lg transform hover:shadow-2xl transition duration-500 transform hover:scale-105 transition duration-500">
+          <div
+            key={service.id}
+            className="flex justify-evenly sm:flex-col md:flex-row"
+          >
+            <div className="bg-white mt-10 w-80 h-full shadow-lg transform motion-safe:hover:shadow-2xl transition duration-500 transform hover:scale-105 transition duration-500">
               <Image
                 src="/images/diag.jpg"
                 alt="carwash"
-                class="w-full"
+                className="w-full"
                 width={500}
                 height={300}
                 layout="responsive"
@@ -33,17 +36,17 @@ export default function Activities({ services }) {
               </div>
               <button
                 type="button"
-                className="w-full  fixed -bottom-2 text-lg h-16 text-white font-extrabold bg-yellow-500 rounded-lg"
+                className="w-full  fixed -bottom-2 text-lg h-16 text-white font-extrabold bg-yellow-500 rounded-b-lg"
               >
                 à partir de{' '}
                 <span className="text-4xl">{service.ServiceLowPrice}€</span>
               </button>
             </div>
-            <div className="bg-white shadow-lg transform hover:shadow-2xl transition duration-500 transform hover:scale-105 transition duration-500">
+            <div className="bg-white mt-10 w-80 shadow-lg transform motion-safe:hover:shadow-2xl transition duration-500 transform hover:scale-105 transition duration-500">
               <Image
                 src="/images/vidange.jpg"
                 alt="carwash"
-                class="w-full"
+                className="w-full"
                 width={500}
                 height={300}
                 layout="responsive"
@@ -56,17 +59,17 @@ export default function Activities({ services }) {
               </div>
               <button
                 type="button"
-                className="w-full mt-20 fixed -bottom-2 text-lg h-16 text-white font-extrabold bg-yellow-600 rounded-lg"
+                className="w-full mt-20 fixed -bottom-2 text-lg h-16 text-white font-extrabold bg-yellow-600 rounded-b-lg"
               >
                 à partir de{' '}
                 <span className="text-4xl">{service.ServiceHighPrice}€</span>
               </button>
             </div>
-            <div className="bg-white shadow-lg transform hover:shadow-2xl transition duration-500 transform hover:scale-105 transition duration-500">
+            <div className="bg-white mt-10 w-80 shadow-lg transform motion-safe:hover:shadow-2xl transition duration-500 transform hover:scale-105 transition duration-500">
               <Image
                 src="/images/carwash.jpg"
                 alt="carwash"
-                class="w-full"
+                className="w-full"
                 width={500}
                 height={300}
                 layout="responsive"
@@ -79,7 +82,7 @@ export default function Activities({ services }) {
               </div>
               <button
                 type="button"
-                className="w-full fixed -bottom-2 text-lg h-16 text-white font-extrabold bg-red-500 rounded-lg"
+                className="w-full fixed -bottom-2 text-lg h-16 text-white font-extrabold bg-red-500 rounded-b-lg"
               >
                 à partir de{' '}
                 <span className="text-4xl">{service.OtherServicePrice}€</span>
@@ -87,7 +90,7 @@ export default function Activities({ services }) {
             </div>
           </div>
         ))}
-      </main>
+      </div>
     </motion.div>
   );
 }

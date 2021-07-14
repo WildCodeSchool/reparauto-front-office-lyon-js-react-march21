@@ -8,7 +8,7 @@ export default function Footer() {
         Informations
       </h1>
       <Link href="./Contact">
-        <input
+        <img
           type="image"
           src="./logo.png"
           alt="logo"
@@ -16,7 +16,7 @@ export default function Footer() {
         />
       </Link>
       <Link href="https://www.wildcodeschool.com/fr-FR">
-        <input
+        <img
           type="image"
           src="./logo-wild.png"
           alt="logo-wild"
@@ -24,7 +24,7 @@ export default function Footer() {
         />
       </Link>
       <Link href="https://www.facebook.com/repar.auto.mobile.florian.leblond">
-        <input
+        <img
           type="image"
           src="./facebook.png"
           alt="facebook-logo"
