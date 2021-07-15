@@ -40,21 +40,21 @@ export default function Nav() {
               whileTap={{ scale: 0.95 }}
               className="ml-20 md:mx-4 text-gray-800 "
             >
-              <Link href="./Appointments">Rendez-vous</Link>
+              <Link href="/Appointments">Rendez-vous</Link>
             </motion.div>
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="ml-20 md:mx-4 text-gray-800 "
             >
-              <Link href="./Activities">Activités</Link>
+              <Link href="/Activities">Activités</Link>
             </motion.div>
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="ml-20 md:mx-4 text-gray-800 "
             >
-              <Link href="./Occasions">Véhicules d'occasions</Link>
+              <Link href="/Occasions">Véhicules d'occasions</Link>
             </motion.div>
             <motion.div
               whileHover={{ scale: 1.05 }}

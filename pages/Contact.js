@@ -45,12 +45,12 @@ export default function Contact() {
     
     axios({
       method: 'post',
-      url: '/api/contact',
+      url: 'http://localhost:1337/contact-mails',
       data: {
         ContactContent: data.ContactContent,
         UserEmail: data.UserEmail,
         CarDescription: data.CarDescription,
-        ContactPhotos: data.ContactPhotos[0].name,
+        ContactPhotos: data.ContactPhotos,
         ContactImmat: data.ContactImmat,
         ContactModel: data.ContactModel,
         ContactBrand: data.ContactBrand,
@@ -171,11 +171,9 @@ export default function Contact() {
                     <input
                       {...register('ContactPhotos', {
                   name: 'ContactPhotos',
-
                 })}
                       type="file"
                       // onChange={handleFiles}
-                      multiple
                       className="py-4 my-2 text-lg bg-white  rounded-xl text-gray-800 hover:shadow-lg"
                     />
                     <button
