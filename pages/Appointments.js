@@ -62,12 +62,12 @@ export default function Appointements() {
     >
       <div className="h-full sm:max-w-xl sm:mx-auto">
         <div className="flex flex-col item-center shadow-lg ">
-          <div className="bg-white flex justify-center md:rounded-t-xl sm:py-6 md:py-6  hover:shadow-l">
+          <div className="bg-white flex justify-center md:rounded-t-xl sm:py-6 md:py-6 hover:shadow-lg">
             <h2 className="text-gray-800 text-xl font-semibold py-2">
               Prenons rendez-vous !
             </h2>
           </div>
-          <div className="bg-gray-200 flex flex-col items-center md:rounded-b-xl ">
+          <div className="bg-gray-200 flex flex-col items-center">
             <div className="flex flex-col items-center py-2 space-y-3" />
             <form
               onSubmit={handleSubmit(onSubmit)}
@@ -137,8 +137,8 @@ export default function Appointements() {
                   <ReactDatePicker
                     onChange={onChange}
                     selected={value}
-                    className="p-3 my-2 text-gray-500 rounded-xl hover:shadow-lg"
-                    placeholderText="Date de rendez-vous souhaité"
+                    className="p-3 px-16 my-2 text-gray-500 rounded-xl hover:shadow-lg"
+                    placeholderText="Date de rendez-vous"
                   />
                 )}
               />

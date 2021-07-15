@@ -11,21 +11,14 @@ export default function Occasions({ occasionCars }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1.1 }}
-      className="md:flex flex-col "
+      className="md:flex flex-row justify-evenly "
     >
       {occasionCars.map((occasion) => (
-        <div className="md:flex mt-2 ">
-          <div className="bg-white w-3/5 md:w-1/3 mt-10  md:mx-20 m-auto border-1  border-dashed border-gray-100 shadow-lg hover:shadow-2xl rounded-lg overflow-hidden ">
+        <div key={occasion.id} className="md:flex mt-2 ">
+          <div className="bg-white sm:w-full md:w-80 my-10 m-auto border-1 border-dashed border-gray-100 shadow-lg hover:shadow-2xl rounded-lg overflow-hidden ">
             <Image
-              src="/images/voiture.jpg"
-              /*
-              src={
-                process.env.NEXT_PUBLIC_OCCASION_URL +
-                occasion.Photos[0].formats.thumbnail.url
-              }
-              */
-              // src={occasion.Photos[0].formats.medium.url}
-              alt={occasion.titre}
+              src={}
+              alt="Dacia"
               className="w-full"
               width={500}
               height={350}
@@ -37,9 +30,7 @@ export default function Occasions({ occasionCars }) {
               </p>
               <span className="text-gray-700">
                 Prix :{' '}
-                <span className="text-xl font-medium">
-                  {occasion.Price} TTC
-                </span>{' '}
+                <span className="text-xl font-medium">{occasion.prix} TTC</span>{' '}
               </span>
               <button
                 type="button"
