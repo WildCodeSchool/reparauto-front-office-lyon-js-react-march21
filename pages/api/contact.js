@@ -29,11 +29,18 @@ export default function (req, res) {
     subject: `${UserEmail} vous à contacté`,
     text: `Message:${ContactContent},
        Description:${CarDescription},
-       Photos: ${ContactPhotos},
+       Photos: ${ContactPhotos[0]},
        Immatriculation: ${ContactImmat},
         Modele:${ContactModel},
         Marque :${ContactBrand}`,
     html: `Message:${ContactContent},</br> Description:${CarDescription},</br> Photos: ${ContactPhotos},</br> Immatriculation: ${ContactImmat},</br> Modele:${ContactModel},</br> Marque :${ContactBrand}`,
+
+    attachments: [
+      {
+        filename: `image.jpg`,
+        path: `/public/images/accueil-1.jpg`,
+      },
+    ],
   };
   transporter.sendMail(mailData, function (err, info) {
     if (err) console.log(err);

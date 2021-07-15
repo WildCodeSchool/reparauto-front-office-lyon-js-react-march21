@@ -4,6 +4,8 @@ import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { useToasts } from 'react-toast-notifications';
 
+
+
 export default function Contact() {
 
   // affichage miniatures des file uploads
@@ -42,10 +44,11 @@ export default function Contact() {
 
   const onSubmit = (data) => {
     console.log(data);
+    console.log(data.ContactPhotos);
     
     axios({
       method: 'post',
-      url: 'http://localhost:1337/contact-mails',
+      url: '/api/contact',
       data: {
         ContactContent: data.ContactContent,
         UserEmail: data.UserEmail,
