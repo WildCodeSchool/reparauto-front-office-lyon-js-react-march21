@@ -60,48 +60,6 @@ export default function Nav() {
             <Link href="./Contact">Contact</Link>
           </motion.div>
         </div>
-<<<<<<< HEAD
-        {toggleMenu && (
-          <div className=" md:flex md:items-center ">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="ml-20 md:mx-4 text-gray-800 "
-            >
-              <Link href="/Appointments">Rendez-vous</Link>
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="ml-20 md:mx-4 text-gray-800 "
-            >
-              <Link href="/Activities">Activités</Link>
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="ml-20 md:mx-4 text-gray-800 "
-            >
-              <Link href="/Occasions">Véhicules d'occasions</Link>
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="ml-20 md:mx-4 text-gray-800 "
-            >
-              <Link href="./Customers-notices">Avis clients</Link>
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="ml-20 md:mx-4 text-gray-800"
-            >
-              <Link href="./Contact">Contact</Link>
-            </motion.div>
-          </div>
-        )}
-=======
->>>>>>> 40c84ad271a991982eb3cd84d4747208e9b28d7c
       </div>
     </motion.div>
   );

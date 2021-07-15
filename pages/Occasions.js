@@ -17,7 +17,7 @@ export default function Occasions({ occasionCars }) {
         <div key={occasion.id} className="md:flex mt-2 ">
           <div className="bg-white sm:w-full md:w-80 my-10 m-auto border-1 border-dashed border-gray-100 shadow-lg hover:shadow-2xl rounded-lg overflow-hidden ">
             <Image
-              src={}
+              src="http://localhost:1337/second-hand-cars.Photos[0].url"
               alt="Dacia"
               className="w-full"
               width={500}
