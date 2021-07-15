@@ -59,8 +59,9 @@ export default function Contact() {
     })
       .then((reponse) => {
         // On traite la suite une fois la réponse obtenue
+        
         addToast(
-          'Votre mail a bien été envoyé, je vous répondrais dés que possible, merci !',
+          "Votre mail a bien été envoyé, je vous répondrais dés que possible, merci !",
           {
             appearance: 'success',
           }
