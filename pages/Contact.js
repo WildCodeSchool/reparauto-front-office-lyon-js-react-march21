@@ -63,7 +63,6 @@ export default function Contact() {
           'Votre mail a bien été envoyé, je vous répondrais dés que possible, merci !',
           {
             appearance: 'success',
-            autoDismiss: true,
           }
         );
         console.log(reponse.data);
@@ -74,7 +73,6 @@ export default function Contact() {
           "Quelque chose s'est mal passé",
           {
             appearance: 'error',
-            autoDismiss: true,
           }
         );
          console.log(erreur);
