@@ -44,7 +44,6 @@ export default function Contact() {
 
   const onSubmit = (data) => {
     console.log(data);
-    console.log(data.ContactPhotos);
     
     axios({
       method: 'post',
@@ -53,13 +52,12 @@ export default function Contact() {
         ContactContent: data.ContactContent,
         UserEmail: data.UserEmail,
         CarDescription: data.CarDescription,
-        ContactPhotos: data.ContactPhotos,
         ContactImmat: data.ContactImmat,
         ContactModel: data.ContactModel,
         ContactBrand: data.ContactBrand,
       },
     })
-      .then(function (reponse) {
+      .then((reponse) => {
         // On traite la suite une fois la réponse obtenue
         addToast(
           'Votre mail a bien été envoyé, je vous répondrais dés que possible, merci !',
@@ -70,8 +68,15 @@ export default function Contact() {
         );
         console.log(reponse.data);
       })
-      .catch(function (erreur) {
+      .catch((erreur) => {
         // On traite ici les erreurs éventuellement survenues
+        addToast(
+          "Quelque chose s'est mal passé",
+          {
+            appearance: 'error',
+            autoDismiss: true,
+          }
+        );
          console.log(erreur);
       });
   };
@@ -171,6 +176,8 @@ export default function Contact() {
                       type="text"
                     />
                     {errors.message && <p>Message requis</p>}
+
+                    {/*
                     <input
                       {...register('ContactPhotos', {
                   name: 'ContactPhotos',
@@ -179,6 +186,8 @@ export default function Contact() {
                       // onChange={handleFiles}
                       className="py-4 my-2 text-lg bg-white  rounded-xl text-gray-800 hover:shadow-lg"
                     />
+                    */}
+
                     <button
                       type="submit"
                       className="py-4 mt-2 mb-20 text-lg bg-gradient-to-r from-yellow-400 to-red-500 rounded-xl text-gray-800 hover:shadow-lg"

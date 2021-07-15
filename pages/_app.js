@@ -10,7 +10,7 @@ import '../styles/globals.css';
 export default function MyApp({ Component, pageProps }) {
   return (
     <AnimatePresence>
-      <ToastProvider>
+      <ToastProvider placement="bottom-right" autoDismissTimeout="4000">
         <Layout>
           <Component {...pageProps} />
         </Layout>
