@@ -89,7 +89,7 @@ export default function Avis({ reviews }) {
       </div>
       <motion.div whileHover={{ y: -7 }}>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className=" flex flex-col justify-center sm:py-3">
+          <div className=" flex flex-col justify-center mb-10 sm:py-3">
             <div className="md:py-3 m-auto mt-0 mb-0">
               <div className="bg-white w-full flex flex-col md:rounded-xl shadow-lg">
                 <div className="px-12 py-5">

@@ -9,12 +9,12 @@ export default function DetailsOccasions({ occasionCars }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1.1 }}
-      className="my-10"
+      className="flex justify-evenly sm:flex-row md:flex flex-col-reverse"
     >
       {occasionCars.map((occasion) => (
         <div
           key={occasion.id}
-          className="bg-white w-96 m-auto border-1 border-dashed border-gray-100 shadow-md rounded-lg overflow-hidden"
+          className="mt-8 mb-16 sm:w-screen md:w-auto bg-white w-96 m-auto border-1 border-dashed border-gray-100 shadow-md rounded-lg overflow-hidden"
         >
           <div className="slider">
             <figure>
@@ -71,14 +71,14 @@ export default function DetailsOccasions({ occasionCars }) {
           <div className="p-4">
             <p className="mb-1 text-gray-900 font-semibold">{occasion.titre}</p>
             <br />
-            <p className="text-gray-700">Marque: {occasion.marque}</p>
+            <p className="text-gray-700">Marque: {occasion.SecondHandBrand}</p>
             <br />
-            <p className="text-gray-700">Modèle: {occasion.model}</p>
+            <p className="text-gray-700">Modèle: {occasion.SecondHandModel}</p>
             <br />
             <h3>Description:</h3>
             <br />
-            <p className="text-gray-700"> {occasion.description}</p>
-            <p className=" mt-3 text-gray-700">Prix : {occasion.prix} TTC </p>
+            <p className="text-gray-700"> {occasion.Description}</p>
+            <p className=" mt-3 text-gray-700">Prix : {occasion.Price} TTC </p>
             <div className="mt-8 mb-3" />
           </div>
         </div>

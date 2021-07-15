@@ -16,8 +16,8 @@ export default function Occasions({ occasionCars }) {
         <div key={occasion.id} className="md:flex mt-2 ">
           <div className="bg-white sm:w-full md:w-80 my-10 m-auto border-1 border-dashed border-gray-100 shadow-lg hover:shadow-2xl rounded-lg overflow-hidden ">
             <Image
-              src={}
-              alt="Dacia"
+              src={occasion.Photos[0].url}
+              alt={occasion.SecondHandModel}
               className="w-full"
               width={500}
               height={350}
@@ -29,7 +29,9 @@ export default function Occasions({ occasionCars }) {
               </p>
               <span className="text-gray-700">
                 Prix :{' '}
-                <span className="text-xl font-medium">{occasion.prix} TTC</span>{' '}
+                <span className="text-xl font-medium">
+                  {occasion.Price} TTC
+                </span>{' '}
               </span>
               <button
                 type="button"

@@ -10,16 +10,20 @@ export default function Nav() {
       transition={{ duration: 0.8 }}
       className="navbar"
     >
-      <div className="md:flex justify-around items-center flex-row shadow-lg py-7 px-0 bg-gradient-to-r from-yellow-400 to-red-500 ">
+      <motion.div
+        animate={{ y: -80 }}
+        whileHover={{ y: 0 }}
+        className="md:flex justify-around items-start flex-row h-32 pt-7 shadow-lg bg-gradient-to-r from-yellow-400 to-red-500 "
+      >
         <img
-          className="md:w-16 absolute left-2 top-3 md:left-1 md:top-2 w-12"
+          className="md:w-16 absolute left-3 top-10 md:left-3 md:top-2 w-12"
           src="./logo.png"
           alt="logo"
         />
         <motion.div
           whileHover={{ scale: 1.05, originX: 0, color: '#FFFFFF' }}
           whileTap={{ scale: 0.95 }}
-          className="text-xl font-family:Josefin Sans text-gray-900 sm:ml-10 sm:flex sm:justify-around md:flex md:justify-around md:mx-16 ml-20"
+          className="text-xl text-gray-900 absolute mt-16"
         >
           <Link href="/">Repar'Auto Mobile</Link>
         </motion.div>
@@ -29,38 +33,38 @@ export default function Nav() {
             whileTap={{ scale: 0.95 }}
             className="ml-20 md:mx-4 text-gray-800"
           >
-            <Link href="./Appointments">Rendez-vous</Link>
+            <Link href="/Appointments">Rendez-vous</Link>
           </motion.div>
           <motion.div
             whileHover={{ scale: 1.05, originX: 0, color: '#FFFFFF' }}
             whileTap={{ scale: 0.95 }}
             className="ml-20 md:mx-4 text-gray-800 "
           >
-            <Link href="./Activities">Activités</Link>
+            <Link href="/Activities">Activités</Link>
           </motion.div>
           <motion.div
             whileHover={{ scale: 1.05, originX: 0, color: '#FFFFFF' }}
             whileTap={{ scale: 0.95 }}
             className="ml-20 md:mx-4 text-gray-800 "
           >
-            <Link href="./Occasions">Véhicules d'occasions</Link>
+            <Link href="/Occasions">Véhicules d'occasions</Link>
           </motion.div>
           <motion.div
             whileHover={{ scale: 1.05, originX: 0, color: '#FFFFFF' }}
             whileTap={{ scale: 0.95 }}
             className="ml-20 md:mx-4 text-gray-800 "
           >
-            <Link href="./Customers-notices">Avis clients</Link>
+            <Link href="/Customers-notices">Avis clients</Link>
           </motion.div>
           <motion.div
             whileHover={{ scale: 1.05, originX: 0, color: '#FFFFFF' }}
             whileTap={{ scale: 0.95 }}
             className="ml-20 md:mx-4 text-gray-800"
           >
-            <Link href="./Contact">Contact</Link>
+            <Link href="/Contact">Contact</Link>
           </motion.div>
         </div>
-      </div>
+      </motion.div>
     </motion.div>
   );
 }
