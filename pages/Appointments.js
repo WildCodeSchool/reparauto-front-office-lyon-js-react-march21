@@ -21,30 +21,29 @@ export default function Appointements() {
       method: 'post',
       url: '/api/appointments',
       data: {
-        Brand: data.Brand,
-        Model: data.Model,
-        AppointmentDate: data.date,
-        AppointmentsEmail: data.email,
-        AppointmentsName: data.lastName,
-        AppointmentsContent: data.content,
-        AppointmentsImmatriculation: data.immatriculation,
+        appointmentsUserName: data.appointmentsUserName,
+        appointmentsEmail: data.appointmentsEmail,
+        brandModel: data.brandModel,
+        appointmentsImmatriculation: data.appointmentsImmatriculation,
+        appointmentsContent: data.appointmentsContent,
+        appointmentDate: data.appointmentDate,
       },
     })
       .then((response) => {
         console.log(response);
-        addToast(
-          `Merci M.${data.lastName}, votre demande de rendez-vous a bien été prise en compte pour le ${data.date}`,
-          {
-            appearance: 'success',
-            autoDismissTimeout: '4000',
-            autoDismiss: true,
-          }
-        );
       })
 
       .catch(function (err) {
         console.log(err);
       });
+    addToast(
+      `Merci ${data.appointmentsUserName}, votre demande de rendez-vous a bien été prise en compte pour le ${data.appointmentDate}`,
+      {
+        appearance: 'success',
+        autoDismissTimeout: '6000',
+        autoDismiss: true,
+      }
+    );
   };
 
   return (
@@ -69,62 +68,60 @@ export default function Appointements() {
               className=" flex flex-col mx-10"
             >
               <input
-                {...register('firstName', {
-                  pattern: /^[A-Za-z]+$/i,
+                {...register('appointmentsUserName', {
                   required: true,
                   minLength: { value: 3 },
                 })}
                 className="p-3 m my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
-                name="firstName"
-                placeholder="Prénom"
+                name="appointmentsUserName"
+                placeholder="Nom, Prénom"
                 type="text"
               />
-              {errors.firstName && <p>Prénom requis (lettres uniquement)</p>}
+              {errors.appointmentsUserName && <p>Nom et prénom requis</p>}
               <input
-                {...register('lastName', {
-                  pattern: /^[A-Za-z]+$/i,
+                {...register('appointmentsEmail', {
                   required: true,
-                  minLength: { value: 3 },
-                })}
-                className="p-3 my-2 text-gray-500 rounded-xl resize-none  hover:shadow-lg"
-                name="lastName"
-                placeholder="Nom"
-                type="text"
-              />
-              {errors.lastName && <p>Nom requis (lettres uniquement)</p>}
-              <input
-                {...register('email', {
-                  required: false,
                   minLength: { value: 3 },
                 })}
                 className="p-3 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
                 placeholder="Email"
                 type="email"
-                name="email"
+                name="appointmentsEmail"
               />
-              {errors.email && <p>Email requis</p>}
+              {errors.appointmentsEmail && <p>Email requis</p>}
               <input
-                {...register('immatriculation', {
+                {...register('brandModel', {
+                  required: true,
+                  minLength: { value: 3 },
+                })}
+                className="p-3 m my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
+                name="brandModel"
+                placeholder="Marque, Modèle"
+                type="text"
+              />
+              {errors.brandModel && <p>Marque et modèle requis</p>}
+              <input
+                {...register('appointmentsImmatriculation', {
                   required: true,
                   minLength: { value: 3 },
                 })}
                 className="p-3 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
                 placeholder="Immatriculation"
                 type="text"
-                name="immatriculation"
+                name="appointmentsImmatriculation"
               />
               {errors.immatriculation && <p>Immatriculation requise</p>}
               <textarea
-                {...register('message', {
+                {...register('appointmentsContent', {
                   required: true,
                   minLength: { value: 1 },
                 })}
                 className="p-3 h-24 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
                 placeholder="Travaux à réaliser"
-                name="message"
+                name="appointmentsContent"
                 type="text"
               />
-              {errors.message && <p>Message requis</p>}
+              {errors.appointmentsContent && <p>Date requise</p>}
               <Controller
                 name="appointmentDate"
                 control={control}
