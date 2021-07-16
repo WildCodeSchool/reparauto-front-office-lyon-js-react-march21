@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import axios from 'axios';
 import { motion } from 'framer-motion';
-import pictureActivities from '../public/images/pictureActivities.jpg';
+// import pictureActivities from '../public/images/pictureActivities.jpg';
 
 export default function Activities({ services }) {
   return (
@@ -11,12 +11,12 @@ export default function Activities({ services }) {
       exit={{ opacity: 0 }}
       transition={{ duration: 1.1 }}
     >
-      {/*<Image
+      {/* <Image
         className="opacity-30 mt-40 z-0"
         src={pictureActivities}
         alt="background"
         layout="fill"
-      />*/}
+      /> */}
       <div className="px-3 mb-10 ">
         <h1 className="text-4xl sm:text-5xl text-center my-10">
           Nos prestations
