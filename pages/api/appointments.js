@@ -4,13 +4,13 @@ export default function (req, res) {
   console.log(req.body);
   console.log(res.body);
   const {
-    ContactContent,
-    UserEmail,
-    CarDescription,
-    // ContactPhotos,
-    ContactImmat,
-    ContactModel,
-    ContactBrand,
+    Brand,
+    Model,
+    AppointmentDate,
+    AppointmentsEmail,
+    AppointmentsName,
+    AppointmentsContent,
+    AppointmentsImmatriculation,
   } = req.body;
   const transporter = nodemailer.createTransport({
     port: process.env.SMTP_PORT,
@@ -27,13 +27,14 @@ export default function (req, res) {
   const mailData = {
     from: process.env.SMTP_MAILSENDER,
     to: process.env.SMTP_MAILRECEIVER,
-    subject: `${UserEmail} vous à contacté`,
-    text: `Message:${ContactContent},</br>
-       Description:${CarDescription},
-       Immatriculation: ${ContactImmat},
-        Modele:${ContactModel},
-        Marque :${ContactBrand}`,
-    html: `Message:${ContactContent},</br> Description:${CarDescription},</br> Immatriculation: ${ContactImmat},</br> Modele:${ContactModel},</br> Marque :${ContactBrand}`,
+    subject: `${AppointmentsEmail}/${AppointmentsName} vous à contacté`,
+    text: `Message:${AppointmentsContent},</br>
+       Immatriculation: ${AppointmentsImmatriculation},
+        Modele:${Model},
+        Marque :${Brand},
+        Date : ${AppointmentDate}`,
+
+    html: `Message:${AppointmentsContent},</br> Nom:${AppointmentsName},</br> Immatriculation: ${AppointmentsImmatriculation},</br> Modele:${Model},Date : ${AppointmentDate},</br> Marque :${Brand}`,
     /*
     attachments: [
       {

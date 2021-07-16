@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import axios from 'axios';
 import { motion } from 'framer-motion';
-import pictureActivities from '../public/images/pictureActivities.jpg';
+// import pictureActivities from '../public/images/pictureActivities.jpg';
 
 export default function Activities({ services }) {
   return (
@@ -11,16 +11,16 @@ export default function Activities({ services }) {
       exit={{ opacity: 0 }}
       transition={{ duration: 1.1 }}
     >
-      {/*<Image
+      {/* <Image
         className="opacity-30 mt-40 z-0"
         src={pictureActivities}
         alt="background"
         layout="fill"
-      />*/}
+      /> */}
       <div className="px-3 mb-10 ">
-        <div className="text-4xl sm:text-5xl text-center my-10">
+        <h1 className="text-4xl sm:text-5xl text-center my-10">
           Nos prestations
-        </div>
+        </h1>
         {services.map((service) => (
           <div
             key={service.id}
@@ -36,9 +36,9 @@ export default function Activities({ services }) {
                 layout="responsive"
               />
               <div className="px-10 py-12 mb-20 text-center">
-                <div className="text-2xl font-bold text-yellow-500 mb-10">
+                <h1 className="text-2xl font-bold text-yellow-500 mb-10">
                   TRAVAUX SIMPLES
-                </div>
+                </h1>
                 <span className="text-sm">{service.ServiceLow}</span>
               </div>
               <button
@@ -59,9 +59,9 @@ export default function Activities({ services }) {
                 layout="responsive"
               />
               <div className="px-10 py-12 text-center">
-                <div className="text-2xl font-bold text-yellow-600 mb-10">
+                <h1 className="text-2xl font-bold text-yellow-600 mb-10">
                   TRAVAUX LOURDS
-                </div>
+                </h1>
                 <span className="text-sm">{service.ServiceHigh}</span>
               </div>
               <button
@@ -82,9 +82,9 @@ export default function Activities({ services }) {
                 layout="responsive"
               />
               <div className="px-10 py-12  text-center">
-                <div className="text-2xl font-bold text-red-500 mb-10">
+                <h1 className="text-2xl font-bold text-red-500 mb-10">
                   DIVERS
-                </div>
+                </h1>
                 <span className="text-sm">{service.OtherService}</span>
               </div>
               <button
