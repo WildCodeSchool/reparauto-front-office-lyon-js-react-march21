@@ -6,7 +6,6 @@ import { useToasts } from 'react-toast-notifications';
 export default function Contact() {
   // affichage miniatures des file uploads
   /*
-
   function handleFiles(files) {
     for (let i = 0; i < files.length; i++) {
       const file = files[i];
@@ -46,7 +45,6 @@ export default function Contact() {
       data: {
         ContactContent: data.ContactContent,
         UserEmail: data.UserEmail,
-        CarDescription: data.CarDescription,
         ContactImmat: data.ContactImmat,
         ContactModel: data.ContactModel,
         ContactBrand: data.ContactBrand,
@@ -104,18 +102,6 @@ export default function Contact() {
                 placeholder="Marque du vehicule"
                 type="text"
               />
-              <input
-                {...register('CarDescription', {
-                  pattern: /^[A-Za-z]+$/i,
-                  required: true,
-                  minLength: { value: 3 },
-                })}
-                className="p-3 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
-                name="CarDescription"
-                placeholder="Description du vehicule"
-                type="text"
-              />
-              {errors.firstName && <p>Prénom requis (lettres uniquement)</p>}
               <input
                 {...register('ContactModel', {
                   // pattern: /^[A-Za-z]+$/i,

@@ -1,9 +1,3 @@
-/* eslint-disable func-names */
-/* eslint-disable no-unused-expressions */
-/* eslint-disable no-sequences */
-/* eslint-disable no-console */
-/* eslint-disable no-shadow */
-/* eslint-disable no-unused-vars */
 import { useForm, Controller } from 'react-hook-form';
 import { motion } from 'framer-motion';
 import ReactDatePicker from 'react-datepicker';
@@ -142,10 +136,6 @@ export default function Appointements() {
                     placeholderText="Date de rendez-vous"
                   />
                 )}
-              />
-              <input
-                type="file"
-                className="py-3 my-2 text-lg bg-white  rounded-xl text-gray-800 hover:shadow-lg"
               />
               <button
                 type="submit"

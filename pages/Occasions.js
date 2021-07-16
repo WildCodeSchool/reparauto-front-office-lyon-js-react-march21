@@ -16,28 +16,33 @@ export default function Occasions({ occasionCars }) {
       {occasionCars.map((occasion) => (
         <div key={occasion.id} className="md:flex mt-2 ">
           <div className="bg-white sm:w-full md:w-80 my-10 m-auto border-1 border-dashed border-gray-100 shadow-lg hover:shadow-2xl rounded-lg overflow-hidden ">
-            <Image
-              src={occasion.Photos[0].url}
-              alt={occasion.titre}
-              className="w-full"
-              width={500}
-              height={350}
-              layout="responsive"
-            />
-            <div className="p-4">
-              <p className="my-3 text-gray-900 text-lg font-semibold">
-                {occasion.titre}
-              </p>
-              <span className="text-gray-700">
-                Prix :{' '}
-                <span className="text-xl font-medium">{occasion.prix} TTC</span>{' '}
-              </span>
-              <button
-                type="button"
-                className="flex my-5 shadow-lg hover:shadow-2xl cursor-pointer bg-yellow-300 px-4 py-2 bg-teal-500 rounded-lg  align-center"
-              >
-                <Link href="./Detail-occasion">Détails</Link>
-              </button>
+            <div>
+              <Image
+                src={occasion.Photos[0].url}
+                alt={occasion.SecondHandModel}
+                className="w-screen z-0"
+                width={500}
+                height={350}
+                layout="responsive"
+              />
+
+              <div className="p-4">
+                <p className="my-3 text-gray-900 text-lg font-semibold">
+                  {occasion.titre}
+                </p>
+                <span className="text-gray-700">
+                  Prix :{' '}
+                  <span className="text-xl font-medium">
+                    {occasion.Price} TTC
+                  </span>{' '}
+                </span>
+                <button
+                  type="button"
+                  className="flex my-5 shadow-lg hover:shadow-2xl cursor-pointer bg-yellow-300 px-4 py-2 bg-teal-500 rounded-lg  align-center"
+                >
+                  <Link href="./Detail-occasion">Détails</Link>
+                </button>
+              </div>
             </div>
           </div>
         </div>
