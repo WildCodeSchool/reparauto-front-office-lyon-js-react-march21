@@ -1,10 +1,18 @@
+/* eslint-disable func-names */
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-sequences */
+/* eslint-disable no-console */
+/* eslint-disable no-shadow */
+/* eslint-disable no-unused-vars */
 import { useForm, Controller } from 'react-hook-form';
 import { motion } from 'framer-motion';
 import ReactDatePicker from 'react-datepicker';
+
 import axios from 'axios';
 import { useToasts } from 'react-toast-notifications';
 
 export default function Appointements() {
+
   const {
     register,
     handleSubmit,
@@ -12,7 +20,9 @@ export default function Appointements() {
     formState: { errors },
   } = useForm();
 
+
   const { addToast } = useToasts();
+
 
   const onSubmit = (data) => {
     console.log(data);
@@ -39,9 +49,11 @@ export default function Appointements() {
             }
           );
       })
+
       .catch(function (err) {
         console.log(err);
       });
+
   };
 
   return (
@@ -63,7 +75,9 @@ export default function Appointements() {
             <div className="flex flex-col items-center py-2 space-y-3" />
             <form
               onSubmit={handleSubmit(onSubmit)}
+
               className=" flex flex-col mx-10"
+
             >
               <input
                 {...register('firstName', {
@@ -71,7 +85,7 @@ export default function Appointements() {
                   required: true,
                   minLength: { value: 3 },
                 })}
-                className="p-3 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
+                className="p-3 m my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
                 name="firstName"
                 placeholder="Prénom"
                 type="text"
