@@ -8,7 +8,7 @@ export default function Nav() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.8 }}
-      className="navbar"
+      className=" z-50"
     >
       <motion.div
         animate={{ y: -80 }}

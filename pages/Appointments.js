@@ -132,10 +132,6 @@ export default function Appointements() {
                   />
                 )}
               />
-              <input
-                type="file"
-                className="py-3 my-2 text-lg bg-white  rounded-xl text-gray-800 hover:shadow-lg"
-              />
               <button
                 type="submit"
                 className="py-4 mx-10 mt-2 mb-10 text-lg bg-gradient-to-r from-yellow-400 to-red-500 rounded-xl text-gray-800 hover:shadow-lg"
