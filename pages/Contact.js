@@ -94,7 +94,6 @@ export default function Contact() {
               <input
                 {...register('ContactBrand', {
                   // pattern: /^[A-Za-z]+$/i,
-                        
                   required: true,
                   minLength: { value: 3 },
                 })}
@@ -152,10 +151,8 @@ export default function Contact() {
 
               {/*
                     <input
-
                       {...register('ContactPhotos', {
                   name: 'ContactPhotos',
-
                 })}
                       type="file"
                       // onChange={handleFiles}

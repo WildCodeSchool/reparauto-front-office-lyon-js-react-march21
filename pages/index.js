@@ -3,6 +3,8 @@ import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import homeImg from '../public/images/accueil-2.jpg';
 
+// import homeImg from '../public/images/accueil1.jpg';
+
 export default function Home() {
   return (
     <div className={styles.container}>
