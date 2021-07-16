@@ -25,7 +25,7 @@ export default function Appointements() {
     console.log(data);
     axios({
       method: 'post',
-      url: process.env.NEXT_PUBLIC_APPOINTMENTS_URL,
+      url: '/api/appointments',
       data: {
         Brand: data.Brand,
         Model: data.Model,
