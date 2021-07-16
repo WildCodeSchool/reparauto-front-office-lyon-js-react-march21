@@ -1,9 +1,3 @@
-/* eslint-disable func-names */
-/* eslint-disable no-unused-expressions */
-/* eslint-disable no-sequences */
-/* eslint-disable no-console */
-/* eslint-disable no-shadow */
-/* eslint-disable no-unused-vars */
 import { useForm, Controller } from 'react-hook-form';
 import { motion } from 'framer-motion';
 import ReactDatePicker from 'react-datepicker';
@@ -12,7 +6,6 @@ import axios from 'axios';
 import { useToasts } from 'react-toast-notifications';
 
 export default function Appointements() {
-
   const {
     register,
     handleSubmit,
@@ -20,15 +13,13 @@ export default function Appointements() {
     formState: { errors },
   } = useForm();
 
-
   const { addToast } = useToasts();
-
 
   const onSubmit = (data) => {
     console.log(data);
     axios({
       method: 'post',
-      url: process.env.NEXT_PUBLIC_APPOINTMENTS_URL,
+      url: '/api/appointments',
       data: {
         Brand: data.Brand,
         Model: data.Model,
@@ -39,21 +30,21 @@ export default function Appointements() {
         AppointmentsImmatriculation: data.immatriculation,
       },
     })
-      .then(function (response) {
-        console.log(response),
-          addToast(
-            `Merci M.${data.lastName}, votre demande de rendez-vous a bien été prise en compte pour le ${data.date}`,
-            {
-              appearance: 'success',
-              autoDismiss: true,
-            }
-          );
+      .then((response) => {
+        console.log(response);
+        addToast(
+          `Merci M.${data.lastName}, votre demande de rendez-vous a bien été prise en compte pour le ${data.date}`,
+          {
+            appearance: 'success',
+            autoDismissTimeout: '4000',
+            autoDismiss: true,
+          }
+        );
       })
 
       .catch(function (err) {
         console.log(err);
       });
-
   };
 
   return (
@@ -75,9 +66,7 @@ export default function Appointements() {
             <div className="flex flex-col items-center py-2 space-y-3" />
             <form
               onSubmit={handleSubmit(onSubmit)}
-
               className=" flex flex-col mx-10"
-
             >
               <input
                 {...register('firstName', {
