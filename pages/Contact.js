@@ -43,11 +43,11 @@ export default function Contact() {
       method: 'post',
       url: '/api/contact',
       data: {
-        ContactContent: data.ContactContent,
-        UserEmail: data.UserEmail,
-        ContactImmat: data.ContactImmat,
-        ContactModel: data.ContactModel,
-        ContactBrand: data.ContactBrand,
+        contactUserName: data.contactUserName,
+        contactContent: data.contactContent,
+        contactEmail: data.contactEmail,
+        contactImmat: data.contactImmat,
+        contactBrandModel: data.contactBrandModel,
       },
     })
       .then((reponse) => {
@@ -92,62 +92,61 @@ export default function Contact() {
               className="w-3/4 flex flex-col "
             >
               <input
-                {...register('ContactBrand', {
+                {...register('contactUserName', {
                   // pattern: /^[A-Za-z]+$/i,
                   required: true,
                   minLength: { value: 3 },
                 })}
                 className="p-3 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
-                name="ContactBrand"
-                placeholder="Marque du vehicule"
+                name="contactUserName"
+                placeholder="Nom et prénom"
                 type="text"
               />
+              {errors.contactUserName && <p>Nom et prénom requis</p>}
               <input
-                {...register('ContactModel', {
-                  // pattern: /^[A-Za-z]+$/i,
-
+                {...register('contactBrandModel', {
                   required: true,
                   minLength: { value: 2 },
                 })}
                 className="p-3 my-2 text-gray-500 rounded-xl resize-none  hover:shadow-lg"
-                name="ContactModel"
-                placeholder="Modele du véhicule"
+                name="contactBrandModel"
+                placeholder="Marque et modèle"
                 type="text"
               />
-              {errors.lastName && <p>Nom requis (lettres uniquement)</p>}
+              {errors.contactBrandModel && <p>Marque et modèle requis</p>}
               <input
-                {...register('UserEmail', {
+                {...register('contactEmail', {
                   required: true,
                   minLength: { value: 3 },
                 })}
                 className="p-3 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
                 placeholder="Email"
                 type="email"
-                name="UserEmail"
+                name="contactEmail"
               />
-              {errors.email && <p>Email requis</p>}
+              {errors.contactEmail && <p>Email requis</p>}
               <input
-                {...register('ContactImmat', {
+                {...register('contactImmat', {
                   required: true,
                   minLength: { value: 3 },
                 })}
                 className="p-3 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
                 placeholder="Immatriculation"
                 type="text"
-                name="ContactImmat"
+                name="contactImmat"
               />
-              {errors.immatriculation && <p>Immatriculation requise</p>}
+              {errors.contactImmat && <p>Immatriculation requise</p>}
               <textarea
-                {...register('ContactContent', {
+                {...register('contactContent', {
                   required: true,
                   minLength: { value: 1 },
                 })}
                 className="p-3 h-24 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
                 placeholder="Laissez nous un message"
-                name="ContactContent"
+                name="contactContent"
                 type="text"
               />
-              {errors.message && <p>Message requis</p>}
+              {errors.contactContent && <p>Message requis</p>}
 
               {/*
                     <input
