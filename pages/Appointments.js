@@ -21,7 +21,7 @@ export default function Appointements() {
       method: 'post',
       url: '/api/appointments',
       data: {
-        apppointmentsUserName: data.apppointmentsUserName,
+        appointmentsUserName: data.appointmentsUserName,
         appointmentsEmail: data.appointmentsEmail,
         brandModel: data.brandModel,
         appointmentsImmatriculation: data.appointmentsImmatriculation,
@@ -31,19 +31,19 @@ export default function Appointements() {
     })
       .then((response) => {
         console.log(response);
-        addToast(
-          `Merci ${data.apppointmentsUserName}, votre demande de rendez-vous a bien été prise en compte pour le ${data.date}`,
-          {
-            appearance: 'success',
-            autoDismissTimeout: '4000',
-            autoDismiss: true,
-          }
-        );
       })
 
       .catch(function (err) {
         console.log(err);
       });
+    addToast(
+      `Merci ${data.appointmentsUserName}, votre demande de rendez-vous a bien été prise en compte pour le ${data.appointmentDate}`,
+      {
+        appearance: 'success',
+        autoDismissTimeout: '6000',
+        autoDismiss: true,
+      }
+    );
   };
 
   return (
@@ -68,7 +68,7 @@ export default function Appointements() {
               className=" flex flex-col mx-10"
             >
               <input
-                {...register('apppointmentsUserName', {
+                {...register('appointmentsUserName', {
                   required: true,
                   minLength: { value: 3 },
                 })}
@@ -77,7 +77,7 @@ export default function Appointements() {
                 placeholder="Nom, Prénom"
                 type="text"
               />
-              {errors.apppointmentsUserName && <p>Nom et prenom requis</p>}
+              {errors.appointmentsUserName && <p>Nom et prénom requis</p>}
               <input
                 {...register('appointmentsEmail', {
                   required: true,

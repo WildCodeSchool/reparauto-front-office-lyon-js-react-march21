@@ -4,7 +4,7 @@ export default function (req, res) {
   console.log(req.body);
   console.log(res.body);
   const {
-    apppointmentsUserName,
+    appointmentsUserName,
     appointmentsEmail,
     brandModel,
     appointmentsImmatriculation,
@@ -26,15 +26,15 @@ export default function (req, res) {
   const mailData = {
     from: process.env.SMTP_MAILSENDER,
     to: process.env.SMTP_MAILRECEIVER,
-    subject: `${appointmentsEmail}/${apppointmentsUserName} vous à contacté`,
-    text: `Nom : ${apppointmentsUserName},</br>
+    subject: `${appointmentsEmail}/${appointmentsUserName} vous à contacté`,
+    text: `Nom : ${appointmentsUserName},</br>
        Email : ${appointmentsEmail},
         Marque, modèle : ${brandModel},
         Immatriculation : ${appointmentsImmatriculation},
         Contenu : ${appointmentsContent},
         Date : ${appointmentDate}`,
 
-    html: `Message:${appointmentsContent},</br> Nom:${appointmentDate},</br> Immatriculation: ${appointmentsImmatriculation},</br> Modele:${brandModel},Date : ${appointmentDate},</br> Email :${appointmentsEmail}`,
+    html: `Message:${appointmentsContent},</br> Nom:${appointmentsUserName},</br> Immatriculation: ${appointmentsImmatriculation},</br> Modele:${brandModel},Date : ${appointmentDate},</br> Email :${appointmentsEmail}`,
     /*
     attachments: [
       {
