@@ -28,7 +28,7 @@ export default function (req, res) {
     from: process.env.SMTP_MAILSENDER,
     to: process.env.SMTP_MAILRECEIVER,
     subject: `${UserEmail} vous à contacté`,
-    text: `Message:${ContactContent},
+    text: `Message:${ContactContent},</br>
        Description:${CarDescription},
        Immatriculation: ${ContactImmat},
         Modele:${ContactModel},

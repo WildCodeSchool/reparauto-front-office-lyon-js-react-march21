@@ -66,6 +66,8 @@ export default function Contact() {
       `Votre mail a bien été envoyé, je vous répondrais dés que possible a votre adresse: ${data.UserEmail}, merci !`,
       {
         appearance: 'success',
+        autoDismissTimeout: '4000',
+        autoDismiss: true,
       }
     );
   };

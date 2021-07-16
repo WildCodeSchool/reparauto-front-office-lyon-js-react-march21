@@ -42,6 +42,7 @@ export default function Appointements() {
           `Merci M.${data.lastName}, votre demande de rendez-vous a bien été prise en compte pour le ${data.date}`,
           {
             appearance: 'success',
+            autoDismissTimeout: '4000',
             autoDismiss: true,
           }
         );
