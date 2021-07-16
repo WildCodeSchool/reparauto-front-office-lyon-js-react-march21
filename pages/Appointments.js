@@ -1,6 +1,7 @@
 import { useForm, Controller } from 'react-hook-form';
 import { motion } from 'framer-motion';
 import ReactDatePicker from 'react-datepicker';
+
 import axios from 'axios';
 import { useToasts } from 'react-toast-notifications';
 
@@ -18,7 +19,7 @@ export default function Appointements() {
     console.log(data);
     axios({
       method: 'post',
-      url: process.env.NEXT_PUBLIC_APPOINTMENTS_URL,
+      url: '/api/appointments',
       data: {
         Brand: data.Brand,
         Model: data.Model,
@@ -29,16 +30,18 @@ export default function Appointements() {
         AppointmentsImmatriculation: data.immatriculation,
       },
     })
-      .then(function (response) {
-        console.log(response),
-          addToast(
-            `Merci M.${data.lastName}, votre demande de rendez-vous a bien été prise en compte pour le ${data.date}`,
-            {
-              appearance: 'success',
-              autoDismiss: true,
-            }
-          );
+      .then((response) => {
+        console.log(response);
+        addToast(
+          `Merci M.${data.lastName}, votre demande de rendez-vous a bien été prise en compte pour le ${data.date}`,
+          {
+            appearance: 'success',
+            autoDismissTimeout: '4000',
+            autoDismiss: true,
+          }
+        );
       })
+
       .catch(function (err) {
         console.log(err);
       });
@@ -54,12 +57,12 @@ export default function Appointements() {
     >
       <div className="h-full sm:max-w-xl sm:mx-auto">
         <div className="flex flex-col item-center shadow-lg ">
-          <div className="bg-white flex justify-center md:rounded-t-xl sm:py-6 md:py-6  hover:shadow-l">
+          <div className="bg-white flex justify-center md:rounded-t-xl sm:py-6 md:py-6 hover:shadow-lg">
             <h2 className="text-gray-800 text-xl font-semibold py-2">
               Prenons rendez-vous !
             </h2>
           </div>
-          <div className="bg-gray-200 flex flex-col items-center md:rounded-b-xl ">
+          <div className="bg-gray-200 flex flex-col items-center">
             <div className="flex flex-col items-center py-2 space-y-3" />
             <form
               onSubmit={handleSubmit(onSubmit)}
@@ -71,7 +74,7 @@ export default function Appointements() {
                   required: true,
                   minLength: { value: 3 },
                 })}
-                className="p-3 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
+                className="p-3 m my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
                 name="firstName"
                 placeholder="Prénom"
                 type="text"
@@ -129,14 +132,10 @@ export default function Appointements() {
                   <ReactDatePicker
                     onChange={onChange}
                     selected={value}
-                    className="p-3 my-2 text-gray-500 rounded-xl hover:shadow-lg"
-                    placeholderText="Date de rendez-vous souhaité"
+                    className="p-3 px-16 my-2 text-gray-500 rounded-xl hover:shadow-lg"
+                    placeholderText="Date de rendez-vous"
                   />
                 )}
-              />
-              <input
-                type="file"
-                className="py-3 my-2 text-lg bg-white  rounded-xl text-gray-800 hover:shadow-lg"
               />
               <button
                 type="submit"
