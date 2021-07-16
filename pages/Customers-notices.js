@@ -25,7 +25,7 @@ export default function Avis({ reviews }) {
   };
   // form data sending email
   const onSubmit = (data) => {
-    data.rating &&
+    if (data.rating) {
       axios({
         method: 'post',
         url: process.env.NEXT_PUBLIC_REVIEWS_URL,
@@ -45,6 +45,7 @@ export default function Avis({ reviews }) {
           // On traite ici les erreurs éventuellement survenues
           console.log(erreur);
         });
+    }
     if (data.rating !== undefined) {
       addToast(
         `Merci ${data.userNameRequired}, votre message a bien été envoyé avec une note de ${data.rating} étoiles !`,
@@ -167,8 +168,8 @@ export default function Avis({ reviews }) {
 export async function getStaticProps() {
   const res = await axios.get(process.env.NEXT_PUBLIC_REVIEWS_URL);
   const reviews = res.data;
-
   return {
     props: { reviews },
+    revalidate: 60,
   };
 }
