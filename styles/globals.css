@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   background-color:#D3D3D3;
@@ -14,14 +18,10 @@ a {
 
 * {
   box-sizing: border-box;
-  
 }
 
 .slider { width: 384px; height: 250px; overflow: hidden;}
-
-
   .slider figure Image { width: 384px; height: 250px ; float: top; }
-
 
   @keyframes slidy {
     0% { top: 0%; }
@@ -34,7 +34,6 @@ a {
     95% { top: -300%; }
     100% { top: -400%; }
   }
-
   .slider figure {
     position: relative;
     height: 250px;
@@ -45,4 +44,4 @@ a {
     left: 0;
     text-align: left;
     animation: 30s slidy infinite;
-  }
+}

@@ -68,11 +68,17 @@ export default function Avis({ reviews }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1.1 }}
-      className="flex justify-center sm:flex-row md:flex flex-col-reverse"
+      className="flex justify-evenly md:mt-12 sm:mt-0 sm:flex-row md:flex flex-col-reverse"
     >
       <div>
         {reviews.map((review) => (
-          <div className="max-w-md mb-20 md:m-6 bg-white rounded-xl shadow-lg overflow-hidden md:max-w-xl my-10 ">
+          <motion.div
+            key={reviews.id}
+            whileHover={{ y: -7 }}
+            className="max-w-m mb-20 md:m-6 bg-white rounded-xl shadow-lg
+          >
+            overflow-hidden md:max-w-xl "
+          >
             <div className="p-6 md:p-4 ">
               <p>Note : {review.Rating} / 5</p>
               <div className="tracking-wide text-sm text-indigo-500 font-semibold">
@@ -83,28 +89,28 @@ export default function Avis({ reviews }) {
               </p>
               {console.log(reviews)}
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
-      <div>
+      <motion.div whileHover={{ y: -7 }}>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className=" py-4 flex flex-col justify-center sm:py-3">
-            <div className="py-3 m-auto mt-0 mb-0">
-              <div className="bg-white w-full flex flex-col rounded-xl shadow-lg">
+          <div className=" flex flex-col justify-center mb-10 sm:py-3">
+            <div className="md:py-3 m-auto mt-0 mb-0">
+              <div className="bg-white w-full flex flex-col md:rounded-xl shadow-lg">
                 <div className="px-12 py-5">
-                  <h2 className="text-gray-800 text-xl font-semibold">
+                  <h2 className="text-gray-800 text-xl font-semibold flex justify-center">
                     Votre avis nous intéresse !
                   </h2>
                 </div>
                 <div className="bg-gray-200 w-full flex flex-col items-center">
-                  <div className="flex flex-col items-center py-3 space-y-1">
+                  <div className="flex flex-col items-center py-6 px-10 space-y-1">
                     <span className="text-lg text-gray-800">
                       Quelle à été la qualité du service rendu ?
                     </span>
 
                     <div className="flex space-x-3">
                       <ReactStars
-                        size={65}
+                        size={48}
                         activeColor="#ffd700"
                         value={starRating}
                         onChange={(setStarRating, ratingChanged)}
@@ -141,7 +147,7 @@ export default function Avis({ reviews }) {
                     )}
                     <button
                       type="submit"
-                      className="py-3 my-8 text-lg bg-gradient-to-r from-yellow-500 to-red-600 rounded-xl text-white hover:shadow-lg"
+                      className="py-3 mt-3 mb-16 text-lg bg-gradient-to-r from-yellow-500 to-red-600 rounded-xl text-white hover:shadow-lg"
                     >
                       Envoyer
                     </button>
@@ -151,7 +157,7 @@ export default function Avis({ reviews }) {
             </div>
           </div>
         </form>
-      </div>
+      </motion.div>
     </motion.div>
   );
 }

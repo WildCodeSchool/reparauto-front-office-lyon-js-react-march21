@@ -1,11 +1,9 @@
-/* eslint-disable prettier/prettier */
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
-
+import homeImg from '../public/images/accueil-2.jpg';
 
 export default function Home() {
- 
   return (
     <div className={styles.container}>
       <Head>
@@ -15,18 +13,20 @@ export default function Home() {
           content="Réparation de véhicule à domicile"
         />
         <link rel="icon" href="./favicon.png" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap"
+          rel="stylesheet"
+        />
       </Head>
 
-      
       <div className="sm:mt-0 md:mt-10 ">
         <Image
-          src="/images/accueil-1.jpg"
+          src={homeImg}
           alt="accueil"
-          height="700px"
-          width="900px"
+          layout="responsive"
+          placeholder="blur"
         />
       </div>
     </div>
   );
 }
-
