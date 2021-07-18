@@ -18,8 +18,8 @@ export default function Nav() {
       className="navbar"
     >
       <motion.input
-        whileHover={{ scale: 1.1, originX: 0}}
-        whileTap={{ scale: 0.90 }}
+        whileHover={{ scale: 1.1, originX: 0 }}
+        whileTap={{ scale: 0.9 }}
         onClick={showMenu}
         type="image"
         src="./icon-burger.png"
