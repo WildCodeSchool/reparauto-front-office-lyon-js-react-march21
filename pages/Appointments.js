@@ -42,7 +42,7 @@ export default function Appointements() {
         );
       })
 
-      .catch(function (err) {
+      .catch((err) => {
         console.log(err);
       });
   };
