@@ -1,6 +1,10 @@
 import Image from 'next/image';
 import axios from 'axios';
 import { motion } from 'framer-motion';
+import serviceLowImg from '../public/images/service1.jpg';
+import serviceHighImg from '../public/images/service2.jpg';
+import otherServiceImg from '../public/images/services3.jpeg';
+
 // import pictureActivities from '../public/images/pictureActivities.jpg';
 
 export default function Activities({ services }) {
@@ -17,29 +21,29 @@ export default function Activities({ services }) {
         alt="background"
         layout="fill"
       /> */}
-      <div className="px-3 mb-10 ">
-        <h1 className="text-4xl sm:text-5xl text-center my-10">
+      <div className="md:mb-10">
+        <h1 className="text-3xl sm:text-5xl text-center py-3 bg-white md:bg-transparent w-full">
           Nos prestations
         </h1>
         {services.map((service) => (
           <div
             key={service.id}
-            className="grid md:grid-cols-3 gap-8 max-w-4xl m-auto"
+            className="grid md:grid-cols-3 md:gap-8 max-w-4xl m-auto"
           >
-            <div className="bg-white mt-10 sm:w-screen md:w-64 shadow-lg rounded-b-lg transform motion-safe:hover:shadow-2xl transition duration-500 transform hover:scale-105 transition duration-500">
+            <div className="bg-white md:mt-10 sm:w-screen md:w-64 rounded-b-lg shadow-lg transform hover:shadow-2xl transition duration-400">
               <Image
-                src="/images/diag.jpg"
+                src={serviceLowImg}
                 alt="carwash"
                 className="w-full"
                 width={500}
                 height={300}
                 layout="responsive"
               />
-              <div className="px-10 py-12 mb-20 text-center">
+              <div className="px-10 py-6 mb-20 text-center">
                 <h1 className="text-2xl font-bold text-yellow-500 mb-10">
                   TRAVAUX SIMPLES
                 </h1>
-                <span className="text-sm">{service.ServiceLow}</span>
+                <p className="text-md h-20">{service.ServiceLow}</p>
               </div>
               <button
                 type="button"
@@ -49,20 +53,20 @@ export default function Activities({ services }) {
                 <span className="text-4xl">{service.ServiceLowPrice}€</span>
               </button>
             </div>
-            <div className="bg-white mt-10 sm:w-screen md:w-64 shadow-lg rounded-b-lg transform motion-safe:hover:shadow-2xl transition duration-500 transform hover:scale-105 transition duration-500">
+            <div className="bg-white mt-10 sm:w-screen md:w-64 rounded-b-lg shadow-lg transform hover:shadow-2xl transition duration-400">
               <Image
-                src="/images/vidange.jpg"
+                src={serviceHighImg}
                 alt="carwash"
                 className="w-full"
                 width={500}
                 height={300}
                 layout="responsive"
               />
-              <div className="px-10 py-12 text-center">
+              <div className="px-10 py-6 text-center">
                 <h1 className="text-2xl font-bold text-yellow-600 mb-10">
                   TRAVAUX LOURDS
                 </h1>
-                <span className="text-sm">{service.ServiceHigh}</span>
+                <p className="text-md h-32">{service.ServiceHigh}</p>
               </div>
               <button
                 type="button"
@@ -72,20 +76,20 @@ export default function Activities({ services }) {
                 <span className="text-4xl">{service.ServiceHighPrice}€</span>
               </button>
             </div>
-            <div className="bg-white mt-10 sm:w-screen md:w-64 shadow-lg rounded-b-lg transform motion-safe:hover:shadow-2xl transition duration-500 transform hover:scale-105 transition duration-500">
+            <div className="bg-white mt-10 sm:mb-20 md:mb-0 sm:w-screen md:w-64 rounded-b-lg shadow-lg transform hover:shadow-2xl transition duration-400">
               <Image
-                src="/images/carwash.jpg"
+                src={otherServiceImg}
                 alt="carwash"
                 className="w-full"
                 width={500}
                 height={300}
                 layout="responsive"
               />
-              <div className="px-10 py-12  text-center">
+              <div className="px-10 py-6 text-center">
                 <h1 className="text-2xl font-bold text-red-500 mb-10">
-                  DIVERS
+                  AUTRES TRAVAUX
                 </h1>
-                <span className="text-sm">{service.OtherService}</span>
+                <p className="text-md h-32">{service.OtherService}</p>
               </div>
               <button
                 type="button"
@@ -108,5 +112,6 @@ export async function getStaticProps() {
 
   return {
     props: { services },
+    revalidate: 60,
   };
 }

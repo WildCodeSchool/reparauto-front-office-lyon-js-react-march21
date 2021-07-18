@@ -85,7 +85,7 @@ export default function Contact() {
               N'hésitez pas à nous contacter !
             </h2>
           </div>
-          <div className="bg-gray-200  flex flex-col items-center md:rounded-b-xl ">
+          <div className="bg-gray-200 flex flex-col items-center shadow-md transform hover:shadow-2xl transition duration-500">
             <div className="flex flex-col items-center py-2 space-y-3" />
             <form
               onSubmit={handleSubmit(onSubmit)}
@@ -97,7 +97,7 @@ export default function Contact() {
                   required: true,
                   minLength: { value: 3 },
                 })}
-                className="p-3 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
+                className="p-3 my-2 text-gray-500 rounded-xl resize-none shadow-md transform hover:shadow-xl transition duration-400"
                 name="ContactBrand"
                 placeholder="Marque du vehicule"
                 type="text"
@@ -109,7 +109,7 @@ export default function Contact() {
                   required: true,
                   minLength: { value: 2 },
                 })}
-                className="p-3 my-2 text-gray-500 rounded-xl resize-none  hover:shadow-lg"
+                className="p-3 my-2 text-gray-500 rounded-xl resize-none  shadow-md transform hover:shadow-xl transition duration-400"
                 name="ContactModel"
                 placeholder="Modele du véhicule"
                 type="text"
@@ -120,7 +120,7 @@ export default function Contact() {
                   required: true,
                   minLength: { value: 3 },
                 })}
-                className="p-3 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
+                className="p-3 my-2 text-gray-500 rounded-xl resize-none shadow-md transform hover:shadow-xl transition duration-400"
                 placeholder="Email"
                 type="email"
                 name="UserEmail"
@@ -131,7 +131,7 @@ export default function Contact() {
                   required: true,
                   minLength: { value: 3 },
                 })}
-                className="p-3 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
+                className="p-3 my-2 text-gray-500 rounded-xl resize-none shadow-md transform hover:shadow-xl transition duration-400"
                 placeholder="Immatriculation"
                 type="text"
                 name="ContactImmat"
@@ -142,7 +142,7 @@ export default function Contact() {
                   required: true,
                   minLength: { value: 1 },
                 })}
-                className="p-3 h-24 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
+                className="p-3 h-24 my-2 text-gray-500 rounded-xl resize-none shadow-md transform hover:shadow-xl transition duration-400"
                 placeholder="Laissez nous un message"
                 name="ContactContent"
                 type="text"
@@ -162,7 +162,7 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="py-4 mt-2 mb-20 text-lg bg-gradient-to-r from-yellow-400 to-red-500 rounded-xl text-gray-800 hover:shadow-lg"
+                className="py-4 mt-2 mb-20 text-lg bg-gradient-to-r from-yellow-400 to-red-500 rounded-xl text-gray-800 shadow-md transform hover:shadow-xl transition duration-400"
               >
                 Envoyez
               </button>

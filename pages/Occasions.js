@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import axios from 'axios';
 import { motion } from 'framer-motion';
+import occasionImg from '../public/images/accueil3.jpg';
 
 export default function Occasions({ occasionCars }) {
   return (
@@ -11,14 +12,19 @@ export default function Occasions({ occasionCars }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1.1 }}
-      className="md:flex flex-row justify-evenly "
+      className="flex-col justify-center md:mt-10"
     >
+      <div>
+        <h1 className="text-2xl sm:text-5xl text-center py-3 bg-white w-full md:bg-transparent ">
+          Venez découvrir nos Occasions !
+        </h1>
+      </div>
       {occasionCars.map((occasion) => (
         <div key={occasion.id} className="md:flex mt-2 ">
-          <div className="bg-white sm:w-full md:w-80 my-10 m-auto border-1 border-dashed border-gray-100 shadow-lg hover:shadow-2xl rounded-lg overflow-hidden ">
+          <div className="bg-white sm:w-full md:w-3/5 my-10 m-auto border-1 border-dashed border-gray-100 shadow-lg hover:shadow-2xl rounded-lg overflow-hidden ">
             <div>
               <Image
-                src={occasion.Photos[0].url}
+                src={occasionImg}
                 alt={occasion.SecondHandModel}
                 className="w-screen z-0"
                 width={500}
@@ -57,5 +63,6 @@ export async function getStaticProps() {
 
   return {
     props: { occasionCars },
+    revalidate: 90,
   };
 }
