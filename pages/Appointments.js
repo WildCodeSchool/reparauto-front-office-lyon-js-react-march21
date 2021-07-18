@@ -53,12 +53,12 @@ export default function Appointements() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1.1 }}
-      className="flex flex-col md:mt-10 sm:mt-0 justify-center "
+      className="flex flex-col md:mt-28 sm:mt-0 justify-center "
     >
       <div className="h-full sm:max-w-xl sm:mx-auto">
         <div className="flex flex-col item-center shadow-lg ">
           <div className="bg-white flex justify-center md:rounded-t-xl sm:py-6 md:py-6 hover:shadow-lg">
-            <h2 className="text-gray-800 text-xl font-semibold py-2">
+            <h2 className="text-gray-800 text-2xl font-semibold py-3">
               Prenons rendez-vous !
             </h2>
           </div>
