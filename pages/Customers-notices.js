@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-expressions */
-/* eslint-disable no-console */
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import ReactStars from 'react-rating-stars-component';
@@ -78,7 +76,7 @@ export default function Avis({ reviews }) {
           <motion.div
             key={reviews.id}
             whileHover={{ y: -7 }}
-            className="max-w-m mb-20 md:m-6 bg-white rounded-xl shadow-lg
+            className="max-w-m mt-5 md:my-6 md:mb-8 bg-white rounded-xl shadow-lg
           >
             overflow-hidden md:max-w-xl "
           >
@@ -127,21 +125,21 @@ export default function Avis({ reviews }) {
                     <textarea
                       {...register('content', { required: true })}
                       rows="3"
-                      className="p-4 my-2 text-gray-500 rounded-xl resize-none hover:shadow-xl"
+                      className="p-4 my-2 text-gray-500 rounded-xl resize-none shadow-md transform hover:shadow-xl transition duration-400"
                       placeholder="Rédigez votre avis :"
                     />
                     <input
                       placeholder="Votre email:"
                       {...register('clientEmail', { required: true })}
                       rows="3"
-                      className="p-4 text-gray-500 my-2 rounded-xl resize-none hover:shadow-lg"
+                      className="p-4 text-gray-500 my-2 rounded-xl resize-none shadow-md transform hover:shadow-xl transition duration-400"
                       type="email"
                     />
                     <input
                       placeholder="Votre nom:"
                       {...register('userNameRequired', { required: true })}
                       rows="3"
-                      className="p-4 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
+                      className="p-4 my-2 text-gray-500 rounded-xl resize-none shadow-md transform hover:shadow-xl transition duration-400"
                     />
                     {errors.userNameRequired && (
                       <span>
@@ -150,7 +148,7 @@ export default function Avis({ reviews }) {
                     )}
                     <button
                       type="submit"
-                      className="py-3 mt-3 mb-16 text-lg bg-gradient-to-r from-yellow-500 to-red-600 rounded-xl text-white hover:shadow-lg"
+                      className="py-3 mt-3 mb-16 text-lg bg-gradient-to-r from-yellow-500 to-red-600 rounded-xl text-white shadow-md transform hover:shadow-xl transition duration-400"
                     >
                       Envoyer
                     </button>
@@ -168,8 +166,8 @@ export default function Avis({ reviews }) {
 export async function getStaticProps() {
   const res = await axios.get(process.env.NEXT_PUBLIC_REVIEWS_URL);
   const reviews = res.data;
-
   return {
     props: { reviews },
+    revalidate: 60,
   };
 }
