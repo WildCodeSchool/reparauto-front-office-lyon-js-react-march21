@@ -72,7 +72,7 @@ export default function Appointements() {
                   required: true,
                   minLength: { value: 3 },
                 })}
-                className="p-3 m my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
+                className="p-3 m my-2 text-gray-500 rounded-xl resize-none shadow-md transform hover:shadow-xl transition duration-400"
                 name="appointmentsUserName"
                 placeholder="Nom, Prénom"
                 type="text"
@@ -83,7 +83,7 @@ export default function Appointements() {
                   required: true,
                   minLength: { value: 3 },
                 })}
-                className="p-3 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
+                className="p-3 my-2 text-gray-500 rounded-xl resize-none shadow-md transform hover:shadow-xl transition duration-400"
                 placeholder="Email"
                 type="email"
                 name="appointmentsEmail"
@@ -94,7 +94,7 @@ export default function Appointements() {
                   required: true,
                   minLength: { value: 3 },
                 })}
-                className="p-3 m my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
+                className="p-3 m my-2 text-gray-500 rounded-xl resize-none shadow-md transform hover:shadow-xl transition duration-400"
                 name="brandModel"
                 placeholder="Marque, Modèle"
                 type="text"
@@ -105,7 +105,7 @@ export default function Appointements() {
                   required: true,
                   minLength: { value: 3 },
                 })}
-                className="p-3 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
+                className="p-3 my-2 text-gray-500 rounded-xl resize-none shadow-md transform hover:shadow-xl transition duration-400"
                 placeholder="Immatriculation"
                 type="text"
                 name="appointmentsImmatriculation"
@@ -116,7 +116,7 @@ export default function Appointements() {
                   required: true,
                   minLength: { value: 1 },
                 })}
-                className="p-3 h-24 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
+                className="p-3 h-24 my-2 text-gray-500 rounded-xl resize-none shadow-md transform hover:shadow-xl transition duration-400"
                 placeholder="Travaux à réaliser"
                 name="appointmentsContent"
                 type="text"
@@ -129,14 +129,14 @@ export default function Appointements() {
                   <ReactDatePicker
                     onChange={onChange}
                     selected={value}
-                    className="p-3 px-16 my-2 text-gray-500 rounded-xl hover:shadow-lg"
+                    className="p-3 px-16 my-2 text-gray-500 rounded-xl shadow-md transform hover:shadow-xl transition duration-400"
                     placeholderText="Date de rendez-vous"
                   />
                 )}
               />
               <button
                 type="submit"
-                className="py-4 mx-10 mt-2 mb-10 text-lg bg-gradient-to-r from-yellow-400 to-red-500 rounded-xl text-gray-800 hover:shadow-lg"
+                className="py-4 mt-2 mb-10 text-lg bg-gradient-to-r from-yellow-400 to-red-500 rounded-xl text-gray-800 shadow-md transform hover:shadow-xl transition duration-400"
               >
                 Envoyez
               </button>

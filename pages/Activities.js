@@ -21,14 +21,14 @@ export default function Activities({ services }) {
         alt="background"
         layout="fill"
       /> */}
-      <div className="md:mb-10">
+      <div className="md:mb-20">
         <h1 className="text-3xl sm:text-5xl text-center py-3 bg-white md:bg-transparent w-full">
           Nos prestations
         </h1>
         {services.map((service) => (
           <div
             key={service.id}
-            className="grid md:grid-cols-3 md:gap-8 max-w-4xl m-auto"
+            className="grid md:grid-cols-2 md:gap-8 lg:grid-cols-3 md:ml-16"
           >
             <div className="bg-white md:mt-10 sm:w-screen md:w-64 rounded-b-lg shadow-lg transform hover:shadow-2xl transition duration-400">
               <Image
@@ -39,10 +39,11 @@ export default function Activities({ services }) {
                 height={300}
                 layout="responsive"
               />
-              <div className="px-10 py-6 mb-20 text-center">
+              <div className="px-3 py-6 mb-20 text-center">
                 <h1 className="text-2xl font-bold text-yellow-500 mb-10">
                   TRAVAUX SIMPLES
                 </h1>
+                <hr className="mb-5 w-5/5 bg-gray-700 h-px border-none" />
                 <p className="text-md h-20">{service.ServiceLow}</p>
               </div>
               <button
@@ -62,10 +63,11 @@ export default function Activities({ services }) {
                 height={300}
                 layout="responsive"
               />
-              <div className="px-10 py-6 text-center">
+              <div className="px-3 py-6 text-center">
                 <h1 className="text-2xl font-bold text-yellow-600 mb-10">
                   TRAVAUX LOURDS
                 </h1>
+                <hr className="mb-5 w-5/5 bg-gray-700 h-px border-none" />
                 <p className="text-md h-32">{service.ServiceHigh}</p>
               </div>
               <button
@@ -85,10 +87,11 @@ export default function Activities({ services }) {
                 height={300}
                 layout="responsive"
               />
-              <div className="px-10 py-6 text-center">
+              <div className="px-3 py-6 text-center">
                 <h1 className="text-2xl font-bold text-red-500 mb-10">
-                  AUTRES TRAVAUX
+                  TRAVAUX DIVERS
                 </h1>
+                <hr className="mb-5 w-5/5 bg-gray-700 h-px border-none" />
                 <p className="text-md h-32">{service.OtherService}</p>
               </div>
               <button
