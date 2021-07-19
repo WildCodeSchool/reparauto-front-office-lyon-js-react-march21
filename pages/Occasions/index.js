@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import axios from 'axios';
 import { motion } from 'framer-motion';
-// import occasionImg from '../../public/images/accueil3.jpg';
+
 
 export default function Occasions({ occasionCars }) {
   return (
