@@ -94,6 +94,6 @@ export async function getStaticProps() {
 
   return {
     props: { occasionCars },
-    revalidate: 60,
+    revalidate: 10,
   };
 }

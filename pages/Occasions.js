@@ -35,16 +35,15 @@ export default function Occasions({ occasionCars }) {
                 height={350}
                 layout="responsive"
               />
-
               <div className="p-4 bg-gray-500">
                 <p className="my-3 text-white text-color-white text-xl font-semibold">
-                  "titre du véhicule{occasion.titre}"
+                  {occasion.titre}
                   <hr className="bg-gradient-to-r from-yellow-400 to-red-500 my-3 h-px border-none" />
                 </p>
                 <span className="flex justify-end -mb-14 pt-3 text-white text-xl bg-grey-500 ">
                   Prix :{' '}
                   <span className="text-xl text-white font-medium">
-                    {occasion.Price} TTC
+                    {occasion.Prix} TTC
                   </span>{' '}
                 </span>
                 <motion.button
@@ -75,6 +74,6 @@ export async function getStaticProps() {
 
   return {
     props: { occasionCars },
-    revalidate: 90,
+    revalidate: 10,
   };
 }

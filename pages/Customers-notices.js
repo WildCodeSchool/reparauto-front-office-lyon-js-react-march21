@@ -166,6 +166,6 @@ export async function getStaticProps() {
   const reviews = res.data;
   return {
     props: { reviews },
-    revalidate: 60,
+    revalidate: 10,
   };
 }
