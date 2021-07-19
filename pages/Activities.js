@@ -17,20 +17,20 @@ export default function Activities({ services }) {
         alt="background"
         layout="fill"
       /> */}
-      <div className="md:mb-20">
+      <div className="flex flex-row justify-center md:mb-20">
         <h1 className="text-3xl sm:text-5xl text-center py-3 bg-white md:bg-transparent w-full">
           Nos prestations
         </h1>
         {services.map((service) => (
           <div
             key={service.id}
-            className="grid md:grid-cols-2 md:gap-8 lg:grid-cols-3 md:ml-16"
+            className="flex flex-col justify-center bg-red-300 w-80 md:ml-16"
           >
             <div className="bg-white md:mt-10 sm:w-screen md:w-80 rounded-b-lg shadow-lg transform hover:shadow-2xl transition duration-400">
               {service.picture && (
                 <Image
                   src={service.picture}
-                  alt="carwash"
+                  alt={service.Titre}
                   className="w-full"
                   width={500}
                   height={300}
