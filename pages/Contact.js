@@ -76,16 +76,18 @@ export default function Contact() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1.1 }}
-      className="flex flex-col md:mt-10 sm:mt-0 justify-center "
+      className="flex flex-col md:mt-28 sm:mt-0 justify-center "
     >
       <div className="h-full sm:max-w-xl sm:mx-auto">
-        <div className="flex flex-col item-center shadow-lg ">
-          <div className="bg-white flex justify-center md:rounded-t-xl sm:py-6 md:py-6 hover:shadow-lg px-14">
-            <h2 className="text-gray-800 text-xl font-semibold py-2">
+        <div className="flex flex-col item-center shadow-lg transform hover:shadow-2xl transition duration-400">
+          <div className="bg-white flex justify-center md:rounded-t-xl sm:py-4 md:py-6 shadow-lg transform hover:shadow-2xl transition duration-400 px-14">
+            <h2 className="flex justify-center align-center text-gray-800 text-xl font-semibold py-2">
               N'hésitez pas à nous contacter !
+              <br />
+              06-34-37-24-42
             </h2>
           </div>
-          <div className="bg-gray-200 flex flex-col items-center shadow-md transform hover:shadow-2xl transition duration-500">
+          <div className="bg-gray-200 flex flex-col items-center">
             <div className="flex flex-col items-center py-2 space-y-3" />
             <form
               onSubmit={handleSubmit(onSubmit)}
@@ -97,7 +99,7 @@ export default function Contact() {
                   required: true,
                   minLength: { value: 3 },
                 })}
-                className="p-3 my-2 text-gray-500 rounded-xl resize-none hover:shadow-lg"
+                className="p-3 my-2 text-gray-500 rounded-xl resize-none shadow-lg transform hover:shadow-2xl transition duration-400"
                 name="contactUserName"
                 placeholder="Nom et prénom"
                 type="text"
@@ -108,7 +110,7 @@ export default function Contact() {
                   required: true,
                   minLength: { value: 2 },
                 })}
-                className="p-3 my-2 text-gray-500 rounded-xl resize-none  hover:shadow-lg"
+                className="p-3 my-2 text-gray-500 rounded-xl resize-none shadow-lg transform hover:shadow-2xl transition duration-400"
                 name="contactBrandModel"
                 placeholder="Marque et modèle"
                 type="text"
@@ -119,7 +121,7 @@ export default function Contact() {
                   required: true,
                   minLength: { value: 3 },
                 })}
-                className="p-3 my-2 text-gray-500 rounded-xl resize-none shadow-md transform hover:shadow-xl transition duration-400"
+                className="p-3 my-2 text-gray-500 rounded-xl resize-none shadow-lg transform hover:shadow-2xl transition duration-400"
                 placeholder="Email"
                 type="email"
                 name="contactEmail"
@@ -130,7 +132,7 @@ export default function Contact() {
                   required: true,
                   minLength: { value: 3 },
                 })}
-                className="p-3 my-2 text-gray-500 rounded-xl resize-none shadow-md transform hover:shadow-xl transition duration-400"
+                className="p-3 my-2 text-gray-500 rounded-xl resize-none shadow-lg transform hover:shadow-2xl transition duration-400"
                 placeholder="Immatriculation"
                 type="text"
                 name="contactImmat"
@@ -141,7 +143,7 @@ export default function Contact() {
                   required: true,
                   minLength: { value: 1 },
                 })}
-                className="p-3 h-24 my-2 text-gray-500 rounded-xl resize-none shadow-md transform hover:shadow-xl transition duration-400"
+                className="p-3 h-24 my-2 text-gray-500 rounded-xl resize-none shadow-lg transform hover:shadow-2xl transition duration-400"
                 placeholder="Laissez nous un message"
                 name="contactContent"
                 type="text"
@@ -161,7 +163,7 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="py-4 mt-2 mb-20 text-lg bg-gradient-to-r from-yellow-400 to-red-500 rounded-xl text-gray-800 shadow-md transform hover:shadow-xl transition duration-400"
+                className="py-4 mt-2 mb-20 text-lg bg-gradient-to-r from-yellow-400 to-red-500 rounded-xl text-gray-800 shadow-lg transform hover:shadow-2xl transition duration-400"
               >
                 Envoyez
               </button>

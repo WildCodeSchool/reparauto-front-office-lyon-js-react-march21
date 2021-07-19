@@ -20,8 +20,12 @@ export default function Occasions({ occasionCars }) {
         </h1>
       </div>
       {occasionCars.map((occasion) => (
-        <div key={occasion.id} className="md:flex mt-2 ">
-          <div className="bg-white sm:w-full md:w-3/5 my-10 m-auto border-1 border-dashed border-gray-100 shadow-lg hover:shadow-2xl rounded-lg overflow-hidden ">
+        <motion.div
+          key={occasion.id}
+          whileHover={{ y: -7 }}
+          className="md:flex mt-2 "
+        >
+          <div className="bg-white sm:w-full md:w-2/5 my-10 m-auto border-1 border-dashed border-gray-100 shadow-xl transform hover:shadow-2xl transition duration-400 rounded-lg overflow-hidden ">
             <div>
               <Image
                 src={occasionImg}
@@ -31,29 +35,34 @@ export default function Occasions({ occasionCars }) {
                 height={350}
                 layout="responsive"
               />
-
-              <div className="p-4">
-                <p className="my-3 text-gray-900 text-lg font-semibold">
+              <div className="p-4 bg-gray-500">
+                <p className="my-3 text-white text-color-white text-xl font-semibold">
                   {occasion.titre}
+                  <hr className="bg-gradient-to-r from-yellow-400 to-red-500 my-3 h-px border-none" />
                 </p>
-                <span className="text-gray-700">
+                <span className="flex justify-end -mb-14 pt-3 text-white text-xl bg-grey-500 ">
                   Prix :{' '}
-                  <span className="text-xl font-medium">
-                    {occasion.Price} TTC
+                  <span className="text-xl text-white font-medium">
+                    {occasion.Prix} TTC
                   </span>{' '}
                 </span>
-                <button
+                <motion.button
+                  whileHover={{
+                    scale: 1.03,
+                    originX: 0,
+                    color: '#5c5453',
+                    backgroundColor: '#fdb31f',
+                  }}
+                  whileTap={{ scale: 0.95 }}
                   type="button"
-                  className="flex my-5 shadow-lg hover:shadow-2xl cursor-pointer bg-yellow-300 px-4 py-2 bg-teal-500 rounded-lg  align-center"
+                  className="flex text-lg bg-gray-200 my-5 shadow-lg hover:shadow-2xl cursor-pointer px-4 py-2 rounded-lg align-center"
                 >
-                  <Link href={`./Detail-occasion/${occasion.id}`}>
-                    <p>Détails</p>
-                  </Link>
-                </button>
+                  <Link href={`./Detail-occasion/${occasion.id}`}>Détails</Link>
+                </motion.button>
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       ))}
     </motion.div>
   );
@@ -65,6 +74,6 @@ export async function getStaticProps() {
 
   return {
     props: { occasionCars },
-    revalidate: 90,
+    revalidate: 10,
   };
 }
