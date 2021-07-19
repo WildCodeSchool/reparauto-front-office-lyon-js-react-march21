@@ -32,6 +32,7 @@ export default function Avis({ reviews }) {
           ClientEmail: data.ClientEmail,
           Rating: data.rating,
           ReviewsClientName: data.userNameRequired,
+          ValidatedNotice: null,
         },
       })
         .then((reponse) => {
@@ -74,11 +75,11 @@ export default function Avis({ reviews }) {
       <div>
         {reviews.map((review) => (
           <motion.div
-            key={reviews.id}
             whileHover={{ y: -7 }}
+            key={reviews.id}
             className="max-w-m mt-5 md:my-6 md:mb-8 bg-white rounded-xl shadow-lg transform hover:shadow-2xl overflow-hidden md:max-w-xl "
           >
-            {reviews.ValidatedNotice && (
+            {review.ValidatedNotice && (
               <div className="p-6 md:p-4 ">
                 <p>Note : {review.Rating} / 5</p>
                 <div className="tracking-wide text-sm text-indigo-500 font-semibold">
