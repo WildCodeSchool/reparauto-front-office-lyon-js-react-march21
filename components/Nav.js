@@ -22,14 +22,14 @@ export default function Nav() {
         whileTap={{ scale: 0.9 }}
         onClick={showMenu}
         type="image"
-        src="./icon-burger.png"
+        src="/icon-burger.png"
         alt="menu"
         className=" w-6 right-6 top-5 absolute md:hidden "
       />
       <div className="md:flex justify-around items-center flex-row shadow-lg py-4 md:py-5 px-0 bg-gradient-to-r from-yellow-400 to-red-500 ">
         <img
           className="md:w-12 absolute left-2 top-1 md:left-3 md:top-2 w-12"
-          src="./logo.png"
+          src="/logo.png"
           alt="logo"
         />
         <motion.div
@@ -74,7 +74,7 @@ export default function Nav() {
               whileTap={{ scale: 0.95 }}
               className="ml-20 md:mx-4 text-gray-800"
             >
-              <Link href="./Contact">Contact</Link>
+              <Link href="/Contact">Contact</Link>
             </motion.div>
           </div>
         )}

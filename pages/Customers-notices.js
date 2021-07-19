@@ -128,7 +128,7 @@ export default function Avis({ reviews }) {
                     />
                     <input
                       placeholder="Votre email:"
-                      {...register('clientEmail', { required: true })}
+                      {...register('ClientEmail', { required: true })}
                       rows="3"
                       className="p-4 text-gray-500 my-2 rounded-xl resize-none shadow-lg transform hover:shadow-2xl transition duration-400"
                       type="email"
