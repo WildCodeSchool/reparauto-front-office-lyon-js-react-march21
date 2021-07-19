@@ -11,7 +11,7 @@ export default function Footer() {
       <Link href="./Contact">
         <img
           type="image"
-          src="./logo.png"
+          src="/logo.png"
           alt="logo"
           className="w-9 h-9 cursor-pointer items-center transform hover:scale-110 transition duration-500 mb-5"
         />
@@ -19,7 +19,7 @@ export default function Footer() {
       <Link href="https://www.wildcodeschool.com/fr-FR">
         <img
           type="image"
-          src="./logo-wild.png"
+          src="/logo-wild.png"
           alt="logo-wild"
           className=" w-20 cursor-pointer transform hover:scale-110 transition duration-500"
         />
@@ -27,7 +27,7 @@ export default function Footer() {
       <Link href="https://www.facebook.com/repar.auto.mobile.florian.leblond">
         <img
           type="image"
-          src="./facebook.png"
+          src="/facebook.png"
           alt="facebook-logo"
           className="w-12 h-12 mb-4 cursor-pointer transform hover:scale-110 transition duration-500"
         />
