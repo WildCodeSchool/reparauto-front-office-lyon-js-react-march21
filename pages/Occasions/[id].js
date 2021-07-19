@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import axios from 'axios';
 import { motion } from 'framer-motion';
-import { getOccasions } from '../../models/detailsOccasions';
+import { getSingleOccasion } from '../../models/detailsOccasions';
 
 export default function DetailsOccasions({ occasionCars }) {
   return (
@@ -90,7 +90,7 @@ export default function DetailsOccasions({ occasionCars }) {
 }
 
 export async function getStaticPaths() {
-  const occasions = await getOccasions(0, 3);
+  const occasions = await getSingleOccasion(0, 3);
   const paths = occasions.map((a) => ({ params: { id: a.id.toString() } }));
   return {
     paths,

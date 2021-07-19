@@ -32,7 +32,7 @@ export default function Appointements() {
         console.log(response);
       })
 
-      .catch(function (err) {
+      .catch((err) => {
         console.log(err);
       });
     addToast(

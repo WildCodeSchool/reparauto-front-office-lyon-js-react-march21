@@ -57,7 +57,7 @@ export default function Occasions({ occasionCars }) {
                   type="button"
                   className="flex text-lg bg-gray-200 my-5 shadow-lg hover:shadow-2xl cursor-pointer px-4 py-2 rounded-lg align-center"
                 >
-                  <Link href={`./Detail-occasion/${occasion.id}`}>Détails</Link>
+                  <Link href={`/Occasions/${occasion.id}`}>Détails</Link>
                 </motion.button>
               </div>
             </div>

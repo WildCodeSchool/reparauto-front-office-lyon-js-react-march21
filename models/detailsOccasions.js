@@ -10,7 +10,9 @@ export async function getOccasions(offset, limit) {
 
 export async function getSingleOccasion(id) {
   const article = await axios
-    .get(process.env.NEXT_PUBLIC_DETAILS_OCCASION_URL)
+    .get(
+      `https://repar-auto-api.wcs-lyon.duckdns.org/second-hand-cars/${id + 1}`
+    )
     .then((res) => res.data);
 
   return {
