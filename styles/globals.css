@@ -4,7 +4,7 @@
 
 html,
 body {
-  background-color:#D3D3D3;
+  background-color: #d3d3d3;
   padding: 0;
   margin: 0;
   margin-bottom: 25px;
@@ -21,28 +21,54 @@ a {
   box-sizing: border-box;
 }
 
-.slider { width: 384px; height: 250px; overflow: hidden;}
-  .slider figure Image { width: 384px; height: 250px ; float: top; }
+.slider {
+  width: 384px;
+  height: 250px;
+  overflow: hidden;
+}
+.slider figure Image {
+  width: 384px;
+  height: 250px;
+  float: top;
+}
 
-  @keyframes slidy {
-    0% { top: 0%; }
-    20% { top: 0%; }
-    25% { top: -100%; }
-    45% { top: -100%; }
-    50% { top: -200%; }
-    70% { top: -200%; }
-    75% { top: -300%; }
-    95% { top: -300%; }
-    100% { top: -400%; }
+@keyframes slidy {
+  0% {
+    top: 0%;
   }
-  .slider figure {
-    position: relative;
-    height: 250px;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    font-size: 0;
-    left: 0;
-    text-align: left;
-    animation: 30s slidy infinite;
+  20% {
+    top: 0%;
+  }
+  25% {
+    top: -100%;
+  }
+  45% {
+    top: -100%;
+  }
+  50% {
+    top: -200%;
+  }
+  70% {
+    top: -200%;
+  }
+  75% {
+    top: -300%;
+  }
+  95% {
+    top: -300%;
+  }
+  100% {
+    top: -400%;
+  }
+}
+.slider figure {
+  position: relative;
+  height: 250px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  left: 0;
+  text-align: left;
+  animation: 30s slidy infinite;
 }
