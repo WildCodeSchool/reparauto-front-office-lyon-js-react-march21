@@ -3,6 +3,7 @@ import axios from 'axios';
 import { motion } from 'framer-motion';
 
 export default function DetailsOccasions({ occasion }) {
+  if (!occasion) return null;
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -59,11 +60,8 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const occasion = await axios
-    .get(
-      `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/second-hand-cars/${params.id}`
-    )
-    .then((res) => res.data);
+  const url = `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/second-hand-cars/${params.id}`;
+  const occasion = await axios.get(url).then((res) => res.data);
 
   return {
     props: { occasion },
