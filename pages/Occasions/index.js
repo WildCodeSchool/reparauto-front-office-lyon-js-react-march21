@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import axios from 'axios';
 import { motion } from 'framer-motion';
-import occasionImg from '../public/images/accueil3.jpg';
+import occasionImg from '../../public/images/accueil3.jpg';
 
 export default function Occasions({ occasionCars }) {
   return (
@@ -46,7 +46,9 @@ export default function Occasions({ occasionCars }) {
                   type="button"
                   className="flex my-5 shadow-lg hover:shadow-2xl cursor-pointer bg-yellow-300 px-4 py-2 bg-teal-500 rounded-lg  align-center"
                 >
-                  <Link href="./Detail-occasion">Détails</Link>
+                  <Link href={`./Detail-occasion/${occasion.id}`}>
+                    <p>Détails</p>
+                  </Link>
                 </button>
               </div>
             </div>

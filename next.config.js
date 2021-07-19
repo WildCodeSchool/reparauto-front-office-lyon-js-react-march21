@@ -1,5 +1,5 @@
 module.exports = {
   images: {
-    domains: ['localhost'],
+    domains: ['localhost', 'https://repar-auto-api.wcs-lyon.duckdns.org'],
   },
 };

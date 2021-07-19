@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
-import homeImg from '../public/images/accueil-1mini.jpg';
+import homeImg from '../public/images/accueil3.jpg';
 
 export default function Home() {
   return (
@@ -19,13 +19,13 @@ export default function Home() {
         />
       </Head>
 
-      <div className="sm:mt-0 md:mt-10 ">
+      <div className="sm:mt-0 md:mt-10">
         <Image
           src={homeImg}
           alt="accueil"
           width="900"
           height="700"
-          layout="responsive"
+          // layout="fill"
           placeholder="blur"
         />
       </div>
