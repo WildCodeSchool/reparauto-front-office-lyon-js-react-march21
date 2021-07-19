@@ -22,14 +22,14 @@ export default function Nav() {
         whileTap={{ scale: 0.9 }}
         onClick={showMenu}
         type="image"
-        src="./icon-burger.png"
+        src="/icon-burger.png"
         alt="menu"
         className=" w-6 right-6 top-5 absolute md:hidden "
       />
       <div className="md:flex justify-around items-center flex-row shadow-lg py-4 md:py-5 px-0 bg-gradient-to-r from-yellow-400 to-red-500 ">
         <img
           className="md:w-12 absolute left-2 top-1 md:left-3 md:top-2 w-12"
-          src="./logo.png"
+          src="/logo.png"
           alt="logo"
         />
         <motion.div
@@ -46,35 +46,35 @@ export default function Nav() {
               whileTap={{ scale: 0.95 }}
               className="ml-20 md:mx-4 text-gray-800 "
             >
-              <Link href="./Appointments">Rendez-vous</Link>
+              <Link href="/Appointments">Rendez-vous</Link>
             </motion.div>
             <motion.div
               whileHover={{ scale: 1.05, originX: 0, color: '#FFFFFF' }}
               whileTap={{ scale: 0.95 }}
               className="ml-20 md:mx-4 text-gray-800 "
             >
-              <Link href="./Activities">Activités</Link>
+              <Link href="/Activities">Activités</Link>
             </motion.div>
             <motion.div
               whileHover={{ scale: 1.05, originX: 0, color: '#FFFFFF' }}
               whileTap={{ scale: 0.95 }}
               className="ml-20 md:mx-4 text-gray-800 "
             >
-              <Link href="./Occasions">Véhicules d'occasions</Link>
+              <Link href="/Occasions">Véhicules d'occasions</Link>
             </motion.div>
             <motion.div
               whileHover={{ scale: 1.05, originX: 0, color: '#FFFFFF' }}
               whileTap={{ scale: 0.95 }}
               className="ml-20 md:mx-4 text-gray-800 "
             >
-              <Link href="./Customers-notices">Avis clients</Link>
+              <Link href="/Customers-notices">Avis clients</Link>
             </motion.div>
             <motion.div
               whileHover={{ scale: 1.05, originX: 0, color: '#FFFFFF' }}
               whileTap={{ scale: 0.95 }}
               className="ml-20 md:mx-4 text-gray-800"
             >
-              <Link href="./Contact">Contact</Link>
+              <Link href="/Contact">Contact</Link>
             </motion.div>
           </div>
         )}

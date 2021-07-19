@@ -61,7 +61,7 @@ export default function Contact() {
         console.log(erreur);
       });
     addToast(
-      `Votre mail a bien été envoyé, je vous répondrais dés que possible a votre adresse: ${data.UserEmail}, merci !`,
+      `Votre mail a bien été envoyé, je vous répondrais dés que possible a votre adresse: ${data.contactEmail}, merci !`,
       {
         appearance: 'success',
         autoDismissTimeout: '4000',
