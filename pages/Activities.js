@@ -17,82 +17,36 @@ export default function Activities({ services }) {
         alt="background"
         layout="fill"
       /> */}
-      <div className="px-3 mb-10 ">
-        <h1 className="text-4xl sm:text-5xl text-center my-10">
+      <div className="md:mb-20">
+        <h1 className="text-3xl sm:text-5xl text-center py-3 bg-white md:bg-transparent w-full">
           Nos prestations
         </h1>
         {services.map((service) => (
           <div
             key={service.id}
-            className="grid md:grid-cols-3 gap-8 max-w-4xl m-auto"
+            className="grid md:grid-cols-2 md:gap-8 lg:grid-cols-3 md:ml-16"
           >
-            <div className="bg-white mt-10 sm:w-screen md:w-64 shadow-lg rounded-b-lg transform motion-safe:hover:shadow-2xl transition duration-500 transform hover:scale-105 transition duration-500">
+            <div className="bg-white md:mt-10 sm:w-screen md:w-80 rounded-b-lg shadow-lg transform hover:shadow-2xl transition duration-400">
               <Image
-                src="/images/diag.jpg"
+                src={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}${service.Image[0].formats.large.url}`}
                 alt="carwash"
                 className="w-full"
                 width={500}
                 height={300}
                 layout="responsive"
               />
-              <div className="px-10 py-12 mb-20 text-center">
+              <div className="px-3 py-6 mb-20 text-center">
                 <h1 className="text-2xl font-bold text-yellow-500 mb-10">
-                  TRAVAUX SIMPLES
+                  {service.Titre}
                 </h1>
-                <span className="text-sm">{service.ServiceLow}</span>
+                <hr className="mb-5 w-5/5 bg-gray-700 h-px border-none" />
+                <p className="text-md h-20">{service.Description}</p>
               </div>
               <button
                 type="button"
-                className="w-full fixed bottom-0 text-lg h-16 text-white font-extrabold bg-yellow-500 rounded-b-lg"
+                className="w-full fixed bottom-0 text-lg h-16 text-white font-extrabold bg-yellow-500 md:rounded-b-lg"
               >
-                à partir de{' '}
-                <span className="text-4xl">{service.ServiceLowPrice}€</span>
-              </button>
-            </div>
-            <div className="bg-white mt-10 sm:w-screen md:w-64 shadow-lg rounded-b-lg transform motion-safe:hover:shadow-2xl transition duration-500 transform hover:scale-105 transition duration-500">
-              <Image
-                src="/images/vidange.jpg"
-                alt="carwash"
-                className="w-full"
-                width={500}
-                height={300}
-                layout="responsive"
-              />
-              <div className="px-10 py-12 text-center">
-                <h1 className="text-2xl font-bold text-yellow-600 mb-10">
-                  TRAVAUX LOURDS
-                </h1>
-                <span className="text-sm">{service.ServiceHigh}</span>
-              </div>
-              <button
-                type="button"
-                className="w-full fixed bottom-0 text-lg h-16 text-white font-extrabold bg-yellow-600 rounded-b-lg"
-              >
-                à partir de{' '}
-                <span className="text-4xl">{service.ServiceHighPrice}€</span>
-              </button>
-            </div>
-            <div className="bg-white mt-10 sm:w-screen md:w-64 shadow-lg rounded-b-lg transform motion-safe:hover:shadow-2xl transition duration-500 transform hover:scale-105 transition duration-500">
-              <Image
-                src="/images/carwash.jpg"
-                alt="carwash"
-                className="w-full"
-                width={500}
-                height={300}
-                layout="responsive"
-              />
-              <div className="px-10 py-12  text-center">
-                <h1 className="text-2xl font-bold text-red-500 mb-10">
-                  DIVERS
-                </h1>
-                <span className="text-sm">{service.OtherService}</span>
-              </div>
-              <button
-                type="button"
-                className="w-full fixed bottom-0 text-lg h-16 text-white font-extrabold bg-red-500 rounded-b-lg"
-              >
-                à partir de{' '}
-                <span className="text-4xl">{service.OtherServicePrice}€</span>
+                à partir de <span className="text-4xl">{service.Prix}€</span>
               </button>
             </div>
           </div>
@@ -105,8 +59,10 @@ export default function Activities({ services }) {
 export async function getStaticProps() {
   const res = await axios.get(process.env.NEXT_PUBLIC_SERVICES_URL);
   const services = res.data;
+  console.log(services);
 
   return {
     props: { services },
+    revalidate: 10,
   };
 }
