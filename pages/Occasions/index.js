@@ -4,7 +4,6 @@ import Link from 'next/link';
 import axios from 'axios';
 import { motion } from 'framer-motion';
 
-
 export default function Occasions({ occasionCars }) {
   return (
     <motion.div
@@ -25,7 +24,7 @@ export default function Occasions({ occasionCars }) {
           whileHover={{ y: -7 }}
           className="md:flex mt-2 "
         >
-          <div className="bg-white sm:w-full md:w-2/5 my-10 m-auto border-1 border-dashed border-gray-100 shadow-xl transform hover:shadow-2xl transition duration-400 rounded-lg overflow-hidden ">
+          <div className="bg-white sm:w-full md:w-2/5 lg:w-3/5 my-10 m-auto border-1 border-dashed border-gray-100 shadow-xl transform hover:shadow-2xl transition duration-400 rounded-lg overflow-hidden ">
             <div>
               <Image
                 src={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}${occasion.photos[0].formats.large.url}`}

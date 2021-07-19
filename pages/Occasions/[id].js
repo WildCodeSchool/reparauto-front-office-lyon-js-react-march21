@@ -14,18 +14,18 @@ export default function DetailsOccasions({ occasion }) {
       <div className="mt-8 mb-16 sm:w-screen md:w-auto bg-white w-96 m-auto border-1 border-dashed border-gray-100 shadow-md rounded-lg overflow-hidden">
         <div className="slider">
           {occasion.photos.map((photo) => {
-              console.log()
+            console.log();
             const photoUrl = `${process.env.NEXT_PUBLIC_STRAPI_API_URL}${photo.url}`;
             return (
-                <figure key={photo.id}>
-              <Image
-                src={photoUrl}  
-                alt={occasion.titre}
-                className="w-full"
-                width={384}
-                height={250}
-                layout="responsive"
-              />
+              <figure key={photo.id}>
+                <Image
+                  src={photoUrl}
+                  alt={occasion.titre}
+                  className="w-full"
+                  width={384}
+                  height={250}
+                  layout="responsive"
+                />
               </figure>
             );
           })}
