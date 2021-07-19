@@ -4,7 +4,6 @@ import Link from 'next/link';
 import axios from 'axios';
 import { motion } from 'framer-motion';
 
-
 export default function Occasions({ occasionCars }) {
   return (
     <motion.div
