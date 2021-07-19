@@ -19,12 +19,13 @@ export default function Home() {
         />
       </Head>
 
-      <div className="sm:mt-0 md:mt-20 ">
+      <div className="sm:mt-0 md:mt-10 ">
         <Image
           src={homeImg}
           alt="accueil"
           width="1200"
           height="900"
+          objectFit="scale-down"
           priority="true"
           placeholder="blur"
         />

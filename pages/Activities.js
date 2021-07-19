@@ -27,14 +27,16 @@ export default function Activities({ services }) {
             className="grid md:grid-cols-2 md:gap-8 lg:grid-cols-3 md:ml-16"
           >
             <div className="bg-white md:mt-10 sm:w-screen md:w-80 rounded-b-lg shadow-lg transform hover:shadow-2xl transition duration-400">
-              <Image
-                src={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}${service.Image[0].formats.large.url}`}
-                alt="carwash"
-                className="w-full"
-                width={500}
-                height={300}
-                layout="responsive"
-              />
+              {service.picture && (
+                <Image
+                  src={service.picture}
+                  alt="carwash"
+                  className="w-full"
+                  width={500}
+                  height={300}
+                  layout="responsive"
+                />
+              )}
               <div className="px-3 py-6 mb-20 text-center">
                 <h1 className="text-2xl font-bold text-yellow-500 mb-10">
                   {service.Titre}
@@ -58,8 +60,15 @@ export default function Activities({ services }) {
 
 export async function getStaticProps() {
   const res = await axios.get(process.env.NEXT_PUBLIC_SERVICES_URL);
-  const services = res.data;
-  console.log(services);
+  const services = res.data.map((service) => {
+    const picture = service.Image[0] && service.Image[0].url;
+    return {
+      ...service,
+      picture: picture
+        ? `${process.env.NEXT_PUBLIC_STRAPI_API_URL}${picture}`
+        : null,
+    };
+  });
 
   return {
     props: { services },
