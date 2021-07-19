@@ -28,7 +28,7 @@ export default function Occasions({ occasionCars }) {
           <div className="bg-white sm:w-full md:w-2/5 my-10 m-auto border-1 border-dashed border-gray-100 shadow-xl transform hover:shadow-2xl transition duration-400 rounded-lg overflow-hidden ">
             <div>
               <Image
-                src={occasionImg}
+                src={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}${occasion.photos[0].formats.large.url}`}
                 alt={occasion.SecondHandModel}
                 className="w-screen z-0"
                 width={500}
@@ -43,7 +43,7 @@ export default function Occasions({ occasionCars }) {
                 <span className="flex justify-end -mb-14 pt-3 text-white text-xl bg-grey-500 ">
                   Prix :{' '}
                   <span className="text-xl text-white font-medium">
-                    {occasion.Prix} TTC
+                    {occasion.prix} TTC
                   </span>{' '}
                 </span>
                 <motion.button
