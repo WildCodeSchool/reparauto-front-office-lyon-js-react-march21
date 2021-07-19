@@ -78,16 +78,18 @@ export default function Avis({ reviews }) {
             whileHover={{ y: -7 }}
             className="max-w-m mt-5 md:my-6 md:mb-8 bg-white rounded-xl shadow-lg transform hover:shadow-2xl overflow-hidden md:max-w-xl "
           >
-            <div className="p-6 md:p-4 ">
-              <p>Note : {review.Rating} / 5</p>
-              <div className="tracking-wide text-sm text-indigo-500 font-semibold">
-                <p>Client: {review.ReviewsClientName}</p>
+            {reviews.ValidatedNotice && (
+              <div className="p-6 md:p-4 ">
+                <p>Note : {review.Rating} / 5</p>
+                <div className="tracking-wide text-sm text-indigo-500 font-semibold">
+                  <p>Client: {review.ReviewsClientName}</p>
+                </div>
+                <p className="mt-2 text-gray-500">
+                  Commentaires: {review.Content}
+                </p>
+                {console.log(reviews)}
               </div>
-              <p className="mt-2 text-gray-500">
-                Commentaires: {review.Content}
-              </p>
-              {console.log(reviews)}
-            </div>
+            )}
           </motion.div>
         ))}
       </div>
