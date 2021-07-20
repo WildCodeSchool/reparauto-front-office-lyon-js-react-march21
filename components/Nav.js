@@ -24,9 +24,9 @@ export default function Nav() {
         type="image"
         src="/icon-burger.png"
         alt="menu"
-        className=" w-6 right-6 top-5 absolute md:hidden "
+        className=" w-6 right-6 top-5 absolute md:hidden"
       />
-      <div className="md:flex justify-around items-center flex-row shadow-lg py-4 md:py-5 px-0 bg-gradient-to-r from-yellow-400 to-red-500 ">
+      <div className="md:flex justify-around items-center flex-row shadow-lg py-4 md:py-5 px-0 bg-gradient-to-r from-yellow-400 to-red-500 z-20">
         <img
           className="md:w-12 absolute left-2 top-1 md:left-3 md:top-2 w-12"
           src="/logo.png"
@@ -44,7 +44,7 @@ export default function Nav() {
             <motion.div
               whileHover={{ scale: 1.05, originX: 0, color: '#FFFFFF' }}
               whileTap={{ scale: 0.95 }}
-              className="ml-20 md:mx-4 text-gray-800 "
+              className="ml-20 md:mx-4 text-gray-800"
             >
               <Link href="/Appointments">Rendez-vous</Link>
             </motion.div>
