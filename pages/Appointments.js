@@ -9,6 +9,7 @@ export default function Appointements() {
     register,
     handleSubmit,
     control,
+    reset,
     formState: { errors },
   } = useForm();
 
@@ -55,23 +56,23 @@ export default function Appointements() {
     >
       <div className="h-full sm:max-w-xl sm:mx-auto">
         <div className="flex flex-col item-center shadow-lg ">
-          <div className="bg-white flex justify-center md:rounded-t-xl sm:py-6 md:py-6 hover:shadow-lg">
-            <h2 className="text-gray-800 text-xl font-semibold py-2">
+          <div className="bg-gray-600 flex justify-center md:rounded-t-xl sm:py-6 md:py-6 hover:shadow-lg">
+            <h2 className="text-yellow-400 text-xl font-semibold py-2">
               Prenons rendez-vous !
             </h2>
           </div>
-          <div className="bg-gray-200 flex flex-col items-center">
+          <div className="bg-gray-500 w-96 flex flex-col items-center">
             <div className="flex flex-col items-center py-2 space-y-3" />
             <form
               onSubmit={handleSubmit(onSubmit)}
-              className=" flex flex-col mx-10"
+              className=" flex flex-col w-80"
             >
               <input
                 {...register('appointmentsUserName', {
                   required: true,
                   minLength: { value: 3 },
                 })}
-                className="p-3 m my-2 text-gray-500 rounded-xl resize-none shadow-md transform hover:shadow-xl transition duration-400"
+                className="p-3 m my-2 text-gray-800 rounded-xl resize-none shadow-md transform hover:shadow-xl transition duration-400"
                 name="appointmentsUserName"
                 placeholder="Nom, Prénom"
                 type="text"
@@ -82,7 +83,7 @@ export default function Appointements() {
                   required: true,
                   minLength: { value: 3 },
                 })}
-                className="p-3 my-2 text-gray-500 rounded-xl resize-none shadow-md transform hover:shadow-xl transition duration-400"
+                className="p-3 my-2 text-gray-800 rounded-xl resize-none shadow-md transform hover:shadow-xl transition duration-400"
                 placeholder="Email"
                 type="email"
                 name="appointmentsEmail"
@@ -93,7 +94,7 @@ export default function Appointements() {
                   required: true,
                   minLength: { value: 3 },
                 })}
-                className="p-3 m my-2 text-gray-500 rounded-xl resize-none shadow-md transform hover:shadow-xl transition duration-400"
+                className="p-3 m my-2 text-gray-800 rounded-xl resize-none shadow-md transform hover:shadow-xl transition duration-400"
                 name="brandModel"
                 placeholder="Marque, Modèle"
                 type="text"
@@ -104,7 +105,7 @@ export default function Appointements() {
                   required: true,
                   minLength: { value: 3 },
                 })}
-                className="p-3 my-2 text-gray-500 rounded-xl resize-none shadow-md transform hover:shadow-xl transition duration-400"
+                className="p-3 my-2 text-gray-800 rounded-xl resize-none shadow-md transform hover:shadow-xl transition duration-400"
                 placeholder="Immatriculation"
                 type="text"
                 name="appointmentsImmatriculation"
@@ -115,7 +116,7 @@ export default function Appointements() {
                   required: true,
                   minLength: { value: 1 },
                 })}
-                className="p-3 h-24 my-2 text-gray-500 rounded-xl resize-none shadow-md transform hover:shadow-xl transition duration-400"
+                className="p-3 h-24 my-2 text-gray-800 rounded-xl resize-none shadow-md transform hover:shadow-xl transition duration-400"
                 placeholder="Travaux à réaliser"
                 name="appointmentsContent"
                 type="text"
@@ -128,7 +129,7 @@ export default function Appointements() {
                   <ReactDatePicker
                     onChange={onChange}
                     selected={value}
-                    className="p-3 px-16 my-2 text-gray-500 rounded-xl shadow-md transform hover:shadow-xl transition duration-400"
+                    className="p-3 my-2 w-80 text-gray-800 rounded-xl shadow-md transform hover:shadow-xl transition duration-400"
                     placeholderText="Date de rendez-vous"
                   />
                 )}
