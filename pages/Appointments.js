@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import ReactDatePicker from 'react-datepicker';
 import axios from 'axios';
 import { useToasts } from 'react-toast-notifications';
+import { useState } from 'react';
 
 export default function Appointements() {
   const {
@@ -13,6 +14,7 @@ export default function Appointements() {
     formState: { errors },
   } = useForm();
 
+  //const [startDate, setStartDate] = useState(newDate());
   const { addToast } = useToasts();
 
   const onSubmit = (data) => {
@@ -56,12 +58,13 @@ export default function Appointements() {
     >
       <div className="h-full sm:max-w-xl sm:mx-auto">
         <div className="flex flex-col item-center shadow-lg ">
-          <div className="bg-gray-600 flex justify-center md:rounded-t-xl sm:py-6 md:py-6 hover:shadow-lg">
-            <h2 className="text-yellow-400 text-xl font-semibold py-2">
+          <div className="bg-gray-600 flex justify-center md:rounded-t-xl hover:shadow-lg">
+            <h2 className="text-yellow-400 text-2xl font-semibold md:py-8 py-4">
               Prenons rendez-vous !
             </h2>
           </div>
-          <div className="bg-gray-500 w-96 flex flex-col items-center">
+          <hr className="  w-6/6 bg-gradient-to-r from-yellow-400 to-red-500 h-px border-none " />
+          <div className="bg-gray-500 md:w-96 sm:w-screen flex flex-col items-center">
             <div className="flex flex-col items-center py-2 space-y-3" />
             <form
               onSubmit={handleSubmit(onSubmit)}
@@ -72,7 +75,7 @@ export default function Appointements() {
                   required: true,
                   minLength: { value: 3 },
                 })}
-                className="p-3 m my-2 text-gray-800 rounded-xl resize-none shadow-md transform hover:shadow-xl transition duration-400"
+                className="p-3 m my-2 text-gray-800 rounded-md resize-none shadow-md transform hover:shadow-xl transition duration-400"
                 name="appointmentsUserName"
                 placeholder="Nom, Prénom"
                 type="text"
@@ -83,7 +86,7 @@ export default function Appointements() {
                   required: true,
                   minLength: { value: 3 },
                 })}
-                className="p-3 my-2 text-gray-800 rounded-xl resize-none shadow-md transform hover:shadow-xl transition duration-400"
+                className="p-3 my-2 text-gray-800 rounded-md resize-none shadow-md transform hover:shadow-xl transition duration-400"
                 placeholder="Email"
                 type="email"
                 name="appointmentsEmail"
@@ -94,7 +97,7 @@ export default function Appointements() {
                   required: true,
                   minLength: { value: 3 },
                 })}
-                className="p-3 m my-2 text-gray-800 rounded-xl resize-none shadow-md transform hover:shadow-xl transition duration-400"
+                className="p-3 m my-2 text-gray-800 rounded-md resize-none shadow-md transform hover:shadow-xl transition duration-400"
                 name="brandModel"
                 placeholder="Marque, Modèle"
                 type="text"
@@ -105,7 +108,7 @@ export default function Appointements() {
                   required: true,
                   minLength: { value: 3 },
                 })}
-                className="p-3 my-2 text-gray-800 rounded-xl resize-none shadow-md transform hover:shadow-xl transition duration-400"
+                className="p-3 my-2 text-gray-800 rounded-md resize-none shadow-md transform hover:shadow-xl transition duration-400"
                 placeholder="Immatriculation"
                 type="text"
                 name="appointmentsImmatriculation"
@@ -116,7 +119,7 @@ export default function Appointements() {
                   required: true,
                   minLength: { value: 1 },
                 })}
-                className="p-3 h-24 my-2 text-gray-800 rounded-xl resize-none shadow-md transform hover:shadow-xl transition duration-400"
+                className="p-3 h-24 my-2 text-gray-800 rounded-md resize-none shadow-md transform hover:shadow-xl transition duration-400"
                 placeholder="Travaux à réaliser"
                 name="appointmentsContent"
                 type="text"
@@ -129,17 +132,24 @@ export default function Appointements() {
                   <ReactDatePicker
                     onChange={onChange}
                     selected={value}
-                    className="p-3 my-2 w-80 text-gray-800 rounded-xl shadow-md transform hover:shadow-xl transition duration-400"
+                    className="p-3 my-2 w-80 text-gray-800 rounded-md shadow-md transform hover:shadow-xl transition duration-400"
                     placeholderText="Date de rendez-vous"
                   />
                 )}
               />
-              <button
+              <motion.button
+                whileHover={{
+                  scale: 1.03,
+                  originY: 0,
+                  color: '#5c5453',
+                  backgroundColor: '#fdb31f',
+                }}
+                whileTap={{ scale: 0.95 }}
                 type="submit"
-                className="py-4 mt-2 mb-10 text-lg bg-gradient-to-r from-yellow-400 to-red-500 rounded-xl text-gray-800 shadow-md transform hover:shadow-xl transition duration-400"
+                className="flex justify-center bg-gray-300 border-solid border-2 border-yellow-500 text-lg mt-5 mb-10 shadow-lg hover:shadow-2xl cursor-pointer px-4 py-4 rounded-lg align-center"
               >
-                Envoyez
-              </button>
+                Envoyer
+              </motion.button>
             </form>
           </div>
         </div>
