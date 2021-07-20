@@ -22,26 +22,26 @@ export default function Activities({ services }) {
           <motion.div
             whileHover={{ y: -7 }}
             key={service.id}
-            className=" w-96  "
+            className=" w-3/5"
           >
-            <div className="bg-gray-500 p-4 rounded-xl shadow-lg mt-10 transform hover:shadow-2xl transition duration-400">
+            <div className="bg-gray-500 rounded-xl shadow-lg mt-10 transform hover:shadow-2xl transition duration-400">
               {service.picture && (
                 <Image
                   src={service.picture}
                   alt={service.Titre}
-                  className="rounded-t-lg
-                  "
+                  className="rounded-t-lg "
                   width={500}
                   height={320}
                   layout="responsive"
+                  priority="true"
                 />
               )}
-              <div className="px-3 py-6 mb-20 text-center">
-                <h1 className="text-2xl font-bold text-yellow-500 mb-10">
+              <div className="h-32 ">
+                <h1 className="text-xl  font-bold text-yellow-500 mb-6">
                   {service.Titre}
                 </h1>
                 <hr className="bg-gradient-to-r from-yellow-400 to-red-500 my-3 h-px border-none" />
-                <p className="text-lg text-gray-200 h-10">
+                <p className="text-lg text-gray-200 h-5">
                   {service.Description}
                 </p>
               </div>
@@ -53,10 +53,10 @@ export default function Activities({ services }) {
                   color: '#5c5453',
                   backgroundColor: '#fdb31f',
                 }}
-                className="flex text-lg bg-gray-200 font-bold w-52 shadow-lg hover:shadow-2xl cursor-none px-4 py-2 rounded-lg align-center"
+                className="flex bg-gray-200 text-lg  w-52 shadow-lg hover:shadow-2xl cursor-none px-4 py-2 rounded-lg align-center"
               >
                 {' '}
-                A partir de {service.Prix} TTC
+                A partir de {service.Prix} € TTC
               </motion.span>
             </div>
           </motion.div>
