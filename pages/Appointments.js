@@ -1,9 +1,8 @@
 import { useForm, Controller } from 'react-hook-form';
 import { motion } from 'framer-motion';
-import ReactDatePicker from 'react-datepicker';
+import ReactDatePicker, { getDefaultLocale } from 'react-datepicker';
 import axios from 'axios';
 import { useToasts } from 'react-toast-notifications';
-import { useState } from 'react';
 
 export default function Appointements() {
   const {
@@ -14,8 +13,12 @@ export default function Appointements() {
     formState: { errors },
   } = useForm();
 
-  //const [startDate, setStartDate] = useState(newDate());
   const { addToast } = useToasts();
+
+  const isWeekDay = (date) => {
+    const day = date.getDay();
+    return day !== 0 && day !== 6;
+  };
 
   const onSubmit = (data) => {
     console.log(data);
@@ -46,6 +49,7 @@ export default function Appointements() {
         autoDismiss: true,
       }
     );
+    reset();
   };
 
   return (
@@ -54,7 +58,7 @@ export default function Appointements() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1.1 }}
-      className="flex flex-col md:mt-28 sm:mt-0 justify-center "
+      className="flex flex-col md:mt-20 sm:mt-0 justify-center "
     >
       <div className="h-full sm:max-w-xl sm:mx-auto">
         <div className="flex flex-col item-center shadow-lg ">
@@ -132,7 +136,9 @@ export default function Appointements() {
                   <ReactDatePicker
                     onChange={onChange}
                     selected={value}
-                    className="p-3 my-2 w-80 text-gray-800 rounded-md shadow-md transform hover:shadow-xl transition duration-400"
+                    filterDate={isWeekDay}
+                    minDate={new Date()}
+                    className="p-3 w-80 my-2 text-gray-500 rounded-md shadow-md transform hover:shadow-xl transition duration-400"
                     placeholderText="Date de rendez-vous"
                   />
                 )}
