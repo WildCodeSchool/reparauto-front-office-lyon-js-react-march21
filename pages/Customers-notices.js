@@ -78,7 +78,7 @@ export default function Avis({ reviews }) {
           <motion.div
             whileHover={{ y: -5 }}
             key={reviews.id}
-            className="sm:w-screen  md:w-96 mt-5 md:my-6 md:mb-8 bg-gray-500 rounded-xl shadow-lg transform hover:shadow-2xl overflow-hidden md:max-w-xl "
+            className="sm:w-screen md:w-96 mt-5 md:my-6 md:mb-8 bg-gray-500 rounded-xl shadow-lg transform hover:shadow-2xl overflow-hidden md:max-w-xl "
           >
             <div className="p-6 md:p-4 text-yellow-400 text-lg ">
               <p>Note : {review.Rating} / 5</p>
@@ -127,7 +127,7 @@ export default function Avis({ reviews }) {
                       {...register('content', { required: true })}
                       rows="3"
                       maxLength="250"
-                      className="p-4 my-2 text-gray-500 rounded-xl resize-none shadow-lg transform hover:shadow-2xl transition duration-400"
+                      className="p-4 my-2 text-gray-500 rounded-xl resize-none border-solid border border-yellow-500 shadow-lg transform hover:shadow-2xl transition duration-400"
                       placeholder="Rédigez votre avis :"
                     />
                     <input
