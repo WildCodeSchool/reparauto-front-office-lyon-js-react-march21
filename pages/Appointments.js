@@ -58,7 +58,7 @@ export default function Appointements() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1.1 }}
-      className="flex flex-col md:mt-20 sm:mt-0 justify-center "
+      className="flex flex-col md:mt-10 xl:mt-24 sm:mt-0 justify-center "
     >
       <div className="h-full sm:max-w-xl sm:mx-auto">
         <div className="flex flex-col item-center shadow-lg ">
