@@ -1,6 +1,6 @@
 import { useForm, Controller } from 'react-hook-form';
 import { motion } from 'framer-motion';
-import ReactDatePicker from 'react-datepicker';
+import ReactDatePicker, { getDefaultLocale } from 'react-datepicker';
 import axios from 'axios';
 import { useToasts } from 'react-toast-notifications';
 
@@ -9,10 +9,16 @@ export default function Appointements() {
     register,
     handleSubmit,
     control,
+    reset,
     formState: { errors },
   } = useForm();
 
   const { addToast } = useToasts();
+
+  const isWeekDay = (date) => {
+    const day = date.getDay();
+    return day !== 0 && day !== 6;
+  };
 
   const onSubmit = (data) => {
     console.log(data);
@@ -43,6 +49,7 @@ export default function Appointements() {
         autoDismiss: true,
       }
     );
+    reset();
   };
 
   return (
@@ -128,6 +135,8 @@ export default function Appointements() {
                   <ReactDatePicker
                     onChange={onChange}
                     selected={value}
+                    filterDate={isWeekDay}
+                    minDate={new Date()}
                     className="p-3 px-16 my-2 text-gray-500 rounded-xl shadow-md transform hover:shadow-xl transition duration-400"
                     placeholderText="Date de rendez-vous"
                   />

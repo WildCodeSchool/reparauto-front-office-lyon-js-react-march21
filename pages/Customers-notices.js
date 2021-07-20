@@ -10,6 +10,7 @@ export default function Avis({ reviews }) {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
     setValue,
   } = useForm();
 
@@ -37,7 +38,6 @@ export default function Avis({ reviews }) {
       })
         .then((reponse) => {
           // On traite la suite une fois la réponse obtenue
-
           console.log(reponse);
         })
         .catch((erreur) => {
@@ -53,6 +53,7 @@ export default function Avis({ reviews }) {
           autoDismiss: true,
         }
       );
+      reset();
     } else {
       addToast(
         'Tout les champs et une note doivent être enregistrés pour envoyer le formulaire',
@@ -123,6 +124,7 @@ export default function Avis({ reviews }) {
                     <textarea
                       {...register('content', { required: true })}
                       rows="3"
+                      maxLength="250"
                       className="p-4 my-2 text-gray-500 rounded-xl resize-none shadow-lg transform hover:shadow-2xl transition duration-400"
                       placeholder="Rédigez votre avis :"
                     />

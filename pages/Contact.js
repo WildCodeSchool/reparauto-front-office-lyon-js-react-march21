@@ -31,6 +31,7 @@ export default function Contact() {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
@@ -68,6 +69,7 @@ export default function Contact() {
         autoDismiss: true,
       }
     );
+    reset();
   };
 
   return (
