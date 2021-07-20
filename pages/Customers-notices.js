@@ -26,7 +26,7 @@ export default function Avis({ reviews }) {
     if (data.rating) {
       axios({
         method: 'post',
-        url: process.env.NEXT_PUBLIC_REVIEWS_URL,
+        url: `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/reviews`,
         data: {
           Content: data.content,
           ClientEmail: data.ClientEmail,
@@ -79,18 +79,15 @@ export default function Avis({ reviews }) {
             key={reviews.id}
             className="max-w-m mt-5 md:my-6 md:mb-8 bg-white rounded-xl shadow-lg transform hover:shadow-2xl overflow-hidden md:max-w-xl "
           >
-            {review.ValidatedNotice && (
-              <div className="p-6 md:p-4 ">
-                <p>Note : {review.Rating} / 5</p>
-                <div className="tracking-wide text-sm text-indigo-500 font-semibold">
-                  <p>Client: {review.ReviewsClientName}</p>
-                </div>
-                <p className="mt-2 text-gray-500">
-                  Commentaires: {review.Content}
-                </p>
-                {console.log(reviews)}
+            <div className="p-6 md:p-4 ">
+              <p>Note : {review.Rating} / 5</p>
+              <div className="tracking-wide text-sm text-indigo-500 font-semibold">
+                <p>Client: {review.ReviewsClientName}</p>
               </div>
-            )}
+              <p className="mt-2 text-gray-500">
+                Commentaires: {review.Content}
+              </p>
+            </div>
           </motion.div>
         ))}
       </div>
@@ -165,7 +162,10 @@ export default function Avis({ reviews }) {
 }
 
 export async function getStaticProps() {
-  const res = await axios.get(process.env.NEXT_PUBLIC_REVIEWS_URL);
+  const res = await axios.get(
+    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/reviews`
+  );
+  console.log('data', res.data);
   const reviews = res.data;
   return {
     props: { reviews },
