@@ -70,21 +70,21 @@ export default function Avis({ reviews }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1.1 }}
-      className="flex justify-evenly md:mt-12 sm:mt-0 sm:flex-row md:flex flex-col-reverse"
+      className="flex flex-wrap-reverse justify-evenly md:mt-12 sm:mt-0  "
     >
       <div>
         {reviews.map((review) => (
           <motion.div
-            whileHover={{ y: -7 }}
+            whileHover={{ y: -5 }}
             key={reviews.id}
-            className="max-w-m mt-5 md:my-6 md:mb-8 bg-white rounded-xl shadow-lg transform hover:shadow-2xl overflow-hidden md:max-w-xl "
+            className="max-w-m mt-5 md:my-6 md:mb-8 bg-gray-500 rounded-xl shadow-lg transform hover:shadow-2xl overflow-hidden md:max-w-xl "
           >
-            <div className="p-6 md:p-4 ">
+            <div className="p-6 md:p-4 text-yellow-400 text-lg ">
               <p>Note : {review.Rating} / 5</p>
-              <div className="tracking-wide text-sm text-indigo-500 font-semibold">
+              <div className="tracking-wide text-sm text-yellow-500 font-semibold">
                 <p>Client: {review.ReviewsClientName}</p>
               </div>
-              <p className="mt-2 text-gray-500">
+              <p className="mt-2 text-gray-200">
                 Commentaires: {review.Content}
               </p>
             </div>
@@ -95,22 +95,24 @@ export default function Avis({ reviews }) {
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className=" flex flex-col justify-center mb-10 sm:py-3">
             <div className="md:py-3 m-auto mt-0 mb-0">
-              <div className="bg-white w-full flex flex-col md:rounded-xl shadow-lg transform hover:shadow-2xl transition duration-400">
+              <div className="bg-gray-600 w-full flex flex-col md:rounded-xl shadow-lg transform hover:shadow-2xl transition duration-400">
                 <div className="px-12 ">
-                  <h2 className="text-gray-800 py-5 text-xl font-semibold flex justify-center">
+                  <h2 className="text-yellow-400 py-5 text-xl font-semibold flex justify-center">
                     Votre avis nous intéresse !
                   </h2>
                 </div>
-                <div className="bg-gray-200 w-full flex flex-col items-center">
-                  <div className="flex flex-col items-center py-6 px-10 space-y-1">
-                    <span className="text-lg text-gray-800">
+                <hr className="  w-full bg-gradient-to-r from-yellow-400 to-red-500 h-px border-none " />
+                <div className="bg-gray-500 w-full flex flex-col items-center">
+                  <div className="flex flex-col items-center py-6 px-8 space-y-1">
+                    <span className="text-xl text-yellow-400">
                       Quelle a été la qualité du service rendu ?
                     </span>
 
-                    <div className="flex space-x-3">
+                    <div className="flex space-x-2 ">
                       <ReactStars
                         size={48}
-                        activeColor="#ffd700"
+                        color1="ffffff"
+                        color2="#e1870b"
                         value={starRating}
                         onChange={(setStarRating, ratingChanged)}
                         type="input"
@@ -123,33 +125,40 @@ export default function Avis({ reviews }) {
                     <textarea
                       {...register('content', { required: true })}
                       rows="3"
-                      className="p-4 my-2 text-gray-500 rounded-xl resize-none shadow-lg transform hover:shadow-2xl transition duration-400"
+                      className="p-4 my-2 text-gray-500 rounded-lg resize-none border-solid border border-yellow-500 shadow-lg transform hover:shadow-2xl transition duration-400"
                       placeholder="Rédigez votre avis :"
                     />
                     <input
                       placeholder="Votre email:"
                       {...register('ClientEmail', { required: true })}
                       rows="3"
-                      className="p-4 text-gray-500 my-2 rounded-xl resize-none shadow-lg transform hover:shadow-2xl transition duration-400"
+                      className="p-4 text-gray-500 my-2 rounded-lg resize-none border-solid border border-yellow-500 shadow-lg transform hover:shadow-2xl transition duration-400"
                       type="email"
                     />
                     <input
                       placeholder="Votre nom:"
                       {...register('userNameRequired', { required: true })}
                       rows="3"
-                      className="p-4 my-2 text-gray-500 rounded-xl resize-none shadow-lg transform hover:shadow-2xl transition duration-400"
+                      className="p-4 my-2 text-gray-500 rounded-lg resize-none border-solid border border-yellow-500 shadow-lg transform hover:shadow-2xl transition duration-400"
                     />
                     {errors.userNameRequired && (
                       <span>
                         Cette information est requise pour l'envoi du formulaire
                       </span>
                     )}
-                    <button
+                    <motion.button
+                      whileHover={{
+                        scale: 1.02,
+                        originY: 0,
+                        color: '#5c5453',
+                        backgroundColor: '#fdb31f',
+                      }}
+                      whileTap={{ scale: 0.95 }}
                       type="submit"
-                      className="py-3 mt-3 mb-16 text-lg bg-gradient-to-r from-yellow-500 to-red-600 rounded-xl text-white shadow-lg transform hover:shadow-2xl transition duration-400"
+                      className="flex justify-center bg-gray-300 border-solid border border-yellow-500 text-lg mt-5 mb-10 shadow-lg hover:shadow-2xl cursor-pointer px-4 py-4 rounded-md align-center"
                     >
                       Envoyer
-                    </button>
+                    </motion.button>
                   </div>
                 </div>
               </div>
