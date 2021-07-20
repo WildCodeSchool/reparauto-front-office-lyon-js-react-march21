@@ -67,7 +67,9 @@ export default function Activities({ services }) {
 }
 
 export async function getStaticProps() {
-  const res = await axios.get(process.env.NEXT_PUBLIC_SERVICES_URL);
+  const res = await axios.get(
+    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/rates`
+  );
   const services = res.data.map((service) => {
     const picture = service.Image[0] && service.Image[0].url;
     return {

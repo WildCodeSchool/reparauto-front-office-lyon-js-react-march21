@@ -68,7 +68,9 @@ export default function Occasions({ occasionCars }) {
 }
 
 export async function getStaticProps() {
-  const res = await axios.get(process.env.NEXT_PUBLIC_OCCASION_URL);
+  const res = await axios.get(
+    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/second-hand-cars`
+  );
   const occasionCars = res.data;
 
   return {
