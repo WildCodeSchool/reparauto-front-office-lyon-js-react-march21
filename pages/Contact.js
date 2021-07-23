@@ -85,8 +85,6 @@ export default function Contact() {
           <div className="bg-gray-600 flex justify-center md:rounded-t-xl sm:py-4 md:py-6 shadow-lg transform hover:shadow-2xl transition duration-400 px-14">
             <h2 className="flex justify-center align-center text-yellow-400 text-xl font-semibold py-2">
               N'hésitez pas à nous contacter !
-              <br />
-              06-34-37-24-42
             </h2>
           </div>
           <hr className="  w-6/6 bg-gradient-to-r from-yellow-400 to-red-500 h-px border-none " />
