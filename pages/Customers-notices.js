@@ -112,7 +112,7 @@ export default function Avis({ reviews }) {
                         size={48}
                         activeColor="#ffd700"
                         value={starRating}
-                        onChange={(setStarRating, ratingChanged)}
+                        onChange={setStarRating}
                         type="input"
                         required
                       />
