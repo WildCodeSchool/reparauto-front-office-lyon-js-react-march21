@@ -48,7 +48,7 @@ export default function Activities({ services }) {
               <hr className="bg-gray-200 my-3 h-px border-none" />
               <motion.span
                 whileHover={{
-                  scale: 1.03,
+                  scale: 1.01,
                   originX: 0,
                   color: '#5c5453',
                   backgroundColor: '#fdb31f',

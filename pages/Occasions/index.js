@@ -11,20 +11,15 @@ export default function Occasions({ occasionCars }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1.1 }}
-      className="flex-col justify-center md:mt-10"
+      className="flex flex-wrap justify-evenly md:mt-10"
     >
-      <div>
-        <h1 className="text-2xl sm:text-5xl text-center py-3 bg-white w-full md:bg-transparent ">
-          Venez découvrir nos Occasions !
-        </h1>
-      </div>
       {occasionCars.map((occasion) => (
         <motion.div
           key={occasion.id}
           whileHover={{ y: -7 }}
-          className="md:flex mt-2 "
+          className="sm:w-full md:w-80 lg:w-96"
         >
-          <div className="bg-white sm:w-full md:w-2/5 lg:w-3/5 my-10 m-auto border-1 border-dashed border-gray-100 shadow-xl transform hover:shadow-2xl transition duration-400 rounded-lg overflow-hidden ">
+          <div className="sm:w-full md:w-80 lg:w-96 my-10 m-auto border-1 border-dashed border-gray-100 shadow-xl transform hover:shadow-2xl transition duration-400 rounded-lg overflow-hidden ">
             <div>
               <Image
                 src={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}${occasion.photos[0].formats.large.url}`}
@@ -35,10 +30,10 @@ export default function Occasions({ occasionCars }) {
                 layout="responsive"
               />
               <div className="p-4 bg-gray-500">
-                <p className="my-3 text-white text-color-white text-xl font-semibold">
+                <p className="my-3 h-16 text-white text-color-white sm:text-md lg:text-xl font-semibold">
                   {occasion.titre}
-                  <hr className="bg-gradient-to-r from-yellow-400 to-red-500 my-3 h-px border-none" />
                 </p>
+                <hr className=" bg-gradient-to-r from-yellow-400 to-red-500 my-3 h-px border-none" />
                 <span className="flex justify-end -mb-14 pt-3 text-white text-xl bg-grey-500 ">
                   Prix :{' '}
                   <span className="text-xl text-white font-medium">
