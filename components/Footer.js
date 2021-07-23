@@ -8,7 +8,7 @@ export default function Footer() {
         Informations
       </h1>
       <hr className=" absolute top-16 w-5/6 bg-gradient-to-r from-yellow-400 to-red-500 h-px border-none rounded-xl" />
-      <Link href="./Contact">
+      <Link href="/Contact">
         <img
           type="image"
           src="/logo.png"

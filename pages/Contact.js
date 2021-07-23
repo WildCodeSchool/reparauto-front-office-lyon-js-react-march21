@@ -1,33 +1,11 @@
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
+// import Image from 'next/image';
 import { useToasts } from 'react-toast-notifications';
+// import bgImage from '../public/images/bgCubes.jpg';
 
 export default function Contact() {
-  // affichage miniatures des file uploads
-  /*
-  function handleFiles(files) {
-    for (let i = 0; i < files.length; i++) {
-      const file = files[i];
-      const imageType = /^image\/lg
-  
-      if (!imageType.test(file.type)) {
-        continue;
-      }
-  
-      const img = document.createElement("img");
-      img.classList.add("obj");
-      img.file = file;
-      const preview = document.querySelector('#preview');
-      preview.appendChild(img); // En admettant que "preview" est l'élément div qui contiendra le contenu affiché.
-  
-      const reader = new FileReader();
-      reader.onload = (function(aImg) { return function(e) { aImg.src = e.target.result; }; })(img);
-      reader.readAsDataURL(file);
-    }
-  }
-  */
-
   const {
     register,
     handleSubmit,
@@ -96,7 +74,6 @@ export default function Contact() {
             >
               <input
                 {...register('contactUserName', {
-                  // pattern: /^[A-Za-z]+$/i,
                   required: true,
                   minLength: { value: 3 },
                 })}

@@ -1,6 +1,6 @@
 const nodemailer = require('nodemailer');
 
-export default function (req, res) {
+export default (req, res) => {
   console.log(req.body);
   console.log(res.body);
   const {
