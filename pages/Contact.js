@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
-// import Image from 'next/image';
 import { useToasts } from 'react-toast-notifications';
+// import Image from 'next/image';
 // import bgImage from '../public/images/bgCubes.jpg';
 
 export default function Contact() {
