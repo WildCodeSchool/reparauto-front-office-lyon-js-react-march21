@@ -9,7 +9,7 @@ export default function Contact() {
   function handleFiles(files) {
     for (let i = 0; i < files.length; i++) {
       const file = files[i];
-      const imageType = /^image\//;
+      const imageType = /^image\/lg
   
       if (!imageType.test(file.type)) {
         continue;
@@ -31,6 +31,7 @@ export default function Contact() {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
@@ -68,6 +69,7 @@ export default function Contact() {
         autoDismiss: true,
       }
     );
+    reset();
   };
 
   return (
@@ -76,18 +78,19 @@ export default function Contact() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1.1 }}
-      className="flex flex-col md:mt-28 sm:mt-0 justify-center "
+      className="flex flex-col sm:mt-0 md:mt-10 xl:mt-32 justify-center "
     >
-      <div className="h-full sm:max-w-xl sm:mx-auto">
+      <div className=" sm:max-w-xl sm:mx-auto">
         <div className="flex flex-col item-center shadow-lg transform hover:shadow-2xl transition duration-400">
-          <div className="bg-white flex justify-center md:rounded-t-xl sm:py-4 md:py-6 shadow-lg transform hover:shadow-2xl transition duration-400 px-14">
-            <h2 className="flex justify-center align-center text-gray-800 text-xl font-semibold py-2">
+          <div className="bg-gray-600 flex justify-center md:rounded-t-xl sm:py-4 md:py-6 shadow-lg transform hover:shadow-2xl transition duration-400 px-14">
+            <h2 className="flex justify-center align-center text-yellow-400 text-xl font-semibold py-2">
               N'hésitez pas à nous contacter !
               <br />
               06-34-37-24-42
             </h2>
           </div>
-          <div className="bg-gray-200 flex flex-col items-center">
+          <hr className="  w-6/6 bg-gradient-to-r from-yellow-400 to-red-500 h-px border-none " />
+          <div className="bg-gray-500 flex flex-col items-center">
             <div className="flex flex-col items-center py-2 space-y-3" />
             <form
               onSubmit={handleSubmit(onSubmit)}
@@ -99,7 +102,7 @@ export default function Contact() {
                   required: true,
                   minLength: { value: 3 },
                 })}
-                className="p-3 my-2 text-gray-500 rounded-xl resize-none shadow-lg transform hover:shadow-2xl transition duration-400"
+                className="p-3 my-2 text-gray-500 rounded-lg resize-none shadow-lg transform hover:shadow-2xl transition duration-400"
                 name="contactUserName"
                 placeholder="Nom et prénom"
                 type="text"
@@ -110,7 +113,7 @@ export default function Contact() {
                   required: true,
                   minLength: { value: 2 },
                 })}
-                className="p-3 my-2 text-gray-500 rounded-xl resize-none shadow-lg transform hover:shadow-2xl transition duration-400"
+                className="p-3 my-2 text-gray-500 rounded-lg resize-none shadow-lg transform hover:shadow-2xl transition duration-400"
                 name="contactBrandModel"
                 placeholder="Marque et modèle"
                 type="text"
@@ -121,7 +124,7 @@ export default function Contact() {
                   required: true,
                   minLength: { value: 3 },
                 })}
-                className="p-3 my-2 text-gray-500 rounded-xl resize-none shadow-lg transform hover:shadow-2xl transition duration-400"
+                className="p-3 my-2 text-gray-500 rounded-lg resize-none shadow-lg transform hover:shadow-2xl transition duration-400"
                 placeholder="Email"
                 type="email"
                 name="contactEmail"
@@ -132,7 +135,7 @@ export default function Contact() {
                   required: true,
                   minLength: { value: 3 },
                 })}
-                className="p-3 my-2 text-gray-500 rounded-xl resize-none shadow-lg transform hover:shadow-2xl transition duration-400"
+                className="p-3 my-2 text-gray-500 rounded-lg resize-none shadow-lg transform hover:shadow-2xl transition duration-400"
                 placeholder="Immatriculation"
                 type="text"
                 name="contactImmat"
@@ -143,7 +146,7 @@ export default function Contact() {
                   required: true,
                   minLength: { value: 1 },
                 })}
-                className="p-3 h-24 my-2 text-gray-500 rounded-xl resize-none shadow-lg transform hover:shadow-2xl transition duration-400"
+                className="p-3 h-24 my-2 text-gray-500 rounded-lg resize-none shadow-lg transform hover:shadow-2xl transition duration-400"
                 placeholder="Laissez nous un message"
                 name="contactContent"
                 type="text"
@@ -160,13 +163,19 @@ export default function Contact() {
                       className="py-4 my-2 text-lg bg-white  rounded-xl text-gray-800 hover:shadow-lg"
                     />
                     */}
-
-              <button
+              <motion.button
+                whileHover={{
+                  scale: 1.03,
+                  originY: 0,
+                  color: '#5c5453',
+                  backgroundColor: '#fdb31f',
+                }}
+                whileTap={{ scale: 0.95 }}
                 type="submit"
-                className="py-4 mt-2 mb-20 text-lg bg-gradient-to-r from-yellow-400 to-red-500 rounded-xl text-gray-800 shadow-lg transform hover:shadow-2xl transition duration-400"
+                className="flex justify-center bg-gray-300 border-solid border-2 border-yellow-500 text-lg mt-5 mb-10 shadow-lg hover:shadow-2xl cursor-pointer px-4 py-4 rounded-lg align-center"
               >
-                Envoyez
-              </button>
+                Envoyer
+              </motion.button>
             </form>
           </div>
         </div>

@@ -23,11 +23,10 @@ export default function Home() {
         <Image
           src={homeImg}
           alt="accueil"
-          width="1200"
-          height="900"
           objectFit="scale-down"
           priority="true"
           placeholder="blur"
+          layout="responsive"
         />
       </div>
     </div>

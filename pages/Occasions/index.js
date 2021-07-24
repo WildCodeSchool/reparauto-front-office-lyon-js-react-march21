@@ -11,12 +11,24 @@ export default function Occasions({ occasionCars }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1.1 }}
+<<<<<<< HEAD
       className="flex flex-wrap justify-evenly items-center mt-10"
     >
       <div />
       {occasionCars.map((occasion) => (
         <motion.div key={occasion.id} whileHover={{ y: -7 }} className="w-96 ">
           <div className="my-7 shadow-xl transform hover:shadow-2xl transition duration-400">
+=======
+      className="flex flex-wrap justify-evenly md:mt-10"
+    >
+      {occasionCars.map((occasion) => (
+        <motion.div
+          key={occasion.id}
+          whileHover={{ y: -7 }}
+          className="sm:w-full md:w-80 lg:w-96"
+        >
+          <div className="sm:w-full md:w-80 lg:w-96 my-10 m-auto border-1 border-dashed border-gray-100 shadow-xl transform hover:shadow-2xl transition duration-400 rounded-lg overflow-hidden ">
+>>>>>>> e0f00abfd23e247eaa530309c642d0b4fcde5ac2
             <div>
               <Image
                 src={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}${occasion.photos[0].formats.large.url}`}
@@ -26,11 +38,16 @@ export default function Occasions({ occasionCars }) {
                 height={350}
                 layout="responsive"
               />
+<<<<<<< HEAD
               <div className="p-4 bg-gray-500 rounded-b-lg">
                 <p className="my-3 text-white text-color-white text-xl font-semibold">
+=======
+              <div className="p-4 bg-gray-500">
+                <p className="my-3 h-16 text-white text-color-white sm:text-md lg:text-xl font-semibold">
+>>>>>>> e0f00abfd23e247eaa530309c642d0b4fcde5ac2
                   {occasion.titre}
-                  <hr className="bg-gradient-to-r from-yellow-400 to-red-500 my-3 h-px border-none" />
                 </p>
+                <hr className=" bg-gradient-to-r from-yellow-400 to-red-500 my-3 h-px border-none" />
                 <span className="flex justify-end -mb-14 pt-3 text-white text-xl bg-grey-500 ">
                   Prix :{' '}
                   <span className="text-xl text-white font-medium">
@@ -60,7 +77,9 @@ export default function Occasions({ occasionCars }) {
 }
 
 export async function getStaticProps() {
-  const res = await axios.get(process.env.NEXT_PUBLIC_OCCASION_URL);
+  const res = await axios.get(
+    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/second-hand-cars`
+  );
   const occasionCars = res.data;
 
   return {

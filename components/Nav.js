@@ -40,7 +40,7 @@ export default function Nav() {
           <Link href="/">Repar'Auto Mobile</Link>
         </motion.div>
         {toggleMenu && (
-          <div className=" md:flex md:items-center ">
+          <div className=" md:flex md:items-center my-2">
             <motion.div
               whileHover={{ scale: 1.05, originX: 0, color: '#FFFFFF' }}
               whileTap={{ scale: 0.95 }}
@@ -51,28 +51,28 @@ export default function Nav() {
             <motion.div
               whileHover={{ scale: 1.05, originX: 0, color: '#FFFFFF' }}
               whileTap={{ scale: 0.95 }}
-              className="ml-20 md:mx-4 text-gray-800 "
+              className="ml-20 md:mx-4 text-gray-800 my-2"
             >
               <Link href="/Activities">Activités</Link>
             </motion.div>
             <motion.div
               whileHover={{ scale: 1.05, originX: 0, color: '#FFFFFF' }}
               whileTap={{ scale: 0.95 }}
-              className="ml-20 md:mx-4 text-gray-800 "
+              className="ml-20 md:mx-4 text-gray-800 my-2"
             >
               <Link href="/Occasions">Véhicules d'occasions</Link>
             </motion.div>
             <motion.div
               whileHover={{ scale: 1.05, originX: 0, color: '#FFFFFF' }}
               whileTap={{ scale: 0.95 }}
-              className="ml-20 md:mx-4 text-gray-800 "
+              className="ml-20 md:mx-4 text-gray-800 my-2"
             >
               <Link href="/Customers-notices">Avis clients</Link>
             </motion.div>
             <motion.div
               whileHover={{ scale: 1.05, originX: 0, color: '#FFFFFF' }}
               whileTap={{ scale: 0.95 }}
-              className="ml-20 md:mx-4 text-gray-800"
+              className="ml-20 md:mx-4 text-gray-800 my-2"
             >
               <Link href="/Contact">Contact</Link>
             </motion.div>
