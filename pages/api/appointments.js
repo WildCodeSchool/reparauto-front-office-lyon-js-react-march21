@@ -1,6 +1,6 @@
 const nodemailer = require('nodemailer');
 
-export default function (req, res) {
+export default (req, res) => {
   console.log(req.body);
   console.log(res.body);
   const {
@@ -44,9 +44,9 @@ export default function (req, res) {
     ],
     */
   };
-  transporter.sendMail(mailData, function (err, info) {
+  transporter.sendMail(mailData, (err, info) => {
     if (err) console.log(err);
     else console.log(info);
   });
   res.status(200);
-}
+};

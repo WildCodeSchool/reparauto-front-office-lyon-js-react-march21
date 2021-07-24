@@ -2,32 +2,10 @@ import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { useToasts } from 'react-toast-notifications';
+// import Image from 'next/image';
+// import bgImage from '../public/images/bgCubes.jpg';
 
 export default function Contact() {
-  // affichage miniatures des file uploads
-  /*
-  function handleFiles(files) {
-    for (let i = 0; i < files.length; i++) {
-      const file = files[i];
-      const imageType = /^image\/lg
-  
-      if (!imageType.test(file.type)) {
-        continue;
-      }
-  
-      const img = document.createElement("img");
-      img.classList.add("obj");
-      img.file = file;
-      const preview = document.querySelector('#preview');
-      preview.appendChild(img); // En admettant que "preview" est l'élément div qui contiendra le contenu affiché.
-  
-      const reader = new FileReader();
-      reader.onload = (function(aImg) { return function(e) { aImg.src = e.target.result; }; })(img);
-      reader.readAsDataURL(file);
-    }
-  }
-  */
-
   const {
     register,
     handleSubmit,
@@ -85,8 +63,6 @@ export default function Contact() {
           <div className="bg-gray-600 flex justify-center md:rounded-t-xl sm:py-4 md:py-6 shadow-lg transform hover:shadow-2xl transition duration-400 px-14">
             <h2 className="flex justify-center align-center text-yellow-400 text-xl font-semibold py-2">
               N'hésitez pas à nous contacter !
-              <br />
-              06-34-37-24-42
             </h2>
           </div>
           <hr className="  w-6/6 bg-gradient-to-r from-yellow-400 to-red-500 h-px border-none " />
@@ -98,7 +74,6 @@ export default function Contact() {
             >
               <input
                 {...register('contactUserName', {
-                  // pattern: /^[A-Za-z]+$/i,
                   required: true,
                   minLength: { value: 3 },
                 })}
