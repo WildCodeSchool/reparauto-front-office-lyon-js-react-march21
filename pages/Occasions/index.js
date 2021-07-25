@@ -25,6 +25,7 @@ export default function Occasions({ occasionCars }) {
                 width={500}
                 height={350}
                 layout="responsive"
+                priority="true"
               />
               <div className="p-4 bg-gray-500 rounded-b-lg">
                 <p className="my-3 text-white text-color-white text-xl font-semibold">

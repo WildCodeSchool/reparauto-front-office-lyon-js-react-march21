@@ -71,7 +71,7 @@ export default function Avis({ reviews }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1.1 }}
-      className="flex flex-wrap-reverse justify-evenly md:mt-12 sm:mt-0  "
+      className="flex flex-wrap-reverse justify-evenly md:mt-12 sm:mt-0 "
     >
       <div>
         {reviews.map((review) => (
@@ -94,15 +94,15 @@ export default function Avis({ reviews }) {
       </div>
       <motion.div whileHover={{ y: -7 }}>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className=" flex flex-col justify-center mb-10 sm:py-3">
-            <div className="md:py-3 m-auto mt-0 mb-0">
+          <div className=" flex flex-col justify-center mb-10 sm:py-3 w-screen sm:w-full ">
+            <div className="md:py-3 mt-0 mb-0">
               <div className="bg-gray-600 w-full flex flex-col md:rounded-xl shadow-lg transform hover:shadow-2xl transition duration-400">
-                <div className="px-12 ">
+                <div className="h-full w-full">
                   <h2 className="text-yellow-400 py-5 text-xl font-semibold flex justify-center">
                     Votre avis nous intéresse !
                   </h2>
                 </div>
-                <hr className="  w-full bg-gradient-to-r from-yellow-400 to-red-500 h-px border-none " />
+                <hr className=" w-full bg-gradient-to-r from-yellow-400 to-red-500 h-px border-none " />
                 <div className="bg-gray-500 w-full flex flex-col items-center">
                   <div className="flex flex-col items-center py-6 px-8 space-y-1">
                     <span className="text-xl text-yellow-400">
@@ -180,7 +180,7 @@ export async function getStaticProps() {
     `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/reviews`
   );
   console.log('data', res.data);
-  const reviews = res.data;
+  const reviews = res.data.slice(0, 5);
   return {
     props: { reviews },
     revalidate: 10,
