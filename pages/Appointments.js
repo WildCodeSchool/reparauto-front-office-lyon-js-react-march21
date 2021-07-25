@@ -138,6 +138,7 @@ export default function Appointements() {
                     onChange={onChange}
                     selected={value}
                     locale={fr}
+                    calendarStartDay={1}
                     filterDate={isWeekDay}
                     minDate={new Date()}
                     className="p-3 w-80 my-2 text-gray-500 rounded-md shadow-md transform hover:shadow-xl transition duration-400"
