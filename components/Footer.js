@@ -27,7 +27,7 @@ export default function Footer() {
       <Link href="https://www.facebook.com/repar.auto.mobile.florian.leblond">
         <img
           type="image"
-          src="/facebook.png"
+          src="/facebook .png"
           alt="facebook-logo"
           className="w-12 h-12 mb-4 cursor-pointer transform hover:scale-110 transition duration-500"
         />
