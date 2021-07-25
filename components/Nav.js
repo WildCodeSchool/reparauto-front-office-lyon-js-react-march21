@@ -26,7 +26,7 @@ export default function Nav() {
         alt="menu"
         className=" w-6 right-6 top-5 absolute md:hidden"
       />
-      <div className="md:flex justify-around items-center flex-row shadow-lg py-4 md:py-5 px-0 bg-gradient-to-r from-yellow-400 to-red-500 z-20">
+      <div className="md:flex justify-around items-center flex-row shadow-lg py-4 md:py-2 px-0 bg-gradient-to-r from-yellow-400 to-red-500 z-20">
         <img
           className="md:w-12 absolute left-2 top-1 md:left-3 md:top-2 w-12"
           src="/logo.png"
