@@ -38,13 +38,18 @@ export default function Home() {
         />
         <hr className="w-px mx-4 transform-rotate-90 bg-gradient-to-r from-yellow-400 to-red-500 h-60  border-none" />
         <div className="md:w-3/6 md:m-5 m-3 sm:w-screen ">
-        <h2 className="text-yellow-400 md:text-xl md:font-semibold text-lg my-3">Bienvenue sur mon site !</h2>
-          <h2 className="text-yellow-400 md:text-xl md:font-semibold text-lg"> Je suis Leblond Florian</h2>
+          <h2 className="text-yellow-400 md:text-xl md:font-semibold text-lg my-3">
+            Bienvenue sur mon site !
+          </h2>
+          <h2 className="text-yellow-400 md:text-xl md:font-semibold text-lg">
+            {' '}
+            Je suis Leblond Florian
+          </h2>
           <p className="text-gray-200 md:text-xl md:font-semibold text-md">
             Mécanicien depuis 2002, j'ai décidé de me mettre à mon compte en
             2017, afin d'apporter à mes clients les compétences d'un
-            professionnel à domicile.
-            Vous pouvez me contacter au 06-34-37-24-42 et par mail repar-auto-mobile@hotmail.com
+            professionnel à domicile. Vous pouvez me contacter au 06-34-37-24-42
+            et par mail repar-auto-mobile@hotmail.com
           </p>
         </div>
       </div>
