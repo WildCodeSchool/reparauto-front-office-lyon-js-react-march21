@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
-import homeImg from '../public/images/accueil3-min.jpg';
 import avatar from '../public/images/avatar.png';
 
 export default function Home() {
@@ -16,17 +15,16 @@ export default function Home() {
         <link rel="icon" href="./favicon.png" />
       </Head>
 
-      <div className="absolute bottom-10 w-screen bg-gray-500 md:p-10 p-5 flex flex-wrap justify-center">
+      <div className="absolute bottom-10 w-screen bg-gray-500 md:p-5 p-2 flex flex-wrap justify-evenly">
         <Image
           src={avatar}
           alt="accueil"
           priority="true"
           placeholder="blur"
-          width="230"
-          height="150"
-          className="m-2"
+          width="180"
+          height="120"
         />
-        <hr className="w-px mx-4 md:transform-rotate-90 md:bg-gradient-to-b from-yellow-400 to-red-500 h-60 border-none" />
+        <hr className="w-px mx-4 md:transform-rotate-90 md:bg-gradient-to-b from-yellow-400 to-red-500 h-52 border-none" />
         <hr className="w-10/12 my-4 md:hidden bg-gradient-to-r from-yellow-400 to-red-500 h-px border-none" />
         <div className="md:w-3/6 md:m-5 m-3 sm:w-screen ">
           <h2 className="text-yellow-400 md:text-xl md:font-semibold text-lg my-3">
