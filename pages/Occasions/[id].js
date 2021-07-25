@@ -25,7 +25,7 @@ export default function DetailsOccasions({ occasion }) {
                   width={384}
                   height={250}
                   layout="responsive"
-                  placeholder="blur"
+                  // placeholder="blur"
                   priority="true"
                 />
               </figure>

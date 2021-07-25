@@ -29,7 +29,7 @@ export default function Activities({ services }) {
                   width={500}
                   height={320}
                   layout="responsive"
-                  placeholder="blur"
+                  // placeholder="blur"
                   priority="true"
                 />
               )}
