@@ -1,4 +1,4 @@
-/* eslint-disable react/button-has-type */
+
 import Image from 'next/image';
 import Link from 'next/link';
 import axios from 'axios';
@@ -11,26 +11,24 @@ export default function Occasions({ occasionCars }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1.1 }}
-      className="flex flex-wrap justify-evenly md:mt-10"
+      className="flex flex-wrap justify-evenly items-center mt-10"
     >
+      <div />
       {occasionCars.map((occasion) => (
-        <motion.div
-          key={occasion.id}
-          whileHover={{ y: -7 }}
-          className="sm:w-full md:w-80 lg:w-96"
-        >
-          <div className="sm:w-full md:w-80 lg:w-96 my-10 m-auto border-1 border-dashed border-gray-100 shadow-xl transform hover:shadow-2xl transition duration-400 rounded-lg overflow-hidden ">
+        <motion.div key={occasion.id} whileHover={{ y: -7 }} className="w-96 ">
+          <div className="my-7 shadow-xl transform hover:shadow-2xl transition duration-400">
             <div>
               <Image
                 src={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}${occasion.photos[0].formats.large.url}`}
                 alt={occasion.SecondHandModel}
-                className="w-screen z-0"
+                className="w-screen z-0 rounded-t-lg"
                 width={500}
                 height={350}
                 layout="responsive"
+                priority="true"
               />
-              <div className="p-4 bg-gray-500">
-                <p className="my-3 h-16 text-white text-color-white sm:text-md lg:text-xl font-semibold">
+              <div className="p-4 bg-gray-500 rounded-b-lg">
+                <p className="my-3 text-white text-color-white text-xl font-semibold">
                   {occasion.titre}
                 </p>
                 <hr className=" bg-gradient-to-r from-yellow-400 to-red-500 my-3 h-px border-none" />

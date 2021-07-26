@@ -4,15 +4,19 @@
 
 html,
 body {
-  background-color: #d3d3d3;
+  background-image: url('../public/images/background.jpg');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-color: #4B5563;
   padding: 0;
-  margin: 0;
   margin-bottom: 28px;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 .navbar{
   z-index: 9999;
+  font-family: 'Comfortaa', cursive;
+  font-size: large;
 }
 a {
   color: inherit;

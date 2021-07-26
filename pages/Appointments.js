@@ -1,8 +1,12 @@
 import { useForm, Controller } from 'react-hook-form';
 import { motion } from 'framer-motion';
-import ReactDatePicker from 'react-datepicker';
 import axios from 'axios';
 import { useToasts } from 'react-toast-notifications';
+import ReactDatePicker, { registerLocale } from 'react-datepicker';
+
+import fr from 'date-fns/locale/fr';
+
+registerLocale('fr', fr);
 
 export default function Appointements() {
   const {
@@ -134,9 +138,12 @@ export default function Appointements() {
                 control={control}
                 render={({ field: { onChange, value } }) => (
                   <ReactDatePicker
+                    locale="fr"
                     onChange={onChange}
                     selected={value}
+                    calendarStartDay={1}
                     filterDate={isWeekDay}
+                    calendarStartDay={1}
                     minDate={new Date()}
                     className="p-3 w-80 my-2 text-gray-500 rounded-md shadow-md transform hover:shadow-xl transition duration-400"
                     placeholderText="Date de rendez-vous"
