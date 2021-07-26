@@ -6,17 +6,11 @@ import avatar from '../public/images/avatar.png';
 export default function Home() {
   return (
     <div className={styles.container}>
-      <Head>
+      <Head crossOrigin="true">
         <title>Répar'Automobile</title>
         <meta
           name="Répar'Auto-mobile"
           content="Réparation de véhicule à domicile"
-        />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap"
-          rel="stylesheet"
         />
         <link rel="icon" href="./favicon.png" />
       </Head>

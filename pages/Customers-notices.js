@@ -73,7 +73,7 @@ export default function Avis({ reviews }) {
       transition={{ duration: 1.1 }}
       className="flex flex-wrap-reverse justify-evenly md:mt-12 sm:mt-0 "
     >
-      <div>
+      <div key={reviews.id}>
         {reviews.map((review) => (
           <motion.div
             key={reviews.id}
