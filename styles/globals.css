@@ -15,7 +15,7 @@ body {
 }
 .navbar{
   z-index: 9999;
-  font-family: 'Comfortaa', cursive;
+  font-family: "Comfortaa", cursive;
   font-size: large;
 }
 a {
