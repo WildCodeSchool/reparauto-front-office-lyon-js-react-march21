@@ -2,7 +2,6 @@ import Image from 'next/image';
 import axios from 'axios';
 import { motion } from 'framer-motion';
 
-
 export default function Activities({ services }) {
   return (
     <motion.div
