@@ -1,12 +1,21 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import {
+  CarouselProvider,
+  Slider,
+  Slide,
+  ButtonBack,
+  ButtonNext,
+} from 'pure-react-carousel';
+import acceuil3 from '../public/images/accueil3.jpg';
+import 'pure-react-carousel/dist/react-carousel.es.css';
 import styles from '../styles/Home.module.css';
 import avatar from '../public/images/avatar.png';
 
 export default function Home() {
   return (
     <div className={styles.container}>
-      <Head crossOrigin="true">
+      <Head>
         <title>Répar'Automobile</title>
         <meta
           name="Répar'Auto-mobile"
@@ -14,6 +23,45 @@ export default function Home() {
         />
         <link rel="icon" href="./favicon.png" />
       </Head>
+      <div>
+        <CarouselProvider
+          className="w-full h-3.5 justify-item-center"
+          naturalSlideWidth={500}
+          naturalSlideHeight={200}
+          totalSlides={4}
+          isPlaying
+          infinite
+        >
+          <div>
+            <Slider>
+              <Slide index={0}>
+                <div>
+                  <Image alt="reparHome" src={acceuil3} />
+                </div>
+              </Slide>
+              <Slide index={1}>
+                <div>
+                  <Image alt="reparActivities" src={acceuil3} />
+                </div>
+              </Slide>
+              <Slide index={2}>
+                <div>
+                  <Image alt="reparAppointments" src={acceuil3} />
+                </div>
+              </Slide>
+              <Slide index={3}>
+                <div className="rounded-full">
+                  <Image alt="reparNotices" src={acceuil3} />
+                </div>
+              </Slide>
+            </Slider>
+          </div>
+          <div className="flex justify-around">
+            <ButtonBack>Back</ButtonBack>
+            <ButtonNext className="bg-gray-300">Next</ButtonNext>
+          </div>
+        </CarouselProvider>
+      </div>
 
       <div className="absolute bottom-10 w-screen bg-gray-500 md:p-5 p-2 flex flex-wrap justify-evenly">
         <Image
