@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
-import homeImg from '../public/images/accueil3-min.jpg';
+// import homeImg from '../public/images/accueil3-min.jpg';
 import avatar from '../public/images/avatar.png';
 
 export default function Home() {
@@ -15,17 +15,6 @@ export default function Home() {
         />
         <link rel="icon" href="./favicon.png" />
       </Head>
-
-      <div className="sm:mt-0  flex justify-center">
-        <Image
-          src={homeImg}
-          alt="accueil"
-          priority="true"
-          placeholder="blur"
-          width="1100"
-          height="800"
-        />
-      </div>
       <div className="absolute bottom-10 w-screen bg-gray-500 md:p-10 p-5 flex flex-wrap justify-center">
         <Image
           src={avatar}
