@@ -10,12 +10,11 @@ export default function DetailsOccasions({ occasion }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1.1 }}
-      className="flex justify-evenly sm:flex-row md:flex flex-col-reverse"
+      className="flex justify-center items-center h-auto sm:w-screen md:w-full "
     >
       <div className="mt-8 mb-16 sm:w-screen md:w-auto bg-white w-96 m-auto border-1 border-dashed border-gray-100 shadow-md rounded-lg overflow-hidden">
         <div className="slider">
           {occasion.photos.map((photo) => {
-            console.log();
             const photoUrl = `${process.env.NEXT_PUBLIC_STRAPI_API_URL}${photo.url}`;
             return (
               <figure key={photo.id}>
@@ -24,23 +23,22 @@ export default function DetailsOccasions({ occasion }) {
                   alt={occasion.titre}
                   className="w-full"
                   width={384}
-                  height={250}
+                  height={270}
                   layout="responsive"
+                  priority="true"
                 />
               </figure>
             );
           })}
         </div>
-        <div className="p-4">
-          <p className="text-gray-700">Marque: {occasion.marque}</p>
-          <br />
-          <p className="text-gray-700">Modèle: {occasion.model}</p>
-          <br />
+        <div className="bg-gray-500 text-gray-200 text-xl p-4">
+          <p className="my-2">
+            Marque: {occasion.marque}
+            {''} Modèle: {occasion.model}
+          </p>
           <h3>Description:</h3>
-          <br />
-          <p className="text-gray-700"> {occasion.description}</p>
-          <p className=" mt-3 text-gray-700">Prix : {occasion.prix} TTC </p>
-          <div className="mt-8 mb-3" />
+          <p className=""> {occasion.description}</p>
+          <p className=" mt-3 ">Prix : {occasion.prix} TTC </p>
         </div>
       </div>
     </motion.div>
