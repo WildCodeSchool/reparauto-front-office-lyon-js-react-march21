@@ -49,7 +49,6 @@ export default function Contact() {
     );
     reset();
   };
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
