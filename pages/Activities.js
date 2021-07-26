@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import axios from 'axios';
 import { motion } from 'framer-motion';
-// import pictureActivities from '../public/images/pictureActivities.jpg';
+
 
 export default function Activities({ services }) {
   return (
