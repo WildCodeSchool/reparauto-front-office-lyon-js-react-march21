@@ -5,6 +5,15 @@ import avatar from '../public/images/avatar.png';
 export default function Home() {
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Répar'Automobile</title>
+        <meta
+          name="Répar'Auto-mobile"
+          content="Réparation de véhicule à domicile"
+        />
+        <link rel="icon" href="./favicon.png" />
+      </Head>
+
       <div className="absolute bottom-10 w-screen bg-gray-500 md:p-5 p-2 flex flex-wrap justify-evenly">
         <Image
           src={avatar}
