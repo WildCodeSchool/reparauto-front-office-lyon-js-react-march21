@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import avatar from '../public/images/avatar.png';
@@ -6,21 +5,6 @@ import avatar from '../public/images/avatar.png';
 export default function Home() {
   return (
     <div className={styles.container}>
-      <Head>
-        <title>Répar'Automobile</title>
-        <meta
-          name="Répar'Auto-mobile"
-          content="Réparation de véhicule à domicile"
-        />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap"
-          rel="stylesheet"
-        />
-        <link rel="icon" href="./favicon.png" />
-      </Head>
-
       <div className="absolute bottom-10 w-screen bg-gray-500 md:p-5 p-2 flex flex-wrap justify-evenly">
         <Image
           src={avatar}
