@@ -19,7 +19,7 @@ export default function Activities({ services }) {
       <div className="flex flex-wrap justify-evenly md:my-10 ">
         {services.map((service) => (
           <motion.div whileHover={{ y: -7 }} key={service.id} className=" ">
-            <div className="bg-gray-500 md:w-96 w-screen rounded-xl shadow-lg mb-10 transform hover:shadow-2xl transition duration-400">
+            <div className="bg-gray-600 md:w-96 w-screen rounded-xl shadow-lg mb-10 transform hover:shadow-2xl transition duration-400">
               {service.picture && (
                 <Image
                   src={service.picture}
@@ -32,22 +32,23 @@ export default function Activities({ services }) {
                 />
               )}
               <div className=" my-2 ">
-                <h1 className="text-xl p-3 font-bold text-yellow-500 ">
+                <h1 className="navbar text-2xl p-3 font-bold text-yellow-500 ">
                   {service.Titre}
                 </h1>
-                <hr className="bg-gradient-to-r from-yellow-400 to-red-500 my-3 h-px border-none" />
+                <hr className="mx-4 bg-gradient-to-r from-yellow-400 to-red-500 my-3 h-px border-none" />
                 <p className="text-lg text-gray-200 my-5 p-3">
                   {service.Description}
                 </p>
-                <hr className="bg-gray-200 my-3 h-px border-none" />
+
                 <motion.button
                   whileHover={{
                     scale: 1.01,
                     originX: 0,
                     color: '#5c5453',
                     backgroundColor: '#fdb31f',
+                    cursor: 'default',
                   }}
-                  className="bg-gray-200 text-lg my-3 ml-3 p-3 w-52 cursor-none rounded-lg "
+                  className="bg-gray-200 text-lg my-5 ml-3 p-3 w-52 cursor-none rounded-lg "
                 >
                   {' '}
                   A partir de {service.Prix} € TTC

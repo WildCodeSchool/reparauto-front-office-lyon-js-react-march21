@@ -22,7 +22,7 @@ export default function Home() {
         <title>Répar'Automobile</title>
         <meta
           name="Répar'Auto-mobile"
-          content="Réparation de véhicule à domicile"
+          content="Le spécialiste de la réparation de véhicule à domicile"
         />
         <link rel="icon" href="./favicon.png" />
       </Head>
@@ -48,47 +48,61 @@ export default function Home() {
               </Slide>
               <Slide index={2}>
                 <div>
-                  <Image priority="true" alt="reparAppointments" src={acceuil1} />
+                  <Image
+                    priority="true"
+                    alt="reparAppointments"
+                    src={acceuil1}
+                  />
                 </div>
               </Slide>
             </Slider>
           </div>
           <div className="flex justify-around">
-            <ButtonBack className="absolute  left-2 top-80 ">
+            <ButtonBack className="absolute left-2 top-80 ">
               <Image
-                className="absolute w-10 h-10"
+                className="absolute sm:w-3 md:w-10"
                 src={flecheGauche}
                 alt="left"
               />
             </ButtonBack>
             <ButtonNext className="absolute right-2 top-80 ">
-              <Image className="w-10 h-10" src={flecheDroite} alt="right" />
+              <Image className="w-10" src={flecheDroite} alt="right" />
             </ButtonNext>
           </div>
         </CarouselProvider>
       </div>
 
-      <div className="absolute bottom-10 w-screen bg-gray-500 md:p-5 p-2 flex flex-wrap justify-evenly">
-        <Image
-          src={avatar}
-          alt="accueil"
-          priority="true"
-          width="150"
-          height="120"
-          className="ml-3"
-        />
+      <div className=" absolute bottom-10 w-screen bg-gray-500 md:p-6 p-3 flex flex-wrap justify-center">
+        <div className="hidden md:contents">
+          <Image
+            src={avatar}
+            alt="accueil"
+            priority="true"
+            width="110"
+            height="120"
+          />
+          <hr className="w-px mx-4 md:transform-rotate-90 md:bg-gradient-to-b from-yellow-400 to-red-500 h-auto border-none" />
+          <hr className="w-10/12 my-4 md:hidden bg-gradient-to-r from-yellow-400 to-red-500 h-px border-none" />
+        </div>
 
-        <hr className="w-px mx-4 md:transform-rotate-90 md:bg-gradient-to-b from-yellow-400 to-red-500 h-40 border-none" />
-        <hr className="w-10/12 my-4 md:hidden bg-gradient-to-r from-yellow-400 to-red-500 h-px border-none" />
-        <div className="md:w-auto  sm:w-screen ">
-          <h2 className="text-yellow-400 md:text-xl md:font-semibold text-lg my-1">
+        <div className=" bottom-10 md:w-auto md:mx-2  sm:w-screen  ">
+          <div className="md:hidden absolute right-3 top-3">
+            <Image
+              src={avatar}
+              alt="accueil"
+              priority="true"
+              width="50"
+              height="55"
+            />
+          </div>
+          <h2 className="custom-font text-yellow-400 md:text-lg lg:text-xl md:font-semibold text-lg my-1">
             Bienvenue sur mon site !
           </h2>
-          <h2 className="text-yellow-400 md:text-lg md:font-semibold text-lg">
+          <h2 className="custom-font text-yellow-400 md:text-sm lg:text-lg md:font-semibold text-md">
             {' '}
             Je suis Florian LEBLOND
           </h2>
-          <p className="text-gray-200 md:text-lg md:font-semibold text-md">
+          <p className="custom-font text-gray-200 md:text-md  md:font-semibold text-md">
             Mécanicien depuis 2001, j'ai décidé de me mettre à mon compte en
             2017,
             <p>

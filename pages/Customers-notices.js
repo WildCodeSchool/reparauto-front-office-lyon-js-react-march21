@@ -77,14 +77,14 @@ export default function Avis({ reviews }) {
         {reviews.map((review) => (
           <motion.div
             whileHover={{ y: -5 }}
-            className="sm:w-screen md:w-96 mt-5 md:my-6 md:mb-8 bg-gray-500 rounded-xl shadow-lg transform hover:shadow-2xl overflow-hidden md:max-w-xl "
+            className="sm:w-screen md:w-96 my-5 md:my-6 md:mb-8 bg-gray-500 rounded-xl shadow-lg transform hover:shadow-2xl overflow-hidden md:max-w-xl "
           >
-            <div className="p-6 md:p-4 text-yellow-400 text-lg ">
+            <div className="p-6 md:p-4 text-yellow-500 md:text-lg sm:text:md ">
               <p>Note : {review.Rating} / 5</p>
-              <div className="tracking-wide text-sm text-yellow-500 font-semibold">
+              <div className="text-sm text-yellow-400 font-semibold">
                 <p>Client: {review.ReviewsClientName}</p>
               </div>
-              <p className="mt-2 text-gray-200">
+              <p className="mt-2 text-gray-200 sm:text-md md:text-lg">
                 Commentaires: {review.Content}
               </p>
             </div>
@@ -93,18 +93,18 @@ export default function Avis({ reviews }) {
       </div>
       <motion.div whileHover={{ y: -7 }}>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className=" flex flex-col justify-center mb-10 sm:py-3 w-screen sm:w-full ">
+          <div className=" flex flex-col justify-center mb-2 sm:py-3 w-screen sm:w-full ">
             <div className="md:py-3 mt-0 mb-0">
               <div className="bg-gray-600 w-full flex flex-col md:rounded-xl shadow-lg transform hover:shadow-2xl transition duration-400">
                 <div className="h-full w-full">
-                  <h2 className="text-yellow-400 py-5 text-xl font-semibold flex justify-center">
+                  <h2 className="custom-font text-yellow-400 py-5 text-xl flex justify-center">
                     Votre avis nous intéresse !
                   </h2>
                 </div>
                 <hr className=" w-full bg-gradient-to-r from-yellow-400 to-red-500 h-px border-none " />
                 <div className="bg-gray-500 w-full flex flex-col items-center">
                   <div className="flex flex-col items-center py-6 px-8 space-y-1">
-                    <span className="text-xl text-yellow-400">
+                    <span className="sm:text-lg md:text-xl text-yellow-400">
                       Quelle a été la qualité du service rendu ?
                     </span>
 
@@ -129,21 +129,21 @@ export default function Avis({ reviews }) {
                       {...register('content', { required: true })}
                       rows="3"
                       maxLength="250"
-                      className="p-4 my-2 text-gray-500 rounded-xl resize-none border-solid border border-yellow-500 shadow-lg transform hover:shadow-2xl transition duration-400"
+                      className="p-4 my-2 text-gray-500 rounded-xl resize-none shadow-lg transform hover:shadow-2xl transition duration-400"
                       placeholder="Rédigez votre avis :"
                     />
                     <input
                       placeholder="Votre email:"
                       {...register('ClientEmail', { required: true })}
                       rows="3"
-                      className="p-4 text-gray-500 my-2 rounded-lg resize-none border-solid border border-yellow-500 shadow-lg transform hover:shadow-2xl transition duration-400"
+                      className="p-4 text-gray-500 my-2 rounded-lg resize-none shadow-lg transform hover:shadow-2xl transition duration-400"
                       type="email"
                     />
                     <input
                       placeholder="Votre nom:"
                       {...register('userNameRequired', { required: true })}
                       rows="3"
-                      className="p-4 my-2 text-gray-500 rounded-lg resize-none border-solid border border-yellow-500 shadow-lg transform hover:shadow-2xl transition duration-400"
+                      className="p-4 my-2 text-gray-500 rounded-lg resize-none shadow-lg transform hover:shadow-2xl transition duration-400"
                     />
                     {errors.userNameRequired && (
                       <span>
