@@ -133,14 +133,14 @@ export default function Contact() {
               />
               {errors.contactContent && <p>Message requis</p>}
 
-              <input
+              {/* <input
                 {...register('ContactPhotos', {
                   name: 'ContactPhotos',
                 })}
                 type="file"
                 // onChange={handleFiles}
                 className="py-4 my-2 text-lg bg-white  rounded-xl text-gray-800 hover:shadow-lg"
-              />
+              /> */}
 
               <motion.button
                 whileHover={{
