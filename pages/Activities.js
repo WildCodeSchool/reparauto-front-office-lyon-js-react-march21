@@ -46,6 +46,7 @@ export default function Activities({ services }) {
                     originX: 0,
                     color: '#5c5453',
                     backgroundColor: '#fdb31f',
+                    cursor: 'default',
                   }}
                   className="bg-gray-200 text-lg my-3 ml-3 p-3 w-52 cursor-none rounded-lg "
                 >
