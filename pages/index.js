@@ -1,5 +1,5 @@
-import Head from 'next/head';
 import Image from 'next/image';
+import Head from 'next/head';
 import {
   CarouselProvider,
   Slider,
@@ -7,10 +7,12 @@ import {
   ButtonBack,
   ButtonNext,
 } from 'pure-react-carousel';
-import acceuil3 from '../public/images/accueil3.jpg';
-import 'pure-react-carousel/dist/react-carousel.es.css';
 import styles from '../styles/Home.module.css';
 import avatar from '../public/images/avatar.png';
+import acceuil3 from '../public/images/accueil3.jpg';
+import 'pure-react-carousel/dist/react-carousel.es.css';
+import flecheGauche from '../public/images/flechegauche.png';
+import flecheDroite from '../public/images/flechedroite.png';
 
 export default function Home() {
   return (
@@ -23,11 +25,10 @@ export default function Home() {
         />
         <link rel="icon" href="./favicon.png" />
       </Head>
-      <div>
+      <div className="">
         <CarouselProvider
-          className="w-full h-3.5 justify-item-center"
-          naturalSlideWidth={500}
-          naturalSlideHeight={200}
+          naturalSlideWidth={200}
+          naturalSlideHeight={140}
           totalSlides={4}
           isPlaying
           infinite
@@ -57,8 +58,16 @@ export default function Home() {
             </Slider>
           </div>
           <div className="flex justify-around">
-            <ButtonBack>Back</ButtonBack>
-            <ButtonNext className="bg-gray-300">Next</ButtonNext>
+            <ButtonBack className="absolute  left-2 top-80 ">
+              <Image
+                className="absolute w-10 h-10"
+                src={flecheGauche}
+                alt="left"
+              />
+            </ButtonBack>
+            <ButtonNext className="absolute right-2 top-80 ">
+              <Image className="w-10 h-10" src={flecheDroite} alt="right" />
+            </ButtonNext>
           </div>
         </CarouselProvider>
       </div>
@@ -68,14 +77,15 @@ export default function Home() {
           src={avatar}
           alt="accueil"
           priority="true"
-          width="180"
+          width="150"
           height="120"
           className="ml-3"
         />
-        <hr className="w-px mx-4 md:transform-rotate-90 md:bg-gradient-to-b from-yellow-400 to-red-500 h-52 border-none" />
+
+        <hr className="w-px mx-4 md:transform-rotate-90 md:bg-gradient-to-b from-yellow-400 to-red-500 h-40 border-none" />
         <hr className="w-10/12 my-4 md:hidden bg-gradient-to-r from-yellow-400 to-red-500 h-px border-none" />
-        <div className="md:w-auto md:m-2 m-3 sm:w-screen ">
-          <h2 className="text-yellow-400 md:text-xl md:font-semibold text-lg my-3">
+        <div className="md:w-auto  sm:w-screen ">
+          <h2 className="text-yellow-400 md:text-xl md:font-semibold text-lg my-1">
             Bienvenue sur mon site !
           </h2>
           <h2 className="text-yellow-400 md:text-lg md:font-semibold text-lg">

@@ -76,7 +76,6 @@ export default function Avis({ reviews }) {
       <div key={reviews.id}>
         {reviews.map((review) => (
           <motion.div
-            key={reviews.id}
             whileHover={{ y: -5 }}
             className="sm:w-screen md:w-96 mt-5 md:my-6 md:mb-8 bg-gray-500 rounded-xl shadow-lg transform hover:shadow-2xl overflow-hidden md:max-w-xl "
           >

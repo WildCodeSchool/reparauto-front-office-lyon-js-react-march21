@@ -23,7 +23,7 @@ export default function DetailsOccasions({ occasion }) {
                   alt={occasion.titre}
                   className="w-full"
                   width={384}
-                  height={250}
+                  height={270}
                   layout="responsive"
                   priority="true"
                 />
