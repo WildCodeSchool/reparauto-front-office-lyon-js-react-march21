@@ -25,9 +25,9 @@ export default function Home() {
         />
         <link rel="icon" href="./favicon.png" />
       </Head>
-      <div className="h-8 max-h-10 top-full">
+      <div className="h-40 md:px-20 mt-0 sm:px-0">
         <CarouselProvider
-          naturalSlideWidth={125}
+          naturalSlideWidth={150}
           naturalSlideHeight={75}
           totalSlides={4}
           isPlaying
@@ -35,9 +35,9 @@ export default function Home() {
           // isIntrinsicHeight="true"
           layout="fill"
           objectfit="cover"
-          className="container"
+          className="h-4"
         >
-          <Slider className="max-h-full">
+          <Slider className="">
             <Slide index={0}>
               <Image
                 alt="reparHome"
@@ -81,7 +81,7 @@ export default function Home() {
                 alt="left"
               />
             </ButtonBack>
-            <ButtonNext className="absolute right-2 top-80 ">
+            <ButtonNext className="absolute right-2 top-80">
               <Image className="w-10" src={flecheDroite} alt="right" />
             </ButtonNext>
           </div>
