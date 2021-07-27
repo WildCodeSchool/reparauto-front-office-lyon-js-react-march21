@@ -35,11 +35,11 @@ export default function Activities({ services }) {
                 <h1 className="text-xl p-3 font-bold text-yellow-500 ">
                   {service.Titre}
                 </h1>
-                <hr className="bg-gradient-to-r from-yellow-400 to-red-500 my-3 h-px border-none" />
+                <hr className="mx-4 bg-gradient-to-r from-yellow-400 to-red-500 my-3 h-px border-none" />
                 <p className="text-lg text-gray-200 my-5 p-3">
                   {service.Description}
                 </p>
-                <hr className="bg-gray-200 my-3 h-px border-none" />
+                <hr className="mx-4 bg-gray-200 my-3 h-px border-none" />
                 <motion.button
                   whileHover={{
                     scale: 1.01,

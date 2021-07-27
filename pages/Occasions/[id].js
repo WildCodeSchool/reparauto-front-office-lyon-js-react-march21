@@ -10,9 +10,9 @@ export default function DetailsOccasions({ occasion }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1.1 }}
-      className="flex justify-center items-center h-auto sm:w-screen md:w-full "
+      className="flex justify-center "
     >
-      <div className="mt-8 mb-16 sm:w-screen md:w-auto bg-white w-96 m-auto border-1 border-dashed border-gray-100 shadow-md rounded-lg overflow-hidden">
+      <div className="sm:m-0 md:mt-8 bg-grey-600 lg:mt-16 mb-16 sm:w-screen md:w-96 border-1 shadow-md rounded-lg overflow-hidden">
         <div className="slider">
           {occasion.photos.map((photo) => {
             const photoUrl = `${process.env.NEXT_PUBLIC_STRAPI_API_URL}${photo.url}`;
@@ -31,14 +31,20 @@ export default function DetailsOccasions({ occasion }) {
             );
           })}
         </div>
-        <div className="bg-gray-500 text-gray-200 text-xl p-4">
-          <p className="my-2">
-            Marque: {occasion.marque}
-            {''} Modèle: {occasion.model}
-          </p>
-          <h3>Description:</h3>
+        <div className="w-96 bg-gray-500 text-gray-200 md:text-lg p-4">
+          <div className="flex my-3 w-96">
+            <h3 className="text-yellow-400">Marque:</h3>
+            <p className="ml-3">{occasion.marque}</p>
+            <h3 className="ml-5 text-yellow-400">Modèle:</h3>
+            <p className="ml-3">{occasion.model}</p>
+          </div>
+          <h3 className="text-yellow-400">Description:</h3>
           <p className=""> {occasion.description}</p>
-          <p className=" mt-3 ">Prix : {occasion.prix} TTC </p>
+          <hr className="  w-6/6 my-3 bg-gradient-to-r from-yellow-400 to-red-500 h-px border-none " />
+          <div className="flex ">
+            <h3 className="text-yellow-400">Prix:</h3>
+            <p className="ml-5 ">{occasion.prix} TTC </p>
+          </div>
         </div>
       </div>
     </motion.div>
