@@ -35,7 +35,7 @@ export default function Home() {
           // isIntrinsicHeight="true"
           layout="fill"
           objectfit="cover"
-          className="max-h-full"
+          className="container"
         >
           <Slider className="max-h-full">
             <Slide index={0}>
