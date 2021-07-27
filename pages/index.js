@@ -9,7 +9,8 @@ import {
 } from 'pure-react-carousel';
 import styles from '../styles/Home.module.css';
 import avatar from '../public/images/avatar.png';
-import acceuil3 from '../public/images/accueil3.jpg';
+import acceuil2 from '../public/images/accueil-2-min.jpg';
+import acceuil1 from '../public/images/accueil-1mini.jpg';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import flecheGauche from '../public/images/flechegauche.png';
 import flecheDroite from '../public/images/flechedroite.png';
@@ -27,9 +28,9 @@ export default function Home() {
       </Head>
       <div className="">
         <CarouselProvider
-          naturalSlideWidth={300}
-          naturalSlideHeight={140}
-          totalSlides={4}
+          naturalSlideWidth={400}
+          naturalSlideHeight={180}
+          totalSlides={3}
           isPlaying
           infinite
         >
@@ -37,22 +38,17 @@ export default function Home() {
             <Slider>
               <Slide index={0}>
                 <div>
-                  <Image alt="reparHome" src={acceuil3} />
+                  <Image priority="true" alt="reparHome" src={acceuil1} />
                 </div>
               </Slide>
               <Slide index={1}>
                 <div>
-                  <Image alt="reparActivities" src={acceuil3} />
+                  <Image priority="true" alt="reparActivities" src={acceuil2} />
                 </div>
               </Slide>
               <Slide index={2}>
                 <div>
-                  <Image alt="reparAppointments" src={acceuil3} />
-                </div>
-              </Slide>
-              <Slide index={3}>
-                <div className="rounded-full">
-                  <Image alt="reparNotices" src={acceuil3} />
+                  <Image priority="true" alt="reparAppointments" src={acceuil1} />
                 </div>
               </Slide>
             </Slider>
