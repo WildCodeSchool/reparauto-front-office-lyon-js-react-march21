@@ -32,15 +32,16 @@ export default function DetailsOccasions({ occasion }) {
           })}
         </div>
         <div className="w-96 bg-gray-500 text-gray-200 md:text-lg p-4">
-          <div className="flex my-3 w-96">
+          <div className="flex mb-3 w-96">
             <h3 className="text-yellow-400">Marque:</h3>
             <p className="ml-3">{occasion.marque}</p>
             <h3 className="ml-5 text-yellow-400">Modèle:</h3>
             <p className="ml-3">{occasion.model}</p>
           </div>
-          <h3 className="text-yellow-400">Description:</h3>
+          <hr className="  w-6/6 my-5 bg-gradient-to-r from-yellow-400 to-red-500 h-px border-none " />
+          <h3 className="text-yellow-400 my-2">Description:</h3>
           <p className=""> {occasion.description}</p>
-          <hr className="  w-6/6 my-3 bg-gradient-to-r from-yellow-400 to-red-500 h-px border-none " />
+          <hr className="  w-6/6 my-5 bg-gradient-to-r from-yellow-400 to-red-500 h-px border-none " />
           <div className="flex ">
             <h3 className="text-yellow-400">Prix:</h3>
             <p className="ml-5 ">{occasion.prix} TTC </p>

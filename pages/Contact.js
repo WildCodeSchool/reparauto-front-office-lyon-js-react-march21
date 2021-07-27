@@ -60,7 +60,7 @@ export default function Contact() {
       <div className=" sm:max-w-xl sm:mx-auto">
         <div className="flex flex-col item-center shadow-lg transform hover:shadow-2xl transition duration-400">
           <div className="bg-gray-600 flex justify-center md:rounded-t-xl sm:py-4 md:py-6 shadow-lg transform hover:shadow-2xl transition duration-400 px-14">
-            <h2 className="flex justify-center align-center text-yellow-400 md:text-xl sm:text-lg font-semibold md:py-5 py-4">
+            <h2 className="custom-font flex justify-center align-center text-yellow-400 md:text-xl sm:text-lg font-semibold md:py-5 py-4">
               N'hésitez pas à nous contacter !
             </h2>
           </div>

@@ -97,7 +97,7 @@ export default function Avis({ reviews }) {
             <div className="md:py-3 mt-0 mb-0">
               <div className="bg-gray-600 w-full flex flex-col md:rounded-xl shadow-lg transform hover:shadow-2xl transition duration-400">
                 <div className="h-full w-full">
-                  <h2 className="text-yellow-400 py-5 text-xl font-semibold flex justify-center">
+                  <h2 className="custom-font text-yellow-400 py-5 text-xl flex justify-center">
                     Votre avis nous intéresse !
                   </h2>
                 </div>
