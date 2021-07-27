@@ -1,7 +1,10 @@
+// import firebase from 'firebase/app';
+import 'firebase/firestore';
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { useToasts } from 'react-toast-notifications';
+// import { app } from '../base';
 // import Image from 'next/image';
 // import bgImage from '../public/images/bgCubes.jpg';
 
@@ -15,6 +18,8 @@ export default function Contact() {
 
   const { addToast } = useToasts();
 
+  // firebase.initializeApp(firebaseConfig);
+
   const onSubmit = (data) => {
     console.log(data);
 
@@ -27,6 +32,7 @@ export default function Contact() {
         contactEmail: data.contactEmail,
         contactImmat: data.contactImmat,
         contactBrandModel: data.contactBrandModel,
+        contactPhotos: data.contactPhotos[0],
       },
     })
       .then((reponse) => {
@@ -127,16 +133,15 @@ export default function Contact() {
               />
               {errors.contactContent && <p>Message requis</p>}
 
-              {/*
-                    <input
-                      {...register('ContactPhotos', {
+              {/* <input
+                {...register('ContactPhotos', {
                   name: 'ContactPhotos',
                 })}
-                      type="file"
-                      // onChange={handleFiles}
-                      className="py-4 my-2 text-lg bg-white  rounded-xl text-gray-800 hover:shadow-lg"
-                    />
-                    */}
+                type="file"
+                // onChange={handleFiles}
+                className="py-4 my-2 text-lg bg-white  rounded-xl text-gray-800 hover:shadow-lg"
+              /> */}
+
               <motion.button
                 whileHover={{
                   scale: 1.03,
