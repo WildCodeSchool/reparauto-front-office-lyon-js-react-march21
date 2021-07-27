@@ -29,8 +29,8 @@ export default function Contact() {
         contactPhotos: data.contactPhotos[0],
       },
     })
-      .then((reponse)
-      .catch((erreur);
+      .then(reponse)
+      .catch(erreur);
     addToast(
       `Votre mail a bien été envoyé, je vous répondrais dés que possible a votre adresse: ${data.contactEmail}, merci !`,
       {

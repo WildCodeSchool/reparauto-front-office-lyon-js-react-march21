@@ -1,19 +1,9 @@
 import Image from 'next/image';
 import Head from 'next/head';
-import {
-  CarouselProvider,
-  Slider,
-  Slide,
-  ButtonBack,
-  ButtonNext,
-} from 'pure-react-carousel';
 import styles from '../styles/Home.module.css';
 import avatar from '../public/images/avatar.png';
-import acceuil2 from '../public/images/accueil-2-min.jpg';
 import acceuil1 from '../public/images/accueil-1mini.jpg';
 import 'pure-react-carousel/dist/react-carousel.es.css';
-import flecheGauche from '../public/images/flechegauche.png';
-import flecheDroite from '../public/images/flechedroite.png';
 
 export default function Home() {
   return (
@@ -26,52 +16,15 @@ export default function Home() {
         />
         <link rel="icon" href="./favicon.png" />
       </Head>
-      <div className="">
-        <CarouselProvider
-          naturalSlideWidth={400}
-          naturalSlideHeight={180}
-          totalSlides={3}
-          isPlaying
-          infinite
-        >
-          <div>
-            <Slider>
-              <Slide index={0}>
-                <div>
-                  <Image priority="true" alt="reparHome" src={acceuil1} />
-                </div>
-              </Slide>
-              <Slide index={1}>
-                <div>
-                  <Image priority="true" alt="reparActivities" src={acceuil2} />
-                </div>
-              </Slide>
-              <Slide index={2}>
-                <div>
-                  <Image
-                    priority="true"
-                    alt="reparAppointments"
-                    src={acceuil1}
-                  />
-                </div>
-              </Slide>
-            </Slider>
-          </div>
-          <div className="flex justify-around">
-            <ButtonBack className="absolute left-2 top-80 ">
-              <Image
-                className="absolute sm:w-3 md:w-10"
-                src={flecheGauche}
-                alt="left"
-              />
-            </ButtonBack>
-            <ButtonNext className="absolute right-2 top-80 ">
-              <Image className="w-10" src={flecheDroite} alt="right" />
-            </ButtonNext>
-          </div>
-        </CarouselProvider>
+      <div className="flex justify-center">
+        <Image
+          src={acceuil1}
+          alt="acceuil"
+          layout="intrinsic"
+          width="1200"
+          height="700"
+        />
       </div>
-
       <div className=" absolute bottom-10 w-screen bg-gray-500 md:p-6 p-3 flex flex-wrap justify-center">
         <div className="hidden md:contents">
           <Image
@@ -102,7 +55,7 @@ export default function Home() {
             {' '}
             Je suis Florian LEBLOND
           </h2>
-          <p className="custom-font text-gray-200 md:text-md  md:font-semibold text-md">
+          <p className="text-gray-200 md:text-md  md:font-semibold text-md">
             Mécanicien depuis 2001, j'ai décidé de me mettre à mon compte en
             2017,
             <p>

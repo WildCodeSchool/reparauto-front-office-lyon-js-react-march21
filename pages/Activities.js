@@ -10,15 +10,9 @@ export default function Activities({ services }) {
       exit={{ opacity: 0 }}
       transition={{ duration: 1.1 }}
     >
-      {/* <Image
-        className="opacity-30 mt-40 z-0"
-        src={pictureActivities}
-        alt="background"
-        
-      /> */}
       <div className="flex flex-wrap justify-evenly md:my-10 ">
         {services.map((service) => (
-          <motion.div whileHover={{ y: -7 }} key={service.id} className=" ">
+          <motion.div key={service.id} whileHover={{ y: -7 }}>
             <div className="bg-gray-600 md:w-96 w-screen rounded-xl shadow-lg mb-10 transform hover:shadow-2xl transition duration-400">
               {service.picture && (
                 <Image
@@ -32,7 +26,7 @@ export default function Activities({ services }) {
                 />
               )}
               <div className=" my-2 ">
-                <h1 className="navbar text-2xl p-3 font-bold text-yellow-500 ">
+                <h1 className="custom-font text-2xl p-3 font-bold text-yellow-500 ">
                   {service.Titre}
                 </h1>
                 <hr className="mx-4 bg-gradient-to-r from-yellow-400 to-red-500 my-3 h-px border-none" />
