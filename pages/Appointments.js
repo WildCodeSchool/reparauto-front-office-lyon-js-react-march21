@@ -122,7 +122,9 @@ export default function Appointements() {
                   type="text"
                   name="appointmentsImmatriculation"
                 />
-                {errors.immatriculation && <p>Immatriculation requise</p>}
+                {errors.appointmentsImmatriculation && (
+                  <p>Immatriculation requise</p>
+                )}
                 <textarea
                   {...register('appointmentsContent', {
                     required: true,
@@ -133,7 +135,7 @@ export default function Appointements() {
                   name="appointmentsContent"
                   type="text"
                 />
-                {errors.appointmentsContent && <p>Date requise</p>}
+                {errors.appointmentsContent && <p>Texte requis</p>}
                 <Controller
                   name="appointmentDate"
                   control={control}
@@ -150,6 +152,7 @@ export default function Appointements() {
                     />
                   )}
                 />
+                {errors.appointmentDate && <p>Date requise</p>}
                 <motion.button
                   whileHover={{
                     scale: 1.03,
