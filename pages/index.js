@@ -25,38 +25,54 @@ export default function Home() {
         />
         <link rel="icon" href="./favicon.png" />
       </Head>
-      <div className="">
+      <div className="h-8 max-h-10 top-full">
         <CarouselProvider
-          naturalSlideWidth={200}
-          naturalSlideHeight={140}
+          naturalSlideWidth={125}
+          naturalSlideHeight={75}
           totalSlides={4}
           isPlaying
           infinite
+          // isIntrinsicHeight="true"
+          layout="fill"
+          objectfit="cover"
+          className="max-h-full"
         >
-          <div>
-            <Slider>
-              <Slide index={0}>
-                <div>
-                  <Image alt="reparHome" src={acceuil3} />
-                </div>
-              </Slide>
-              <Slide index={1}>
-                <div>
-                  <Image alt="reparActivities" src={acceuil3} />
-                </div>
-              </Slide>
-              <Slide index={2}>
-                <div>
-                  <Image alt="reparAppointments" src={acceuil3} />
-                </div>
-              </Slide>
-              <Slide index={3}>
-                <div className="rounded-full">
-                  <Image alt="reparNotices" src={acceuil3} />
-                </div>
-              </Slide>
-            </Slider>
-          </div>
+          <Slider className="max-h-full">
+            <Slide index={0}>
+              <Image
+                alt="reparHome"
+                src={acceuil3}
+                layout="fill"
+                objectFit="cover"
+                className=""
+              />
+            </Slide>
+            <Slide index={1}>
+              <Image
+                alt="reparActivities"
+                src={acceuil3}
+                layout="fill"
+                objectFit="cover"
+              />
+            </Slide>
+            <Slide index={2}>
+              <Image
+                alt="reparAppointments"
+                src={acceuil3}
+                layout="fill"
+                objectFit="cover"
+              />
+            </Slide>
+            <Slide index={3}>
+              <Image
+                alt="reparNotices"
+                src={acceuil3}
+                layout="fill"
+                objectFit="cover"
+              />
+            </Slide>
+          </Slider>
+
           <div className="flex justify-around">
             <ButtonBack className="absolute  left-2 top-80 ">
               <Image
@@ -72,7 +88,7 @@ export default function Home() {
         </CarouselProvider>
       </div>
 
-      <div className="absolute bottom-10 w-screen bg-gray-500 md:p-3 p-2 flex flex-wrap justify-center">
+      <div className="fixed bottom-10 w-screen bg-gray-500 md:p-3 p-2 flex flex-wrap justify-center">
         <Image
           src={avatar}
           alt="accueil"
