@@ -27,13 +27,8 @@ export default function Home() {
       </Head>
       <div className="">
         <CarouselProvider
-<<<<<<< HEAD
-          naturalSlideWidth={800}
-          naturalSlideHeight={240}
-=======
           naturalSlideWidth={200}
           naturalSlideHeight={140}
->>>>>>> a6394f73e503bd4a77b241d6e485f474fbbd4943
           totalSlides={4}
           isPlaying
           infinite
