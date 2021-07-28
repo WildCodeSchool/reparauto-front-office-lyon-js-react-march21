@@ -3,7 +3,18 @@ import React from 'react';
 
 export default function Footer() {
   return (
-    <div className="navbar fixed -bottom-24 flex justify-evenly items-end w-screen h-36 bg-gray-600 transform hover:-translate-y-24 transition duration-500 ">
+    <div className="custom-font fixed -bottom-24 flex justify-evenly items-end w-screen h-36 bg-gray-600 transform hover:-translate-y-24 transition duration-500 ">
+      <p className="text-sm text-yellow-400 custom-font absolute top-3 right-20">
+        Made by
+      </p>
+      <Link href="https://www.wildcodeschool.com/fr-FR">
+        <img
+          type="image"
+          src="/logo-wild.png"
+          alt="logo-wild"
+          className="absolute  w-16 -top-2 right-2 cursor-pointer transform hover:scale-110 transition duration-500"
+        />
+      </Link>
       <h1 className="md:text-xl absolute top-2 items-start text-yellow-400">
         Informations
       </h1>
@@ -14,14 +25,6 @@ export default function Footer() {
           src="/logo.png"
           alt="logo"
           className="w-10 h-10 cursor-pointer items-center transform hover:scale-110 transition duration-500 mb-5"
-        />
-      </Link>
-      <Link href="https://www.wildcodeschool.com/fr-FR">
-        <img
-          type="image"
-          src="/logo-wild.png"
-          alt="logo-wild"
-          className=" w-20 cursor-pointer transform hover:scale-110 transition duration-500"
         />
       </Link>
       <Link href="https://www.facebook.com/repar.auto.mobile.florian.leblond">

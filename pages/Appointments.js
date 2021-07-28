@@ -63,28 +63,28 @@ export default function Appointements() {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 1.1 }}
-        className="flex flex-col md:mt-10 xl:mt-24 sm:mt-0 justify-center "
+        className="flex flex-col md:mt-8 xl:mt-18 sm:mt-0 justify-center "
       >
         <div className="h-full sm:max-w-xl sm:mx-auto">
           <div className="flex flex-col item-center shadow-lg ">
             <div className="bg-gray-600 flex justify-center md:rounded-t-xl hover:shadow-lg">
-              <h2 className="text-yellow-400 text-2xl font-semibold md:py-8 py-4">
+              <h2 className="custom-font text-yellow-400 text-2xl font-semibold md:py-5 py-4">
                 Prenons rendez-vous !
               </h2>
             </div>
             <hr className="  w-6/6 bg-gradient-to-r from-yellow-400 to-red-500 h-px border-none " />
-            <div className="bg-gray-500 md:w-96 sm:w-screen flex flex-col items-center">
+            <div className="bg-gray-500 md:w-auto sm:w-screen flex flex-col items-center">
               <div className="flex flex-col items-center py-2 space-y-3" />
               <form
                 onSubmit={handleSubmit(onSubmit)}
-                className=" flex flex-col w-80"
+                className=" flex flex-col sm:w-screen sm:w-80 md:w-80 md:mx-24 "
               >
                 <input
                   {...register('appointmentsUserName', {
                     required: true,
                     minLength: { value: 3 },
                   })}
-                  className="p-3 m my-2 text-gray-800 rounded-md resize-none shadow-md transform hover:shadow-xl transition duration-400"
+                  className="p-3 w-80 my-2 text-gray-800 rounded-md resize-none shadow-md transform hover:shadow-xl transition duration-400"
                   name="appointmentsUserName"
                   placeholder="Nom, Prénom"
                   type="text"
@@ -122,7 +122,9 @@ export default function Appointements() {
                   type="text"
                   name="appointmentsImmatriculation"
                 />
-                {errors.immatriculation && <p>Immatriculation requise</p>}
+                {errors.appointmentsImmatriculation && (
+                  <p>Immatriculation requise</p>
+                )}
                 <textarea
                   {...register('appointmentsContent', {
                     required: true,
@@ -133,7 +135,7 @@ export default function Appointements() {
                   name="appointmentsContent"
                   type="text"
                 />
-                {errors.appointmentsContent && <p>Date requise</p>}
+                {errors.appointmentsContent && <p>Texte requis</p>}
                 <Controller
                   name="appointmentDate"
                   control={control}

@@ -1,9 +1,9 @@
+// import firebase from 'firebase/app';
+import 'firebase/firestore';
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { useToasts } from 'react-toast-notifications';
-// import Image from 'next/image';
-// import bgImage from '../public/images/bgCubes.jpg';
 
 export default function Contact() {
   const {
@@ -14,7 +14,6 @@ export default function Contact() {
   } = useForm();
 
   const { addToast } = useToasts();
-
   const onSubmit = (data) => {
     console.log(data);
 
@@ -27,6 +26,7 @@ export default function Contact() {
         contactEmail: data.contactEmail,
         contactImmat: data.contactImmat,
         contactBrandModel: data.contactBrandModel,
+        contactPhotos: data.contactPhotos[0],
       },
     })
       .then((reponse) => {
@@ -60,7 +60,7 @@ export default function Contact() {
       <div className=" sm:max-w-xl sm:mx-auto">
         <div className="flex flex-col item-center shadow-lg transform hover:shadow-2xl transition duration-400">
           <div className="bg-gray-600 flex justify-center md:rounded-t-xl sm:py-4 md:py-6 shadow-lg transform hover:shadow-2xl transition duration-400 px-14">
-            <h2 className="flex justify-center align-center text-yellow-400 text-xl font-semibold md:py-5 py-4">
+            <h2 className="custom-font flex justify-center align-center text-yellow-400 md:text-xl sm:text-lg font-semibold md:py-5 py-4">
               N'hésitez pas à nous contacter !
             </h2>
           </div>
@@ -127,16 +127,15 @@ export default function Contact() {
               />
               {errors.contactContent && <p>Message requis</p>}
 
-              {/*
-                    <input
-                      {...register('ContactPhotos', {
+              {/* <input
+                {...register('ContactPhotos', {
                   name: 'ContactPhotos',
                 })}
-                      type="file"
-                      // onChange={handleFiles}
-                      className="py-4 my-2 text-lg bg-white  rounded-xl text-gray-800 hover:shadow-lg"
-                    />
-                    */}
+                type="file"
+                // onChange={handleFiles}
+                className="py-4 my-2 text-lg bg-white  rounded-xl text-gray-800 hover:shadow-lg"
+              /> */}
+
               <motion.button
                 whileHover={{
                   scale: 1.03,
