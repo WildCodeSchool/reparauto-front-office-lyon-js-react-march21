@@ -48,15 +48,11 @@ export default function Home() {
             {' '}
             Je suis Florian LEBLOND
           </h2>
-          <p className="text-gray-200 md:text-md  md:font-semibold text-md">
+          <p className="text-gray-200 md:text-md md:font-semibold text-md">
             Mécanicien depuis 2001, j'ai décidé de me mettre à mon compte en
-            2017,
-            <p>
-              {' '}
-              afin d'apporter à mes clients mes compétences de professionnel à
-              domicile.
-            </p>
-            Vous pouvez me contacter au 06-34-37-24-42 et par Email sur
+            2017, afin d'apporter à mes clients mes compétences de professionnel
+            à domicile.
+            <br /> Vous pouvez me contacter au 06-34-37-24-42 et par Email sur
             repar-auto-mobile@hotmail.com
           </p>
         </div>

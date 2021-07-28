@@ -10,10 +10,14 @@ export default function Occasions({ occasionCars }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1.1 }}
-      className="flex flex-wrap justify-evenly items-center sm:m-0 md:mt-10"
+      className="flex flex-wrap justify-center sm:m-0 md:mt-10"
     >
       {occasionCars.map((occasion) => (
-        <motion.div key={occasion.id} whileHover={{ y: -7 }} className="w-96 ">
+        <motion.div
+          key={occasion.id}
+          whileHover={{ y: -7 }}
+          className="w-screen md:w-2/5 "
+        >
           <div className="mb-7 shadow-xl transform hover:shadow-2xl transition duration-400">
             <div>
               <Image
