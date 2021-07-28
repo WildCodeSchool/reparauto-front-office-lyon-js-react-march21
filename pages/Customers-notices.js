@@ -79,7 +79,7 @@ export default function Avis({ reviews }) {
             <motion.div
               key={review.id}
               whileHover={{ y: -5 }}
-              className="w-screen md:w-96 my-5 md:my-6 md:mb-8 bg-gray-500 rounded-xl shadow-lg transform hover:shadow-2xl overflow-hidden"
+              className="w-screen md:w-80 lg:w-96 my-5 md:my-6 md:mb-8 bg-gray-500 rounded-xl shadow-lg transform hover:shadow-2xl overflow-hidden"
             >
               <div className="p-6 md:p-4 text-yellow-500 md:text-lg sm:text:md ">
                 <p>Note : {review.Rating} / 5</p>
@@ -183,7 +183,7 @@ export async function getStaticProps() {
     `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/reviews`
   );
   console.log('data', res.data);
-  const reviews = res.data.slice(0, 5);
+  const reviews = res.data;
   return {
     props: { reviews },
     revalidate: 10,
