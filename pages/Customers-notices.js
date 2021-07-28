@@ -59,7 +59,7 @@ export default function Avis({ reviews }) {
         'Tout les champs et une note doivent être enregistrés pour envoyer le formulaire',
         {
           appearance: 'error',
-          autoDismiss: false,
+          autoDismiss: 'true',
         }
       );
     }
