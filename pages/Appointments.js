@@ -77,7 +77,7 @@ export default function Appointements() {
               <div className="flex flex-col items-center py-2 space-y-3" />
               <form
                 onSubmit={handleSubmit(onSubmit)}
-                className=" flex flex-col sm:w-screen sm:w-80 md:w-80 md:mx-12 "
+                className=" flex flex-col sm:w-screen sm:w-80 md:w-80 md:mx-24 "
               >
                 <input
                   {...register('appointmentsUserName', {
