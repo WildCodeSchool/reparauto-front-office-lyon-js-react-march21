@@ -6,12 +6,12 @@ import Footer from './Footer';
 
 export default function Layout({ children }) {
   return (
-    <AnimatePresence>
-      <div>
+    <>
+      <AnimatePresence>
         <Nav />
         {children}
         <Footer />
-      </div>
-    </AnimatePresence>
+      </AnimatePresence>
+    </>
   );
 }

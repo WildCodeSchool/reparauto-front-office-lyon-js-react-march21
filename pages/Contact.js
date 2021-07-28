@@ -4,9 +4,6 @@ import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { useToasts } from 'react-toast-notifications';
-// import { app } from '../base';
-// import Image from 'next/image';
-// import bgImage from '../public/images/bgCubes.jpg';
 
 export default function Contact() {
   const {
@@ -17,9 +14,6 @@ export default function Contact() {
   } = useForm();
 
   const { addToast } = useToasts();
-
-  // firebase.initializeApp(firebaseConfig);
-
   const onSubmit = (data) => {
     console.log(data);
 
@@ -35,16 +29,8 @@ export default function Contact() {
         contactPhotos: data.contactPhotos[0],
       },
     })
-      .then((reponse) => {
-        // On traite la suite une fois la réponse obtenue
-
-        console.log(reponse.data);
-      })
-      .catch((erreur) => {
-        // On traite ici les erreurs éventuellement survenues
-
-        console.log(erreur);
-      });
+      .then(reponse)
+      .catch(erreur);
     addToast(
       `Votre mail a bien été envoyé, je vous répondrais dés que possible a votre adresse: ${data.contactEmail}, merci !`,
       {
