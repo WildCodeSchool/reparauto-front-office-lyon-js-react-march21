@@ -4,9 +4,6 @@ import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { useToasts } from 'react-toast-notifications';
-// import { app } from '../base';
-// import Image from 'next/image';
-// import bgImage from '../public/images/bgCubes.jpg';
 
 export default function Contact() {
   const {
@@ -17,9 +14,6 @@ export default function Contact() {
   } = useForm();
 
   const { addToast } = useToasts();
-
-  // firebase.initializeApp(firebaseConfig);
-
   const onSubmit = (data) => {
     console.log(data);
 

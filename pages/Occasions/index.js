@@ -12,7 +12,6 @@ export default function Occasions({ occasionCars }) {
       transition={{ duration: 1.1 }}
       className="flex flex-wrap justify-center sm:m-0 md:mt-10"
     >
-      <div />
       {occasionCars.map((occasion) => (
         <motion.div
           key={occasion.id}
@@ -22,7 +21,7 @@ export default function Occasions({ occasionCars }) {
           <div className="mb-7 shadow-xl transform hover:shadow-2xl transition duration-400">
             <div>
               <Image
-                src={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}${occasion.photos[0].formats.large.url}`}
+                src={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}${occasion.photos[0].formats.small.url}`}
                 alt={occasion.SecondHandModel}
                 className="w-screen z-0 rounded-t-lg"
                 width={500}
