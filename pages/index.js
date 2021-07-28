@@ -23,6 +23,7 @@ export default function Home() {
           layout="intrinsic"
           width="1200"
           height="700"
+          priority="true"
         />
       </div>
       <div className=" absolute bottom-10 w-screen bg-gray-500 md:p-6 p-3 flex flex-wrap justify-center">
