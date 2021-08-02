@@ -26,21 +26,20 @@ export default function Occasions({ occasionCars }) {
                 priority="true"
               />
               <div className="p-4 bg-gray-500 rounded-b-lg">
-                <p className="my-3 text-white text-color-white text-lg font-semibold">
+                <p className="my-4 text-white text-color-white text-lg font-semibold">
                   {occasion.titre}
                 </p>
-                <hr className=" bg-gradient-to-r from-yellow-400 to-red-500 my-3 h-px border-none" />
-                <span className="flex justify-end -mb-14 pt-3 text-white text-xl bg-grey-500 ">
-                  Prix :{' '}
+                <hr className=" bg-gradient-to-r from-yellow-400 to-red-500 my-4 h-px border-none" />
+                <h2 className="flex justify-end -mb-14 pt-3 text-white text-xl bg-grey-500 ">
+                  Prix :
                   <span className="text-xl text-white font-medium">
-                    {occasion.prix} TTC
+                    {occasion.prix}€ TTC
                   </span>{' '}
-                </span>
+                </h2>
                 <motion.button
                   whileHover={{
-                    scale: 1.03,
                     originX: 0,
-                    color: '#5c5453',
+                    color: '#ffffff',
                     backgroundColor: '#fdb31f',
                   }}
                   whileTap={{ scale: 0.95 }}

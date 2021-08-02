@@ -25,61 +25,62 @@ export default function Nav() {
           type="image"
           src="/icon-burger.png"
           alt="menu"
-          className=" w-6 right-6 top-5 absolute md:hidden"
+          className="w-6 right-6 top-5 absolute md:hidden"
         />
-        <div className="md:flex justify-around items-center flex-row shadow-lg py-4 md:py-2 px-0 bg-gradient-to-r from-yellow-400 to-red-500 z-20">
+        <div className="md:flex justify-around items-center flex-row shadow-lg py-4 md:py-2 px-0 bg-gray-600 z-20">
           <img
-            className="md:w-12 absolute left-2 top-1 md:left-3 md:top-2 w-12"
+            className="md:w-12 absolute left-2 top-3 md:left-3 md:top-3 w-10"
             src="/logo.png"
             alt="logo"
           />
           <motion.div
-            whileHover={{ scale: 1.05, originX: 0, color: '#FFFFFF' }}
-            whileTap={{ scale: 0.95 }}
-            className="text-xl text-gray-900 w-52 sm:ml-20 sm:flex sm:justify-around md:flex md:justify-around md:mx-16 ml-20 md:text-xl"
+            whileHover={{ color: '#f7a809' }}
+            whileTap={{ scale: 0.97 }}
+            className="text-xl text-gray-300 w-52 ml-20 sm:flex sm:justify-around md:flex md:justify-around md:mx-16  md:text-xl"
           >
-            <Link href="/">Repar'Auto Mobile</Link>
+            <Link href="/">Repar'AutoMobile</Link>
           </motion.div>
           {toggleMenu && (
             <div className=" md:flex md:items-center my-2">
               <motion.div
-                whileHover={{ scale: 1.05, originX: 0, color: '#FFFFFF' }}
-                whileTap={{ scale: 0.95 }}
-                className="ml-20 md:mx-4 text-gray-800 my-2 md:text-xl"
+                whileHover={{ color: '#f78709' }}
+                whileTap={{ scale: 0.97 }}
+                className="ml-20 w-20 text-gray-300 md:mx-4 my-2 md:text-xl"
               >
                 <Link href="/Activities">Activités</Link>
               </motion.div>
               <motion.div
-                whileHover={{ scale: 1.05, originX: 0, color: '#FFFFFF' }}
-                whileTap={{ scale: 0.95 }}
-                className="ml-20 md:mx-4 text-gray-800 md:text-xl"
+                whileHover={{ color: '#e95e13' }}
+                whileTap={{ scale: 0.97 }}
+                className="ml-20 w-32 text-gray-300 md:mx-4 md:text-xl"
               >
                 <Link href="/Appointments">Rendez-vous</Link>
               </motion.div>
               <motion.div
-                whileHover={{ scale: 1.05, originX: 0, color: '#FFFFFF' }}
-                whileTap={{ scale: 0.95 }}
-                className="ml-20 md:mx-4 text-gray-800 my-2 md:text-xl"
+                whileHover={{ color: '#f04913' }}
+                whileTap={{ scale: 0.97 }}
+                className="ml-20 w-24 text-gray-300 md:mx-4 my-2 md:text-xl"
               >
-                <Link href="/Occasions">Véhicules d'occasions</Link>
+                <Link href="/Occasions">Occasions</Link>
               </motion.div>
               <motion.div
-                whileHover={{ scale: 1.05, originX: 0, color: '#FFFFFF' }}
-                whileTap={{ scale: 0.95 }}
-                className="ml-20 md:mx-4 text-gray-800 my-2 md:text-xl"
+                whileHover={{ color: '#f4350b' }}
+                whileTap={{ scale: 0.97 }}
+                className="ml-20 w-12 text-gray-300 md:mx-4 my-2 md:text-xl"
               >
-                <Link href="/Customers-notices">Avis clients</Link>
+                <Link href="/Customers-notices">Avis</Link>
               </motion.div>
               <motion.div
-                whileHover={{ scale: 1.05, originX: 0, color: '#FFFFFF' }}
-                whileTap={{ scale: 0.95 }}
-                className="ml-20 md:mx-4 text-gray-800 my-2 md:text-xl"
+                whileHover={{ color: '#f71b09' }}
+                whileTap={{ scale: 0.97 }}
+                className="ml-20 w-16 text-gray-300 md:mx-4 my-2 md:text-xl"
               >
                 <Link href="/Contact">Contact</Link>
               </motion.div>
             </div>
           )}
         </div>
+        <hr className=" w-screen bg-gradient-to-r from-yellow-400 to-red-500 h-0.5 border-none" />
       </motion.div>
     </>
   );
