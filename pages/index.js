@@ -56,10 +56,13 @@ export default function Home() {
           </h2>
           <p className="text-gray-200 md:text-md md:font-semibold text-md">
             Mécanicien depuis 2001, j'ai décidé de me mettre à mon compte en
-            2017, afin d'apporter à mes clients mes compétences de professionnel
-            à domicile.
-            <br /> Vous pouvez me contacter au 06-34-37-24-42 et par Email sur
-            repar-auto-mobile@hotmail.com
+            2017,
+            <br />
+            afin d'apporter à mes clients mes compétences de professionnel à
+            domicile.
+            <br /> Vous pouvez me contacter au 06-34-37-24-42 et
+            <br />
+            par Email sur repar-auto-mobile@hotmail.com
           </p>
         </div>
       </div>
