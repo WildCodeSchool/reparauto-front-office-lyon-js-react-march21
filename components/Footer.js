@@ -4,7 +4,7 @@ import React from 'react';
 export default function Footer() {
   return (
     <div className="custom-font fixed -bottom-24 flex justify-evenly items-end w-screen h-36 bg-gray-600 transform hover:-translate-y-24 transition duration-500 ">
-      <p className="text-sm text-yellow-400 custom-font absolute top-5 right-20">
+      <p className="text-xs md:text-sm text-yellow-400 custom-font absolute top-5 right-12 md:top-5 md:right-20">
         Made by
       </p>
       <Link href="https://www.wildcodeschool.com/fr-FR">
@@ -12,7 +12,7 @@ export default function Footer() {
           type="image"
           src="/logo-wild.png"
           alt="logo-wild"
-          className="absolute  w-16 -top-2 right-2 cursor-pointer transform hover:scale-110 transition duration-500"
+          className="absolute w-10 top-1 right-1 md:w-16 md:-top-2 md:right-2 cursor-pointer transform hover:scale-110 transition duration-500"
         />
       </Link>
       <h1 className="md:text-xl absolute top-3 items-start text-yellow-400">

@@ -80,7 +80,7 @@ export default function Nav() {
             </div>
           )}
         </div>
-        <hr className=" w-screen bg-gradient-to-r from-yellow-400 to-red-500 h-0.5 border-none" />
+        <hr className=" w-screen bg-gradient-to-r from-yellow-400 to-red-600 h-0.5 border-none" />
       </motion.div>
     </>
   );
