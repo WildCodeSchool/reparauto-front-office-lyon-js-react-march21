@@ -7,7 +7,7 @@ export default function Nav() {
   const iconRotation = {
     open: {
       scale: 2,
-      rotate: 45,
+      rotate: 135,
     },
     close: {
       scale: 1.3,
