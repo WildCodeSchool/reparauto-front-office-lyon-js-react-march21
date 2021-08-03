@@ -36,7 +36,7 @@ export default function Nav() {
           <motion.div
             whileHover={{ color: '#f7a809' }}
             whileTap={{ scale: 0.97 }}
-            className="text-xl text-gray-300 w-52 ml-20 sm:flex sm:justify-around md:flex md:justify-around md:mx-16  md:text-xl"
+            className="text-lg text-gray-300 w-52 ml-8 flex justify-around md:text-lg"
           >
             <Link href="/">Repar'AutoMobile</Link>
           </motion.div>
@@ -45,35 +45,35 @@ export default function Nav() {
               <motion.div
                 whileHover={{ color: '#f78709' }}
                 whileTap={{ scale: 0.97 }}
-                className="ml-20 w-20 text-gray-300 md:mx-4 my-2 md:text-xl"
+                className="ml-16 w-20 text-md text-gray-300 md:mx-4 my-2 md:text-lg"
               >
                 <Link href="/Activities">Activités</Link>
               </motion.div>
               <motion.div
                 whileHover={{ color: '#e95e13' }}
                 whileTap={{ scale: 0.97 }}
-                className="ml-20 w-32 text-gray-300 md:mx-4 md:text-xl"
+                className="ml-16 w-32 text-md text-gray-300 md:mx-4 md:text-lg"
               >
                 <Link href="/Appointments">Rendez-vous</Link>
               </motion.div>
               <motion.div
                 whileHover={{ color: '#f04913' }}
                 whileTap={{ scale: 0.97 }}
-                className="ml-20 w-24 text-gray-300 md:mx-4 my-2 md:text-xl"
+                className="ml-16  text-md text-gray-300 md:mx-4 my-2 md:text-lg"
               >
                 <Link href="/Occasions">Occasions</Link>
               </motion.div>
               <motion.div
                 whileHover={{ color: '#f4350b' }}
                 whileTap={{ scale: 0.97 }}
-                className="ml-20 w-12 text-gray-300 md:mx-4 my-2 md:text-xl"
+                className="ml-16 w-12 text-md text-gray-300 md:mx-4 my-2 md:text-lg"
               >
                 <Link href="/Customers-notices">Avis</Link>
               </motion.div>
               <motion.div
                 whileHover={{ color: '#f71b09' }}
                 whileTap={{ scale: 0.97 }}
-                className="ml-20 w-16 text-gray-300 md:mx-4 my-2 md:text-xl"
+                className="ml-16 w-16 text-md text-gray-300 md:mx-4 my-2 md:text-lg"
               >
                 <Link href="/Contact">Contact</Link>
               </motion.div>

@@ -21,12 +21,12 @@ export default function Home() {
           src={acceuil1}
           alt="acceuil"
           layout="intrinsic"
-          width="1920"
-          height="1100"
+          width="1600"
+          height="900"
           priority="true"
         />
       </div>
-      <div className=" absolute bottom-10 w-screen bg-gray-500 md:p-6 p-3 flex flex-wrap justify-center">
+      <div className=" absolute bottom-10 w-screen bg-gray-500 md:p-5 p-3 flex flex-wrap justify-center">
         <div className="hidden md:contents">
           <Image
             src={avatar}
@@ -35,7 +35,7 @@ export default function Home() {
             width="130"
             height="120"
           />
-          <hr className="w-0.5 mx-8 md:transform-rotate-90 md:bg-gradient-to-b from-yellow-400 to-red-500 h-auto border-none" />
+          <hr className="w-0.5 mx-3 md:transform-rotate-90 md:bg-gradient-to-b from-yellow-400 to-red-500 h-auto border-none" />
         </div>
         <div className=" bottom-10 md:w-auto md:mx-2  sm:w-screen  ">
           <div className="md:hidden absolute right-3 top-3">
