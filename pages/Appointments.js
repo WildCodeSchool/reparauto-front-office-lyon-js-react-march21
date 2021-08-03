@@ -77,7 +77,7 @@ export default function Appointements() {
               <div className="flex flex-col items-center py-2 space-y-3" />
               <form
                 onSubmit={handleSubmit(onSubmit)}
-                className=" flex flex-col sm:w-screen sm:w-80 md:w-96 md:mx-12 "
+                className=" flex flex-col sm:w-screen sm:mx-4 md:w-96 md:mx-24 "
               >
                 <input
                   {...register('appointmentsUserName', {
@@ -149,9 +149,11 @@ export default function Appointements() {
                       minDate={new Date()}
                       className="p-3 sm:w-screen md:w-96 my-2 text-gray-500 rounded-md shadow-md transform hover:shadow-xl transition duration-400"
                       placeholderText="Date de rendez-vous"
+                      required="true"
                     />
                   )}
                 />
+                {errors.appointmentDate && <p>Date requise</p>}
                 <motion.button
                   whileHover={{
                     scale: 1.03,
