@@ -35,14 +35,13 @@ export default (req, res) => {
         Date : ${appointmentDate}`,
 
     html: `Message:${appointmentsContent},</br> Nom:${appointmentsUserName},</br> Immatriculation: ${appointmentsImmatriculation},</br> Modele:${brandModel},Date : ${appointmentDate},</br> Email :${appointmentsEmail}`,
-    /*
+
     attachments: [
       {
         filename: `image.jpg`,
         path: `/public/images/accueil-1.jpg`,
       },
     ],
-    */
   };
   transporter.sendMail(mailData, (err, info) => {
     if (err) console.log(err);

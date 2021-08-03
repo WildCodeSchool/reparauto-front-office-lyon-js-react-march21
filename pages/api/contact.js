@@ -46,6 +46,7 @@ export default (req, res) => {
       },
     ],
   };
+
   transporter.sendMail(mailData, (err, info) => {
     if (err) console.log(err);
     else console.log(info);

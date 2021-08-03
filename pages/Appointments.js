@@ -149,7 +149,6 @@ export default function Appointements() {
                       minDate={new Date()}
                       className="p-3 sm:w-screen md:w-96 my-2 text-gray-500 rounded-md shadow-md transform hover:shadow-xl transition duration-400"
                       placeholderText="Date de rendez-vous"
-                      required="true"
                     />
                   )}
                 />
