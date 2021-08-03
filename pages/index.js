@@ -21,8 +21,8 @@ export default function Home() {
           src={acceuil1}
           alt="acceuil"
           layout="intrinsic"
-          width="1600"
-          height="900"
+          width="1400"
+          height="800"
           priority="true"
         />
       </div>
