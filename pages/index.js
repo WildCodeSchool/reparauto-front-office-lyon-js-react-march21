@@ -16,7 +16,7 @@ export default function Home() {
         />
         <link rel="icon" href="./favicon.png" />
       </Head>
-      <div className="flex justify-center">
+      <div className="flex justify-center ">
         <Image
           src={acceuil1}
           alt="acceuil"
@@ -26,41 +26,42 @@ export default function Home() {
           priority="true"
         />
       </div>
-      <div className=" absolute bottom-10 w-screen bg-gray-500 md:p-5 p-3 flex flex-wrap justify-center">
+      <div className="fixed bottom-10 w-screen bg-gray-500 md:p-5 p-4 flex flex-wrap justify-center">
         <div className="hidden md:contents">
           <Image
             src={avatar}
             alt="accueil"
             priority="true"
-            width="130"
+            width="120"
             height="120"
           />
           <hr className="w-0.5 mx-3 md:transform-rotate-90 md:bg-gradient-to-b from-yellow-400 to-red-500 h-auto border-none" />
         </div>
-        <div className=" bottom-10 md:w-auto md:mx-2  sm:w-screen  ">
+        <div className=" bottom-10 md:w-auto md:mx-2 sm:w-screen  ">
           <div className="md:hidden absolute right-3 top-3">
             <Image
               src={avatar}
               alt="accueil"
               priority="true"
-              width="50"
-              height="55"
+              width="45"
+              height="50"
             />
           </div>
-          <h2 className="custom-font text-yellow-400 md:text-lg lg:text-xl md:font-semibold text-lg my-1">
+          <h2 className="custom-font text-yellow-400 md:text-lg lg:text-xl text-md">
             Bienvenue sur mon site !
           </h2>
-          <h2 className="custom-font text-yellow-400 md:text-sm lg:text-lg md:font-semibold text-md">
+          <h2 className="custom-font text-yellow-400 md:text-sm lg:text-lg text-md">
             {' '}
             Je suis Florian LEBLOND
           </h2>
-          <p className="text-gray-200 md:text-md md:font-semibold text-md">
+          <p className="text-gray-200 md:text-md md:font-semibold text-sm">
             Mécanicien depuis 2001, j'ai décidé de me mettre à mon compte en
             2017,
             <br />
             afin d'apporter à mes clients mes compétences de professionnel à
             domicile.
-            <br /> Vous pouvez me contacter au 06-34-37-24-42 et
+            <br />
+            Vous pouvez me contacter au 06-34-37-24-42 et
             <br />
             par Email sur repar-auto-mobile@hotmail.com
           </p>
