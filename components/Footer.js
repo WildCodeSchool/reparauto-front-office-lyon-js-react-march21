@@ -20,28 +20,28 @@ export default function Footer() {
       </h1>
       <hr className=" absolute top-12 w-5/6 bg-gradient-to-r from-yellow-400 to-red-500 h-px border-none rounded-xl" />
       <div className="absolute bottom-20 my-1">
+        <svg
+          width="28"
+          height="28"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="text-gray-300 absolute -ml-4 transform hover:text-yellow-400
+            transition duration-500"
+        >
+          <path
+            d="M9.19795 21.5H13.198V13.4901H16.8021L17.198 9.50977H13.198V7.5C13.198 6.94772 13.6457 6.5 14.198 6.5H17.198V2.5H14.198C11.4365 2.5 9.19795 4.73858 9.19795 7.5V9.50977H7.19795L6.80206 13.4901H9.19795V21.5Z"
+            fill="currentColor"
+          />
+        </svg>
         <Link href="https://www.facebook.com/repar.auto.mobile.florian.leblond">
-          <svg
-            width="28"
-            height="28"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="text-gray-300 absolute -ml-4 cursor-pointer transform hover:text-yellow-400
+          <p
+            className="text-gray-300 ml-4 cursor-pointer transform hover:text-yellow-400
           transition duration-500"
           >
-            <path
-              d="M9.19795 21.5H13.198V13.4901H16.8021L17.198 9.50977H13.198V7.5C13.198 6.94772 13.6457 6.5 14.198 6.5H17.198V2.5H14.198C11.4365 2.5 9.19795 4.73858 9.19795 7.5V9.50977H7.19795L6.80206 13.4901H9.19795V21.5Z"
-              fill="currentColor"
-            />
-          </svg>
+            Facebook
+          </p>
         </Link>
-        <p
-          className="text-gray-300 ml-4 transform hover:text-yellow-400
-          transition duration-500"
-        >
-          Facebook
-        </p>
       </div>
 
       <div className="absolute bottom-12 -ml-4">
@@ -86,12 +86,14 @@ export default function Footer() {
             fill="currentColor"
           />
         </svg>
-        <p
-          className="text-gray-300 ml-4 transform hover:text-yellow-400
+        <Link href="mailto:repar-auto-mobile@hotmail.com">
+          <p
+            className="text-gray-300 ml-4 cursor-pointer transform hover:text-yellow-400
           transition duration-500"
-        >
-          repar-auto-mobile@hotmail.com
-        </p>
+          >
+            repar-auto-mobile@hotmail.com
+          </p>
+        </Link>
       </div>
     </div>
   );

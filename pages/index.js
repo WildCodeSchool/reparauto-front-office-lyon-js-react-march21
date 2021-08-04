@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Head from 'next/head';
+import { motion } from 'framer-motion';
 import styles from '../styles/Home.module.css';
 import avatar from '../public/images/avatar.png';
 import acceuil1 from '../public/images/accueil-1mini.jpg';
@@ -27,7 +28,7 @@ export default function Home() {
         />
       </div>
       <div className="fixed bottom-10 w-screen bg-gray-500 md:p-5 p-4 flex flex-wrap justify-center">
-        <div className="hidden md:contents">
+        <motion.div className="hidden md:contents">
           <Image
             src={avatar}
             alt="accueil"
@@ -36,7 +37,7 @@ export default function Home() {
             height="100"
           />
           <hr className="w-px mx-3 md:transform-rotate-90 md:bg-gradient-to-b from-yellow-400 to-red-500 h-auto border-none" />
-        </div>
+        </motion.div>
         <div className="bottom-10 md:w-auto md:mx-2 sm:w-screen">
           <div className="md:hidden absolute right-3 top-3">
             <Image
