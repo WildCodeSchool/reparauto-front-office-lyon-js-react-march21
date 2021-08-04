@@ -16,7 +16,7 @@ export default function Home() {
         />
         <link rel="icon" href="./favicon.png" />
       </Head>
-      <div className="flex justify-center mt-20">
+      <div className="flex justify-center mt-10">
         <Image
           src={acceuil1}
           alt="acceuil"

@@ -40,7 +40,7 @@ export default function DetailsOccasions({ occasion }) {
           </div>
           <h3 className="text-yellow-400 my-4">Description:</h3>
           <p className=""> {occasion.description}</p>
-          <hr className="  w-full my-5 bg-gradient-to-r from-yellow-400 to-red-500 h-px border-none " />
+          <hr className="w-full my-5 bg-gradient-to-r from-yellow-400 to-red-500 h-px border-none " />
           <div className="flex ">
             <h3 className="text-yellow-400">Prix:</h3>
             <p className="ml-5 ">{occasion.prix}€ TTC </p>
