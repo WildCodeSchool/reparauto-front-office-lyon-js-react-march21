@@ -37,10 +37,9 @@ export default function Footer() {
           </svg>
         </Link>
         <p
-          className="text-gray-300 ml-3 transform hover:text-yellow-400
+          className="text-gray-300 ml-4 transform hover:text-yellow-400
           transition duration-500"
         >
-          {' '}
           Facebook
         </p>
       </div>
@@ -64,13 +63,13 @@ export default function Footer() {
           />
         </svg>
         <p
-          className="text-gray-300 ml-3 transform hover:text-yellow-400
+          className="text-gray-300 ml-4 transform hover:text-yellow-400
           transition duration-500"
         >
           06-34-37-24-42
         </p>
       </div>
-      <div className="absolute bottom-2 my-2">
+      <div className="absolute bottom-2 my-2 ">
         <svg
           width="28"
           height="28"
