@@ -12,7 +12,7 @@ export default function DetailsOccasions({ occasion }) {
       transition={{ duration: 1.1 }}
       className="flex justify-center "
     >
-      <div className="bg-grey-600 sm:m-0 md:mt-8 lg:mt-16 mb-16 sm:w-screen md:w-96 lg:w-2/5  ">
+      <div className="bg-grey-600 sm:m-0 md:mt-8 lg:mt-16 mb-16 sm:w-screen md:w-96 ">
         <div className="slider">
           {occasion.photos.map((photo) => {
             const photoUrl = `${process.env.NEXT_PUBLIC_STRAPI_API_URL}${photo.url}`;

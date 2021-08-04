@@ -3,12 +3,10 @@ import { motion } from 'framer-motion';
 import axios from 'axios';
 import { useToasts } from 'react-toast-notifications';
 import ReactDatePicker, { registerLocale } from 'react-datepicker';
-
 import fr from 'date-fns/locale/fr';
 
-registerLocale('fr', fr);
-
 export default function Appointements() {
+  registerLocale('fr', fr);
   const {
     register,
     handleSubmit,
@@ -41,7 +39,6 @@ export default function Appointements() {
       .then((response) => {
         console.log(response);
       })
-
       .catch((err) => {
         console.log(err);
       });
@@ -143,22 +140,21 @@ export default function Appointements() {
                     <ReactDatePicker
                       locale="fr"
                       onChange={onChange}
+                      required
                       selected={value}
                       calendarStartDay={1}
                       filterDate={isWeekDay}
                       minDate={new Date()}
                       className="p-3 sm:w-screen md:w-96 my-2 text-gray-500 rounded-md shadow-md transform hover:shadow-xl transition duration-400"
                       placeholderText="Date de rendez-vous"
-                      required="true"
                     />
                   )}
                 />
-                {errors.appointmentDate && <p>Date requise</p>}
                 <motion.button
                   whileHover={{
                     scale: 1.03,
                     originY: 0,
-                    color: '#5c5453',
+                    color: '#ffffff',
                     backgroundColor: '#fdb31f',
                   }}
                   whileTap={{ scale: 0.95 }}

@@ -51,7 +51,6 @@ export default function Home() {
             Bienvenue sur mon site !
           </h2>
           <h2 className="custom-font text-yellow-400 md:text-sm lg:text-lg text-md">
-            {' '}
             Je suis Florian LEBLOND
           </h2>
           <p className="text-gray-200 md:text-md md:font-semibold text-sm">
