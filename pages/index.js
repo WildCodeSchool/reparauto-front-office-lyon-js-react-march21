@@ -7,7 +7,7 @@ import 'pure-react-carousel/dist/react-carousel.es.css';
 
 export default function Home() {
   return (
-    <div className="md:mt-10 lg:mt-20">
+    <div>
       <Head>
         <title>Répar'Automobile</title>
         <meta
