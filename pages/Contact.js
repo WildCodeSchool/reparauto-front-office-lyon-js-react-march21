@@ -145,7 +145,7 @@ export default function Contact() {
                 }}
                 whileTap={{ scale: 0.95 }}
                 type="submit"
-                className="flex justify-center bg-gray-300 border-solid border-2 border-yellow-500 text-lg mt-5 mb-10 shadow-lg hover:shadow-2xl cursor-pointer px-4 py-4 rounded-lg align-center"
+                className="flex justify-center bg-gray-300 border-solid border-2 border-yellow-500 text-lg mt-5 mb-20 shadow-lg hover:shadow-2xl cursor-pointer px-4 py-4 rounded-lg align-center"
               >
                 Envoyer
               </motion.button>

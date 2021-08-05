@@ -24,7 +24,7 @@ export default function Home() {
           height="700"
           width="1200"
           priority="true"
-          className="rounded-xl "
+          className=" md:rounded-xl "
         />
       </div>
       <div className="fixed bottom-10 w-screen bg-gray-500 md:p-5 p-4 flex flex-wrap justify-center">
