@@ -1,14 +1,13 @@
 import Image from 'next/image';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
-import styles from '../styles/Home.module.css';
 import avatar from '../public/images/avatar.png';
 import acceuil1 from '../public/images/accueil-1mini.jpg';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div className="md:mt-10 lg:mt-20">
       <Head>
         <title>Répar'Automobile</title>
         <meta
@@ -17,14 +16,15 @@ export default function Home() {
         />
         <link rel="icon" href="./favicon.png" />
       </Head>
-      <div className="flex justify-center mt-10">
+      <div className="flex justify-center  lg:mt-10 xl:mt-20">
         <Image
           src={acceuil1}
           alt="acceuil"
           layout="intrinsic"
-          width="1200"
           height="700"
+          width="1200"
           priority="true"
+          className="rounded-xl "
         />
       </div>
       <div className="fixed bottom-10 w-screen bg-gray-500 md:p-5 p-4 flex flex-wrap justify-center">

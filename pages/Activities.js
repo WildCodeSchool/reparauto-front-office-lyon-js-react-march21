@@ -5,7 +5,7 @@ import Head from 'next/head';
 
 export default function Activities({ services }) {
   return (
-    <>
+    <div className="container">
       <Head>
         <title>Répar'Automobile</title>
         <meta
@@ -20,10 +20,10 @@ export default function Activities({ services }) {
         exit={{ opacity: 0 }}
         transition={{ duration: 1.1 }}
       >
-        <div className="flex flex-wrap justify-evenly md:my-10 ">
+        <div className="flex justify-center md:flex-wrap md:justify-evenly w-screen">
           {services.map((service) => (
             <motion.div key={service.id} whileHover={{ y: -7 }}>
-              <div className="bg-gray-600 md:w-96 p-3  w-screen rounded-xl shadow-lg mb-10 transform hover:shadow-2xl transition duration-400">
+              <div className="bg-gray-600 md:w-80 p-2 w-screen rounded-xl shadow-lg transform hover:shadow-2xl transition duration-400">
                 {service.picture && (
                   <Image
                     src={service.picture}
@@ -36,7 +36,7 @@ export default function Activities({ services }) {
                   />
                 )}
                 <div className=" my-2 ">
-                  <h1 className="custom-font text-2xl p-3 font-bold text-yellow-500 ">
+                  <h1 className="custom-font text-2xl p-2 font-bold text-yellow-500 ">
                     {service.Titre}
                   </h1>
                   <hr className="mx-4 bg-gradient-to-r from-yellow-400 to-red-500 my-3 h-px border-none" />
@@ -51,7 +51,7 @@ export default function Activities({ services }) {
                       backgroundColor: '#fdb31f',
                       cursor: 'default',
                     }}
-                    className="bg-gray-200 text-lg my-5 ml-3 p-3 w-52 cursor-none rounded-lg "
+                    className="bg-gray-200 text-lg my-2 ml-3 p-3 w-52 cursor-none rounded-lg "
                   >
                     {' '}
                     A partir de {service.Prix} € TTC
@@ -62,7 +62,7 @@ export default function Activities({ services }) {
           ))}
         </div>
       </motion.div>
-    </>
+    </div>
   );
 }
 
