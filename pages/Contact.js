@@ -14,10 +14,12 @@ export default function Contact() {
   } = useForm();
 
   const { addToast } = useToasts();
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     console.log(data);
+    const formData = new FormData();
+    formData.append('contactPhotos', data.contactPhotos[0]);
 
-    axios({
+    await axios({
       method: 'post',
       url: '/api/contact',
       data: {
@@ -31,7 +33,6 @@ export default function Contact() {
     })
       .then((reponse) => {
         // On traite la suite une fois la réponse obtenue
-
         console.log(reponse.data);
       })
       .catch((erreur) => {
@@ -127,14 +128,14 @@ export default function Contact() {
               />
               {errors.contactContent && <p>Message requis</p>}
 
-              {/* <input
-                {...register('ContactPhotos', {
-                  name: 'ContactPhotos',
+              <input
+                {...register('contactPhotos', {
+                  name: 'contactPhotos',
                 })}
                 type="file"
                 // onChange={handleFiles}
                 className="py-4 my-2 text-lg bg-white  rounded-xl text-gray-800 hover:shadow-lg"
-              /> */}
+              />
 
               <motion.button
                 whileHover={{

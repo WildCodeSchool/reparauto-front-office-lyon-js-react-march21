@@ -1,8 +1,8 @@
 import 'firebase/firestore';
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
-import axios from 'axios';
-import { useToasts } from 'react-toast-notifications';
+// import axios from 'axios';
+// import { useToasts } from 'react-toast-notifications';
 
 export default function Contact() {
   const { register, handleSubmit } = useForm();
@@ -10,11 +10,13 @@ export default function Contact() {
   const onSubmit = async (data) => {
     const formData = new FormData();
     formData.append('picture', data.picture[0]);
+    console.log(data);
 
     const res = await fetch('http://localhost:4000/picture', {
       method: 'POST',
       body: formData,
     }).then((res) => res.json());
+    console.log(data);
     alert(JSON.stringify(res));
   };
   return (

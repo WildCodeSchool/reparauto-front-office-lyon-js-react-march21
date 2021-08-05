@@ -1,14 +1,14 @@
 const nodemailer = require('nodemailer');
 const fs = require('fs');
 
-export default (req, res) => {
+export default async (req, res) => {
   console.log(req.body);
   console.log(res.body);
   const {
     contactContent,
     contactUserName,
     contactEmail,
-    ContactPhotos,
+    contactPhotos,
     contactImmat,
     contactBrandModel,
   } = req.body;
@@ -31,6 +31,7 @@ export default (req, res) => {
     text: `Message:${contactContent},</br>
        Nom Prénom:${contactUserName},
        Immatriculation: ${contactImmat},
+       Photos: ${contactPhotos},
         Modele:${contactBrandModel},
         Email : ${contactEmail}`,
     html: `Message: ${contactContent}, </br>  Nom Prénom: ${contactUserName}, </br> Immatriculation: ${contactImmat}, </br> Modele: ${contactBrandModel}, </br> Email : ${contactEmail}`,
@@ -39,10 +40,11 @@ export default (req, res) => {
       {
         filename: 'test.log',
         content: fs.createReadStream('./test.log'),
+        contactPhotos,
       },
       {
-        filename: `${ContactPhotos[0].filename}`,
-        content: fs.createReadStream(`${ContactPhotos[0].path}`),
+        filename: `${contactUserName}`,
+        content: `${contactPhotos}`,
       },
     ],
   };
