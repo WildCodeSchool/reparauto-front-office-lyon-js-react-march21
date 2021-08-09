@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 import React from 'react';
 
@@ -16,9 +17,18 @@ export default function Footer() {
         />
       </Link>
       <h1 className="md:text-xl absolute top-3 items-start text-yellow-400">
-        Informations
+        Contact
       </h1>
-      <hr className=" absolute top-12 w-screen  bg-gradient-to-r from-yellow-400 to-red-500 h-px border-none rounded-xl" />
+      <Link href="/Activities">
+        <motion.div
+          whileHover={{ color: '#f71b09' }}
+          whileTap={{ scale: 0.97 }}
+          className="md:text-lg cursor-pointer absolute top-3 left-3 text-yellow-400"
+        >
+          Promotions
+        </motion.div>
+      </Link>
+      <hr className=" absolute top-12 w-screen  bg-gradient-to-r from-yellow-400 to-red-700 h-px border-none rounded-xl" />
       <div className="absolute bottom-20 my-1">
         <svg
           width="28"
