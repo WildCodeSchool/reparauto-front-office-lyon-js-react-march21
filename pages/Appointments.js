@@ -3,12 +3,10 @@ import { motion } from 'framer-motion';
 import axios from 'axios';
 import { useToasts } from 'react-toast-notifications';
 import ReactDatePicker, { registerLocale } from 'react-datepicker';
-
 import fr from 'date-fns/locale/fr';
 
-registerLocale('fr', fr);
-
 export default function Appointements() {
+  registerLocale('fr', fr);
   const {
     register,
     handleSubmit,
@@ -57,34 +55,33 @@ export default function Appointements() {
   };
 
   return (
-    <>
+    <div className="container justify-center items-center">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 1.1 }}
-        className="flex flex-col md:mt-8 xl:mt-18 sm:mt-0 justify-center "
+        className="flex flex-col justify-center"
       >
         <div className="h-full sm:max-w-xl sm:mx-auto">
           <div className="flex flex-col item-center shadow-lg ">
             <div className="bg-gray-600 flex justify-center md:rounded-t-xl hover:shadow-lg">
-              <h2 className="custom-font text-yellow-400 text-2xl font-semibold md:py-5 py-4">
+              <h2 className="custom-font text-yellow-400 text-2xl md:py-8 py-4">
                 Prenons rendez-vous !
               </h2>
             </div>
             <hr className="  w-6/6 bg-gradient-to-r from-yellow-400 to-red-500 h-px border-none " />
-            <div className="bg-gray-500 md:w-auto sm:w-screen flex flex-col items-center">
-              <div className="flex flex-col items-center py-2 space-y-3" />
+            <div className="bg-gray-500 pt-5 items-center">
               <form
                 onSubmit={handleSubmit(onSubmit)}
-                className=" flex flex-col sm:w-screen sm:mx-4 md:w-96 md:mx-24 "
+                className=" flex flex-col sm:w-screen md:w-80 mx-8 md:mx-24 "
               >
                 <input
                   {...register('appointmentsUserName', {
                     required: true,
                     minLength: { value: 3 },
                   })}
-                  className="p-3 m my-2 text-gray-800 rounded-md resize-none shadow-md transform hover:shadow-xl transition duration-400"
+                  className="p-3 w-80 my-2 text-gray-800 rounded-md resize-none shadow-md transform hover:shadow-xl transition duration-400"
                   name="appointmentsUserName"
                   placeholder="Nom, Prénom"
                   type="text"
@@ -125,17 +122,6 @@ export default function Appointements() {
                 {errors.appointmentsImmatriculation && (
                   <p>Immatriculation requise</p>
                 )}
-                <textarea
-                  {...register('appointmentsContent', {
-                    required: true,
-                    minLength: { value: 1 },
-                  })}
-                  className="p-3 h-24 my-2 text-gray-800 rounded-md resize-none shadow-md transform hover:shadow-xl transition duration-400"
-                  placeholder="Travaux à réaliser"
-                  name="appointmentsContent"
-                  type="text"
-                />
-                {errors.appointmentsContent && <p>Texte requis</p>}
                 <Controller
                   name="appointmentDate"
                   control={control}
@@ -147,12 +133,22 @@ export default function Appointements() {
                       calendarStartDay={1}
                       filterDate={isWeekDay}
                       minDate={new Date()}
-                      className="p-3 sm:w-screen md:w-96 my-2 text-gray-500 rounded-md shadow-md transform hover:shadow-xl transition duration-400"
+                      className="p-3 w-80 my-2 text-gray-500 rounded-md shadow-md transform hover:shadow-xl transition duration-400"
                       placeholderText="Date de rendez-vous"
                     />
                   )}
                 />
-                {errors.appointmentDate && <p>Date requise</p>}
+                <textarea
+                  {...register('appointmentsContent', {
+                    required: true,
+                    minLength: { value: 1 },
+                  })}
+                  className="p-3 h-24 my-2 text-gray-800 rounded-md resize-none shadow-md transform hover:shadow-xl transition duration-400"
+                  placeholder="Travaux à réaliser"
+                  name="appointmentsContent"
+                  type="text"
+                />
+                {errors.appointmentsContent && <p>Texte requis</p>}
                 <motion.button
                   whileHover={{
                     scale: 1.03,
@@ -171,6 +167,6 @@ export default function Appointements() {
           </div>
         </div>
       </motion.div>
-    </>
+    </div>
   );
 }

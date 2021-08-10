@@ -21,13 +21,7 @@ export default function Nav() {
 
   return (
     <>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.8 }}
-        className="custom-font"
-      >
+      <div className="custom-font">
         <div
           onClick={showMenu}
           className="text-gray-300 right-6 top-4 absolute md:hidden"
@@ -49,7 +43,7 @@ export default function Nav() {
         </div>
         <div className="md:flex justify-around items-center flex-row shadow-lg py-3 md:py-2 px-0 bg-gray-600 z-20">
           <img
-            className="md:w-14 md:top-2 absolute left-2 top-1 md:left-3  w-10"
+            className="md:w-12 md:top-2 absolute left-2 top-1 md:left-3  w-10"
             src="/logo.png"
             alt="logo"
           />
@@ -61,11 +55,14 @@ export default function Nav() {
             <Link href="/">Repar'AutoMobile</Link>
           </motion.div>
           {toggleMenu && (
-            <div className=" md:flex md:items-center my-2">
+            <motion.div
+              animate={toggleMenu ? 'open' : 'close'}
+              className=" md:flex md:items-center md:my-2"
+            >
               <motion.div
                 whileHover={{ color: '#f78709' }}
                 whileTap={{ scale: 0.97 }}
-                className="ml-16 w-20 text-md text-gray-300 md:mx-2 lg:mx-7 my-2 md:text-lg"
+                className="ml-16 w-20 text-md text-gray-300 md:mx-2 lg:mx-7 my-1 md:text-lg"
               >
                 <Link href="/Activities">Activités</Link>
               </motion.div>
@@ -79,29 +76,29 @@ export default function Nav() {
               <motion.div
                 whileHover={{ color: '#f04913' }}
                 whileTap={{ scale: 0.97 }}
-                className="ml-16 w-20 text-md text-gray-300 md:mx-2 lg:mx-7 my-2 md:text-lg"
+                className="ml-16 w-20 text-md text-gray-300 md:mx-2 lg:mx-7 my-1 md:text-lg"
               >
                 <Link href="/Occasions">Occasions</Link>
               </motion.div>
               <motion.div
                 whileHover={{ color: '#f4350b' }}
                 whileTap={{ scale: 0.97 }}
-                className="ml-16 w-12 text-md text-gray-300 md:mx-2 lg:mx-7 my-2 md:text-lg"
+                className="ml-12 w-10 text-md text-gray-300 md:mx-2 lg:mx-7 my-1 md:text-lg"
               >
                 <Link href="/Customers-notices">Avis</Link>
               </motion.div>
               <motion.div
                 whileHover={{ color: '#f71b09' }}
                 whileTap={{ scale: 0.97 }}
-                className="ml-16 w-16 text-md text-gray-300 md:mx-2 lg:mx-7 my-2 md:text-lg"
+                className="ml-16 w-16 text-md text-gray-300 md:mx-2 lg:mx-7 md:text-lg"
               >
                 <Link href="/Contact">Contact</Link>
               </motion.div>
-            </div>
+            </motion.div>
           )}
         </div>
-        <hr className=" w-screen bg-gradient-to-r from-yellow-400 to-red-600 h-0.5 border-none" />
-      </motion.div>
+        <hr className=" w-screen bg-gradient-to-r from-yellow-300 to-red-700 h-0.5 border-none" />
+      </div>
     </>
   );
 }
