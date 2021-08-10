@@ -1,11 +1,15 @@
 import Image from 'next/image';
 import Head from 'next/head';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 import avatar from '../public/images/avatar.png';
 import acceuil1 from '../public/images/accueil-1mini.jpg';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 
 export default function Home() {
+  const [showModal, setShowModal] = useState(true);
+
   return (
     <div>
       <Head>
@@ -16,6 +20,68 @@ export default function Home() {
         />
         <link rel="icon" href="./favicon.png" />
       </Head>
+      {showModal ? (
+        <>
+          <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+            <div className="relative w-auto my-6 mx-auto max-w-3xl">
+              {/* content */}
+              <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                {/* header */}
+                <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
+                  <h3 className="text-3xl font-semibold">Promotions !</h3>
+                  <button
+                    type="button"
+                    className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                    onClick={() => setShowModal(false)}
+                  >
+                    <span className="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
+                      ×
+                    </span>
+                  </button>
+                </div>
+                {/* body */}
+                <div className="relative p-6 flex-auto">
+                  <Image
+                    src={avatar}
+                    alt="accueil"
+                    priority="true"
+                    width="100"
+                    height="100"
+                  />
+                  <p>
+                    50% de promotions sur toutes les vidanges jusqu'au 31 aout !
+                  </p>
+                  <p>N'hesitez pas !</p>
+                </div>
+                {/* footer */}
+                <div className="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
+                  <button
+                    className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                    type="button"
+                    onClick={() => setShowModal(false)}
+                  >
+                    Close
+                  </button>
+                  <motion.button
+                    whileHover={{
+                      originX: 0,
+                      color: '#FFFFFF',
+                      backgroundColor: '#fdb31f',
+                    }}
+                    className="bg-gray-200 text-lg my-2 ml-3 p-3 w-52 cursor-non  rounded-lg "
+                  >
+                    {' '}
+                    <Link href="/Appointments">
+                      <p>N'hesitez pas !</p>
+                    </Link>
+                  </motion.button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="opacity-25 fixed inset-0 z-40 bg-black" />
+        </>
+      ) : null}
       <div className="flex justify-center  md:mt-10 xl:mt-16 xl:mt-20">
         <Image
           src={acceuil1}
