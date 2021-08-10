@@ -15,6 +15,15 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+.modal {
+  background-repeat: no-repeat;
+  background: linear-gradient(-45deg, #3a4bac, #746c6c, #993d18);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  padding: 0;
+  margin: 0;
+}
+
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
