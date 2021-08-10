@@ -4,12 +4,14 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import avatar from '../public/images/avatar.png';
-import modalBackground from '../public/images/background-min.jpg';
 import acceuil1 from '../public/images/accueil-1mini.jpg';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 
 export default function Home() {
   const [showModal, setShowModal] = useState(true);
+  const promotionFactor = '50';
+  const promotionDescription = 'toutes les vidanges';
+  const promotionEndDate = '31 aout';
 
   return (
     <div>
@@ -28,8 +30,8 @@ export default function Home() {
               {/* content */}
               <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full modal outline-none focus:outline-none">
                 {/* header */}
-                <div className="flex items-start justify-center p-5 border-b border-solid border-blueGray-200 rounded-t">
-                  <h3 className="text-3xl text-gray-200 font-semibold">
+                <div className="flex items-start justify-center p-5 border-b border-solid border-yellow-500 rounded-t">
+                  <h3 className="text-3xl text-gray-200 font-semibold cursor-default">
                     Promotions !
                   </h3>
                 </div>
@@ -42,12 +44,14 @@ export default function Home() {
                     width="100"
                     height="100"
                   />
-                  <h6 className="text-2xl text-gray-200 font-semibold">
-                    50% de promotions sur toutes les vidanges jusqu'au 31 aout !
+                  <hr className="w-px mx-3 md:transform-rotate-90 md:bg-gradient-to-b from-yellow-400 to-red-500 h-auto border-none" />
+                  <h6 className="text-2xl text-gray-200 font-semibold cursor-default">
+                    {promotionFactor}% de promotion sur {promotionDescription}
+                    jusqu'au {promotionEndDate} !
                   </h6>
                 </div>
                 {/* footer */}
-                <div className="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
+                <div className="flex items-center justify-end p-6 border-t border-solid border-yellow-500 rounded-b">
                   <button
                     className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                     type="button"
@@ -65,7 +69,7 @@ export default function Home() {
                   >
                     {' '}
                     <Link href="/Appointments">
-                      <p>N'hesitez pas !</p>
+                      <p>Ça m'intéresse !</p>
                     </Link>
                   </motion.button>
                 </div>
