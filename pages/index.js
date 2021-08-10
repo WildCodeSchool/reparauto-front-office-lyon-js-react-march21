@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import modalBg from '../public/images/background-min.jpg';
 import avatar from '../public/images/avatar.png';
 import acceuil1 from '../public/images/accueil-1mini.jpg';
 import 'pure-react-carousel/dist/react-carousel.es.css';
@@ -36,17 +37,16 @@ export default function Home() {
                   </h3>
                 </div>
                 {/* body */}
-                <div className="relative p-6 flex-auto">
+                <div className="relative p-6 flex-row">
                   <Image
-                    src={avatar}
+                    src={modalBg}
                     alt="accueil"
                     priority="true"
-                    width="100"
-                    height="100"
+                    className="w-screen"
                   />
                   <hr className="w-px mx-3 md:transform-rotate-90 md:bg-gradient-to-b from-yellow-400 to-red-500 h-auto border-none" />
                   <h6 className="text-2xl text-gray-200 font-semibold cursor-default">
-                    {promotionFactor}% de promotion sur {promotionDescription}
+                    {promotionFactor}% de promotion sur {promotionDescription}{' '}
                     jusqu'au {promotionEndDate} !
                   </h6>
                 </div>
