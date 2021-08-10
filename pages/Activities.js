@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import axios from 'axios';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
@@ -49,12 +50,13 @@ export default function Activities({ services }) {
                       originX: 0,
                       color: '#FFFFFF',
                       backgroundColor: '#fdb31f',
-                      cursor: 'default',
                     }}
                     className="bg-gray-200 text-lg my-2 ml-3 p-3 w-52 cursor-non  rounded-lg "
                   >
                     {' '}
-                    A partir de {service.Prix} € TTC
+                    <Link href="/Appointments">
+                      <p>A partir de {service.Prix} € TTC</p>
+                    </Link>
                   </motion.button>
                 </div>
               </div>
