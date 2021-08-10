@@ -42,10 +42,10 @@ export default function Home() {
                     src={modalBg}
                     alt="accueil"
                     priority="true"
-                    className="w-screen"
+                    layout="responsive"
                   />
                   <hr className="w-px mx-3 md:transform-rotate-90 md:bg-gradient-to-b from-yellow-400 to-red-500 h-auto border-none" />
-                  <h6 className="text-2xl text-gray-200 font-semibold cursor-default">
+                  <h6 className="text-2xl text-center text-gray-200 font-semibold cursor-default">
                     {promotionFactor}% de promotion sur {promotionDescription}{' '}
                     jusqu'au {promotionEndDate} !
                   </h6>
