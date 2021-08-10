@@ -1,8 +1,8 @@
 import 'firebase/firestore';
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
-import axios from 'axios';
-import { useToasts } from 'react-toast-notifications';
+// import axios from 'axios';
+// import { useToasts } from 'react-toast-notifications';
 
 export default function Contact() {
   const { register, handleSubmit } = useForm();
