@@ -51,7 +51,7 @@ export default function Activities({ services }) {
                       color: '#FFFFFF',
                       backgroundColor: '#fdb31f',
                     }}
-                    className="bg-gray-200 text-lg my-2 ml-3 p-3 w-52 cursor-non  rounded-lg "
+                    className="bg-gray-200 text-lg my-2 ml-3 p-3 w-52 rounded-lg"
                   >
                     {' '}
                     <Link href="/Appointments">

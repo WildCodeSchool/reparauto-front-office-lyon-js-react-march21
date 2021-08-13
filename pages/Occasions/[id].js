@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import axios from 'axios';
 import { motion } from 'framer-motion';
 
@@ -33,7 +34,7 @@ export default function DetailsOccasions({ occasion }) {
         </div>
         <hr className="w-full bg-gradient-to-r from-yellow-400 to-red-600 h-px border-none" />
         <div className=" bg-gray-500 text-gray-200 md:text-lg p-4">
-          <div className="flex mt-2 mb-2 ">
+          <div className="flex mt-2 mb-2 cursor-default">
             <h3 className="custom-font text-xl text-yellow-400">Marque:</h3>
             <p className="ml-3">{occasion.marque}</p>
             <h3 className="custom-font text-xl ml-5 text-yellow-400">
@@ -44,16 +45,23 @@ export default function DetailsOccasions({ occasion }) {
           <h3 className="custom-font text-xl text-yellow-400 my-4">
             Description:
           </h3>
-          <p className=""> {occasion.description}</p>
+          <p className="cursor-default"> {occasion.description}</p>
           <div className="flex my-3">
             <h3 className="custom-font text-xl text-yellow-400">Prix:</h3>
-            <p className="ml-5 ">{occasion.prix} € TTC </p>
-            <button
+            <p className="ml-5 cursor-default">{occasion.prix} € TTC </p>
+            <motion.button
               type="button"
+              whileHover={{
+                originX: 0,
+                color: '#FFFFFF',
+                backgroundColor: '#fdb31f',
+              }}
               className="ml-52 border rounded-2xl py-1 px-3"
             >
-              J'achète
-            </button>
+              <Link href="/Appointments">
+                <p>J'achète</p>
+              </Link>
+            </motion.button>
           </div>
         </div>
       </div>
