@@ -24,7 +24,7 @@ export default function Activities({ services }) {
         <div className="cursor-default flex flex-wrap justify-evenly w-screen mb-10">
           {services.map((service) => (
             <motion.div key={service.id} whileHover={{ y: -7 }}>
-              <div className="bg-gray-600 md:w-80 p-2 w-screen rounded-xl shadow-lg transform hover:shadow-2xl transition duration-400">
+              <div className="bg-gray-600 md:w-80 p-2 w-screen h-full rounded-xl shadow-lg transform hover:shadow-2xl transition duration-400">
                 {service.picture && (
                   <Image
                     src={service.picture}
@@ -36,7 +36,7 @@ export default function Activities({ services }) {
                     priority="true"
                   />
                 )}
-                <div className=" my-2 ">
+                <div className="my-2 mb-0 min-h-full">
                   <h1 className="custom-font text-2xl p-2 font-bold text-yellow-500 ">
                     {service.Titre}
                   </h1>
