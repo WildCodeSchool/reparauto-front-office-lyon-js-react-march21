@@ -16,7 +16,7 @@ export default function Occasions({ occasionCars }) {
         <motion.div
           key={occasion.id}
           whileHover={{ y: -7 }}
-          className="container-occasion"
+          className="container-occasion cursor-default"
         >
           <div className="mb-12 shadow-xl transform hover:shadow-2xl transition duration-400">
             <div>
