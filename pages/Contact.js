@@ -55,7 +55,7 @@ export default function Contact() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1.1 }}
-      className="container items-center"
+      className="container items-center cursor-default"
     >
       <div className=" sm:max-w-xl sm:mx-auto">
         <div className="flex flex-col item-center shadow-lg transform hover:shadow-2xl transition duration-400">

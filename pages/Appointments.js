@@ -65,7 +65,7 @@ export default function Appointements() {
         <div className="h-full sm:max-w-xl sm:mx-auto">
           <div className="flex flex-col item-center shadow-lg ">
             <div className="bg-gray-600 flex justify-center md:rounded-t-xl hover:shadow-lg">
-              <h2 className="custom-font text-yellow-400 text-2xl md:py-8 py-4">
+              <h2 className="cursor-default custom-font text-yellow-400 text-2xl md:py-8 py-4">
                 Prenons rendez-vous !
               </h2>
             </div>
