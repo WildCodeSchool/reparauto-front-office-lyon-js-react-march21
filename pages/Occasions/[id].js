@@ -48,19 +48,18 @@ export default function DetailsOccasions({ occasion }) {
           <p className="cursor-default"> {occasion.description}</p>
           <div className="flex my-3">
             <h3 className="custom-font text-xl text-yellow-400">Prix:</h3>
-            <p className="ml-5 cursor-default">{occasion.prix} € TTC </p>
+            <p className="ml-5 ">{occasion.prix} € TTC </p>
             <motion.button
-              type="button"
               whileHover={{
                 originX: 0,
-                color: '#FFFFFF',
+                color: '#ffffff',
                 backgroundColor: '#fdb31f',
               }}
-              className="ml-52 border rounded-2xl py-1 px-3"
+              whileTap={{ scale: 0.95 }}
+              type="button"
+              className="flex custom-font text-gray-600 text-lg bg-gray-200 ml-52 border rounded-2xl py-1 px-3 cursor-pointer rounded-lg"
             >
-              <Link href="/Appointments">
-                <p>J'achète</p>
-              </Link>
+              <Link href="mailto:repar-auto-mobile@hotmail.com">Acheter</Link>
             </motion.button>
           </div>
         </div>
