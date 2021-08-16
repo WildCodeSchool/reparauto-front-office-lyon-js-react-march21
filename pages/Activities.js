@@ -6,7 +6,7 @@ import Head from 'next/head';
 
 export default function Activities({ services }) {
   return (
-    <div className="container  lg:items-center">
+    <div className="container md:items-start lg:items-center">
       <Head>
         <title>Répar'Automobile</title>
         <meta
@@ -21,10 +21,10 @@ export default function Activities({ services }) {
         exit={{ opacity: 0 }}
         transition={{ duration: 1.1 }}
       >
-        <div className="cursor-default flex flex-wrap justify-evenly w-screen mb-10">
+        <div className="cursor-default flex flex-wrap justify-evenly w-screen ">
           {services.map((service) => (
             <motion.div key={service.id} whileHover={{ y: -7 }}>
-              <div className="bg-gray-600 md:w-80 p-2 w-screen h-full rounded-xl shadow-lg transform hover:shadow-2xl transition duration-400">
+              <div className="bg-gray-600 mb-5 md:w-80 p-2 w-screen rounded-xl shadow-lg transform hover:shadow-2xl transition duration-400">
                 {service.picture && (
                   <Image
                     src={service.picture}
@@ -36,7 +36,7 @@ export default function Activities({ services }) {
                     priority="true"
                   />
                 )}
-                <div className="my-2 mb-0 min-h-full">
+                <div className="my-2 h-80 ">
                   <h1 className="custom-font text-2xl p-2 font-bold text-yellow-500 ">
                     {service.Titre}
                   </h1>
@@ -51,7 +51,7 @@ export default function Activities({ services }) {
                       color: '#FFFFFF',
                       backgroundColor: '#fdb31f',
                     }}
-                    className="bg-gray-200 text-lg my-2 ml-3 p-3 w-52 rounded-lg"
+                    className="bg-gray-200 absolute left-2 bottom-2 text-lg my-2 ml-3 p-3 w-52 cursor-non rounded-lg "
                   >
                     {' '}
                     <Link href="/Appointments">
