@@ -19,7 +19,7 @@ export default function Home() {
       <div className="flex justify-center  md:mt-10 xl:mt-16 xl:mt-20">
         <Image
           src={acceuil1}
-          alt="acceuil"
+          alt="accueil"
           layout="intrinsic"
           height="700"
           width="1200"
