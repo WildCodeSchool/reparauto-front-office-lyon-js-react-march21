@@ -5,7 +5,7 @@ import Head from 'next/head';
 
 export default function Activities({ services }) {
   return (
-    <div className="container md:items-center">
+    <div className="container  md:items-center">
       <Head>
         <title>Répar'Automobile</title>
         <meta
