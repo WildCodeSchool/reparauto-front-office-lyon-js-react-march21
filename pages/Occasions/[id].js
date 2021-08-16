@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import axios from 'axios';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export default function DetailsOccasions({ occasion }) {
   if (!occasion) return null;
@@ -48,12 +49,18 @@ export default function DetailsOccasions({ occasion }) {
           <div className="flex my-3">
             <h3 className="custom-font text-xl text-yellow-400">Prix:</h3>
             <p className="ml-5 ">{occasion.prix} € TTC </p>
-            <button
+            <motion.button
+              whileHover={{
+                originX: 0,
+                color: '#ffffff',
+                backgroundColor: '#fdb31f',
+              }}
+              whileTap={{ scale: 0.95 }}
               type="button"
-              className="ml-52 border rounded-2xl py-1 px-3"
+              className="flex custom-font text-gray-600 text-lg bg-gray-200 ml-52 border rounded-2xl py-1 px-3 cursor-pointer rounded-lg"
             >
-              J'achète
-            </button>
+              <Link href="mailto:repar-auto-mobile@hotmail.com">Acheter</Link>
+            </motion.button>
           </div>
         </div>
       </div>
