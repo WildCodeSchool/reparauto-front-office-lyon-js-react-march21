@@ -15,14 +15,11 @@ export default function Avis({ reviews }) {
   } = useForm();
 
   const { addToast } = useToasts();
-
-  // try react star handling
   const [starRating, setStarRating] = useState(null);
-
   const ratingChanged = (newRating) => {
     setValue('rating', newRating);
   };
-  // form data sending email
+
   const onSubmit = (data) => {
     if (data.rating) {
       axios({
@@ -35,15 +32,9 @@ export default function Avis({ reviews }) {
           ReviewsClientName: data.userNameRequired,
           ValidatedNotice: null,
         },
-      })
-        .then((reponse) => {
-          // On traite la suite une fois la réponse obtenue
-          console.log(reponse);
-        })
-        .catch((erreur) => {
-          // On traite ici les erreurs éventuellement survenues
-          console.log(erreur);
-        });
+      }).catch((erreur) => {
+        console.log(erreur);
+      });
     }
     if (data.rating !== undefined) {
       addToast(
@@ -66,117 +57,121 @@ export default function Avis({ reviews }) {
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 1.1 }}
-      className="flex flex-wrap justify-evenly md:mt-12 lg:mt-16 sm:mt-0"
-    >
-      <div>
-        {reviews.map((review) => (
-          <motion.div
-            key={review.id}
-            whileHover={{ y: -5 }}
-            className="sm:w-screen md:w-96 mb-7 md:my-6 md:mb-8 bg-gray-500 rounded-xl shadow-lg cursor-default"
-          >
-            <div className="p-6 md:p-4 text-yellow-500 md:text-lg sm:text:md">
-              <ReactStars
-                size={35}
-                edit={false}
-                color1="ffffff"
-                color2="#e1870b"
-                value={review.Rating}
-              />
-              <div className="text-sm text-yellow-400 font-semibold mt-1">
-                <p>Client: {review.ReviewsClientName}</p>
-              </div>
-              <p className="mt-2 text-gray-200 sm:text-md md:text-lg">
-                {review.Content}
-              </p>
-            </div>
-          </motion.div>
-        ))}
-      </div>
-      <motion.div whileHover={{ y: -7 }}>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="flex flex-col justify-center mb-2 sm:py-3 w-screen sm:w-full mb-10">
-            <div className="md:py-3 mt-0 mb-0">
-              <div className="bg-gray-600 w-full flex flex-col md:rounded-xl shadow-lg transform hover:shadow-2xl transition duration-400">
-                <div className="h-full w-full">
-                  <h2 className="custom-font text-yellow-400 py-5 text-xl flex justify-center cursor-default">
-                    Votre avis nous intéresse !
-                  </h2>
+    <>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 1.1 }}
+        className="flex flex-wrap justify-evenly md:mt-12 lg:mt-16 sm:mt-0"
+      >
+        <div>
+          {reviews.map((review) => (
+            <motion.div
+              key={review.id}
+              whileHover={{ y: -5 }}
+              className="sm:w-screen md:w-96 mb-7 md:my-6 md:mb-8 bg-gray-500 rounded-xl shadow-lg"
+            >
+              <div className="p-6 md:p-4 text-yellow-500 md:text-lg sm:text:md ">
+                <ReactStars
+                  size={35}
+                  edit={false}
+                  activeColor={{
+                    classNames: 'text-gradient-to-r from-yellow-300 to-red-700',
+                  }}
+                  value={review.Rating}
+                  classNames="text-gradient-to-r from-yellow-300 to-red-700"
+                />
+                <div className="text-sm text-yellow-400 font-semibold mt-1">
+                  <p>Client: {review.ReviewsClientName}</p>
                 </div>
-                <hr className=" w-full bg-gradient-to-r from-yellow-400 to-red-500 h-px border-none " />
-                <div className="bg-gray-500 w-full flex flex-col items-center">
-                  <div className="flex flex-col items-center py-6 px-8 space-y-1">
-                    <span className="sm:text-lg md:text-xl text-yellow-400 cursor-default">
-                      Quelle a été la qualité du service rendu ?
-                    </span>
-                    <div className="flex space-x-2 ">
-                      <ReactStars
-                        size={48}
-                        color1="ffffff"
-                        color2="#e1870b"
-                        value={starRating}
-                        onChange={(val) => {
-                          setStarRating(val);
-                          ratingChanged(val);
-                        }}
-                        type="input"
-                        required
-                      />
-                    </div>
-                    {errors.starRating}
+                <p className="mt-2 text-gray-200 sm:text-md md:text-lg">
+                  Commentaires: {review.Content}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+        <motion.div whileHover={{ y: -7 }}>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="flex flex-col justify-center mb-2 sm:py-3 w-screen sm:w-full mb-10">
+              <div className="md:py-3 mt-0 mb-0">
+                <div className="bg-gray-600 w-full flex flex-col md:rounded-xl shadow-lg transform hover:shadow-2xl transition duration-400">
+                  <div className="h-full w-full">
+                    <h2 className="custom-font text-yellow-400 py-5 text-xl flex justify-center">
+                      Votre avis nous intéresse !
+                    </h2>
                   </div>
-                  <div className="w-3/4 flex flex-col">
-                    <textarea
-                      {...register('content', { required: true })}
-                      rows="3"
-                      maxLength="250"
-                      className="p-4 my-2 text-gray-500 rounded-xl resize-none shadow-lg transform hover:shadow-2xl transition duration-400"
-                      placeholder="Rédigez votre avis :"
-                    />
-                    <input
-                      placeholder="Votre email:"
-                      {...register('ClientEmail', { required: true })}
-                      rows="3"
-                      className="p-4 text-gray-500 my-2 rounded-lg resize-none shadow-lg transform hover:shadow-2xl transition duration-400"
-                      type="email"
-                    />
-                    <input
-                      placeholder="Votre nom:"
-                      {...register('userNameRequired', { required: true })}
-                      rows="3"
-                      className="p-4 my-2 text-gray-500 rounded-lg resize-none shadow-lg transform hover:shadow-2xl transition duration-400"
-                    />
-                    {errors.userNameRequired && (
-                      <span>
-                        Cette information est requise pour l'envoi du formulaire
+                  <hr className=" w-full bg-gradient-to-r from-yellow-400 to-red-500 h-px border-none " />
+                  <div className="bg-gray-500 w-full flex flex-col items-center">
+                    <div className="flex flex-col items-center py-6 px-8 space-y-1">
+                      <span className="sm:text-lg md:text-xl text-yellow-400">
+                        Quelle a été la qualité du service rendu ?
                       </span>
-                    )}
-                    <motion.button
-                      whileHover={{
-                        scale: 1.02,
-                        originY: 0,
-                        color: '#5c5453',
-                        backgroundColor: '#fdb31f',
-                      }}
-                      whileTap={{ scale: 0.95 }}
-                      type="submit"
-                      className="flex justify-center bg-gray-300 border-solid border border-yellow-500 text-lg mt-5 mb-10 shadow-lg hover:shadow-2xl cursor-pointer px-4 py-4 rounded-md align-center"
-                    >
-                      Envoyer
-                    </motion.button>
+                      <div className="flex space-x-2 ">
+                        <ReactStars
+                          size={48}
+                          value={starRating}
+                          activeColor="#ffd700"
+                          onChange={(val) => {
+                            setStarRating(val);
+                            ratingChanged(val);
+                          }}
+                          type="input"
+                          required
+                        />
+                      </div>
+                      {errors.starRating}
+                    </div>
+                    <div className="w-3/4 flex flex-col">
+                      <textarea
+                        {...register('content', { required: true })}
+                        rows="3"
+                        maxLength="250"
+                        className="p-4 my-2 text-gray-500 rounded-xl resize-none shadow-lg transform hover:shadow-2xl transition duration-400"
+                        placeholder="Rédigez votre avis :"
+                      />
+                      <input
+                        placeholder="Votre email:"
+                        {...register('ClientEmail', { required: true })}
+                        rows="3"
+                        className="p-4 text-gray-500 my-2 rounded-lg resize-none shadow-lg transform hover:shadow-2xl transition duration-400"
+                        type="email"
+                      />
+                      <input
+                        placeholder="Votre nom:"
+                        {...register('userNameRequired', { required: true })}
+                        rows="3"
+                        className="p-4 my-2 text-gray-500 rounded-lg resize-none shadow-lg transform hover:shadow-2xl transition duration-400"
+                      />
+                      {errors.userNameRequired && (
+                        <span>
+                          Cette information est requise pour l'envoi du
+                          formulaire
+                        </span>
+                      )}
+                      <motion.button
+                        whileHover={{
+                          scale: 1.02,
+                          originY: 0,
+                          color: '#5c5453',
+                          backgroundColor: '#fdb31f',
+                        }}
+                        whileTap={{ scale: 0.95 }}
+                        type="submit"
+                        className="flex justify-center bg-gray-300 border-solid border border-yellow-500 text-lg mt-5 mb-10 shadow-lg hover:shadow-2xl cursor-pointer px-4 py-4 rounded-md align-center"
+                      >
+                        Envoyer
+                      </motion.button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </form>
+          </form>
+        </motion.div>
       </motion.div>
-    </motion.div>
+    </>
   );
 }
 
@@ -185,7 +180,7 @@ export async function getStaticProps() {
     `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/reviews`
   );
   console.log('data', res.data);
-  const reviews = res.data.slice(0, 15);
+  const reviews = res.data;
   return {
     props: { reviews },
     revalidate: 10,
