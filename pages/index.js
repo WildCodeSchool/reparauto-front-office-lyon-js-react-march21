@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Head from 'next/head';
 import Link from 'next/link';
+import Script from 'next/script';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import modalBg from '../public/images/background-min.jpg';
@@ -17,6 +18,7 @@ export default function Home() {
   return (
     <div>
       <Head>
+        <Script async src="https://www.google-analytics.com/analytics.js" />
         <title>Répar'Automobile</title>
         <meta
           name="Répar'Auto-mobile"
