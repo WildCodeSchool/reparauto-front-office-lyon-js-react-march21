@@ -76,17 +76,23 @@ export default function Avis({ reviews }) {
       <div>
         {reviews.map((review) => (
           <motion.div
-            key={reviews.id}
+            key={review.id}
             whileHover={{ y: -5 }}
-            className="sm:w-screen md:w-96 mb-7 md:my-6 md:mb-8 bg-gray-500 rounded-xl shadow-lg"
+            className="sm:w-screen md:w-96 mb-7 md:my-6 md:mb-8 bg-gray-500 rounded-xl shadow-lg cursor-default"
           >
-            <div className="p-6 md:p-4 text-yellow-500 md:text-lg sm:text:md ">
-              <p>Note : {review.Rating} / 5</p>
-              <div className="text-sm text-yellow-400 font-semibold">
+            <div className="p-6 md:p-4 text-yellow-500 md:text-lg sm:text:md">
+              <ReactStars
+                size={35}
+                edit={false}
+                color1="ffffff"
+                color2="#e1870b"
+                value={review.Rating}
+              />
+              <div className="text-sm text-yellow-400 font-semibold mt-1">
                 <p>Client: {review.ReviewsClientName}</p>
               </div>
               <p className="mt-2 text-gray-200 sm:text-md md:text-lg">
-                Commentaires: {review.Content}
+                {review.Content}
               </p>
             </div>
           </motion.div>
@@ -98,14 +104,14 @@ export default function Avis({ reviews }) {
             <div className="md:py-3 mt-0 mb-0">
               <div className="bg-gray-600 w-full flex flex-col md:rounded-xl shadow-lg transform hover:shadow-2xl transition duration-400">
                 <div className="h-full w-full">
-                  <h2 className="custom-font text-yellow-400 py-5 text-xl flex justify-center">
+                  <h2 className="custom-font text-yellow-400 py-5 text-xl flex justify-center cursor-default">
                     Votre avis nous intéresse !
                   </h2>
                 </div>
                 <hr className=" w-full bg-gradient-to-r from-yellow-400 to-red-500 h-px border-none " />
                 <div className="bg-gray-500 w-full flex flex-col items-center">
                   <div className="flex flex-col items-center py-6 px-8 space-y-1">
-                    <span className="sm:text-lg md:text-xl text-yellow-400">
+                    <span className="sm:text-lg md:text-xl text-yellow-400 cursor-default">
                       Quelle a été la qualité du service rendu ?
                     </span>
                     <div className="flex space-x-2 ">
@@ -179,7 +185,7 @@ export async function getStaticProps() {
     `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/reviews`
   );
   console.log('data', res.data);
-  const reviews = res.data.slice(0, 5);
+  const reviews = res.data.slice(0, 15);
   return {
     props: { reviews },
     revalidate: 10,
