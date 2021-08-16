@@ -55,7 +55,7 @@ export default function Contact() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1.1 }}
-      className="flex flex-col sm:mt-0 md:mt-10 xl:mt-32 justify-center "
+      className="container items-center"
     >
       <div className=" sm:max-w-xl sm:mx-auto">
         <div className="flex flex-col item-center shadow-lg transform hover:shadow-2xl transition duration-400">
@@ -76,7 +76,7 @@ export default function Contact() {
                   required: true,
                   minLength: { value: 3 },
                 })}
-                className="p-3 my-2 text-gray-500 rounded-lg resize-none shadow-lg transform hover:shadow-2xl transition duration-400"
+                className="p-3 my-2 text-gray-500 rounded-lg resize-none shadow-md transform hover:shadow-2xl transition duration-400"
                 name="contactUserName"
                 placeholder="Nom et prénom"
                 type="text"
@@ -87,7 +87,7 @@ export default function Contact() {
                   required: true,
                   minLength: { value: 2 },
                 })}
-                className="p-3 my-2 text-gray-500 rounded-lg resize-none shadow-lg transform hover:shadow-2xl transition duration-400"
+                className="p-3 my-2 text-gray-500 rounded-lg resize-none shadow-md transform hover:shadow-2xl transition duration-400"
                 name="contactBrandModel"
                 placeholder="Marque et modèle"
                 type="text"
@@ -98,7 +98,7 @@ export default function Contact() {
                   required: true,
                   minLength: { value: 3 },
                 })}
-                className="p-3 my-2 text-gray-500 rounded-lg resize-none shadow-lg transform hover:shadow-2xl transition duration-400"
+                className="p-3 my-2 text-gray-500 rounded-lg resize-none shadow-md transform hover:shadow-2xl transition duration-400"
                 placeholder="Email"
                 type="email"
                 name="contactEmail"
@@ -109,7 +109,7 @@ export default function Contact() {
                   required: true,
                   minLength: { value: 3 },
                 })}
-                className="p-3 my-2 text-gray-500 rounded-lg resize-none shadow-lg transform hover:shadow-2xl transition duration-400"
+                className="p-3 my-2 text-gray-500 rounded-lg resize-none shadow-md transform hover:shadow-2xl transition duration-400"
                 placeholder="Immatriculation"
                 type="text"
                 name="contactImmat"
@@ -120,7 +120,7 @@ export default function Contact() {
                   required: true,
                   minLength: { value: 1 },
                 })}
-                className="p-3 h-24 my-2 text-gray-500 rounded-lg resize-none shadow-lg transform hover:shadow-2xl transition duration-400"
+                className="p-3 h-24 my-2 text-gray-500 rounded-lg resize-none shadow-md transform hover:shadow-2xl transition duration-400"
                 placeholder="Laissez nous un message"
                 name="contactContent"
                 type="text"

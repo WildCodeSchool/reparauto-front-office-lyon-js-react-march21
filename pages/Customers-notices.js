@@ -79,7 +79,7 @@ export default function Avis({ reviews }) {
             <motion.div
               key={reviews.id}
               whileHover={{ y: -5 }}
-              className="sm:w-screen md:w-96 my-5 md:my-6 md:mb-8 bg-gray-500 rounded-xl shadow-lg transform hover:shadow-2xl overflow-hidden md:max-w-xl "
+              className="sm:w-screen md:w-96 my-5 md:my-6 md:mb-8 bg-gray-500 rounded-xl shadow-lg  "
             >
               <div className="p-6 md:p-4 text-yellow-500 md:text-lg sm:text:md ">
                 <p>Note : {review.Rating} / 5</p>
