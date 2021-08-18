@@ -21,8 +21,8 @@ export default function Home() {
         <Script async src="https://www.google-analytics.com/analytics.js" />
         <title>Répar'Automobile</title>
         <meta
-          name="Répar'Auto-mobile"
-          content="Le spécialiste de la réparation de véhicule à domicile"
+          name="descritpion"
+          content="Répar'Autombile : Le spécialiste de la réparation de véhicule à domicile"
         />
         <link rel="icon" href="./favicon.png" />
       </Head>
