@@ -4,7 +4,7 @@ import Script from 'next/script';
 class MyDocument extends Document {
   render() {
     return (
-      <Html>
+      <Html lang="fr">
         <Head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <Script async src="https://www.google-analytics.com/analytics.js" />
