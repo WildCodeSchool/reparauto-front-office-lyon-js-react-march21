@@ -87,13 +87,6 @@ export default function Nav() {
               >
                 <Link href="/Customers-notices">Avis</Link>
               </motion.div>
-              <motion.div
-                whileHover={{ color: '#f71b09' }}
-                whileTap={{ scale: 0.97 }}
-                className="ml-16 w-16 text-md text-gray-300 md:mx-2 lg:mx-7 md:text-lg"
-              >
-                <Link href="/Contact">Contact</Link>
-              </motion.div>
             </motion.div>
           )}
         </div>

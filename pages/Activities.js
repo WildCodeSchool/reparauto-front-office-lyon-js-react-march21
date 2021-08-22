@@ -5,7 +5,7 @@ import Head from 'next/head';
 
 export default function Activities({ services }) {
   return (
-    <div className="container md:items-start lg:items-center">
+    <div className="container">
       <Head>
         <title>Répar'Automobile</title>
         <meta
@@ -23,7 +23,7 @@ export default function Activities({ services }) {
         <div className="cursor-default flex flex-wrap justify-evenly w-screen ">
           {services.map((service) => (
             <motion.div key={service.id} whileHover={{ y: -7 }}>
-              <div className="bg-gray-600 mb-5 md:w-80 p-2 w-screen rounded-xl shadow-lg transform hover:shadow-2xl transition duration-400">
+              <div className="bg-gray-600 my-5 md:w-96 p-2 w-screen rounded-xl shadow-lg transform hover:shadow-2xl transition duration-400">
                 {service.picture && (
                   <Image
                     src={service.picture}
@@ -35,15 +35,14 @@ export default function Activities({ services }) {
                     priority="true"
                   />
                 )}
-                <div className="my-2 h-80 ">
-                  <h1 className="custom-font text-2xl p-2 font-bold text-yellow-500 ">
+                <div className="my-2 h-72">
+                  <h1 className="custom-font text-2xl p-2 font-bold text-yellow-500">
                     {service.Titre}
                   </h1>
-                  <hr className=" bg-gradient-to-r from-yellow-400 to-red-500 my-3 h-px border-none" />
-                  <p className="text-lg text-gray-200 my-5 p-4">
+                  <hr className="bg-gradient-to-r my-2 from-yellow-400 to-red-500 h-px border-none" />
+                  <p className="text-lg text-gray-200 p-2">
                     {service.Description}
                   </p>
-
                   <motion.button
                     whileHover={{
                       originX: 0,
@@ -51,7 +50,7 @@ export default function Activities({ services }) {
                       backgroundColor: '#fdb31f',
                       cursor: 'default',
                     }}
-                    className="bg-gray-200 absolute left-2 bottom-2 text-lg my-2 ml-3 p-3 w-52 cursor-non rounded-lg "
+                    className="bg-gray-200 absolute left-6 bottom-6 text-lg p-3 w-52 cursor-non rounded-lg "
                   >
                     {' '}
                     A partir de {service.Prix} € TTC

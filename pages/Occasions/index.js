@@ -31,12 +31,12 @@ export default function Occasions({ occasionCars }) {
               />
               <hr className=" bg-gradient-to-r from-yellow-400 to-red-700 h-px border-none" />
               <div className="p-4 bg-gray-500 rounded-b-lg">
-                <p className="my-4 text-white text-color-white text-lg font-semibold">
+                <p className="my-4 custom-font text-white text-xl font-semibold">
                   {occasion.titre}
                 </p>
-                <h2 className="flex justify-end -mb-14 pt-3 text-white text-xl bg-grey-500 ">
+                <h2 className="flex justify-end -mb-14 pt-3 text-yellow-500 custom-font text-xl bg-grey-500 ">
                   Prix :
-                  <span className="text-xl text-white font-medium">
+                  <span className="text-xl mx-1 text-white font-medium">
                     {occasion.prix}€ TTC
                   </span>{' '}
                 </h2>
