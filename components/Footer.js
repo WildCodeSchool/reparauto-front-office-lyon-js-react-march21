@@ -4,7 +4,7 @@ import React from 'react';
 
 export default function Footer() {
   return (
-    <div className="custom-font fixed -bottom-32 flex flex-col justify-center items-center w-screen h-44 bg-gray-600 transform hover:-translate-y-32 transition duration-500 ">
+    <div className="mt-20 custom-font fixed -bottom-32 flex flex-col justify-center items-center w-screen h-44 bg-gray-600 transform hover:-translate-y-32 transition duration-500 ">
       <p className="text-xs md:text-sm text-yellow-400 custom-font absolute top-5 right-12 md:top-5 md:right-20">
         Made by
       </p>

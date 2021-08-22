@@ -71,10 +71,10 @@ export default function Appointements() {
               </h2>
             </div>
             <hr className="  w-6/6 bg-gradient-to-r from-yellow-400 to-red-500 h-px border-none " />
-            <div className="bg-gray-500 pt-5 items-center">
+            <div className="bg-gray-500 pt-5 flex md:items-center md:justify-center">
               <form
                 onSubmit={handleSubmit(onSubmit)}
-                className=" flex flex-col sm:w-screen md:w-80 mx-8 md:mx-24 "
+                className="flex flex-col justify-center mx-8 md:mx-20"
               >
                 <input
                   {...register('appointmentsUserName', {
@@ -92,7 +92,7 @@ export default function Appointements() {
                     required: true,
                     minLength: { value: 3 },
                   })}
-                  className="p-3 my-2 text-gray-800 rounded-md resize-none shadow-md transform hover:shadow-xl transition duration-400"
+                  className="p-3 w-80 my-2 text-gray-800 rounded-md resize-none shadow-md transform hover:shadow-xl transition duration-400"
                   placeholder="Email"
                   type="email"
                   name="appointmentsEmail"
@@ -103,7 +103,7 @@ export default function Appointements() {
                     required: true,
                     minLength: { value: 3 },
                   })}
-                  className="p-3 m my-2 text-gray-800 rounded-md resize-none shadow-md transform hover:shadow-xl transition duration-400"
+                  className="p-3 w-80 m my-2 text-gray-800 rounded-md resize-none shadow-md transform hover:shadow-xl transition duration-400"
                   name="brandModel"
                   placeholder="Marque, Modèle"
                   type="text"
@@ -114,7 +114,7 @@ export default function Appointements() {
                     required: true,
                     minLength: { value: 3 },
                   })}
-                  className="p-3 my-2 text-gray-800 rounded-md resize-none shadow-md transform hover:shadow-xl transition duration-400"
+                  className="p-3 w-80 my-2 text-gray-800 rounded-md resize-none shadow-md transform hover:shadow-xl transition duration-400"
                   placeholder="Immatriculation"
                   type="text"
                   name="appointmentsImmatriculation"
@@ -143,7 +143,7 @@ export default function Appointements() {
                     required: true,
                     minLength: { value: 1 },
                   })}
-                  className="p-3 h-24 my-2 text-gray-800 rounded-md resize-none shadow-md transform hover:shadow-xl transition duration-400"
+                  className="p-3 w-80 h-24 my-2 text-gray-800 rounded-md resize-none shadow-md transform hover:shadow-xl transition duration-400"
                   placeholder="Travaux à réaliser"
                   name="appointmentsContent"
                   type="text"
@@ -158,7 +158,7 @@ export default function Appointements() {
                   }}
                   whileTap={{ scale: 0.95 }}
                   type="submit"
-                  className="flex justify-center bg-gray-300 border-solid border-2 border-yellow-500 text-lg mt-5 mb-10 shadow-lg hover:shadow-2xl cursor-pointer px-4 py-4 rounded-lg align-center"
+                  className="flex w-80 justify-center bg-gray-300 border-solid border-2 border-yellow-500 text-lg mt-5 mb-10 shadow-lg hover:shadow-2xl cursor-pointer px-4 py-4 rounded-lg align-center"
                 >
                   Envoyer
                 </motion.button>

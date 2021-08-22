@@ -83,7 +83,7 @@ export default function Nav() {
               <motion.div
                 whileHover={{ color: '#f4350b' }}
                 whileTap={{ scale: 0.97 }}
-                className="ml-12 w-10 text-md text-gray-300 md:mx-2 lg:mx-7 my-1 md:text-lg"
+                className="ml-16 w-10 text-md text-gray-300 md:mx-2 lg:mx-7 my-1 md:text-lg"
               >
                 <Link href="/Customers-notices">Avis</Link>
               </motion.div>
@@ -97,7 +97,7 @@ export default function Nav() {
             </motion.div>
           )}
         </div>
-        <hr className=" w-screen bg-gradient-to-r from-yellow-300 to-red-700 h-0.5 border-none" />
+        <hr className="w-screen bg-gradient-to-r from-yellow-300 to-red-700 h-0.5 border-none" />
       </div>
     </>
   );
