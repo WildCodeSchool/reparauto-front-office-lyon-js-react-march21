@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+.custom-font {
+  font-family: 'Baloo Chettan 2', Roboto;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
 html,
 body {
   background-repeat: no-repeat;
@@ -10,7 +17,6 @@ body {
   animation: gradient 15s ease infinite;
   padding: 0;
   margin: 0;
-
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
@@ -25,14 +31,6 @@ body {
   100% {
     background-position: 0% 50%;
   }
-}
-
-.custom-font {
-  font-family: 'Baloo Chettan 2', Roboto;
-}
-a {
-  color: inherit;
-  text-decoration: none;
 }
 
 .container {
