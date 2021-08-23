@@ -19,7 +19,7 @@ export default function Home() {
       <div className="flex justify-center  md:mt-10 xl:mt-16 xl:mt-20">
         <Image
           src={acceuil1}
-          alt="acceuil"
+          alt="accueil"
           layout="intrinsic"
           height="700"
           width="1200"
@@ -27,7 +27,7 @@ export default function Home() {
           className=" md:rounded-xl "
         />
       </div>
-      <div className="fixed bottom-10 w-screen bg-gray-500 md:p-5 p-4 flex flex-wrap justify-center">
+      <div className="cursor-default fixed bottom-10 w-screen bg-gray-500 md:p-5 p-4 flex flex-wrap justify-center">
         <motion.div className="hidden md:contents">
           <Image
             src={avatar}

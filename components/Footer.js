@@ -4,8 +4,8 @@ import React from 'react';
 
 export default function Footer() {
   return (
-    <div className="mt-20 custom-font fixed -bottom-32 flex flex-col justify-center items-center w-screen h-44 bg-gray-600 transform hover:-translate-y-32 transition duration-500 ">
-      <p className="text-xs md:text-sm text-yellow-400 custom-font absolute top-5 right-12 md:top-5 md:right-20">
+    <div className="custom-font fixed -bottom-32 flex flex-col justify-center items-center w-screen h-44 bg-gray-600 transform hover:-translate-y-32 transition duration-500 ">
+      <p className="cursor-default text-xs md:text-sm text-yellow-400 custom-font absolute top-5 right-12 md:top-5 md:right-20">
         Made by
       </p>
       <Link href="https://www.wildcodeschool.com/fr-FR">
@@ -16,14 +16,14 @@ export default function Footer() {
           className="absolute w-10 top-1 right-1 md:w-16 md:-top-2 md:right-2 cursor-pointer transform hover:scale-110 transition duration-500"
         />
       </Link>
-      <h1 className="md:text-xl absolute top-3 items-start text-yellow-400">
+      <h1 className="cursor-default md:text-xl absolute top-3 items-start text-yellow-400">
         Contact
       </h1>
       <Link href="/Activities">
         <motion.div
           whileHover={{ color: '#f71b09' }}
           whileTap={{ scale: 0.97 }}
-          className="md:text-lg cursor-pointer absolute top-3 left-3 text-yellow-400"
+          className="cursor-default md:text-lg cursor-pointer absolute top-3 left-3 text-yellow-400"
         >
           Promotions
         </motion.div>
@@ -73,7 +73,7 @@ export default function Footer() {
           />
         </svg>
         <p
-          className="text-gray-300 ml-4 transform hover:text-yellow-400
+          className="cursor-default text-gray-300 ml-4 transform hover:text-yellow-400
           transition duration-500"
         >
           06-34-37-24-42

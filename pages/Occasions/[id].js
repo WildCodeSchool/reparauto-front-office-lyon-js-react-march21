@@ -13,7 +13,7 @@ export default function DetailsOccasions({ occasion }) {
       transition={{ duration: 1.1 }}
       className="container items-center justify-center"
     >
-      <div className="details-occasion bg-gray-600 p-3 ">
+      <div className="cursor-default details-occasion bg-gray-600 p-3 ">
         <div className="slider  ">
           {occasion.photos.map((photo) => {
             const photoUrl = `${process.env.NEXT_PUBLIC_STRAPI_API_URL}${photo.url}`;
@@ -48,7 +48,7 @@ export default function DetailsOccasions({ occasion }) {
           <p className=""> {occasion.description}</p>
           <div className="flex my-3">
             <h3 className="custom-font text-xl text-yellow-400">Prix:</h3>
-            <p className="ml-2 ">{occasion.prix} € TTC </p>
+            <p className="ml-5 custom-font text-xl">{occasion.prix} € TTC </p>
             <motion.button
               whileHover={{
                 originX: 0,
@@ -57,7 +57,7 @@ export default function DetailsOccasions({ occasion }) {
               }}
               whileTap={{ scale: 0.95 }}
               type="button"
-              className="flex custom-font text-gray-600 text-lg bg-gray-200 ml-52 border rounded-2xl py-1 px-3 cursor-pointer rounded-lg"
+              className="ml-20 md:ml-48 lg:ml-96 custom-font text-gray-600 text-lg  bg-gray-200 border rounded-lg py-1 px-3 cursor-pointer rounded-lg"
             >
               <Link href="mailto:repar-auto-mobile@hotmail.com">Acheter</Link>
             </motion.button>
