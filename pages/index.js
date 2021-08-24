@@ -16,7 +16,7 @@ export default function Home() {
         />
         <link rel="icon" href="./favicon.png" />
       </Head>
-      <div className="flex justify-center  md:mt-10 xl:mt-16 xl:mt-20">
+      <div className="flex justify-center md:mt-10 xl:mt-16 xl:mt-20">
         <Image
           src={acceuil1}
           alt="accueil"
@@ -24,7 +24,7 @@ export default function Home() {
           height="700"
           width="1200"
           priority="true"
-          className=" md:rounded-xl "
+          className="md:rounded-xl "
         />
       </div>
       <div className="cursor-default fixed bottom-10 w-screen bg-gray-500 md:p-5 p-4 flex flex-wrap justify-center">

@@ -157,7 +157,11 @@ export default function Appointements() {
                   }}
                   whileTap={{ scale: 0.95 }}
                   type="submit"
+<<<<<<< HEAD
                   className="flex w-80 justify-center bg-gray-300 border-solid border-2 border-yellow-500 text-lg mt-5 mb-10 shadow-lg hover:shadow-2xl cursor-pointer px-4 py-4 rounded-lg align-center"
+=======
+                  className="flex custom-font text-xl justify-center bg-gray-300 border-solid border-2 border-yellow-500 text-lg mt-5 mb-10 shadow-lg hover:shadow-2xl cursor-pointer px-4 py-4 rounded-lg align-center"
+>>>>>>> 2f6b06b5aa23493a4e53539cedf21515c99933cd
                 >
                   Envoyer
                 </motion.button>

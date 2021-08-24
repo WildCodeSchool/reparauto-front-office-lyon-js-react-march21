@@ -5,7 +5,7 @@ import Head from 'next/head';
 
 export default function Activities({ services }) {
   return (
-    <div className="container">
+    <div className="container sm:mt-12 md:mt-0 mb-20 justify-center md:items-center items-start">
       <Head>
         <title>Répar'Automobile</title>
         <meta
@@ -20,27 +20,27 @@ export default function Activities({ services }) {
         exit={{ opacity: 0 }}
         transition={{ duration: 1.1 }}
       >
-        <div className="cursor-default flex flex-wrap justify-evenly w-screen ">
+        <div className="cursor-default justify-center flex flex-wrap">
           {services.map((service) => (
             <motion.div key={service.id} whileHover={{ y: -7 }}>
-              <div className="bg-gray-600 my-5 md:w-96 p-2 w-screen rounded-xl shadow-lg transform hover:shadow-2xl transition duration-400">
+              <div className="bg-gray-600 mb-10 mx-5 w-80 p-2 rounded-xl shadow-lg transform hover:shadow-2xl transition duration-400">
                 {service.picture && (
                   <Image
                     src={service.picture}
                     alt={service.Titre}
                     className="rounded-t-lg "
                     width={500}
-                    height={320}
+                    height={300}
                     layout="responsive"
                     priority="true"
                   />
                 )}
                 <div className="my-2 h-72">
-                  <h1 className="custom-font text-2xl p-2 font-bold text-yellow-500">
+                  <h1 className="custom-font text-xl p-2 text-yellow-500">
                     {service.Titre}
                   </h1>
-                  <hr className="bg-gradient-to-r my-2 from-yellow-400 to-red-500 h-px border-none" />
-                  <p className="text-lg text-gray-200 p-2">
+                  <hr className="bg-gradient-to-r mb-1 from-yellow-400 to-red-500 h-px border-none" />
+                  <p className="text-md text-gray-200 p-2">
                     {service.Description}
                   </p>
                   <motion.button
@@ -50,7 +50,7 @@ export default function Activities({ services }) {
                       backgroundColor: '#fdb31f',
                       cursor: 'default',
                     }}
-                    className="bg-gray-200 absolute left-6 bottom-6 text-lg p-3 w-52 cursor-non rounded-lg "
+                    className="custom-font bg-gray-200 absolute left-6 bottom-6 text-xl p-3 w-52 cursor-non rounded-lg "
                   >
                     {' '}
                     A partir de {service.Prix} € TTC

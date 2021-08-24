@@ -50,7 +50,7 @@ export default function Nav() {
           <motion.div
             whileHover={{ color: '#f7a809' }}
             whileTap={{ scale: 0.97 }}
-            className="text-lg text-gray-300 w-52 ml-7 flex justify-around md:text-lg"
+            className="text-lg text-gray-300 w-52 ml-7 flex justify-around md:text-xl"
           >
             <Link href="/">Repar'AutoMobile</Link>
           </motion.div>
@@ -62,28 +62,28 @@ export default function Nav() {
               <motion.div
                 whileHover={{ color: '#f78709' }}
                 whileTap={{ scale: 0.97 }}
-                className="ml-16 w-20 text-md text-gray-300 md:mx-2 lg:mx-7 my-1 md:text-lg"
+                className="ml-16 w-20 text-md text-gray-300 md:mx-2 lg:mx-7 my-1 md:text-xl"
               >
                 <Link href="/Activities">Activités</Link>
               </motion.div>
               <motion.div
                 whileHover={{ color: '#e95e13' }}
                 whileTap={{ scale: 0.97 }}
-                className="ml-16 w-28 text-md text-gray-300 md:mx-2 lg:mx-7 md:text-lg"
+                className="ml-16 w-32 text-md text-gray-300 md:mx-2 lg:mx-7 md:text-xl"
               >
                 <Link href="/Appointments">Rendez-vous</Link>
               </motion.div>
               <motion.div
                 whileHover={{ color: '#f04913' }}
                 whileTap={{ scale: 0.97 }}
-                className="ml-16 w-20 text-md text-gray-300 md:mx-2 lg:mx-7 my-1 md:text-lg"
+                className="ml-16 w-20 text-md text-gray-300 md:mx-2 lg:mx-7 my-1 md:text-xl"
               >
                 <Link href="/Occasions">Occasions</Link>
               </motion.div>
               <motion.div
                 whileHover={{ color: '#f4350b' }}
                 whileTap={{ scale: 0.97 }}
-                className="ml-16 w-10 text-md text-gray-300 md:mx-2 lg:mx-7 my-1 md:text-lg"
+                className="ml-16 w-10 text-md text-gray-300 md:mx-2 lg:mx-7 my-1 md:text-xl"
               >
                 <Link href="/Customers-notices">Avis</Link>
               </motion.div>
