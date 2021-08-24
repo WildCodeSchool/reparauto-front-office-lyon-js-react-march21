@@ -10,15 +10,15 @@ export default function Occasions({ occasionCars }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1.1 }}
-      className="flex flex-wrap justify-evenly items-center sm:m-0 md:mt-10"
+      className="container md:justify-around md:items-center flex-wrap justify-center items-start"
     >
       {occasionCars.map((occasion) => (
         <motion.div
           key={occasion.id}
           whileHover={{ y: -7 }}
-          className="container-occasion cursor-default"
+          className="container-occasion cursor-default m-4"
         >
-          <div className="mb-12 shadow-xl transform hover:shadow-2xl transition duration-400">
+          <div className="mb-16 shadow-xl transform hover:shadow-2xl transition duration-400">
             <div>
               <Image
                 src={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}${occasion.photos[0].formats.small.url}`}
@@ -48,7 +48,7 @@ export default function Occasions({ occasionCars }) {
                   }}
                   whileTap={{ scale: 0.95 }}
                   type="button"
-                  className="flex custom-font text-lg bg-gray-200 my-5 shadow-lg hover:shadow-2xl cursor-pointer px-4 py-2 rounded-lg align-center"
+                  className="flex custom-font text-lg bg-gray-200 ml-2 mt-6 shadow-lg hover:shadow-2xl cursor-pointer px-4 py-2 rounded-lg align-center"
                 >
                   <Link href={`/Occasions/${occasion.id}`}>Détails</Link>
                 </motion.button>
