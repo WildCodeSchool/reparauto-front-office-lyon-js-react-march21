@@ -84,7 +84,7 @@ export default function Home() {
           <div className="opacity-25 fixed inset-0 z-40 bg-black" />
         </>
       ) : null}
-      <div className="flex justify-center  md:mt-10 xl:mt-16 xl:mt-20">
+      {/* <div className="flex justify-center  md:mt-10 xl:mt-16 xl:mt-20">
         <Image
           src={accueil1}
           alt="accueil"
@@ -94,7 +94,7 @@ export default function Home() {
           priority="true"
           className=" md:rounded-xl "
         />
-      </div>
+                  </div> */}
 
       <CarouselProvider
         naturalSlideWidth={100}
