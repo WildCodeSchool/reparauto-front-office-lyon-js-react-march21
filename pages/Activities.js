@@ -5,7 +5,7 @@ import Head from 'next/head';
 
 export default function Activities({ services }) {
   return (
-    <div className="container sm:mt-12 md:mt-0 mb-20 justify-center md:items-center items-start">
+    <div className="container justify-center md:items-center items-start">
       <Head>
         <title>Répar'Automobile</title>
         <meta
@@ -20,10 +20,10 @@ export default function Activities({ services }) {
         exit={{ opacity: 0 }}
         transition={{ duration: 1.1 }}
       >
-        <div className="cursor-default justify-center flex flex-wrap">
+        <div className="cursor-default justify-center flex flex-wrap my:8">
           {services.map((service) => (
             <motion.div key={service.id} whileHover={{ y: -7 }}>
-              <div className="bg-gray-600 mb-10 mx-5 w-80 p-2 rounded-xl shadow-lg transform hover:shadow-2xl transition duration-400">
+              <div className="bg-gray-600 w-80 p-2 rounded-xl shadow-lg transform hover:shadow-2xl transition duration-400">
                 {service.picture && (
                   <Image
                     src={service.picture}
@@ -35,7 +35,7 @@ export default function Activities({ services }) {
                     priority="true"
                   />
                 )}
-                <div className="my-2 h-72">
+                <div className="my-2 h-64">
                   <h1 className="custom-font text-xl p-2 text-yellow-500">
                     {service.Titre}
                   </h1>

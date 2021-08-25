@@ -73,7 +73,7 @@ export default function Appointements() {
             <div className="bg-gray-500 pt-5 flex md:items-center md:justify-center">
               <form
                 onSubmit={handleSubmit(onSubmit)}
-                className=" flex flex-col  md:w-80 mx-5 md:mx-24 "
+                className=" flex flex-col md:w-80 mx-5 md:mx-24 "
               >
                 <input
                   {...register('appointmentsUserName', {

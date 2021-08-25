@@ -1,9 +1,12 @@
+import { CarouselProvider, Slider, Slide } from 'pure-react-carousel';
+import 'pure-react-carousel/dist/react-carousel.es.css';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Head from 'next/head';
-import { motion } from 'framer-motion';
 import avatar from '../public/images/avatar.png';
-import acceuil1 from '../public/images/accueil-1mini.jpg';
-import 'pure-react-carousel/dist/react-carousel.es.css';
+import accueil1 from '../public/images/accueil-1mini.jpg';
+import accueil2 from '../public/images/accueil3-min.jpg';
+import accueil3 from '../public/images/accueil-2-min.jpg';
 
 export default function Home() {
   return (
@@ -16,24 +19,58 @@ export default function Home() {
         />
         <link rel="icon" href="./favicon.png" />
       </Head>
-      <div className="flex justify-center md:mt-10 xl:mt-16 xl:mt-20">
-        <Image
-          src={acceuil1}
-          alt="accueil"
-          layout="intrinsic"
-          height="700"
-          width="1200"
-          priority="true"
-          className="md:rounded-xl "
-        />
-      </div>
+
+      <CarouselProvider
+        naturalSlideWidth={100}
+        naturalSlideHeight={60}
+        totalSlides={3}
+        infinite="true"
+        isPlaying="true"
+        className="sm:p-0 md:pt-12 w-full text-center"
+      >
+        <Slider>
+          <Slide>
+            <Image
+              src={accueil1}
+              alt="accueil"
+              height="600"
+              width="1100"
+              layout="intrinsic"
+              priority="true"
+              className=""
+            />
+          </Slide>
+          <Slide>
+            <Image
+              src={accueil2}
+              alt="accueil"
+              height="600"
+              width="1100"
+              layout="intrinsic"
+              priority="true"
+              className=""
+            />
+          </Slide>
+          <Slide>
+            <Image
+              src={accueil3}
+              alt="accueil"
+              height="600"
+              width="1100"
+              layout="intrinsic"
+              priority="true"
+              className=""
+            />
+          </Slide>
+        </Slider>
+      </CarouselProvider>
       <div className="cursor-default fixed bottom-10 w-screen bg-gray-500 md:p-5 p-4 flex flex-wrap justify-center">
         <motion.div className="hidden md:contents">
           <Image
             src={avatar}
             alt="accueil"
             priority="true"
-            width="100"
+            width="90"
             height="100"
           />
           <hr className="w-px mx-3 md:transform-rotate-90 md:bg-gradient-to-b from-yellow-400 to-red-500 h-auto border-none" />
