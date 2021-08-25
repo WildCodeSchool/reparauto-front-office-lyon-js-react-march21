@@ -33,8 +33,8 @@ export default function Home() {
             <Image
               src={accueil1}
               alt="accueil"
-              width="1500"
-              height="800"
+              width="1400"
+              height="770"
               layout="intrinsic"
               priority="true"
               className=""
@@ -44,8 +44,8 @@ export default function Home() {
             <Image
               src={accueil2}
               alt="accueil"
-              width="1500"
-              height="800"
+              width="1400"
+              height="770"
               layout="intrinsic"
               priority="true"
               className=""
@@ -55,8 +55,8 @@ export default function Home() {
             <Image
               src={accueil3}
               alt="accueil"
-              width="1500"
-              height="800"
+              width="1400"
+              height="770"
               layout="intrinsic"
               priority="true"
               className=""
