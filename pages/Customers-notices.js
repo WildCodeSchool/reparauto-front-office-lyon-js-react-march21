@@ -69,7 +69,7 @@ export default function Avis({ reviews }) {
           <motion.div
             key={review.id}
             whileHover={{ y: -5 }}
-            className="w-96 mb-7 md:my-3 md:mb-8 bg-gray-500 rounded-xl shadow-lg"
+            className="sm:w-screen md:w-96 mb-7 md:my-3 md:mb-8 bg-gray-500 rounded-xl shadow-lg"
           >
             <div className="p-3 md:p-5 text-yellow-500 md:text-lg sm:text:md ">
               <ReactStars
