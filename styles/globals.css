@@ -33,7 +33,7 @@ body {
   }
 }
 .slider-container {
-  height: 700px;
+  max-height: 900px;
 }
 .container {
   height: 91vh;

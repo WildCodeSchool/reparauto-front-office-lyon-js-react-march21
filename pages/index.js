@@ -26,7 +26,7 @@ export default function Home() {
         totalSlides={3}
         infinite="true"
         isPlaying="true"
-        className="sm:p-0 md:pt-12 text-center max-h-full"
+        className="text-center max-h-full"
       >
         <Slider className="slider-container">
           <Slide>
@@ -34,7 +34,7 @@ export default function Home() {
               src={accueil1}
               alt="accueil"
               width="1300"
-              height="800"
+              height="750"
               layout="intrinsic"
               priority="true"
               className=""
@@ -45,7 +45,7 @@ export default function Home() {
               src={accueil2}
               alt="accueil"
               width="1300"
-              height="800"
+              height="750"
               layout="intrinsic"
               priority="true"
               className=""
@@ -56,7 +56,7 @@ export default function Home() {
               src={accueil3}
               alt="accueil"
               width="1300"
-              height="800"
+              height="750"
               layout="intrinsic"
               priority="true"
               className=""
