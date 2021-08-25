@@ -26,15 +26,15 @@ export default function Home() {
         totalSlides={3}
         infinite="true"
         isPlaying="true"
-        className="sm:p-0 md:pt-12 w-full text-center"
+        className="sm:p-0 md:pt-12 text-center max-h-full"
       >
-        <Slider>
+        <Slider className="slider-container">
           <Slide>
             <Image
               src={accueil1}
               alt="accueil"
-              height="600"
-              width="1100"
+              width="1300"
+              height="800"
               layout="intrinsic"
               priority="true"
               className=""
@@ -44,8 +44,8 @@ export default function Home() {
             <Image
               src={accueil2}
               alt="accueil"
-              height="600"
-              width="1100"
+              width="1300"
+              height="800"
               layout="intrinsic"
               priority="true"
               className=""
@@ -55,8 +55,8 @@ export default function Home() {
             <Image
               src={accueil3}
               alt="accueil"
-              height="600"
-              width="1100"
+              width="1300"
+              height="800"
               layout="intrinsic"
               priority="true"
               className=""
