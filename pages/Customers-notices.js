@@ -62,16 +62,16 @@ export default function Avis({ reviews }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1.1 }}
-      className="flex flex-wrap justify-evenly md:mt-12 lg:mt-16 sm:mt-0 cursor-default"
+      className="container md:justify-around md:items-center flex-wrap justify-center items-start"
     >
       <div>
         {reviews.map((review) => (
           <motion.div
             key={review.id}
             whileHover={{ y: -5 }}
-            className="sm:w-screen md:w-96 mb-7 md:my-6 md:mb-8 bg-gray-500 rounded-xl shadow-lg"
+            className="sm:w-screen md:w-96 mb-7 md:my-3 md:mb-8 bg-gray-500 rounded-xl shadow-lg"
           >
-            <div className="p-6 md:p-4 text-yellow-500 md:text-lg sm:text:md ">
+            <div className="p-3 md:p-5 text-yellow-500 md:text-lg sm:text:md ">
               <ReactStars
                 size={35}
                 edit={false}
@@ -81,7 +81,7 @@ export default function Avis({ reviews }) {
               <div className="text-sm text-yellow-400 font-semibold mt-1">
                 <p>Client: {review.ReviewsClientName}</p>
               </div>
-              <p className="mt-2 text-gray-200 sm:text-md md:text-lg">
+              <p className="text-gray-200 sm:text-md md:text-lg">
                 {review.Content}
               </p>
             </div>
@@ -154,7 +154,7 @@ export default function Avis({ reviews }) {
                       }}
                       whileTap={{ scale: 0.95 }}
                       type="submit"
-                      className="flex justify-center bg-gray-300 border-solid border border-yellow-500 text-lg mt-5 mb-10 shadow-lg hover:shadow-2xl cursor-pointer px-4 py-4 rounded-md align-center"
+                      className="flex custom-font text-xl justify-center bg-gray-300 border-solid border border-yellow-500 text-lg mt-5 mb-10 shadow-lg hover:shadow-2xl cursor-pointer px-4 py-4 rounded-md align-center"
                     >
                       Envoyer
                     </motion.button>

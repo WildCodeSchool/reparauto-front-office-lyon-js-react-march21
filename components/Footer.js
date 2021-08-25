@@ -46,7 +46,7 @@ export default function Footer() {
         </svg>
         <Link href="https://www.facebook.com/repar.auto.mobile.florian.leblond">
           <p
-            className="text-gray-300 ml-4 cursor-pointer transform hover:text-yellow-400
+            className="text-gray-300 ml-3 cursor-pointer transform hover:text-yellow-400
           transition duration-500"
           >
             Facebook
@@ -73,7 +73,7 @@ export default function Footer() {
           />
         </svg>
         <p
-          className="cursor-default text-gray-300 ml-4 transform hover:text-yellow-400
+          className="cursor-default text-gray-300 ml-5 transform hover:text-yellow-400
           transition duration-500"
         >
           06-34-37-24-42
