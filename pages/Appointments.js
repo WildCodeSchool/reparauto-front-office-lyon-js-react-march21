@@ -36,6 +36,7 @@ export default function Appointements() {
         appointmentsImmatriculation: data.appointmentsImmatriculation,
         appointmentsContent: data.appointmentsContent,
         appointmentDate: data.appointmentDate,
+        appointmentsPhotos: data.appointmentsPhotos,
       },
     })
       .then((response) => {
@@ -77,6 +78,7 @@ export default function Appointements() {
               <div className="flex flex-col items-center py-2 space-y-3" />
               <form
                 onSubmit={handleSubmit(onSubmit)}
+                encType="multipart/form-data"
                 className=" flex flex-col sm:w-screen sm:mx-4 md:w-96 md:mx-24 "
               >
                 <input
@@ -153,6 +155,15 @@ export default function Appointements() {
                   )}
                 />
                 {errors.appointmentDate && <p>Date requise</p>}
+                <input
+                  {...register('appointmentsPhotos', {
+                    required: false,
+                  })}
+                  className="p-3 my-2 text-gray-800 rounded-md resize-none shadow-md transform hover:shadow-xl transition duration-400"
+                  placeholder="Envoyez nous des photos"
+                  type="file"
+                  name="appointmentsPhotos"
+                />
                 <motion.button
                   whileHover={{
                     scale: 1.03,

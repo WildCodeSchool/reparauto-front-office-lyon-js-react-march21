@@ -1,24 +1,10 @@
 import 'firebase/firestore';
 import { motion } from 'framer-motion';
-import { useForm } from 'react-hook-form';
+// import { useForm } from 'react-hook-form';
 // import axios from 'axios';
 // import { useToasts } from 'react-toast-notifications';
 
-export default function Contact() {
-  const { register, handleSubmit } = useForm();
-
-  const onSubmit = async (data) => {
-    const formData = new FormData();
-    formData.append('picture', data.picture[0]);
-    console.log(data);
-
-    const res = await fetch('http://localhost:4000/picture', {
-      method: 'POST',
-      body: formData,
-    }).then((res) => res.json());
-    console.log(data);
-    alert(JSON.stringify(res));
-  };
+export default function ContactTest() {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -38,13 +24,24 @@ export default function Contact() {
           <div className="bg-gray-500 flex flex-col items-center">
             <div className="flex flex-col items-center py-2 space-y-3" />
             <form
-              onSubmit={handleSubmit(onSubmit)}
+              method="post"
+              url="/api/contactTest"
               className="w-3/4 flex flex-col "
+              encType="multipart/form-data"
             >
               <input
-                {...register('picture')}
                 type="file"
                 name="picture"
+                className="py-4 my-2 text-lg bg-white  rounded-xl text-gray-800 hover:shadow-lg"
+              />
+              <input
+                type="text"
+                name="texttest1"
+                className="py-4 my-2 text-lg bg-white  rounded-xl text-gray-800 hover:shadow-lg"
+              />
+              <input
+                type="text"
+                name="texttest2"
                 className="py-4 my-2 text-lg bg-white  rounded-xl text-gray-800 hover:shadow-lg"
               />
 

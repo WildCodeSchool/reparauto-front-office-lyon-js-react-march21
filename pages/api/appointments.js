@@ -1,7 +1,15 @@
+import nextConnect from 'next-connect';
+import middleware from '../../middleware/middleware';
+
 const nodemailer = require('nodemailer');
 
-export default (req, res) => {
+const handler = nextConnect();
+handler.use(middleware);
+
+handler.post(async (req, res) => {
   console.log(req.body);
+  console.log(req.files);
+
   console.log(res.body);
   const {
     appointmentsUserName,
@@ -10,7 +18,9 @@ export default (req, res) => {
     appointmentsImmatriculation,
     appointmentsContent,
     appointmentDate,
+    appointmentsPhotos,
   } = req.body;
+  req.file = appointmentsPhotos;
   const transporter = nodemailer.createTransport({
     port: process.env.SMTP_PORT,
     host: process.env.SMTP_HOST,
@@ -32,14 +42,14 @@ export default (req, res) => {
         Marque, modèle : ${brandModel},
         Immatriculation : ${appointmentsImmatriculation},
         Contenu : ${appointmentsContent},
-        Date : ${appointmentDate}`,
+        Date : ${appointmentDate}
+        Photos: ${appointmentsPhotos}`,
 
     html: `Message:${appointmentsContent},</br> Nom:${appointmentsUserName},</br> Immatriculation: ${appointmentsImmatriculation},</br> Modele:${brandModel},Date : ${appointmentDate},</br> Email :${appointmentsEmail}`,
-
     attachments: [
       {
         filename: `image.jpg`,
-        path: `/public/images/accueil-1.jpg`,
+        content: req.file,
       },
     ],
   };
@@ -48,4 +58,11 @@ export default (req, res) => {
     else console.log(info);
   });
   res.status(200);
+});
+
+export const config = {
+  api: {
+    bodyParser: false,
+  },
 };
+export default handler;
