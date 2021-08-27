@@ -10,6 +10,7 @@ export default (req, res) => {
     appointmentsImmatriculation,
     appointmentsContent,
     appointmentDate,
+    picture,
   } = req.body;
   const transporter = nodemailer.createTransport({
     port: process.env.SMTP_PORT,
@@ -28,21 +29,21 @@ export default (req, res) => {
     to: process.env.SMTP_MAILRECEIVER,
     subject: `${appointmentsEmail}/${appointmentsUserName} vous à contacté`,
     text: `Nom : ${appointmentsUserName},</br>
-       Email : ${appointmentsEmail},
-        Marque, modèle : ${brandModel},
-        Immatriculation : ${appointmentsImmatriculation},
-        Contenu : ${appointmentsContent},
-        Date : ${appointmentDate}`,
+        Email : ${appointmentsEmail},</br>
+        Marque, modèle : ${brandModel},</br>
+        Immatriculation : ${appointmentsImmatriculation},</br>
+        Contenu : ${appointmentsContent},</br>
+        Date : ${appointmentDate},</br>
+        Picture : ${picture}`,
 
     html: `Message:${appointmentsContent},</br> Nom:${appointmentsUserName},</br> Immatriculation: ${appointmentsImmatriculation},</br> Modele:${brandModel},Date : ${appointmentDate},</br> Email :${appointmentsEmail}`,
-    /*
+
     attachments: [
       {
         filename: `image.jpg`,
         path: `/public/images/accueil-1.jpg`,
       },
     ],
-    */
   };
   transporter.sendMail(mailData, (err, info) => {
     if (err) console.log(err);

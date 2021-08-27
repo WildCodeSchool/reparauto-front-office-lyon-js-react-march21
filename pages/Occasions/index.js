@@ -18,7 +18,7 @@ export default function Occasions({ occasionCars }) {
           whileHover={{ y: -7 }}
           className="container-occasion cursor-default m-4"
         >
-          <div className="mb-16 shadow-xl transform hover:shadow-2xl transition duration-400">
+          <div className="mb-12 shadow-xl transform hover:shadow-2xl transition duration-400">
             <div>
               <Image
                 src={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}${occasion.photos[0].formats.small.url}`}

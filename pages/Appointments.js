@@ -53,7 +53,6 @@ export default function Appointements() {
     );
     reset();
   };
-
   return (
     <div className="container justify-center md:items-center">
       <motion.div
@@ -69,11 +68,11 @@ export default function Appointements() {
                 Prenons rendez-vous !
               </h2>
             </div>
-            <hr className="  w-6/6 bg-gradient-to-r from-yellow-400 to-red-500 h-px border-none " />
+            <hr className="w-6/6 bg-gradient-to-r from-yellow-400 to-red-500 h-px border-none" />
             <div className="bg-gray-500 pt-5 items-center">
               <form
                 onSubmit={handleSubmit(onSubmit)}
-                className=" flex flex-col md:w-80 mx-5 md:mx-24 "
+                className="flex flex-col md:w-80 mx-5 md:mx-24"
               >
                 <input
                   {...register('appointmentsUserName', {
@@ -148,6 +147,14 @@ export default function Appointements() {
                   type="text"
                 />
                 {errors.appointmentsContent && <p>Texte requis</p>}
+                <input
+                  className="p-3 my-2 bg-white rounded-md resize-none shadow-md transform hover:shadow-xl transition duration-400"
+                  type="file"
+                  name="picture"
+                  accept="image/png, image/jpeg"
+                  {...register('picture')}
+                />
+
                 <motion.button
                   whileHover={{
                     scale: 1.03,

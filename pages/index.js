@@ -3,22 +3,84 @@ import 'pure-react-carousel/dist/react-carousel.es.css';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Head from 'next/head';
+import Link from 'next/link';
+//import Script from 'next/script';
+import { useState } from 'react';
 import avatar from '../public/images/avatar.png';
 import accueil1 from '../public/images/accueil-1mini.jpg';
 import accueil2 from '../public/images/accueil3-min.jpg';
 import accueil3 from '../public/images/accueil-2-min.jpg';
+import modalBg from '../public/images/background-min.jpg';
 
 export default function Home() {
+  const [showModal, setShowModal] = useState(true);
+  const promotionFactor = '50';
+  const promotionDescription = 'toutes les vidanges';
+  const promotionEndDate = '31 aout';
   return (
     <div>
       <Head>
+        {/*<Script async src="https://www.google-analytics.com/analytics.js" />*/}
         <title>Répar'Automobile</title>
         <meta
-          name="Répar'Auto-mobile"
-          content="Le spécialiste de la réparation de véhicule à domicile"
+          name="description"
+          content="Répar'Autombile : Le spécialiste de la réparation de véhicule à domicile"
         />
         <link rel="icon" href="./favicon.png" />
       </Head>
+      {showModal ? (
+        <>
+          <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+            <div className="relative w-screen my-6 mx-auto max-w-3xl">
+              {/* content */}
+              <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full modal outline-none focus:outline-none">
+                {/* header */}
+                <div className="flex items-start justify-center p-5 rounded-t">
+                  <h3 className="text-3xl text-gray-200 cursor-default pt-3">
+                    Promotions !
+                  </h3>
+                </div>
+                {/* body */}
+                <div className="relative p-6 flex-row">
+                  <Image
+                    src={modalBg}
+                    alt="accueil"
+                    priority="true"
+                    layout="responsive"
+                  />
+                  <h6 className="text-xl text-center text-gray-200 font-semibold cursor-default mt-3">
+                    {promotionFactor}% de promotion sur {promotionDescription}{' '}
+                    jusqu'au {promotionEndDate} !
+                  </h6>
+                </div>
+                {/* footer */}
+                <div className="flex items-center justify-end p-6 border-t border-solid border-yellow-500 rounded-b">
+                  <button
+                    className="text-yellow-500 background-transparent font-bold uppercase px-4 py-2 text-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                    type="button"
+                    onClick={() => setShowModal(false)}
+                  >
+                    Fermer
+                  </button>
+                  <motion.button
+                    whileHover={{
+                      originX: 0,
+                      color: '#FFFFFF',
+                      backgroundColor: '#fdb31f',
+                    }}
+                    className="bg-gray-200 text-lg my-2 ml-4 p-3 w-44 rounded-lg "
+                  >
+                    <Link href="/Appointments">
+                      <p>Ça m'intéresse !</p>
+                    </Link>
+                  </motion.button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="opacity-50 fixed inset-0 z-40 bg-black" />
+        </>
+      ) : null}
 
       <CarouselProvider
         naturalSlideWidth={100}
