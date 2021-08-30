@@ -14,11 +14,8 @@
   "dependencies": {
     "autoprefixer": "^10.2.6",
     "axios": "^0.21.1",
-    "css-loader": "^5.2.6",
-    "date-fns": "^2.23.0",
+    "css-loader": "^6.2.0",
     "eslint-config-next": "^11.0.1",
-    "firebase": "^8.8.0",
-    "firebase-tools": "^9.16.0",
     "framer-motion": "^4.1.17",
     "husky": "^6.0.0",
     "multiparty": "^4.2.2",
@@ -53,6 +50,9 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^6.0.0",
     "prettier": "^2.1.2"
+  },
+  "optionalDependencies": {
+    "fsevents": "^2.3.2"
   },
   "eslintConfig": {
     "extends": [
