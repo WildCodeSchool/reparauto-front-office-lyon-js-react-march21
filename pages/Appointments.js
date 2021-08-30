@@ -157,13 +157,13 @@ export default function Appointements() {
                     type="text"
                   />
                   {errors.appointmentsContent && <p>Texte requis</p>}
-                  <input
+                  {/*                  <input
                     className="p-3 my-2 bg-white rounded-md resize-none shadow-md transform hover:shadow-xl transition duration-400"
                     type="file"
                     name="picture"
                     accept="image/png, image/jpeg"
                     {...register('picture')}
-                  />
+/>*/}
 
                   <motion.button
                     whileHover={{
