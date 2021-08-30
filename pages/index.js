@@ -7,9 +7,9 @@ import Link from 'next/link';
 import { useState } from 'react';
 import axios from 'axios';
 import avatar from '../public/images/avatar.png';
-import accueil1 from '../public/images/accueil-1mini.jpg';
-import accueil2 from '../public/images/accueil3-min.jpg';
-import accueil3 from '../public/images/accueil-2-min.jpg';
+import accueil1 from '../public/images/accueil1.jpg';
+import accueil2 from '../public/images/accueil2.jpg';
+import accueil3 from '../public/images/accueil3.jpg';
 
 export default function Home({ promotions }) {
   const [showModal, setShowModal] = useState(true);
