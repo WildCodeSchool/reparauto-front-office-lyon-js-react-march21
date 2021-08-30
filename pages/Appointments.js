@@ -163,8 +163,7 @@ export default function Appointements() {
                     name="picture"
                     accept="image/png, image/jpeg"
                     {...register('picture')}
-/>*/}
-
+                  /> */}
                   <motion.button
                     whileHover={{
                       scale: 1.03,
