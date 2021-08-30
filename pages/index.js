@@ -4,23 +4,19 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Head from 'next/head';
 import Link from 'next/link';
-//import Script from 'next/script';
 import { useState } from 'react';
+import axios from 'axios';
 import avatar from '../public/images/avatar.png';
 import accueil1 from '../public/images/accueil-1mini.jpg';
 import accueil2 from '../public/images/accueil3-min.jpg';
 import accueil3 from '../public/images/accueil-2-min.jpg';
-import modalBg from '../public/images/background-min.jpg';
 
-export default function Home() {
+export default function Home({ promotions }) {
   const [showModal, setShowModal] = useState(true);
-  const promotionFactor = '50';
-  const promotionDescription = 'toutes les vidanges';
-  const promotionEndDate = '31 aout';
+
   return (
     <div>
       <Head>
-        {/*<Script async src="https://www.google-analytics.com/analytics.js" />*/}
         <title>Répar'Automobile</title>
         <meta
           name="description"
@@ -29,7 +25,7 @@ export default function Home() {
         <link rel="icon" href="./favicon.png" />
       </Head>
       {showModal ? (
-        <>
+        <div>
           <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
             <div className="relative w-screen my-6 mx-auto max-w-3xl">
               {/* content */}
@@ -41,19 +37,22 @@ export default function Home() {
                   </h3>
                 </div>
                 {/* body */}
-                <div className="relative p-6 flex-row">
-                  <Image
-                    src={modalBg}
-                    alt="accueil"
-                    priority="true"
-                    layout="responsive"
-                  />
-                  <h6 className="text-xl text-center text-gray-200 font-semibold cursor-default mt-3">
-                    {promotionFactor}% de promotion sur {promotionDescription}{' '}
-                    jusqu'au {promotionEndDate} !
-                  </h6>
-                </div>
-                {/* footer */}
+                {promotions.map((promotion) => (
+                  <div className="relative p-6 flex-row">
+                    <Image
+                      src={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}${promotion.PromotionPhoto.url}`}
+                      alt="accueil"
+                      priority="true"
+                      width="500"
+                      height="300"
+                      layout="responsive"
+                      className="rounded-lg"
+                    />
+                    <h6 className="text-xl text-center text-gray-200 font-semibold cursor-default mt-3">
+                      {promotion.PromotionDescription}
+                    </h6>
+                  </div>
+                ))}
                 <div className="flex items-center justify-end p-6 border-t border-solid border-yellow-500 rounded-b">
                   <button
                     className="text-yellow-500 background-transparent font-bold uppercase px-4 py-2 text-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
@@ -79,7 +78,7 @@ export default function Home() {
             </div>
           </div>
           <div className="opacity-50 fixed inset-0 z-40 bg-black" />
-        </>
+        </div>
       ) : null}
 
       <CarouselProvider
@@ -164,4 +163,16 @@ export default function Home() {
       </div>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const res = await axios.get(
+    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/promotions`
+  );
+  const promotions = res.data;
+
+  return {
+    props: { promotions },
+    revalidate: 30,
+  };
 }

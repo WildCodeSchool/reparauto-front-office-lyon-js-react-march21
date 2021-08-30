@@ -76,7 +76,7 @@ export default function Nav() {
               <motion.div
                 whileHover={{ color: '#f04913' }}
                 whileTap={{ scale: 0.97 }}
-                className="ml-16 w-20 text-md text-gray-300 md:mx-2 lg:mx-7 my-1 md:text-xl"
+                className="ml-16 w-24 text-md text-gray-300 md:mx-2 lg:mx-7 my-1 md:text-xl"
               >
                 <Link href="/Occasions">Occasions</Link>
               </motion.div>
