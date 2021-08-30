@@ -175,6 +175,6 @@ export async function getStaticProps() {
 
   return {
     props: { promotions },
-    revalidate: 30,
+    revalidate: 120,
   };
 }
