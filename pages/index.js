@@ -27,7 +27,7 @@ export default function Home({ promotions }) {
       {showModal ? (
         <div>
           {promotions.map((promotion) => (
-            <>
+            <div key={promotion.id}>
               <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
                 <div className="relative w-screen my-6 mx-auto max-w-3xl">
                   {/* content */}
@@ -78,7 +78,7 @@ export default function Home({ promotions }) {
                 </div>
               </div>
               <div className="opacity-75 fixed inset-0 z-40 bg-black" />
-            </>
+            </div>
           ))}
         </div>
       ) : null}
