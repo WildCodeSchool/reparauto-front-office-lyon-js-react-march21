@@ -34,7 +34,7 @@ export default function Home({ promotions }) {
                   <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full modal bg-gray-500 outline-none focus:outline-none">
                     {/* header */}
                     <div className="flex items-start justify-center p-5 rounded-t">
-                      <h3 className="text-3xl text-gray-200 custom-font cursor-default pt-3">
+                      <h3 className="text-5xl text-yellow-500 custom-font cursor-default pt-3">
                         Promotions !
                       </h3>
                     </div>
@@ -49,7 +49,7 @@ export default function Home({ promotions }) {
                         layout="responsive"
                         className="rounded-lg"
                       />
-                      <h6 className="text-2xl text-center text-gray-200 cursor-default mt-3">
+                      <h6 className="text-3xl underline text-center text-gray-200 cursor-default mt-3">
                         {promotion.PromotionDescription}
                       </h6>
                     </div>
