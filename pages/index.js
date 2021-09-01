@@ -3,22 +3,85 @@ import 'pure-react-carousel/dist/react-carousel.es.css';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Head from 'next/head';
+import Link from 'next/link';
+import { useState } from 'react';
+import axios from 'axios';
 import avatar from '../public/images/avatar.png';
 import accueil1 from '../public/images/accueil-1mini.jpg';
 import accueil2 from '../public/images/accueil3-min.jpg';
 import accueil3 from '../public/images/accueil-2-min.jpg';
 
-export default function Home() {
+export default function Home({ promotions }) {
+  const [showModal, setShowModal] = useState(true);
+
   return (
     <div>
       <Head>
         <title>Répar'Automobile</title>
         <meta
-          name="Répar'Auto-mobile"
-          content="Le spécialiste de la réparation de véhicule à domicile"
+          name="description"
+          content="Répar'Autombile : Le spécialiste de la réparation de véhicule à domicile"
         />
         <link rel="icon" href="./favicon.png" />
       </Head>
+      {showModal ? (
+        <div>
+          {promotions.map((promotion) => (
+            <>
+              <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+                <div className="relative w-screen my-6 mx-auto max-w-3xl">
+                  {/* content */}
+                  <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full modal bg-gray-500 outline-none focus:outline-none">
+                    {/* header */}
+                    <div className="flex items-start justify-center p-5 rounded-t">
+                      <h3 className="text-3xl text-gray-200 custom-font cursor-default pt-3">
+                        Promotions !
+                      </h3>
+                    </div>
+                    {/* body */}
+                    <div className="relative p-6 flex-row custom-font">
+                      <Image
+                        src={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}${promotion.PromotionPhoto.url}`}
+                        alt="accueil"
+                        priority="true"
+                        width="500"
+                        height="300"
+                        layout="responsive"
+                        className="rounded-lg"
+                      />
+                      <h6 className="text-2xl text-center text-gray-200 cursor-default mt-3">
+                        {promotion.PromotionDescription}
+                      </h6>
+                    </div>
+                    <div className="flex items-center justify-end p-6 border-t border-solid border-yellow-500 rounded-b">
+                      <button
+                        className="text-yellow-500 background-transparent custom-font text-xl uppercase px-4 py-2 text-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                        type="button"
+                        onClick={() => setShowModal(false)}
+                      >
+                        Fermer
+                      </button>
+                      <motion.button
+                        whileHover={{
+                          originX: 0,
+                          color: '#FFFFFF',
+                          backgroundColor: '#fdb31f',
+                        }}
+                        className="bg-gray-200 text-xl custom-font my-2 ml-4 p-3 w-44 rounded-lg "
+                      >
+                        <Link href="/Appointments">
+                          <p>Ça m'intéresse !</p>
+                        </Link>
+                      </motion.button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="opacity-75 fixed inset-0 z-40 bg-black" />
+            </>
+          ))}
+        </div>
+      ) : null}
 
       <CarouselProvider
         naturalSlideWidth={100}
@@ -102,4 +165,16 @@ export default function Home() {
       </div>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const res = await axios.get(
+    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/promotions`
+  );
+  const promotions = res.data;
+
+  return {
+    props: { promotions },
+    revalidate: 120,
+  };
 }
