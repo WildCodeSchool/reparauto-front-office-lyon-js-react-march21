@@ -7,9 +7,9 @@ import Link from 'next/link';
 import { useState } from 'react';
 import axios from 'axios';
 import avatar from '../public/images/avatar.png';
-import accueil1 from '../public/images/accueil-1mini.jpg';
-import accueil2 from '../public/images/accueil3-min.jpg';
-import accueil3 from '../public/images/accueil-2-min.jpg';
+import accueil1 from '../public/images/accueil1.jpg';
+import accueil2 from '../public/images/accueil2.jpg';
+import accueil3 from '../public/images/accueil3.jpg';
 
 export default function Home({ promotions }) {
   const [showModal, setShowModal] = useState(true);
@@ -24,22 +24,21 @@ export default function Home({ promotions }) {
         />
         <link rel="icon" href="./favicon.png" />
       </Head>
-      {/* modal */}
       {showModal ? (
-        <>
+        <div>
           {promotions.map((promotion) => (
             <>
-              <div
-                key={promotion.id}
-                className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
-              >
+              <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
                 <div className="relative w-screen my-6 mx-auto max-w-3xl">
+                  {/* content */}
                   <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full modal bg-gray-500 outline-none focus:outline-none">
+                    {/* header */}
                     <div className="flex items-start justify-center p-5 rounded-t">
-                      <h3 className="text-5xl text-yellow-500 custom-font cursor-default pt-3">
+                      <h3 className="text-3xl text-gray-200 custom-font cursor-default pt-3">
                         Promotions !
                       </h3>
                     </div>
+                    {/* body */}
                     <div className="relative p-6 flex-row custom-font">
                       <Image
                         src={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}${promotion.PromotionPhoto.url}`}
@@ -50,7 +49,7 @@ export default function Home({ promotions }) {
                         layout="responsive"
                         className="rounded-lg"
                       />
-                      <h6 className="text-3xl underline text-center text-gray-200 cursor-default mt-3">
+                      <h6 className="text-2xl text-center text-gray-200 cursor-default mt-3">
                         {promotion.PromotionDescription}
                       </h6>
                     </div>
@@ -81,9 +80,9 @@ export default function Home({ promotions }) {
               <div className="opacity-75 fixed inset-0 z-40 bg-black" />
             </>
           ))}
-        </>
+        </div>
       ) : null}
-      {/* caroussel */}
+
       <CarouselProvider
         naturalSlideWidth={100}
         naturalSlideHeight={60}
@@ -128,7 +127,6 @@ export default function Home({ promotions }) {
           </Slide>
         </Slider>
       </CarouselProvider>
-      {/* Footer */}
       <div className="cursor-default fixed bottom-10 w-screen bg-gray-500 md:p-5 p-4 flex flex-wrap justify-center">
         <motion.div className="hidden md:contents">
           <Image
@@ -168,6 +166,7 @@ export default function Home({ promotions }) {
     </div>
   );
 }
+
 export async function getStaticProps() {
   const res = await axios.get(
     `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/promotions`

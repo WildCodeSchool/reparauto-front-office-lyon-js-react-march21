@@ -3,8 +3,6 @@ import axios from 'axios';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Head from 'next/head';
-import { CarouselProvider, Slider, Slide } from 'pure-react-carousel';
-import 'pure-react-carousel/dist/react-carousel.es.css';
 
 export default function DetailsOccasions({ occasion }) {
   if (!occasion) return null;
@@ -25,31 +23,22 @@ export default function DetailsOccasions({ occasion }) {
         transition={{ duration: 1.1 }}
         className="container items-center justify-center"
       >
-        <div className="cursor-default details-occasion bg-gray-600 p-3 mb-14 ">
+        <div className="cursor-default details-occasion bg-gray-600 p-3 mb-14">
           <div className="slider  ">
-            {occasion.photos.map((photo, index) => {
+            {occasion.photos.map((photo) => {
               const photoUrl = `${process.env.NEXT_PUBLIC_STRAPI_API_URL}${photo.url}`;
               return (
-                <CarouselProvider
-                  naturalSlideWidth={100}
-                  naturalSlideHeight={125}
-                  totalSlides={6}
-                  className="text-center max-h-full"
-                >
-                  <Slider className="slider-container">
-                    <Slide index={index}>
-                      <Image
-                        src={photoUrl}
-                        alt={occasion.titre}
-                        className="m-5"
-                        width={490}
-                        height={320}
-                        layout="responsive"
-                        priority="true"
-                      />
-                    </Slide>
-                  </Slider>
-                </CarouselProvider>
+                <figure key={photo.id}>
+                  <Image
+                    src={photoUrl}
+                    alt={occasion.titre}
+                    className="m-5"
+                    width={490}
+                    height={320}
+                    layout="responsive"
+                    priority="true"
+                  />
+                </figure>
               );
             })}
           </div>
