@@ -36,7 +36,7 @@ export default function Activities({ services }) {
                   />
                 )}
                 <div className="my-2 h-56">
-                  <h1 className="custom-font text-xl p-2 text-yellow-500">
+                  <h1 className="custom-font uppercase text-xl p-2 text-yellow-500">
                     {service.Titre}
                   </h1>
                   <hr className="bg-gradient-to-r mb-1 from-yellow-400 to-red-500 h-px border-none" />
