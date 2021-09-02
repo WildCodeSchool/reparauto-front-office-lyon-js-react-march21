@@ -5,6 +5,11 @@
 .custom-font {
   font-family: 'Baloo Chettan 2', Roboto;
 }
+::-webkit-scrollbar {
+  display: none;
+  overflow: -moz-scrollbars-none;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -19,7 +24,11 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-width: none;
 }
+
 .modal {
   background-repeat: no-repeat;
   padding: 0;
@@ -40,7 +49,7 @@ body {
   max-height: 800px;
 }
 .container {
-  height: 91vh;
+  min-height: 91vh;
   max-width: 100vw;
   display: flex;
 }
