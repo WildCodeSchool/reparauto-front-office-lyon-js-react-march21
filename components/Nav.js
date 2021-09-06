@@ -52,7 +52,7 @@ export default function Nav() {
             whileTap={{ scale: 0.97 }}
             className="text-lg text-gray-300 w-52 ml-7 flex justify-around md:text-xl"
           >
-            <Link href="/">Repar'AutoMobile</Link>
+            <Link href="/">Répar'AutoMobile</Link>
           </motion.div>
           {toggleMenu && (
             <motion.div
