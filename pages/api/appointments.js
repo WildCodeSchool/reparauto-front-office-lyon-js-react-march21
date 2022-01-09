@@ -1,8 +1,6 @@
 const nodemailer = require('nodemailer');
 
 export default (req, res) => {
-  console.log(req.body);
-  console.log(res.body);
   const {
     appointmentsUserName,
     appointmentsEmail,
@@ -10,7 +8,6 @@ export default (req, res) => {
     appointmentsImmatriculation,
     appointmentsContent,
     appointmentDate,
-    picture,
   } = req.body;
   const transporter = nodemailer.createTransport({
     port: process.env.SMTP_PORT,
@@ -26,24 +23,21 @@ export default (req, res) => {
   });
   const mailData = {
     from: process.env.SMTP_MAILSENDER,
-    to: process.env.SMTP_MAILRECEIVER,
-    subject: `${appointmentsEmail}/${appointmentsUserName} vous à contacté`,
-    text: `Nom : ${appointmentsUserName},</br>
-        Email : ${appointmentsEmail},</br>
-        Marque, modèle : ${brandModel},</br>
-        Immatriculation : ${appointmentsImmatriculation},</br>
-        Contenu : ${appointmentsContent},</br>
-        Date : ${appointmentDate},</br>
-        Picture : ${picture}`,
+    to: `${appointmentsEmail},${process.env.SMTP_MAILSENDER}`,
+    subject: 'Votre rendez-vous Répar-Automobile est bien enregistré',
+    text: `
+        Nom, prénom ${appointmentsUserName},</br>
+        Email  ${appointmentsEmail},</br>
+        Marque et modele  ${brandModel},</br>
+        Immatriculation  ${appointmentsImmatriculation},</br>
+        Text ${appointmentsContent},</br>
+        Date ${appointmentDate},</br>`,
 
-    html: `Message:${appointmentsContent},</br> Nom:${appointmentsUserName},</br> Immatriculation: ${appointmentsImmatriculation},</br> Modele:${brandModel},Date : ${appointmentDate},</br> Email :${appointmentsEmail}`,
-
-    attachments: [
-      {
-        filename: `image.jpg`,
-        path: `/public/images/accueil-1.jpg`,
-      },
-    ],
+    html: `<h2>Merci d'avoir pris rendez-vous sur Répar'Automobile!!</h2> <br>
+    <h4>Bonjour ${appointmentsUserName},<br>
+    Vous avez demandé l'intervention suivante ${appointmentsContent} sur votre véhicule ${brandModel}, immatriculé ${appointmentsImmatriculation} le ${appointmentDate}<br>
+    Votre demande sera traitée dans les plus brefs délais, et vous recevrez rapidement la confirmation de votre rendez-vous sur cette adresse ${appointmentsEmail}</h4><br><br>
+    <h3>A bientôt, et merci de votre confiance</h3>`,
   };
   transporter.sendMail(mailData, (err, info) => {
     if (err) console.log(err);
