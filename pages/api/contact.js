@@ -5,7 +5,6 @@ export default (req, res) => {
     contactContent,
     contactUserName,
     contactEmail,
-    //ContactPhotos,
     contactImmat,
     contactBrandModel,
   } = req.body;
