@@ -1,10 +1,10 @@
+import ReactDatePicker, { registerLocale } from 'react-datepicker';
+import { useToasts } from 'react-toast-notifications';
 import { useForm, Controller } from 'react-hook-form';
 import { motion } from 'framer-motion';
-import axios from 'axios';
-import { useToasts } from 'react-toast-notifications';
-import ReactDatePicker, { registerLocale } from 'react-datepicker';
 import fr from 'date-fns/locale/fr';
 import Head from 'next/head';
+import axios from 'axios';
 
 export default function Appointements() {
   registerLocale('fr', fr);
