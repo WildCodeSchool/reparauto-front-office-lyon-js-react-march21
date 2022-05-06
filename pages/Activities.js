@@ -20,7 +20,7 @@ export default function Activities({ services }) {
         exit={{ opacity: 0 }}
         transition={{ duration: 1.1 }}
       >
-        <div className="cursor-default justify-center flex flex-wrap mb-10">
+        <div className="cursor-default justify-center flex flex-wrap mb-14">
           {services.map((service) => (
             <motion.div key={service.id} whileHover={{ y: -7 }}>
               <div className="bg-gray-600 w-80 mx-4 mt-4 p-2 rounded-xl shadow-lg transform hover:shadow-2xl transition duration-400">
@@ -36,7 +36,7 @@ export default function Activities({ services }) {
                   />
                 )}
                 <div className="my-2 h-56">
-                  <h1 className="custom-font text-xl p-2 text-yellow-500">
+                  <h1 className="custom-font uppercase text-xl p-2 text-yellow-500">
                     {service.Titre}
                   </h1>
                   <hr className="bg-gradient-to-r mb-1 from-yellow-400 to-red-500 h-px border-none" />

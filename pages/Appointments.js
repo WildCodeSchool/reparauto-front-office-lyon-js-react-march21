@@ -64,7 +64,7 @@ export default function Appointements() {
         />
         <link rel="icon" href="./favicon.png" />
       </Head>
-      <div className="container justify-center md:items-center">
+      <div className="container justify-center md:items-center mt-10 mb-24">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

@@ -23,7 +23,7 @@ export default function DetailsOccasions({ occasion }) {
         transition={{ duration: 1.1 }}
         className="container items-center justify-center"
       >
-        <div className="cursor-default details-occasion bg-gray-600 p-3 ">
+        <div className="cursor-default details-occasion bg-gray-600 p-3 mb-14">
           <div className="slider  ">
             {occasion.photos.map((photo) => {
               const photoUrl = `${process.env.NEXT_PUBLIC_STRAPI_API_URL}${photo.url}`;
